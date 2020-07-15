@@ -25,45 +25,44 @@
 
 TM1637_display:
 
-;------------------------- Команда записи в регистр дисплея
+	;------------------------- Команда записи в регистр дисплея
 
-		rcall	TM1637_start
-		ldi		reg_1, 0x40			; Data command setting: Automatic address adding, Normal mode, Write data to display
-		rcall	TM1637_writeByte
-		rcall	TM1637_stop
+	rcall	TM1637_start
+	ldi		reg_1, 0x40			; Data command setting: Automatic address adding, Normal mode, Write data to display
+	rcall	TM1637_writeByte
+	rcall	TM1637_stop
 
-;------------------------- Начальный адрес 
+	;------------------------- Начальный адрес 
 
-		rcall	TM1637_start
-		ldi		reg_1, 0xC0
-		rcall	TM1637_writeByte
+	rcall	TM1637_start
+	ldi		reg_1, 0xC0
+	rcall	TM1637_writeByte
 
-;------------------------- Запись данных для каждого регистра дисплея
+	;------------------------- Запись данных для каждого регистра дисплея
 
-		mov		reg_1, TM1637_d1
-		rcall	TM1637_writeByte
+	mov		reg_1, TM1637_d1
+	rcall	TM1637_writeByte
 
-		mov		reg_1, TM1637_d2
-		rcall	TM1637_writeByte
+	mov		reg_1, TM1637_d2
+	rcall	TM1637_writeByte
 
-		mov		reg_1, TM1637_d3
-		rcall	TM1637_writeByte
+	mov		reg_1, TM1637_d3
+	rcall	TM1637_writeByte
 
-		mov		reg_1, TM1637_d4
-		rcall	TM1637_writeByte
+	mov		reg_1, TM1637_d4
+	rcall	TM1637_writeByte
 
-		rcall	TM1637_stop
+	rcall	TM1637_stop
 
-;------------------------- Команда управления дисплея
+	;------------------------- Команда управления дисплея
 
-		rcall	TM1637_start
-		ldi		reg_1, 0x8f
-		rcall	TM1637_writeByte
-		rcall	TM1637_stop
-		nop
-		;rcall	delay_1ms_t0
-		ret
+	rcall	TM1637_start
+	ldi		reg_1, 0x8f
+	rcall	TM1637_writeByte
+	rcall	TM1637_stop
+	nop
 
+	ret
 
 ; Expected byte in reg_1
 ; reg_1 contains a char to be written is to be passed as an argument of the call
@@ -75,96 +74,100 @@ TM1637_display:
 ;========================================================
 
 TM1637_writeByte:
-		ldi		reg_2, 8
-TM1637_writeByte_1:
+	ldi		reg_2, 8
+
+	TM1637_writeByte_1:
 		cbi		PORT_TM1367, TM1637_CLK
 
-; starting if condition
+	; starting if condition
 		mov		reg_3, reg_1
 		cbr		reg_3, 0xfe
 		cpi		reg_3, 0x01
 		brne	TM1637_writeByte_send_low
 
-TM1637_writeByte_send_high:
+	TM1637_writeByte_send_high:
 		sbi		PORT_TM1367, TM1637_DATA
 		rjmp	TM1637_writeByte_sync
 
-TM1637_writeByte_send_low:
+	TM1637_writeByte_send_low:
 		cbi		PORT_TM1367, TM1637_DATA 
 		rjmp	TM1637_writeByte_sync
 
-TM1637_writeByte_sync:
+	TM1637_writeByte_sync:
 		nop
-		;rcall	delay_1ms_t0
 		lsr		reg_1 
 		sbi		PORT_TM1367, TM1637_CLK                    
 		nop
-		;rcall	delay_1ms_t0
 
 		dec		reg_2
 		cpi		reg_2, 0                            ; end of 8-bit loop
 		brne	TM1637_writeByte_1
 
 		cbi		PORT_TM1367, TM1637_CLK
-		;rcall	delay_1ms_t0
 		nop
 		cbi		DDR_TM1367, TM1637_DATA
 
-TM1637_writeByte_wait_ACK:
+	TM1637_writeByte_wait_ACK:
 		sbic	PIN_TM1367, TM1637_DATA
 		rjmp	TM1637_writeByte_wait_ACK          ; wait for acknowledgment
     
 		sbi		DDR_TM1367, TM1637_DATA
 		sbi		PORT_TM1367, TM1637_CLK
-		;rcall	delay_1ms_t0
 		nop
 		cbi		PORT_TM1367, TM1637_CLK
-		ret
+
+	ret
 
 ;========================================================
 ;       Подпрограммы начала и конца передачи данных
 ;========================================================
 
 TM1637_start:
-		sbi		PORT_TM1367, TM1637_CLK
-		sbi		PORT_TM1367, TM1637_DATA
-		cbi		PORT_TM1367, TM1637_DATA
-		ret
+	sbi		PORT_TM1367, TM1637_CLK
+	sbi		PORT_TM1367, TM1637_DATA
+	cbi		PORT_TM1367, TM1637_DATA
+
+	ret
 
 TM1637_stop:
-		cbi		PORT_TM1367, TM1637_CLK
-		cbi		PORT_TM1367, TM1637_DATA
-		sbi		PORT_TM1367, TM1637_CLK
-		sbi		PORT_TM1367, TM1637_DATA
-		ret
+	cbi		PORT_TM1367, TM1637_CLK
+	cbi		PORT_TM1367, TM1637_DATA
+	sbi		PORT_TM1367, TM1637_CLK
+	sbi		PORT_TM1367, TM1637_DATA
+
+	ret
 
 ;========================================================
 ;       Включение и выключение двоеточия
 ;========================================================
 
 TM1637_set_double_point:
-		push	r17
-		ldi		r17, 0x01
-		sts		double_point, r17
-		ori		TM1637_d4, 0x80
-		pop		r17
-		ret
+	push	r17
+	ldi		r17, 0x01
+	sts		double_point, r17
+	ori		TM1637_d4, 0x80
+	pop		r17
+
+	ret
 
 TM1637_unset_double_point:
-		push	r17
-		ldi		r17, 0x00
-		sts		double_point, r17
-		andi	TM1637_d4, 0x7f
-		pop		r17
-		ret
+	push	r17
+	ldi		r17, 0x00
+	sts		double_point, r17
+	andi	TM1637_d4, 0x7f
+	pop		r17
+
+	ret
 
 ;========================================================
 ;       Отображение прочерков на всех элемпентах
 ;========================================================
+
 TM1637_display_dash:
-		ldi		TM1637_d1, 0b01000000
-		ldi		TM1637_d2, 0b01000000
-		ldi		TM1637_d3, 0b01000000
-		ldi		TM1637_d4, 0b01000000
-		rcall	TM1637_display
-		ret
+	ldi		TM1637_d1, 0b01000000
+	ldi		TM1637_d2, 0b01000000
+	ldi		TM1637_d3, 0b01000000
+	ldi		TM1637_d4, 0b01000000
+	rcall	TM1637_display
+
+	ret
