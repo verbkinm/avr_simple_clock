@@ -118,78 +118,80 @@ DS1302_transmit_byte:
 
 DS1302_read_package_data:
 	push	r17
+	push	ZH
+	push	ZL
+	push	YH
+	push	YL
+	push	XH
+	push	XL
 
 	;------------------------- Минтуы
 
 	ldi		BYTE, 0x83
-	rcall	DS1302_read_package_data_f1
-	sts		var_minutes, BYTE
+	ldi		XH, high(var_minutes)		
+	ldi		XL, low(var_minutes)
+	ldi		YH, high(tm_m1)		
+	ldi		YL, low(tm_m1)
+	ldi		ZH, high(tm_m2)		
+	ldi		ZL, low(tm_m2)
 
-	rcall	conv_ds1302_to_tm1637
-	lds		r17, d1
-	sts		tm_m1, r17
-
-	lds		r17, d2
-	sts		tm_m2, r17
+	rcall	DS1302_read_package_data_ext
 
 
 	;------------------------- Часы
 
 	ldi		BYTE, 0x85
-	rcall	DS1302_read_package_data_f1
-	sts		var_hours, BYTE
+	ldi		XH, high(var_hours)		
+	ldi		XL, low(var_hours)
+	ldi		YH, high(tm_h1)		
+	ldi		YL, low(tm_h1)
+	ldi		ZH, high(tm_h2)		
+	ldi		ZL, low(tm_h2)
 
-	rcall	conv_ds1302_to_tm1637
-	lds		r17, d1
-	sts		tm_h1, r17
-
-	lds		r17, d2
-	sts		tm_h2, r17
-
+	rcall	DS1302_read_package_data_ext
 
 	;------------------------- Число
 
 	ldi		BYTE, 0x87
-	rcall	DS1302_read_package_data_f1
-	sts		var_day, BYTE
+	ldi		XH, high(var_day)		
+	ldi		XL, low(var_day)
+	ldi		YH, high(tm_d1)		
+	ldi		YL, low(tm_d1)
+	ldi		ZH, high(tm_d2)		
+	ldi		ZL, low(tm_d2)
 
-	rcall	conv_ds1302_to_tm1637
-	lds		r17, d1
-	sts		tm_d1, r17
-
-	lds		r17, d2
-	sts		tm_d2, r17
+	rcall	DS1302_read_package_data_ext
 
 	;------------------------- Месяц
 
 	ldi		BYTE, 0x89
-	rcall	DS1302_read_package_data_f1
-	sts		var_month, BYTE
+	ldi		XH, high(var_month)		
+	ldi		XL, low(var_month)
+	ldi		YH, high(tm_mt1)		
+	ldi		YL, low(tm_mt1)
+	ldi		ZH, high(tm_mt2)		
+	ldi		ZL, low(tm_mt2)
 
-	rcall	conv_ds1302_to_tm1637
-	lds		r17, d1
-	sts		tm_mt1, r17
-
-	lds		r17, d2
-	sts		tm_mt2, r17
+	rcall	DS1302_read_package_data_ext
 
 	;------------------------- Год
 
 	ldi		BYTE, 0x8D
-	rcall	DS1302_read_package_data_f1
-	sts		var_year, BYTE
+	ldi		XH, high(var_year)		
+	ldi		XL, low(var_year)
+	ldi		YH, high(tm_y3)		
+	ldi		YL, low(tm_y3)
+	ldi		ZH, high(tm_y4)		
+	ldi		ZL, low(tm_y4)
 
-	rcall	conv_ds1302_to_tm1637
-	ldi		r17, 0b01011011
-	sts		tm_y1, r17
-	ldi		r17, 0b00111111
-	sts		tm_y2, r17
+	rcall	DS1302_read_package_data_ext
 
-	lds		r17, d1
-	sts		tm_y3, r17
-	lds		r17, d2
-	sts		tm_y4, r17
-
+	pop		XL
+	pop		XH
+	pop		YL
+	pop		YH
+	pop		ZL
+	pop		ZH
 	pop		r17
 
 	ret
@@ -199,6 +201,28 @@ DS1302_read_package_data_f1:
 	rcall	DS1302_send_byte
 	rcall	DS1302_transmit_byte
 	rcall	DS1302_send_stop
+
+	ret
+
+;========================================================
+;			Считать данные с ds1302.
+;	Аадрес регистра чтения ds1302 в регистре BYTE.
+;	Запись ответа от ds1302 в переменную по адресу X.
+;	Запись преобразованных ответов для TM1367 в 
+;	переменные по адресу Y (старший разряд) 
+;	и Z (младший разряд).
+;========================================================
+
+DS1302_read_package_data_ext:
+	rcall	DS1302_read_package_data_f1
+	st		X, BYTE
+
+	rcall	conv_ds1302_to_tm1637
+	lds		r17, d1
+	st		Y, r17
+
+	lds		r17, d2
+	st		Z, r17
 
 	ret
 

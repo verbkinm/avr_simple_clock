@@ -171,7 +171,7 @@ TM1637_unset_double_point:
 	ret
 
 ;========================================================
-;       Отображение прочерков на всех элемпентах
+;       Отображение прочерков на всех элементах
 ;========================================================
 
 TM1637_display_dash:
@@ -220,7 +220,6 @@ TM1637_display_year:
 	lds		TM1637_d2, tm_y2
 	lds		TM1637_d3, tm_y3
 	lds		TM1637_d4, tm_y4
-
 	rcall	TM1637_display
 
 	ret
@@ -277,6 +276,7 @@ TM1637_blink_pair:
 
 	TM1637_blink_pair_end:
 		rcall	TM1637_display
+
 		pop		r19
 		pop		r18
 		pop		r17
