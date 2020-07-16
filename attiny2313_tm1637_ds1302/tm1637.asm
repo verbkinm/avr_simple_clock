@@ -24,6 +24,10 @@
 ;========================================================	
 
 TM1637_display:
+	push	reg_1
+	push	reg_2
+	push	reg_3
+	push	reg_4
 
 	;------------------------- Команда записи в регистр дисплея
 
@@ -61,6 +65,11 @@ TM1637_display:
 	rcall	TM1637_writeByte
 	rcall	TM1637_stop
 	nop
+
+	pop		reg_4
+	pop		reg_3
+	pop		reg_2
+	pop		reg_1
 
 	ret
 
@@ -146,6 +155,7 @@ TM1637_set_double_point:
 	ldi		r17, 0x01
 	sts		double_point, r17
 	ori		TM1637_d4, 0x80
+	rcall	TM1637_display
 	pop		r17
 
 	ret
@@ -155,6 +165,7 @@ TM1637_unset_double_point:
 	ldi		r17, 0x00
 	sts		double_point, r17
 	andi	TM1637_d4, 0x7f
+	rcall	TM1637_display
 	pop		r17
 
 	ret
@@ -169,5 +180,105 @@ TM1637_display_dash:
 	ldi		TM1637_d3, 0b01000000
 	ldi		TM1637_d4, 0b01000000
 	rcall	TM1637_display
+
+	ret
+
+;========================================================
+;				Отображение времени
+;========================================================
+
+TM1637_display_time:
+	lds		TM1637_d1, tm_h1
+	lds		TM1637_d2, tm_h2
+	lds		TM1637_d3, tm_m1
+	lds		TM1637_d4, tm_m2
+
+	rcall	TM1637_display
+
+	ret
+
+;========================================================
+;				Отображение даты
+;========================================================
+
+TM1637_display_date:
+	lds		TM1637_d1, tm_d1
+	lds		TM1637_d2, tm_d2
+	ori		TM1637_d2, 0x80
+	lds		TM1637_d3, tm_mt1
+	lds		TM1637_d4, tm_mt2
+	rcall	TM1637_display
+
+	ret
+
+;========================================================
+;				Отображение года
+;========================================================
+
+TM1637_display_year:
+	lds		TM1637_d1, tm_y1
+	lds		TM1637_d2, tm_y2
+	lds		TM1637_d3, tm_y3
+	lds		TM1637_d4, tm_y4
+
+	rcall	TM1637_display
+
+	ret
+
+;========================================================
+;				Моргание
+;	Режимы: 
+;		1-й и 2-й элементы r17==1
+;		3-й и 4-й элементы r17==2
+;		Все элементы r17==3
+;
+;	значение 1-го элемента == r18
+;	значение 2-го элемента == r19
+;========================================================
+
+TM1637_blink_pair:
+	push	r17
+	push	r18
+	push	r19
+
+	cpi		r17, 0x01
+	breq	TM1637_blink_pair_first
+
+	cpi		r17, 0x02
+	breq	TM1637_blink_pair_second
+
+	cpi		r17, 0x03
+	breq	TM1637_blink_pair_third
+
+	rjmp	TM1637_blink_pair_end
+
+	TM1637_blink_pair_first:
+		eor		TM1637_d1, r18
+		eor		TM1637_d2, r19
+
+		rjmp	TM1637_blink_pair_end
+
+	TM1637_blink_pair_second:
+		eor		TM1637_d3, r18
+		eor		TM1637_d4, r19
+
+		rjmp	TM1637_blink_pair_end
+
+	TM1637_blink_pair_third:
+		lds		r17, tm_y1
+		eor		TM1637_d1, r17
+
+		lds		r17, tm_y2
+		eor		TM1637_d2, r17
+
+		eor		TM1637_d3, r18
+		eor		TM1637_d4, r19
+
+
+	TM1637_blink_pair_end:
+		rcall	TM1637_display
+		pop		r19
+		pop		r18
+		pop		r17
 
 	ret

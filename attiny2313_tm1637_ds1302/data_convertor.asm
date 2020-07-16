@@ -111,96 +111,232 @@ bin_to_tm1637_digit:
 	ret
 
 ;========================================================
-; Подпрограммы выбора режима отображения (время/дата/год)
+;	Подпрограммы инкремента до определённого порога
 ;========================================================
-
-prepare_display:
+inc_circle:
 	push	r17
 	push	r18
+	push	r19
 
-	;-------------------------- Если запрос года
+	lds		r17, mode
 
-	cpi		r18, 0x8D
-	brne	prepare_display_1
+	;-------------------------- Выбор режима mode
 
-	rcall	DS1302_send_start
-	mov		BYTE, r18
-	rcall	DS1302_send_byte
-	rcall	DS1302_transmit_byte
-	rcall	DS1302_send_stop
+	cpi		r17, 0x01
+	breq	inc_circle_hour
 
-	rcall	conv_ds1302_to_tm1637
+	cpi		r17, 0x02
+	breq	inc_circle_minutes
 
-	ldi		TM1637_d1, 0b01011011	; 2 2000-й год
-	ldi		TM1637_d2, 0b00111111	; 0 2000-й год
-	lds		TM1637_d3, d1
-	lds		TM1637_d4, d2
+	cpi		r17, 0x03
+	breq	inc_circle_day
 
-	;-------------------------- Убрать двоеточие и убрать точку после второго числа (год)
+	cpi		r17, 0x04
+	breq	inc_circle_month
 
-	rcall	TM1637_unset_double_point
-	andi	TM1637_d2, 0x7f
+	cpi		r17, 0x05
+	breq	inc_circle_year
 
-	rjmp	prepare_display_end
+	rjmp	inc_circle_end
 
-	prepare_display_1:
+	;-------------------------- Часы
 
-		;-------------------------- Чтение значение из регистра r17
+	inc_circle_hour:
+		ldi		XH, high(var_hours)		
+		ldi		XL, low(var_hours)
+		ldi		r19, 0
+		ldi		r18, 24
+		ldi		BYTE, 0x84
+		ldi		ZH, high(TM1637_display_time)
+		ldi		ZL, low(TM1637_display_time)
 
-		rcall	DS1302_send_start
-		mov		BYTE, r17
-		rcall	DS1302_send_byte
-		rcall	DS1302_transmit_byte
-		rcall	DS1302_send_stop
+		rcall	inc_circle_ext
 
-		rcall	conv_ds1302_to_tm1637
+		rjmp	inc_circle_end
 
-		lds		TM1637_d1, d1
-		lds		TM1637_d2, d2
+	;-------------------------- Минуты
 
-		;-------------------------- Чтение значение из регистра r18
+	inc_circle_minutes:
+		ldi		XH, high(var_minutes)		
+		ldi		XL, low(var_minutes)
+		ldi		r19, 0
+		ldi		r18, 60
+		ldi		BYTE, 0x82
+		ldi		ZH, high(TM1637_display_time)
+		ldi		ZL, low(TM1637_display_time)
 
-		rcall	DS1302_send_start
-		mov		BYTE, r18
-		rcall	DS1302_send_byte
-		rcall	DS1302_transmit_byte
-		rcall	DS1302_send_stop
+		rcall	inc_circle_ext
 
-		rcall	conv_ds1302_to_tm1637
+		rjmp	inc_circle_end
 
-		lds		TM1637_d3, d1
-		lds		TM1637_d4, d2
+	;-------------------------- День месяца
 
+	inc_circle_day:
+		ldi		XH, high(var_day)		
+		ldi		XL, low(var_day)
+		ldi		r19, 1
+		ldi		r18, 32
+		ldi		BYTE, 0x86
+		ldi		ZH, high(TM1637_display_date)
+		ldi		ZL, low(TM1637_display_date)
 
-		lds		r17, clock_mode
+		rcall	inc_circle_ext
 
-		cpi		r17, 0x00
-		breq	prepare_display_time
+		rjmp	inc_circle_end
 
-		cpi		r17, 0x01
-		breq	prepare_display_date
+	;-------------------------- Месяц
 
-	;-------------------------- Установить двоеточие и убрать точку после второго числа (время)
+	inc_circle_month:
+		ldi		XH, high(var_month)		
+		ldi		XL, low(var_month)
+		ldi		r19, 1
+		ldi		r18, 13
+		ldi		BYTE, 0x88
+		ldi		ZH, high(TM1637_display_date)
+		ldi		ZL, low(TM1637_display_date)
 
-	prepare_display_time:
+		rcall	inc_circle_ext
 
-		lds		r17, double_point
-		sbrc	r17, 0
-		rcall	TM1637_unset_double_point
-		sbrs	r17, 0
-		rcall	TM1637_set_double_point
-		andi	TM1637_d2, 0x7f
+		rjmp	inc_circle_end
 
-		rjmp	prepare_display_end
+	;-------------------------- Год
 
-	;-------------------------- Убрать двоеточие и установить точку после второго числа (дата)
+	inc_circle_year:
+		ldi		XH, high(var_year)		
+		ldi		XL, low(var_year)
+		ldi		r18, 100
+		ldi		BYTE, 0x8C
+		ldi		ZH, high(TM1637_display_year)
+		ldi		ZL, low(TM1637_display_year)
 
-	prepare_display_date:
-		rcall	TM1637_unset_double_point
-		ori		TM1637_d2, 0x80
+		rcall	inc_circle_ext
 
-	prepare_display_end:
+	;-------------------------- Конец инкрементации
+			
+	inc_circle_end:
+		pop		r19
 		pop		r18
+		pop		r17
+
+	ret
+
+;========================================================
+;		Преобразование 8-битного двоичного
+;		значения в упакованный BCD формат
+;		Входящее\исходящее значение == BYTE
+;========================================================
+
+bin8bcd:
+	push	r18
+	push	r19
+
+	.def	digitL	=	r18
+	.def	digitH	=	r19
+
+	mov		digitL, BYTE
+	ldi		digitH, 0x00
+
+	bin8bcd_loop:
+		subi	digitL, 0x0a
+		brmi	bin8bcd_end
+
+		inc		digitH
+		rjmp	bin8bcd_loop
+
+	bin8bcd_end:
+		subi	digitL, -0x0a
+
+		swap	digitH
+		mov		BYTE, digitH
+
+		andi	digitL, 0x0f
+		or		BYTE, digitL
+
+		.undef	digitL
+		.undef	digitH
+
+		pop		r19
+		pop		r18
+
+	ret
+
+;========================================================
+;		Преобразование 8-битного упаковонного
+;		значения в двоичный формат
+;		Входящее\исходящее значение == r17
+;========================================================
+
+bcd8bin:
+	push	r18
+
+	.def	result	=	r17
+	.def	tens	=	r18
+
+	mov		tens, r17
+	andi	tens, 0xf0
+	swap	tens
+
+	andi	result, 0x0f
+	
+	bcd8bind_loop:
+		dec		tens
+		brmi	bcd8bin_end
+
+		subi	result, -0x0a
+		rjmp	bcd8bind_loop
+
+	bcd8bin_end:
+		.undef	result
+		.undef	tens
+
+		pop		r18
+
+	ret
+
+;========================================================
+;	Инкремент переменной по адресу X.
+;	Верхняя граница - max_digit (r18).
+;	Нижняя граница - min_digit (r19).
+;	Адрес регистра для DS1302 в регистре BYTE.
+;	Непрямой вызов подпрограммы по адресу Z
+;========================================================
+
+inc_circle_ext:
+	push	r17
+
+	.def	max_digit = r18
+	.def	min_digit = r19
+
+	ld		r17, X
+	rcall	bcd8bin
+	inc		r17
+
+	cp		r17,  max_digit
+	brsh	inc_circle_ext_reset
+
+	rjmp	inc_circle_ext_end
+
+	inc_circle_ext_reset:
+		mov		r17, min_digit
+
+	inc_circle_ext_end:
+		rcall	DS1302_send_start
+
+		rcall	DS1302_send_byte
+
+		mov		BYTE, r17
+		rcall	bin8bcd
+
+		rcall	DS1302_send_byte
+
+		rcall	DS1302_send_stop	
+
+		rcall	DS1302_read_package_data
+		icall
+
+		.undef	max_digit
+		.undef	min_digit
+
 		pop		r17
 
 	ret

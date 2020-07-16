@@ -15,13 +15,12 @@ DS1302_send_stop:
 	ret
 
 ;========================================================
-;       Отправка байта
+;       Отправка байта из регистра BYTE
 ;========================================================
 
 DS1302_send_byte:
-	push	r18
 	push	r17
-	push	r16
+	push	BYTE
 
 	;------------------------- Вывод DAT на выход
 	sbi		DDR_DS1302, DAT
@@ -39,10 +38,7 @@ DS1302_send_byte:
 
 		cbi		PORT_DS1302, CLK
 
-		lsr		BYTE			; сравниваем сдвинутый бит,
-		ldi		r18, 0x00		; который в регистре С,
-		ldi		r16, 0x00		; c байта (BYTE) с нулём
-		cpc		r16, r18		;
+		lsr		BYTE			
 		brcc	cbi_send_bit
 			
 		sbi_send_bit:
@@ -66,18 +62,16 @@ DS1302_send_byte:
 	;------------------------- Выход из цикла
 
 	while_send_end:
-		pop		r16
+		pop		BYTE
 		pop		r17
-		pop		r18
 
 	ret
 
 ;========================================================
-;       Получение байта
+;       Получение байта, результат в регистр BYTE
 ;========================================================
 
 DS1302_transmit_byte:
-	push	r18
 	push	r17
 
 	;------------------------- Вывод DAT на вход
@@ -115,13 +109,11 @@ DS1302_transmit_byte:
 
 	while_transmit_end:
 		pop		r17
-		pop		r18
 
 	ret
 
 ;========================================================
 ;			Считать данные с ds1302 пакетом
-;			адрес записи ответов в регистре Z			
 ;========================================================
 
 DS1302_read_package_data:
@@ -129,49 +121,107 @@ DS1302_read_package_data:
 
 	;------------------------- Минтуы
 
-	rcall	DS1302_send_start
 	ldi		BYTE, 0x83
-	rcall	DS1302_send_byte
-	rcall	DS1302_transmit_byte
-	sts		minutes, BYTE
-	rcall	DS1302_send_stop
+	rcall	DS1302_read_package_data_f1
+	sts		var_minutes, BYTE
+
+	rcall	conv_ds1302_to_tm1637
+	lds		r17, d1
+	sts		tm_m1, r17
+
+	lds		r17, d2
+	sts		tm_m2, r17
+
 
 	;------------------------- Часы
 
-	rcall	DS1302_send_start
 	ldi		BYTE, 0x85
-	rcall	DS1302_send_byte
-	rcall	DS1302_transmit_byte
-	sts		hours, BYTE
-	rcall	DS1302_send_stop
+	rcall	DS1302_read_package_data_f1
+	sts		var_hours, BYTE
+
+	rcall	conv_ds1302_to_tm1637
+	lds		r17, d1
+	sts		tm_h1, r17
+
+	lds		r17, d2
+	sts		tm_h2, r17
+
 
 	;------------------------- Число
 
-	rcall	DS1302_send_start
 	ldi		BYTE, 0x87
-	rcall	DS1302_send_byte
-	rcall	DS1302_transmit_byte
-	sts		day, BYTE
-	rcall	DS1302_send_stop
+	rcall	DS1302_read_package_data_f1
+	sts		var_day, BYTE
+
+	rcall	conv_ds1302_to_tm1637
+	lds		r17, d1
+	sts		tm_d1, r17
+
+	lds		r17, d2
+	sts		tm_d2, r17
 
 	;------------------------- Месяц
 
-	rcall	DS1302_send_start
 	ldi		BYTE, 0x89
-	rcall	DS1302_send_byte
-	rcall	DS1302_transmit_byte
-	sts		month, BYTE
-	rcall	DS1302_send_stop
+	rcall	DS1302_read_package_data_f1
+	sts		var_month, BYTE
+
+	rcall	conv_ds1302_to_tm1637
+	lds		r17, d1
+	sts		tm_mt1, r17
+
+	lds		r17, d2
+	sts		tm_mt2, r17
 
 	;------------------------- Год
 
-	rcall	DS1302_send_start
 	ldi		BYTE, 0x8D
-	rcall	DS1302_send_byte
-	rcall	DS1302_transmit_byte
-	sts		year, BYTE
-	rcall	DS1302_send_stop
+	rcall	DS1302_read_package_data_f1
+	sts		var_year, BYTE
+
+	rcall	conv_ds1302_to_tm1637
+	ldi		r17, 0b01011011
+	sts		tm_y1, r17
+	ldi		r17, 0b00111111
+	sts		tm_y2, r17
+
+	lds		r17, d1
+	sts		tm_y3, r17
+	lds		r17, d2
+	sts		tm_y4, r17
 
 	pop		r17
+
+	ret
+
+DS1302_read_package_data_f1:
+	rcall	DS1302_send_start
+	rcall	DS1302_send_byte
+	rcall	DS1302_transmit_byte
+	rcall	DS1302_send_stop
+
+	ret
+
+;========================================================
+;       Подпрограммы включения\отключения часов
+;========================================================
+
+DS1302_clock_on:
+	rcall	DS1302_send_start
+	ldi		BYTE, 0x80
+	rcall	DS1302_send_byte
+	ldi		BYTE, 0x00
+	rcall	DS1302_send_byte
+	rcall	DS1302_send_stop
+
+	ret
+
+DS1302_clock_off:
+	rcall	DS1302_send_start
+	ldi		BYTE, 0x80
+	rcall	DS1302_send_byte
+	ldi		BYTE, 0x80
+	rcall	DS1302_send_byte
+	rcall	DS1302_send_stop
 
 	ret
