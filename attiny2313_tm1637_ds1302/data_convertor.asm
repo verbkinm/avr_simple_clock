@@ -13,18 +13,15 @@ conv_ds1302_to_tm1637:
 	mov		r17, BYTE
 	andi	r17, 0x0f
 	rcall	bin_to_tm1637_digit
-	lds		r17, d1
 	sts		d2, r17
 
 	;------------------------- преобразуем старший разряд в переменную d1
 
 	mov		r17, BYTE
 	andi	r17, 0x70
-	lsr		r17
-	lsr		r17
-	lsr		r17
-	lsr		r17
+	swap	r17
 	rcall	bin_to_tm1637_digit
+	sts		d1, r17
 	pop		r17
 
 	ret
@@ -32,11 +29,9 @@ conv_ds1302_to_tm1637:
 ;------------------------- Подфункция преобразования.
 ;------------------------- Данные из регистра r17 преобразуются в числовое 
 ;------------------------- значение для 7-сегментного индикатора, результат в 
-;------------------------- переменную d1
+;------------------------- регистр r17
 
 bin_to_tm1637_digit:
-	push	r17
-
 	cpi		r17, 0x00
 	breq	_d0
 	cpi		r17, 0x01
@@ -64,56 +59,45 @@ bin_to_tm1637_digit:
 
 	_d0:
 		ldi		r17, 0b00111111
-		sts		d1, r17
 		rjmp	bin_to_tm1637_digit_end
 	_d1:
 		ldi		r17, 0b00000110
-		sts		d1, r17
 		rjmp	bin_to_tm1637_digit_end
 	_d2:
 		ldi		r17, 0b01011011
-		sts		d1, r17
 		rjmp	bin_to_tm1637_digit_end
 	_d3:
 		ldi		r17, 0b01001111
-		sts		d1, r17
 		rjmp	bin_to_tm1637_digit_end
 	_d4:
 		ldi		r17, 0b01100110
-		sts		d1, r17
 		rjmp	bin_to_tm1637_digit_end
 	_d5:
 		ldi		r17, 0b01101101
-		sts		d1, r17
 		rjmp	bin_to_tm1637_digit_end
 	_d6:
 		ldi		r17, 0b01111101
-		sts		d1, r17
 		rjmp	bin_to_tm1637_digit_end
 	_d7:
 		ldi		r17, 0b00000111
-		sts		d1, r17
 		rjmp	bin_to_tm1637_digit_end
 	_d8:
 		ldi		r17, 0b01111111
-		sts		d1, r17
 		rjmp	bin_to_tm1637_digit_end
 	_d9:
 		ldi		r17, 0b01101111
-		sts		d1, r17
 		rjmp	bin_to_tm1637_digit_end
 	_dx:
 		ldi		r17, 0b01001001
-		sts		d1, r17
 	
 	bin_to_tm1637_digit_end:
-		pop		r17
 
 	ret
 
 ;========================================================
 ;	Подпрограммы инкремента до определённого порога
 ;========================================================
+
 inc_circle:
 	push	r17
 	push	r18
@@ -152,6 +136,7 @@ inc_circle:
 		ldi		ZL, low(TM1637_display_time)
 
 		rcall	inc_circle_ext
+		rcall	TM1637_set_double_point
 
 		rjmp	inc_circle_end
 
@@ -167,6 +152,7 @@ inc_circle:
 		ldi		ZL, low(TM1637_display_time)
 
 		rcall	inc_circle_ext
+		rcall	TM1637_set_double_point
 
 		rjmp	inc_circle_end
 

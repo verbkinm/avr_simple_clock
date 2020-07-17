@@ -23,6 +23,7 @@ DS1302_send_byte:
 	push	BYTE
 
 	;------------------------- Вывод DAT на выход
+
 	sbi		DDR_DS1302, DAT
 	cbi		PORT_DS1302, DAT
 
@@ -32,23 +33,23 @@ DS1302_send_byte:
 
 	;------------------------- Начало цикла
 
-	while_send:
+	DS1302_while_send:
 		cpi		r17, 0x08
-		brsh	while_send_end
+		brsh	DS1302_while_send_end
 
 		cbi		PORT_DS1302, CLK
 
 		lsr		BYTE			
-		brcc	cbi_send_bit
+		brcc	DS1302_cbi_send_bit
 			
-		sbi_send_bit:
+		DS1302_sbi_send_bit:
 			sbi		PORT_DS1302, DAT
-			rjmp	while_send_bit
+			rjmp	DS1302_while_send_bit
 
-		cbi_send_bit:
+		DS1302_cbi_send_bit:
 			cbi		PORT_DS1302, DAT
 
-		while_send_bit:
+		DS1302_while_send_bit:
 
 			;------------------------- Отправка бита
 
@@ -57,11 +58,11 @@ DS1302_send_byte:
 			nop
 			inc		r17
 
-		rjmp	while_send
+		rjmp	DS1302_while_send
 
 	;------------------------- Выход из цикла
 
-	while_send_end:
+	DS1302_while_send_end:
 		pop		BYTE
 		pop		r17
 
@@ -86,9 +87,9 @@ DS1302_transmit_byte:
 
 	;------------------------- Начало цикла
 
-	while_transmit:
+	DS1302_while_transmit:
 		cpi		r17, 0x07
-		brsh	while_transmit_end
+		brsh	DS1302_while_transmit_end
 
 		cbi		PORT_DS1302, CLK
 
@@ -103,11 +104,11 @@ DS1302_transmit_byte:
 		nop
 
 		inc		r17
-		rjmp	while_transmit
+		rjmp	DS1302_while_transmit
 
 	;------------------------- Выход из цикла
 
-	while_transmit_end:
+	DS1302_while_transmit_end:
 		pop		r17
 
 	ret

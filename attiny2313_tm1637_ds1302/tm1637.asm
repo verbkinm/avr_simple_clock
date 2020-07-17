@@ -27,7 +27,6 @@ TM1637_display:
 	push	reg_1
 	push	reg_2
 	push	reg_3
-	push	reg_4
 
 	;------------------------- Команда записи в регистр дисплея
 
@@ -66,7 +65,6 @@ TM1637_display:
 	rcall	TM1637_stop
 	nop
 
-	pop		reg_4
 	pop		reg_3
 	pop		reg_2
 	pop		reg_1
