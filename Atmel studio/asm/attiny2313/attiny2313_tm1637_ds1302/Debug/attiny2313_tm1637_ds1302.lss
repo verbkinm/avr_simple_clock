@@ -1,0 +1,2250 @@
+
+AVRASM ver. 2.2.7  C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm Tue Jul 21 17:17:28 2020
+
+[builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.3.229\avrasm\inc\tn2313adef.inc'
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(15): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.3.229\avrasm\inc\tn2313adef.inc'
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(16): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\def_equ.inc'
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(72): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts_vector.asm'
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(73): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm'
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(74): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\initialization.asm'
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(96): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm'
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(97): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm'
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(98): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm'
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm(220): warning: Register r18 already defined by the .DEF directive
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(98): 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm' included form here
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm(259): warning: Register r17 already defined by the .DEF directive
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(98): 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm' included form here
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm(260): warning: Register r18 already defined by the .DEF directive
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(98): 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm' included form here
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm(294): warning: Register r18 already defined by the .DEF directive
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(98): 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm' included form here
+[builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.3.229\avrasm\inc\tn2313adef.inc'
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(15): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.3.229\avrasm\inc\tn2313adef.inc'
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(16): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\def_equ.inc'
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(72): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts_vector.asm'
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(73): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm'
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(74): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\initialization.asm'
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(96): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm'
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(97): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm'
+C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(98): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm'
+                                 
+                                 ;
+                                 
+                                 ;***** Created: 2011-02-09 12:04 ******* Source: ATtiny2313A.xml *********
+                                 ;*************************************************************************
+                                 ;* A P P L I C A T I O N   N O T E   F O R   T H E   A V R   F A M I L Y
+                                 ;* 
+                                 ;* Number            : AVR000
+                                 ;* File Name         : "tn2313Adef.inc"
+                                 ;* Title             : Register/Bit Definitions for the ATtiny2313A
+                                 ;* Date              : 2011-02-09
+                                 ;* Version           : 2.35
+                                 ;* Support E-mail    : avr@atmel.com
+                                 ;* Target MCU        : ATtiny2313A
+                                 ;* 
+                                 ;* DESCRIPTION
+                                 ;* When including this file in the assembly program file, all I/O register 
+                                 ;* names and I/O register bit names appearing in the data book can be used.
+                                 ;* In addition, the six registers forming the three data pointers X, Y and 
+                                 ;* Z have been assigned names XL - ZH. Highest RAM address for Internal 
+                                 ;* SRAM is also defined 
+                                 ;* 
+                                 ;* The Register names are represented by their hexadecimal address.
+                                 ;* 
+                                 ;* The Register Bit names are represented by their bit number (0-7).
+                                 ;* 
+                                 ;* Please observe the difference in using the bit names with instructions
+                                 ;* such as "sbr"/"cbr" (set/clear bit in register) and "sbrs"/"sbrc"
+                                 ;* (skip if bit in register set/cleared). The following example illustrates
+                                 ;* this:
+                                 ;* 
+                                 ;* in    r16,PORTB             ;read PORTB latch
+                                 ;* sbr   r16,(1<<PB6)+(1<<PB5) ;set PB6 and PB5 (use masks, not bit#)
+                                 ;* out   PORTB,r16             ;output to PORTB
+                                 ;* 
+                                 ;* in    r16,TIFR              ;read the Timer Interrupt Flag Register
+                                 ;* sbrc  r16,TOV0              ;test the overflow flag (use bit#)
+                                 ;* rjmp  TOV0_is_set           ;jump if set
+                                 ;* ...                         ;otherwise do something else
+                                 ;*************************************************************************
+                                 
+                                 #ifndef _TN2313ADEF_INC_
+                                 #define _TN2313ADEF_INC_
+                                 
+                                 
+                                 #pragma partinc 0
+                                 
+                                 ; ***** SPECIFY DEVICE ***************************************************
+                                 .device ATtiny2313A
+                                 #pragma AVRPART ADMIN PART_NAME ATtiny2313A
+                                 .equ	SIGNATURE_000	= 0x1e
+                                 .equ	SIGNATURE_001	= 0x91
+                                 .equ	SIGNATURE_002	= 0x0a
+                                 
+                                 #pragma AVRPART CORE CORE_VERSION V2
+                                 #pragma AVRPART CORE NEW_INSTRUCTIONS lpm rd,z+
+                                 
+                                 
+                                 ; ***** I/O REGISTER DEFINITIONS *****************************************
+                                 ; NOTE:
+                                 ; Definitions marked "MEMORY MAPPED"are extended I/O ports
+                                 ; and cannot be used with IN/OUT instructions
+                                 .equ	SREG	= 0x3f
+                                 .equ	SPL	= 0x3d
+                                 .equ	OCR0B	= 0x3c
+                                 .equ	GIMSK	= 0x3b
+                                 .equ	EIFR	= 0x3a
+                                 .equ	TIMSK	= 0x39
+                                 .equ	TIFR	= 0x38
+                                 .equ	SPMCSR	= 0x37
+                                 .equ	OCR0A	= 0x36
+                                 .equ	MCUCR	= 0x35
+                                 .equ	MCUSR	= 0x34
+                                 .equ	TCCR0B	= 0x33
+                                 .equ	TCNT0	= 0x32
+                                 .equ	OSCCAL	= 0x31
+                                 .equ	TCCR0A	= 0x30
+                                 .equ	TCCR1A	= 0x2f
+                                 .equ	TCCR1B	= 0x2e
+                                 .equ	TCNT1L	= 0x2c
+                                 .equ	TCNT1H	= 0x2d
+                                 .equ	OCR1AL	= 0x2a
+                                 .equ	OCR1AH	= 0x2b
+                                 .equ	OCR1BL	= 0x28
+                                 .equ	OCR1BH	= 0x29
+                                 .equ	CLKPR	= 0x26
+                                 .equ	ICR1L	= 0x24
+                                 .equ	ICR1H	= 0x25
+                                 .equ	GTCCR	= 0x23
+                                 .equ	TCCR1C	= 0x22
+                                 .equ	WDTCR	= 0x21
+                                 .equ	PCMSK0	= 0x20
+                                 .equ	EEAR	= 0x1e
+                                 .equ	EEDR	= 0x1d
+                                 .equ	EECR	= 0x1c
+                                 .equ	PORTA	= 0x1b
+                                 .equ	DDRA	= 0x1a
+                                 .equ	PINA	= 0x19
+                                 .equ	PORTB	= 0x18
+                                 .equ	DDRB	= 0x17
+                                 .equ	PINB	= 0x16
+                                 .equ	GPIOR2	= 0x15
+                                 .equ	GPIOR1	= 0x14
+                                 .equ	GPIOR0	= 0x13
+                                 .equ	PORTD	= 0x12
+                                 .equ	DDRD	= 0x11
+                                 .equ	PIND	= 0x10
+                                 .equ	USIDR	= 0x0f
+                                 .equ	USISR	= 0x0e
+                                 .equ	USICR	= 0x0d
+                                 .equ	UDR	= 0x0c
+                                 .equ	UCSRA	= 0x0b
+                                 .equ	UCSRB	= 0x0a
+                                 .equ	UBRRL	= 0x09
+                                 .equ	ACSR	= 0x08
+                                 .equ	BODCR	= 0x07
+                                 .equ	PRR	= 0x06
+                                 .equ	PCMSK2	= 0x05
+                                 .equ	PCMSK1	= 0x04
+                                 .equ	UCSRC	= 0x03
+                                 .equ	UBRRH	= 0x02
+                                 .equ	DIDR	= 0x01
+                                 
+                                 
+                                 ; ***** BIT DEFINITIONS **************************************************
+                                 
+                                 ; ***** PORTB ************************
+                                 ; PORTB - Port B Data Register
+                                 .equ	PORTB0	= 0	; Port B Data Register bit 0
+                                 .equ	PB0	= 0	; For compatibility
+                                 .equ	PORTB1	= 1	; Port B Data Register bit 1
+                                 .equ	PB1	= 1	; For compatibility
+                                 .equ	PORTB2	= 2	; Port B Data Register bit 2
+                                 .equ	PB2	= 2	; For compatibility
+                                 .equ	PORTB3	= 3	; Port B Data Register bit 3
+                                 .equ	PB3	= 3	; For compatibility
+                                 .equ	PORTB4	= 4	; Port B Data Register bit 4
+                                 .equ	PB4	= 4	; For compatibility
+                                 .equ	PORTB5	= 5	; Port B Data Register bit 5
+                                 .equ	PB5	= 5	; For compatibility
+                                 .equ	PORTB6	= 6	; Port B Data Register bit 6
+                                 .equ	PB6	= 6	; For compatibility
+                                 .equ	PORTB7	= 7	; Port B Data Register bit 7
+                                 .equ	PB7	= 7	; For compatibility
+                                 
+                                 ; DDRB - Port B Data Direction Register
+                                 .equ	DDB0	= 0	; Port B Data Direction Register bit 0
+                                 .equ	DDB1	= 1	; Port B Data Direction Register bit 1
+                                 .equ	DDB2	= 2	; Port B Data Direction Register bit 2
+                                 .equ	DDB3	= 3	; Port B Data Direction Register bit 3
+                                 .equ	DDB4	= 4	; Port B Data Direction Register bit 4
+                                 .equ	DDB5	= 5	; Port B Data Direction Register bit 5
+                                 .equ	DDB6	= 6	; Port B Data Direction Register bit 6
+                                 .equ	DDB7	= 7	; Port B Data Direction Register bit 7
+                                 
+                                 ; PINB - Port B Input Pins
+                                 .equ	PINB0	= 0	; Port B Input Pins bit 0
+                                 .equ	PINB1	= 1	; Port B Input Pins bit 1
+                                 .equ	PINB2	= 2	; Port B Input Pins bit 2
+                                 .equ	PINB3	= 3	; Port B Input Pins bit 3
+                                 .equ	PINB4	= 4	; Port B Input Pins bit 4
+                                 .equ	PINB5	= 5	; Port B Input Pins bit 5
+                                 .equ	PINB6	= 6	; Port B Input Pins bit 6
+                                 .equ	PINB7	= 7	; Port B Input Pins bit 7
+                                 
+                                 
+                                 ; ***** TIMER_COUNTER_0 **************
+                                 ; TIMSK - Timer/Counter Interrupt Mask Register
+                                 .equ	OCIE0A	= 0	; Timer/Counter0 Output Compare Match A Interrupt Enable
+                                 .equ	TOIE0	= 1	; Timer/Counter0 Overflow Interrupt Enable
+                                 .equ	OCIE0B	= 2	; Timer/Counter0 Output Compare Match B Interrupt Enable
+                                 
+                                 ; TIFR - Timer/Counter Interrupt Flag register
+                                 .equ	OCF0A	= 0	; Timer/Counter0 Output Compare Flag 0A
+                                 .equ	TOV0	= 1	; Timer/Counter0 Overflow Flag
+                                 .equ	OCF0B	= 2	; Timer/Counter0 Output Compare Flag 0B
+                                 
+                                 ; OCR0B - Timer/Counter0 Output Compare Register
+                                 .equ	OCR0_0	= 0	; 
+                                 .equ	OCR0_1	= 1	; 
+                                 .equ	OCR0_2	= 2	; 
+                                 .equ	OCR0_3	= 3	; 
+                                 .equ	OCR0_4	= 4	; 
+                                 .equ	OCR0_5	= 5	; 
+                                 .equ	OCR0_6	= 6	; 
+                                 .equ	OCR0_7	= 7	; 
+                                 
+                                 ; OCR0A - Timer/Counter0 Output Compare Register
+                                 .equ	OCR0A_0	= 0	; 
+                                 .equ	OCR0A_1	= 1	; 
+                                 .equ	OCR0A_2	= 2	; 
+                                 .equ	OCR0A_3	= 3	; 
+                                 .equ	OCR0A_4	= 4	; 
+                                 .equ	OCR0A_5	= 5	; 
+                                 .equ	OCR0A_6	= 6	; 
+                                 .equ	OCR0A_7	= 7	; 
+                                 
+                                 ; TCCR0A - Timer/Counter  Control Register A
+                                 .equ	WGM00	= 0	; Waveform Generation Mode
+                                 .equ	WGM01	= 1	; Waveform Generation Mode
+                                 .equ	COM0B0	= 4	; Compare Match Output B Mode
+                                 .equ	COM0B1	= 5	; Compare Match Output B Mode
+                                 .equ	COM0A0	= 6	; Compare Match Output A Mode
+                                 .equ	COM0A1	= 7	; Compare Match Output A Mode
+                                 
+                                 ; TCNT0 - Timer/Counter0
+                                 .equ	TCNT0_0	= 0	; 
+                                 .equ	TCNT0_1	= 1	; 
+                                 .equ	TCNT0_2	= 2	; 
+                                 .equ	TCNT0_3	= 3	; 
+                                 .equ	TCNT0_4	= 4	; 
+                                 .equ	TCNT0_5	= 5	; 
+                                 .equ	TCNT0_6	= 6	; 
+                                 .equ	TCNT0_7	= 7	; 
+                                 
+                                 ; TCCR0B - Timer/Counter Control Register B
+                                 .equ	TCCR0	= TCCR0B	; For compatibility
+                                 .equ	CS00	= 0	; Clock Select
+                                 .equ	CS01	= 1	; Clock Select
+                                 .equ	CS02	= 2	; Clock Select
+                                 .equ	WGM02	= 3	; 
+                                 .equ	FOC0B	= 6	; Force Output Compare B
+                                 .equ	FOC0A	= 7	; Force Output Compare B
+                                 
+                                 
+                                 ; ***** TIMER_COUNTER_1 **************
+                                 ; TIMSK - Timer/Counter Interrupt Mask Register
+                                 .equ	ICIE1	= 3	; Timer/Counter1 Input Capture Interrupt Enable
+                                 .equ	TICIE	= ICIE1	; For compatibility
+                                 .equ	OCIE1B	= 5	; Timer/Counter1 Output CompareB Match Interrupt Enable
+                                 .equ	OCIE1A	= 6	; Timer/Counter1 Output CompareA Match Interrupt Enable
+                                 .equ	TOIE1	= 7	; Timer/Counter1 Overflow Interrupt Enable
+                                 
+                                 ; TIFR - Timer/Counter Interrupt Flag register
+                                 .equ	ICF1	= 3	; Input Capture Flag 1
+                                 .equ	OCF1B	= 5	; Output Compare Flag 1B
+                                 .equ	OCF1A	= 6	; Output Compare Flag 1A
+                                 .equ	TOV1	= 7	; Timer/Counter1 Overflow Flag
+                                 
+                                 ; TCCR1A - Timer/Counter1 Control Register A
+                                 .equ	WGM10	= 0	; Pulse Width Modulator Select Bit 0
+                                 .equ	PWM10	= WGM10	; For compatibility
+                                 .equ	WGM11	= 1	; Pulse Width Modulator Select Bit 1
+                                 .equ	PWM11	= WGM11	; For compatibility
+                                 .equ	COM1B0	= 4	; Comparet Ouput Mode 1B, bit 0
+                                 .equ	COM1B1	= 5	; Compare Output Mode 1B, bit 1
+                                 .equ	COM1A0	= 6	; Comparet Ouput Mode 1A, bit 0
+                                 .equ	COM1A1	= 7	; Compare Output Mode 1A, bit 1
+                                 
+                                 ; TCCR1B - Timer/Counter1 Control Register B
+                                 .equ	CS10	= 0	; Clock Select bit 0
+                                 .equ	CS11	= 1	; Clock Select 1 bit 1
+                                 .equ	CS12	= 2	; Clock Select1 bit 2
+                                 .equ	WGM12	= 3	; Waveform Generation Mode Bit 2
+                                 .equ	CTC1	= WGM12	; For compatibility
+                                 .equ	WGM13	= 4	; Waveform Generation Mode Bit 3
+                                 .equ	ICES1	= 6	; Input Capture 1 Edge Select
+                                 .equ	ICNC1	= 7	; Input Capture 1 Noise Canceler
+                                 
+                                 ; TCCR1C - Timer/Counter1 Control Register C
+                                 .equ	FOC1B	= 6	; Force Output Compare for Channel B
+                                 .equ	FOC1A	= 7	; Force Output Compare for Channel A
+                                 
+                                 
+                                 ; ***** WATCHDOG *********************
+                                 ; WDTCR - Watchdog Timer Control Register
+                                 .equ	WDTCSR	= WDTCR	; For compatibility
+                                 .equ	WDP0	= 0	; Watch Dog Timer Prescaler bit 0
+                                 .equ	WDP1	= 1	; Watch Dog Timer Prescaler bit 1
+                                 .equ	WDP2	= 2	; Watch Dog Timer Prescaler bit 2
+                                 .equ	WDE	= 3	; Watch Dog Enable
+                                 .equ	WDCE	= 4	; Watchdog Change Enable
+                                 .equ	WDTOE	= WDCE	; For compatibility
+                                 .equ	WDP3	= 5	; Watchdog Timer Prescaler Bit 3
+                                 .equ	WDIE	= 6	; Watchdog Timeout Interrupt Enable
+                                 .equ	WDIF	= 7	; Watchdog Timeout Interrupt Flag
+                                 
+                                 
+                                 ; ***** USART ************************
+                                 ; UDR - USART I/O Data Register
+                                 .equ	UDR0	= 0	; USART I/O Data Register bit 0
+                                 .equ	UDR1	= 1	; USART I/O Data Register bit 1
+                                 .equ	UDR2	= 2	; USART I/O Data Register bit 2
+                                 .equ	UDR3	= 3	; USART I/O Data Register bit 3
+                                 .equ	UDR4	= 4	; USART I/O Data Register bit 4
+                                 .equ	UDR5	= 5	; USART I/O Data Register bit 5
+                                 .equ	UDR6	= 6	; USART I/O Data Register bit 6
+                                 .equ	UDR7	= 7	; USART I/O Data Register bit 7
+                                 
+                                 ; UCSRA - USART Control and Status Register A
+                                 .equ	USR	= UCSRA	; For compatibility
+                                 .equ	MPCM	= 0	; Multi-processor Communication Mode
+                                 .equ	U2X	= 1	; Double the USART Transmission Speed
+                                 .equ	UPE	= 2	; USART Parity Error
+                                 .equ	PE	= UPE	; For compatibility
+                                 .equ	DOR	= 3	; Data overRun
+                                 .equ	FE	= 4	; Framing Error
+                                 .equ	UDRE	= 5	; USART Data Register Empty
+                                 .equ	TXC	= 6	; USART Transmitt Complete
+                                 .equ	RXC	= 7	; USART Receive Complete
+                                 
+                                 ; UCSRB - USART Control and Status Register B
+                                 .equ	UCR	= UCSRB	; For compatibility
+                                 .equ	TXB8	= 0	; Transmit Data Bit 8
+                                 .equ	RXB8	= 1	; Receive Data Bit 8
+                                 .equ	UCSZ2	= 2	; Character Size
+                                 .equ	CHR9	= UCSZ2	; For compatibility
+                                 .equ	TXEN	= 3	; Transmitter Enable
+                                 .equ	RXEN	= 4	; Receiver Enable
+                                 .equ	UDRIE	= 5	; USART Data register Empty Interrupt Enable
+                                 .equ	TXCIE	= 6	; TX Complete Interrupt Enable
+                                 .equ	RXCIE	= 7	; RX Complete Interrupt Enable
+                                 
+                                 ; UCSRC - USART Control and Status Register C
+                                 .equ	UCPOL	= 0	; Clock Polarity
+                                 .equ	UCSZ0	= 1	; Character Size Bit 0
+                                 .equ	UCSZ1	= 2	; Character Size Bit 1
+                                 .equ	USBS	= 3	; Stop Bit Select
+                                 .equ	UPM0	= 4	; Parity Mode Bit 0
+                                 .equ	UPM1	= 5	; Parity Mode Bit 1
+                                 .equ	UMSEL0 	= 6	; USART Mode Select 0
+                                 .equ 	UMSEL1 	= 7 ; USART Mode Select 1
+                                 .equ 	UCPHA  	= 1 ; USART MSPIM Clock Phase
+                                 .equ 	UDORD  	= 2 ; USART MSPIM Data Order 
+                                 
+                                 .equ	UBRR	= UBRRL	; For compatibility
+                                 
+                                 ; ***** ANALOG_COMPARATOR ************
+                                 ; ACSR - Analog Comparator Control And Status Register
+                                 .equ	ACIS0	= 0	; Analog Comparator Interrupt Mode Select bit 0
+                                 .equ	ACIS1	= 1	; Analog Comparator Interrupt Mode Select bit 1
+                                 .equ	ACIC	= 2	; 
+                                 .equ	ACIE	= 3	; Analog Comparator Interrupt Enable
+                                 .equ	ACI	= 4	; Analog Comparator Interrupt Flag
+                                 .equ	ACO	= 5	; Analog Compare Output
+                                 .equ	ACBG	= 6	; Analog Comparator Bandgap Select
+                                 .equ	ACD	= 7	; Analog Comparator Disable
+                                 
+                                 ; DIDR - Digital Input Disable Register 1
+                                 .equ	AIN0D	= 0	; AIN0 Digital Input Disable
+                                 .equ	AIN1D	= 1	; AIN1 Digital Input Disable
+                                 
+                                 
+                                 ; ***** PORTD ************************
+                                 ; PORTD - Data Register, Port D
+                                 .equ	PORTD0	= 0	; 
+                                 .equ	PD0	= 0	; For compatibility
+                                 .equ	PORTD1	= 1	; 
+                                 .equ	PD1	= 1	; For compatibility
+                                 .equ	PORTD2	= 2	; 
+                                 .equ	PD2	= 2	; For compatibility
+                                 .equ	PORTD3	= 3	; 
+                                 .equ	PD3	= 3	; For compatibility
+                                 .equ	PORTD4	= 4	; 
+                                 .equ	PD4	= 4	; For compatibility
+                                 .equ	PORTD5	= 5	; 
+                                 .equ	PD5	= 5	; For compatibility
+                                 .equ	PORTD6	= 6	; 
+                                 .equ	PD6	= 6	; For compatibility
+                                 
+                                 ; DDRD - Data Direction Register, Port D
+                                 .equ	DDD0	= 0	; 
+                                 .equ	DDD1	= 1	; 
+                                 .equ	DDD2	= 2	; 
+                                 .equ	DDD3	= 3	; 
+                                 .equ	DDD4	= 4	; 
+                                 .equ	DDD5	= 5	; 
+                                 .equ	DDD6	= 6	; 
+                                 
+                                 ; PIND - Input Pins, Port D
+                                 .equ	PIND0	= 0	; 
+                                 .equ	PIND1	= 1	; 
+                                 .equ	PIND2	= 2	; 
+                                 .equ	PIND3	= 3	; 
+                                 .equ	PIND4	= 4	; 
+                                 .equ	PIND5	= 5	; 
+                                 .equ	PIND6	= 6	; 
+                                 
+                                 
+                                 ; ***** EEPROM ***********************
+                                 ; EEAR - EEPROM Read/Write Access
+                                 .equ	EEARL	= EEAR	; For compatibility
+                                 .equ	EEAR0	= 0	; EEPROM Read/Write Access bit 0
+                                 .equ	EEAR1	= 1	; EEPROM Read/Write Access bit 1
+                                 .equ	EEAR2	= 2	; EEPROM Read/Write Access bit 2
+                                 .equ	EEAR3	= 3	; EEPROM Read/Write Access bit 3
+                                 .equ	EEAR4	= 4	; EEPROM Read/Write Access bit 4
+                                 .equ	EEAR5	= 5	; EEPROM Read/Write Access bit 5
+                                 .equ	EEAR6	= 6	; EEPROM Read/Write Access bit 6
+                                 
+                                 ; EEDR - EEPROM Data Register
+                                 .equ	EEDR0	= 0	; EEPROM Data Register bit 0
+                                 .equ	EEDR1	= 1	; EEPROM Data Register bit 1
+                                 .equ	EEDR2	= 2	; EEPROM Data Register bit 2
+                                 .equ	EEDR3	= 3	; EEPROM Data Register bit 3
+                                 .equ	EEDR4	= 4	; EEPROM Data Register bit 4
+                                 .equ	EEDR5	= 5	; EEPROM Data Register bit 5
+                                 .equ	EEDR6	= 6	; EEPROM Data Register bit 6
+                                 .equ	EEDR7	= 7	; EEPROM Data Register bit 7
+                                 
+                                 ; EECR - EEPROM Control Register
+                                 .equ	EERE	= 0	; EEPROM Read Enable
+                                 .equ	EEPE	= 1	; EEPROM Write Enable
+                                 .equ	EEWE	= EEPE	; For compatibility
+                                 .equ	EEMPE	= 2	; EEPROM Master Write Enable
+                                 .equ	EEMWE	= EEMPE	; For compatibility
+                                 .equ	EERIE	= 3	; EEProm Ready Interrupt Enable
+                                 .equ	EEPM0	= 4	; 
+                                 .equ	EEPM1	= 5	; 
+                                 
+                                 
+                                 ; ***** PORTA ************************
+                                 ; PORTA - Port A Data Register
+                                 .equ	PORTA0	= 0	; Port A Data Register bit 0
+                                 .equ	PA0	= 0	; For compatibility
+                                 .equ	PORTA1	= 1	; Port A Data Register bit 1
+                                 .equ	PA1	= 1	; For compatibility
+                                 .equ	PORTA2	= 2	; Port A Data Register bit 2
+                                 .equ	PA2	= 2	; For compatibility
+                                 
+                                 ; DDRA - Port A Data Direction Register
+                                 .equ	DDA0	= 0	; Data Direction Register, Port A, bit 0
+                                 .equ	DDA1	= 1	; Data Direction Register, Port A, bit 1
+                                 .equ	DDA2	= 2	; Data Direction Register, Port A, bit 2
+                                 
+                                 ; PINA - Port A Input Pins
+                                 .equ	PINA0	= 0	; Input Pins, Port A bit 0
+                                 .equ	PINA1	= 1	; Input Pins, Port A bit 1
+                                 .equ	PINA2	= 2	; Input Pins, Port A bit 2
+                                 
+                                 
+                                 ; ***** USI **************************
+                                 ; USIDR - USI Data Register
+                                 .equ	USIDR0	= 0	; USI Data Register bit 0
+                                 .equ	USIDR1	= 1	; USI Data Register bit 1
+                                 .equ	USIDR2	= 2	; USI Data Register bit 2
+                                 .equ	USIDR3	= 3	; USI Data Register bit 3
+                                 .equ	USIDR4	= 4	; USI Data Register bit 4
+                                 .equ	USIDR5	= 5	; USI Data Register bit 5
+                                 .equ	USIDR6	= 6	; USI Data Register bit 6
+                                 .equ	USIDR7	= 7	; USI Data Register bit 7
+                                 
+                                 ; USISR - USI Status Register
+                                 .equ	USICNT0	= 0	; USI Counter Value Bit 0
+                                 .equ	USICNT1	= 1	; USI Counter Value Bit 1
+                                 .equ	USICNT2	= 2	; USI Counter Value Bit 2
+                                 .equ	USICNT3	= 3	; USI Counter Value Bit 3
+                                 .equ	USIDC	= 4	; Data Output Collision
+                                 .equ	USIPF	= 5	; Stop Condition Flag
+                                 .equ	USIOIF	= 6	; Counter Overflow Interrupt Flag
+                                 .equ	USISIF	= 7	; Start Condition Interrupt Flag
+                                 
+                                 ; USICR - USI Control Register
+                                 .equ	USITC	= 0	; Toggle Clock Port Pin
+                                 .equ	USICLK	= 1	; Clock Strobe
+                                 .equ	USICS0	= 2	; USI Clock Source Select Bit 0
+                                 .equ	USICS1	= 3	; USI Clock Source Select Bit 1
+                                 .equ	USIWM0	= 4	; USI Wire Mode Bit 0
+                                 .equ	USIWM1	= 5	; USI Wire Mode Bit 1
+                                 .equ	USIOIE	= 6	; Counter Overflow Interrupt Enable
+                                 .equ	USISIE	= 7	; Start Condition Interrupt Enable
+                                 
+                                 
+                                 ; ***** EXTERNAL_INTERRUPT ***********
+                                 ; GIMSK - General Interrupt Mask Register
+                                 .equ  PCIE1 = 3 ;
+                                 .equ  PCIE2 = 4 ;
+                                 .equ	PCIE0	= 5	; 
+                                 .equ	INT0	= 6	; External Interrupt Request 0 Enable
+                                 .equ	INT1	= 7	; External Interrupt Request 1 Enable
+                                 
+                                 ; EIFR - Extended Interrupt Flag Register
+                                 .equ	GIFR	= EIFR	; For compatibility
+                                 .equ	PCIF0	= 5	; 
+                                 .equ  PCIF2	= 4   ;
+                                 .equ  PCIF1   = 3   ;
+                                 .equ	INTF0	= 6	; External Interrupt Flag 0
+                                 .equ	INTF1	= 7	; External Interrupt Flag 1
+                                 
+                                 ; PCMSK2 - Pin Change Interrupt Mask Register 2
+                                 .equ	PCINT11	= 0	; Pin Change Interrupt Mask 11
+                                 .equ	PCINT12	= 1	; Pin Change Interrupt Mask 12
+                                 .equ	PCINT13	= 2	; Pin Change Interrupt Mask 13
+                                 .equ	PCINT14	= 3	; Pin Change Interrupt Mask 14
+                                 .equ	PCINT15	= 4	; Pin Change Interrupt Mask 15
+                                 .equ	PCINT16	= 5	; Pin Change Interrupt Mask 16
+                                 .equ	PCINT17	= 6	; Pin Change Interrupt Mask 17
+                                 
+                                 ; PCMSK1 - Pin Change Interrupt Mask Register 1
+                                 .equ	PCINT8	= 0	; Pin Change Interrupt Mask 8
+                                 .equ	PCINT9	= 1	; Pin Change Interrupt Mask 9
+                                 .equ	PCINT10	= 2	; Pin Change Interrupt Mask 10
+                                 
+                                 
+                                 ; ***** CPU **************************
+                                 ; SREG - Status Register
+                                 .equ	SREG_C	= 0	; Carry Flag
+                                 .equ	SREG_Z	= 1	; Zero Flag
+                                 .equ	SREG_N	= 2	; Negative Flag
+                                 .equ	SREG_V	= 3	; Two's Complement Overflow Flag
+                                 .equ	SREG_S	= 4	; Sign Bit
+                                 .equ	SREG_H	= 5	; Half Carry Flag
+                                 .equ	SREG_T	= 6	; Bit Copy Storage
+                                 .equ	SREG_I	= 7	; Global Interrupt Enable
+                                 
+                                 ; SPMCSR - Store Program Memory Control and Status register
+                                 .equ	SPMEN	= 0	; Store Program Memory Enable
+                                 .equ	PGERS	= 1	; Page Erase
+                                 .equ	PGWRT	= 2	; Page Write
+                                 .equ	RFLB	= 3	; Read Fuse and Lock Bits
+                                 .equ	CTPB	= 4	; Clear Temporary Page Buffer
+                                 
+                                 ; MCUCR - MCU Control Register
+                                 .equ	ISC00	= 0	; Interrupt Sense Control 0 bit 0
+                                 .equ	ISC01	= 1	; Interrupt Sense Control 0 bit 1
+                                 .equ	ISC10	= 2	; Interrupt Sense Control 1 bit 0
+                                 .equ	ISC11	= 3	; Interrupt Sense Control 1 bit 1
+                                 .equ	SM0	= 4	; Sleep Mode Select Bit 0
+                                 .equ	SM	= SM0	; For compatibility
+                                 .equ	SE	= 5	; Sleep Enable
+                                 .equ	SM1	= 6	; Sleep Mode Select Bit 1
+                                 .equ	PUD	= 7	; Pull-up Disable
+                                 
+                                 ; CLKPR - Clock Prescale Register
+                                 .equ	CLKPS0	= 0	; Clock Prescaler Select Bit 0
+                                 .equ	CLKPS1	= 1	; Clock Prescaler Select Bit 1
+                                 .equ	CLKPS2	= 2	; Clock Prescaler Select Bit 2
+                                 .equ	CLKPS3	= 3	; Clock Prescaler Select Bit 3
+                                 .equ	CLKPCE	= 7	; Clock Prescaler Change Enable
+                                 
+                                 ; MCUSR - MCU Status register
+                                 .equ	PORF	= 0	; Power-On Reset Flag
+                                 .equ	EXTRF	= 1	; External Reset Flag
+                                 .equ	BORF	= 2	; Brown-out Reset Flag
+                                 .equ	WDRF	= 3	; Watchdog Reset Flag
+                                 
+                                 ; OSCCAL - Oscillator Calibration Register
+                                 .equ	CAL0	= 0	; Oscillatro Calibration Value Bit 0
+                                 .equ	CAL1	= 1	; Oscillatro Calibration Value Bit 1
+                                 .equ	CAL2	= 2	; Oscillatro Calibration Value Bit 2
+                                 .equ	CAL3	= 3	; Oscillatro Calibration Value Bit 3
+                                 .equ	CAL4	= 4	; Oscillatro Calibration Value Bit 4
+                                 .equ	CAL5	= 5	; Oscillatro Calibration Value Bit 5
+                                 .equ	CAL6	= 6	; Oscillatro Calibration Value Bit 6
+                                 
+                                 ; GTCCR - General Timer Counter Control Register
+                                 .equ	SFIOR	= GTCCR	; For compatibility
+                                 .equ	PSR10	= 0	; 
+                                 
+                                 ; PCMSK - Pin-Change Mask register
+                                 .equ	PCINT0	= 0	; Pin-Change Interrupt 0
+                                 .equ	PCINT1	= 1	; Pin-Change Interrupt 1
+                                 .equ	PCINT2	= 2	; Pin-Change Interrupt 2
+                                 .equ	PCINT3	= 3	; Pin-Change Interrupt 3
+                                 .equ	PCINT4	= 4	; Pin-Change Interrupt 4
+                                 .equ	PCINT5	= 5	; Pin-Change Interrupt 5
+                                 .equ	PCINT6	= 6	; Pin-Change Interrupt 6
+                                 .equ	PCINT7	= 7	; Pin-Change Interrupt 7
+                                 
+                                 ; GPIOR2 - General Purpose I/O Register 2
+                                 .equ	GPIOR20	= 0	; General Purpose I/O Register 2 bit 0
+                                 .equ	GPIOR21	= 1	; General Purpose I/O Register 2 bit 1
+                                 .equ	GPIOR22	= 2	; General Purpose I/O Register 2 bit 2
+                                 .equ	GPIOR23	= 3	; General Purpose I/O Register 2 bit 3
+                                 .equ	GPIOR24	= 4	; General Purpose I/O Register 2 bit 4
+                                 .equ	GPIOR25	= 5	; General Purpose I/O Register 2 bit 5
+                                 .equ	GPIOR26	= 6	; General Purpose I/O Register 2 bit 6
+                                 .equ	GPIOR27	= 7	; General Purpose I/O Register 2 bit 7
+                                 
+                                 ; GPIOR1 - General Purpose I/O Register 1
+                                 .equ	GPIOR10	= 0	; General Purpose I/O Register 1 bit 0
+                                 .equ	GPIOR11	= 1	; General Purpose I/O Register 1 bit 1
+                                 .equ	GPIOR12	= 2	; General Purpose I/O Register 1 bit 2
+                                 .equ	GPIOR13	= 3	; General Purpose I/O Register 1 bit 3
+                                 .equ	GPIOR14	= 4	; General Purpose I/O Register 1 bit 4
+                                 .equ	GPIOR15	= 5	; General Purpose I/O Register 1 bit 5
+                                 .equ	GPIOR16	= 6	; General Purpose I/O Register 1 bit 6
+                                 .equ	GPIOR17	= 7	; General Purpose I/O Register 1 bit 7
+                                 
+                                 ; GPIOR0 - General Purpose I/O Register 0
+                                 .equ	GPIOR00	= 0	; General Purpose I/O Register 0 bit 0
+                                 .equ	GPIOR01	= 1	; General Purpose I/O Register 0 bit 1
+                                 .equ	GPIOR02	= 2	; General Purpose I/O Register 0 bit 2
+                                 .equ	GPIOR03	= 3	; General Purpose I/O Register 0 bit 3
+                                 .equ	GPIOR04	= 4	; General Purpose I/O Register 0 bit 4
+                                 .equ	GPIOR05	= 5	; General Purpose I/O Register 0 bit 5
+                                 .equ	GPIOR06	= 6	; General Purpose I/O Register 0 bit 6
+                                 .equ	GPIOR07	= 7	; General Purpose I/O Register 0 bit 7
+                                 
+                                 ; PRR - Power reduction register
+                                 .equ	PRUSART	= 0	; 
+                                 .equ	PRUSI	= 1	; 
+                                 .equ	PRTIM0	= 2	; 
+                                 .equ	PRTIM1	= 3	; 
+                                 
+                                 ; BODCR - BOD control register
+                                 .equ	BPDSE	= 0	; 
+                                 .equ	BPDS	= 1	; 
+                                 
+                                 
+                                 
+                                 ; ***** LOCKSBITS ********************************************************
+                                 .equ	LB1	= 0	; Lockbit
+                                 .equ	LB2	= 1	; Lockbit
+                                 
+                                 
+                                 ; ***** FUSES ************************************************************
+                                 ; LOW fuse bits
+                                 .equ	CKSEL0	= 0	; Select Clock Source
+                                 .equ	CKSEL1	= 1	; Select Clock Source
+                                 .equ	CKSEL2	= 2	; Select Clock Source
+                                 .equ	CKSEL3	= 3	; Select Clock Source
+                                 .equ	SUT0	= 4	; Select start-up time
+                                 .equ	SUT1	= 5	; Select start-up time
+                                 .equ	CKOUT	= 6	; Clock output
+                                 .equ	CKDIV8	= 7	; Divide clock by 8
+                                 
+                                 ; HIGH fuse bits
+                                 .equ	BODLEVEL0	= 0	; Brown-out Detector trigger level
+                                 .equ	BODLEVEL1	= 1	; Brown-out Detector trigger level
+                                 .equ	BODLEVEL2	= 2	; Brown-out Detector trigger level
+                                 .equ	EESAVE	= 3	; EEPROM memory is preserved through chip erase
+                                 .equ	WDTON	= 4	; Watchdog Timer Always On
+                                 .equ	SPIEN	= 5	; Enable Serial programming and Data Downloading
+                                 .equ	DWEN	= 6	; debugWIRE Enable
+                                 .equ	RSTDISBL	= 7	; External reset disable
+                                 
+                                 ; EXTENDED fuse bits
+                                 .equ	SELFPRGEN	= 0	; Self Programming Enable
+                                 
+                                 
+                                 
+                                 ; ***** CPU REGISTER DEFINITIONS *****************************************
+                                 .def	XH	= r27
+                                 .def	XL	= r26
+                                 .def	YH	= r29
+                                 .def	YL	= r28
+                                 .def	ZH	= r31
+                                 .def	ZL	= r30
+                                 
+                                 
+                                 
+                                 ; ***** DATA MEMORY DECLARATIONS *****************************************
+                                 .equ	FLASHEND	= 0x03ff	; Note: Word address
+                                 .equ	IOEND	= 0x003f
+                                 .equ	SRAM_START	= 0x0060
+                                 .equ	SRAM_SIZE	= 128
+                                 .equ	RAMEND	= 0x00df
+                                 .equ	XRAMEND	= 0x0000
+                                 .equ	E2END	= 0x007f
+                                 .equ	EEPROMEND	= 0x007f
+                                 .equ	EEADRBITS	= 7
+                                 #pragma AVRPART MEMORY PROG_FLASH 2048
+                                 #pragma AVRPART MEMORY EEPROM 128
+                                 #pragma AVRPART MEMORY INT_SRAM SIZE 128
+                                 #pragma AVRPART MEMORY INT_SRAM START_ADDR 0x60
+                                 
+                                 
+                                 
+                                 ; ***** BOOTLOADER DECLARATIONS ******************************************
+                                 .equ	NRWW_START_ADDR	= 0x0
+                                 .equ	NRWW_STOP_ADDR	= 0x3ff
+                                 .equ	RWW_START_ADDR	= 0x0
+                                 .equ	RWW_STOP_ADDR	= 0x0
+                                 .equ	PAGESIZE	= 16
+                                 
+                                 
+                                 
+                                 ; ***** INTERRUPT VECTORS ************************************************
+                                 .equ	INT0addr	= 0x0001	; External Interrupt Request 0
+                                 .equ	INT1addr	= 0x0002	; External Interrupt Request 1
+                                 .equ	ICP1addr	= 0x0003	; Timer/Counter1 Capture Event
+                                 .equ	OC1Aaddr	= 0x0004	; Timer/Counter1 Compare Match A
+                                 .equ	OC1addr	= 0x0004	; For compatibility
+                                 .equ	OVF1addr	= 0x0005	; Timer/Counter1 Overflow
+                                 .equ	OVF0addr	= 0x0006	; Timer/Counter0 Overflow
+                                 .equ	URXCaddr	= 0x0007	; USART, Rx Complete
+                                 .equ	URXC0addr	= 0x0007	; For compatibility
+                                 .equ	UDREaddr	= 0x0008	; USART Data Register Empty
+                                 .equ	UDRE0addr	= 0x0008	; For compatibility
+                                 .equ	UTXCaddr	= 0x0009	; USART, Tx Complete
+                                 .equ	UTXC0addr	= 0x0009	; For compatibility
+                                 .equ	ACIaddr	= 0x000a	; Analog Comparator
+                                 .equ	PCIBaddr	= 0x000b	; Pin Change Interrupt Request B
+                                 .equ	PCIaddr	= 0x000b	; For compatibility
+                                 .equ	OC1Baddr	= 0x000c	; 
+                                 .equ	OC0Aaddr	= 0x000d	; 
+                                 .equ	OC0Baddr	= 0x000e	; 
+                                 .equ	USI_STARTaddr	= 0x000f	; USI Start Condition
+                                 .equ	USI_OVFaddr	= 0x0010	; USI Overflow
+                                 .equ	ERDYaddr	= 0x0011	; 
+                                 .equ	WDTaddr	= 0x0012	; Watchdog Timer Overflow
+                                 .equ	PCIAaddr	= 0x0013	; Pin Change Interrupt Request A
+                                 .equ	PCIDaddr	= 0x0014	; Pin Change Interrupt Request D
+                                 
+                                 .equ	INT_VECTORS_SIZE	= 21	; size in words
+                                 
+                                 #endif  /* _TN2313ADEF_INC_ */
+                                 
+                                 ; ***** END OF FILE ******************************************************
+                                 
+                                 ; attiny2313_tm1637.asm
+                                 ;
+                                 ; Created: 30.06.2020 14:09:01
+                                 ; Author : verbkinm
+                                 ;
+                                 
+                                 ;##############################################
+                                 ;##		Отображение времени на на 4-х		 ##
+                                 ;##		елементном дисплее с чипом TM1637,	 ##
+                                 ;##		модуль времени ds1302. 				 ##
+                                 ;##		Управление двумя кнопками.			 ##
+                                 ;##############################################
+                                 
+                                 .include "tn2313adef.inc"
+                                 
+                                 ;***** Created: 2011-02-09 12:04 ******* Source: ATtiny2313A.xml *********
+                                 ;*************************************************************************
+                                 ;* A P P L I C A T I O N   N O T E   F O R   T H E   A V R   F A M I L Y
+                                 ;* 
+                                 ;* Number            : AVR000
+                                 ;* File Name         : "tn2313Adef.inc"
+                                 ;* Title             : Register/Bit Definitions for the ATtiny2313A
+                                 ;* Date              : 2011-02-09
+                                 ;* Version           : 2.35
+                                 ;* Support E-mail    : avr@atmel.com
+                                 ;* Target MCU        : ATtiny2313A
+                                 ;* 
+                                 ;* DESCRIPTION
+                                 ;* When including this file in the assembly program file, all I/O register 
+                                 ;* names and I/O register bit names appearing in the data book can be used.
+                                 ;* In addition, the six registers forming the three data pointers X, Y and 
+                                 ;* Z have been assigned names XL - ZH. Highest RAM address for Internal 
+                                 ;* SRAM is also defined 
+                                 ;* 
+                                 ;* The Register names are represented by their hexadecimal address.
+                                 ;* 
+                                 ;* The Register Bit names are represented by their bit number (0-7).
+                                 ;* 
+                                 ;* Please observe the difference in using the bit names with instructions
+                                 ;* such as "sbr"/"cbr" (set/clear bit in register) and "sbrs"/"sbrc"
+                                 ;* (skip if bit in register set/cleared). The following example illustrates
+                                 ;* this:
+                                 ;* 
+                                 ;* in    r16,PORTB             ;read PORTB latch
+                                 ;* sbr   r16,(1<<PB6)+(1<<PB5) ;set PB6 and PB5 (use masks, not bit#)
+                                 ;* out   PORTB,r16             ;output to PORTB
+                                 ;* 
+                                 ;* in    r16,TIFR              ;read the Timer Interrupt Flag Register
+                                 ;* sbrc  r16,TOV0              ;test the overflow flag (use bit#)
+                                 ;* rjmp  TOV0_is_set           ;jump if set
+                                 ;* ...                         ;otherwise do something else
+                                 ;*************************************************************************
+                                 
+                                 #ifndef _TN2313ADEF_INC_
+                                 #endif  /* _TN2313ADEF_INC_ */
+                                 
+                                 ; ***** END OF FILE ******************************************************
+                                 .include "def_equ.inc"
+                                 
+                                 
+                                 .equ	kdel1		= 7813		 ; (1 сек. для 16-битного таймера на 8МГ)
+                                 .equ	kdel2		= 3906		 ; (0,5 сек. для 16-битного таймера на 8МГ)
+                                 .equ	kdel3		= 250		 ; (32 мс. для 8-битного таймера на 8МГ)
+                                 
+                                 ;------------------------- Регистры/описания для работы с tm1637
+                                 
+                                 .def	reg_1       = r16
+                                 .def	reg_2       = r17
+                                 .def	reg_3       = r18
+                                 
+                                 .def	TM1637_d1   = r20
+                                 .def	TM1637_d2   = r21
+                                 .def	TM1637_d3   = r22
+                                 .def	TM1637_d4   = r23
+                                 
+                                 .equ	PORT_TM1367	= PORTB
+                                 .equ	DDR_TM1367	= DDRB
+                                 .equ	PIN_TM1367	= PINB
+                                 .equ	TM1637_CLK  = PB0
+                                 .equ	TM1637_DATA = PB3
+                                 
+                                 ;------------------------- Регистры/описания для работы с ds1302
+                                 
+                                 .equ	PORT_DS1302	= PORTB
+                                 .equ	DDR_DS1302	= DDRB
+                                 .equ	PIN_DS1302  = PINB
+                                 .equ	DS1302_RST	= PB0
+                                 .equ	DS1302_SCLK	= PB1
+                                 .equ	DS1302_IO	= PB2
+                                 .def	BYTE		= r24	; байт отсылки и приём данных из ds1302
+                                 
+                                 ;------------------------- Регистры/описания для работы с кнопками
+                                 
+                                 .equ	PORT_BUTTON_MODE	= PORTD
+                                 .equ	DDR_BUTTON_MODE		= DDRD
+                                 .equ	PIN_BUTTON_MODE		= PIND
+                                 .equ	BUTTON_MODE			= PD2
+                                 
+                                 .equ	PORT_BUTTON_SET		= PORTD
+                                 .equ	DDR_BUTTON_SET		= DDRD
+                                 .equ	PIN_BUTTON_SET		= PIND
+                                 .equ	BUTTON_SET			= PD3
+                                 
+                                 ;------------------------- Резервирование ячеек памяти
+                                 
+                                 .dseg							; Выбираем сегмент ОЗУ
+                                 	.org	0x60				; Устанавливаем текущий адрес сегмента
+                                 
+                                 ;------------------------- Глобальные переменные
+                                 
+000060                           d1:				.byte	1 		;60 Хранение первого символа
+000061                           d2:				.byte	1		;61 Хранение второго символа
+000062                           double_point:	.byte	1		;62 Храниние состояния разделяющего двоеточия 
+000063                           clock_mode:		.byte	1		;63 Храниние состояния отображения (время == 0, дата == 1, год == 2)
+000064                           mode:			.byte	1		;64 Храниние позиции элемента, который устанавливается 
+                                 								; (ничего не устанавливается == 0, часы == 1, минуты == 2, чисдо == 3, месяц == 4, год == 5)
+                                 
+                                 ;------------------------- Хранение данных в упаковонном формате от DS1302
+                                 
+000065                           var_minutes:	.byte	1		;65
+000066                           var_hours:		.byte	1		;66
+000067                           var_day:		.byte	1		;67
+000068                           var_month:		.byte	1		;68
+000069                           var_year:		.byte	1		;69
+                                 
+                                 ;------------------------- Счётчики для таймеров
+                                 
+00006a                           timer0_counter:	.byte	1		;6A
+00006b                           timer1_counter:	.byte	1		;6B
+                                 
+                                 ;------------------------- Хранение подготовленных данных для отображения на TM1637 по элементно
+                                 
+00006c                           tm_h1:			.byte	1		;6C
+00006d                           tm_h2:			.byte	1		;6D
+                                 
+00006e                           tm_m1:			.byte	1		;6E
+00006f                           tm_m2:			.byte	1		;6F
+                                 
+000070                           tm_d1:			.byte	1		;70
+000071                           tm_d2:			.byte	1
+                                 
+000072                           tm_mt1:			.byte	1
+000073                           tm_mt2:			.byte	1
+                                 
+000074                           tm_y1:			.byte	1		;
+000075                           tm_y2:			.byte	1		;
+000076                           tm_y3:			.byte	1		;
+000077                           tm_y4:			.byte	1		;
+                                 
+                                 
+                                 ;------------------------- Начало программного кода
+                                 
+                                 .cseg		 					; Выбор сегмента программного кода
+                                 	.org	0					; Установка текущего адреса на ноль
+                                 
+                                 start:	
+                                 
+                                 .include "interrupts_vector.asm"
+                                 
+                                 ;				 Вектор прерываний
+                                 ;========================================================		
+                                 
+000000 c0c1                      	rjmp	init	; Переход на начало программы
+000001 c011                      	rjmp	_INT0	; Внешнее прерывание 0
+000002 c038                      	rjmp	_INT1	; Внешнее прерывание 1
+000003 9518                      	reti			; Прерывание по захвату таймера T1
+000004 c054                      	rjmp 	_TIM1	; Прерывание по совпадению T1
+000005 9518                      	reti			; Прерывание по переполнению T1
+000006 9518                      	reti			; Прерывание по переполнению T0
+000007 9518                      	reti			; Прерывание UART прием завершен
+000008 9518                      	reti			; Прерывание UART регистр данных пуст
+000009 9518                      	reti			; Прерывание UART передача завершена
+00000a 9518                      	reti			; Прерывание по компаратору
+00000b 9518                      	reti			; Прерывание по изменению на любом контакте
+00000c 9518                      	reti			; Таймер/счетчик 1. Совпадение B 
+00000d c099                      	rjmp 	_TIM0	; Таймер/счетчик 0. Совпадение A
+00000e 9518                      	reti			; Таймер/счетчик 0. Совпадение B 
+00000f 9518                      	reti			; USI Стартовая готовность
+000010 9518                      	reti			; USI Переполнение
+000011 9518                      	reti			; EEPROM Готовность
+                                 .include "interrupts.asm"
+000012 9518                      
+                                 ;       Подпрограммы обработки прерываний
+                                 ;========================================================
+                                 
+                                 ;-------------------------- Прерывание при нажатии кнопки Mode
+                                 
+                                 _INT0:
+000013 931f                      		push	r17
+                                 
+                                 	;-------------------------- Инкремент переменной mode
+                                 
+000014 e010                      		ldi		r17, 0x00
+000015 9310 0063                 		sts		clock_mode, r17
+000017 9110 0064                 		lds		r17, mode
+000019 9513                      		inc		r17
+                                 
+                                 	;-------------------------- Выбор режима mode
+                                 
+00001a 3011                      		cpi		r17, 0x01
+00001b f079                      		breq	_INT0_mode_1
+                                 
+00001c 3012                      		cpi		r17, 0x02
+00001d f089                      		breq	_INT0_mode_2
+                                 
+00001e 3013                      		cpi		r17, 0x03
+00001f f091                      		breq	_INT0_mode_3
+                                 
+000020 3014                      		cpi		r17, 0x04
+000021 f091                      		breq	_INT0_mode_4
+                                 
+000022 3015                      		cpi		r17, 0x05
+000023 f091                      		breq	_INT0_mode_5
+                                 
+000024 3016                      		cpi		r17, 0x06
+000025 f408                      		brsh	_INT0_mode_0
+                                 
+000026 c010                      		rjmp	_INT0_end
+                                 
+                                 	;------------------------- MODE 0
+                                 
+                                 	_INT0_mode_0:
+000027 d140                      		rcall	DS1302_clock_on
+000028 d1b3                      		rcall	TM1637_display_time
+000029 e010                      		ldi		r17, 0x00
+                                 
+00002a c00c                      		rjmp	_INT0_end
+                                 
+                                 	;------------------------- MODE 1
+                                 
+                                 	_INT0_mode_1:
+00002b d143                      		rcall	DS1302_clock_off
+00002c d1af                      		rcall	TM1637_display_time
+00002d d198                      		rcall	TM1637_set_double_point
+                                 
+00002e c008                      		rjmp	_INT0_end
+                                 
+                                 	;------------------------- MODE 2
+                                 
+                                 	_INT0_mode_2:
+00002f d1ac                      		rcall	TM1637_display_time
+000030 d195                      		rcall	TM1637_set_double_point
+                                 
+000031 c005                      		rjmp	_INT0_end
+                                 
+                                 	;------------------------- MODE 3
+                                 
+                                 	_INT0_mode_3:
+000032 d1b3                      		rcall	TM1637_display_date
+                                 
+000033 c003                      		rjmp	_INT0_end
+                                 
+                                 	;------------------------- MODE 4
+                                 
+                                 	_INT0_mode_4:
+000034 d1b1                      		rcall	TM1637_display_date
+                                 
+000035 c001                      		rjmp	_INT0_end
+                                 
+                                 	;------------------------- MODE 5
+                                 
+                                 	_INT0_mode_5:
+000036 d1ba                      		rcall	TM1637_display_year
+                                 
+                                 	_INT0_end:
+000037 9310 0064                 		sts		mode, r17
+000039 911f                      		pop		r17
+                                 
+00003a 9518                      	reti
+                                 
+                                 ;-------------------------- Прерывание при нажатии кнопки Clock mode \ Set
+                                 
+                                 _INT1:
+00003b 931f                      		push	r17
+                                 
+00003c 9110 0064                 		lds		r17, mode
+00003e 3010                      		cpi		r17, 0x00
+00003f f011                      		breq	_INT1_clock_mode_pressed
+                                 
+                                 	;-------------------------- Режим Set
+                                 
+                                 	_INT1_set_pressed:
+000040 d210                      		rcall	inc_circle
+                                 
+000041 c015                      		rjmp	_INT1_end
+                                 
+                                 	;-------------------------- Режим Clock mode
+                                 
+                                 	_INT1_clock_mode_pressed:
+000042 e010                      		ldi		r17, 0x00
+000043 bd1e                      		out		TCCR1B, r17 ; выключить таймер
+                                 
+000044 d191                      		rcall	TM1637_display_dash
+                                 
+000045 9110 0063                 		lds		r17, clock_mode
+000047 9513                      		inc		r17
+                                 
+000048 3013                      		cpi		r17, 0x03
+000049 f408                      		brsh	_INT1_reset_clock_mode
+00004a c001                      		rjmp	_INT1_1
+                                 
+                                 		_INT1_reset_clock_mode:
+00004b e010                      			ldi		r17, 0x00
+                                 
+                                 		_INT1_1:
+00004c 9310 0063                 			sts		clock_mode, r17
+                                 
+00004e e01d                      			ldi		r17, (1 << WGM12) | (1 << CS12) | (0 << CS11) | (1 << CS10) ; Выбор режима таймера (СТС, предделитель = 1024) 
+00004f bd1e                      			out		TCCR1B, r17
+000050 e01f                      			ldi		r17, high(kdel2)
+000051 bd1d                      			out		TCNT1H, r17
+000052 e412                      			ldi		r17, low(kdel2)
+000053 bd1c                      			out		TCNT1L, r17
+                                 
+                                 			;-------------------------- Чтобы данные сразу отобразились
+                                 
+000054 e31c                      			ldi		r17, 0x3c
+000055 9310 006b                 			sts		timer1_counter, r17
+                                 
+                                 	_INT1_end:
+000057 911f                      		pop		r17
+                                 
+000058 9518                      	reti
+                                 	
+                                 ;-------------------------- Прерывание таймера T1	
+                                 
+                                 
+                                 _TIM1:		
+000059 931f                      	push	r17
+00005a 932f                      	push	r18
+00005b 933f                      	push	r19
+                                 	
+00005c 9110 0064                 	lds		r17, mode
+00005e 3010                      	cpi		r17, 0x00
+00005f f051                      	breq	rcall_TIM1_mode_0
+                                 
+000060 3011                      	cpi		r17, 0x01
+000061 f0f9                      	breq	rcall_TIM1_mode_1
+                                 
+000062 3012                      	cpi		r17, 0x02
+000063 f121                      	breq	rcall_TIM1_mode_2
+                                 
+000064 3013                      	cpi		r17, 0x03
+000065 f149                      	breq	rcall_TIM1_mode_3
+                                 
+000066 3014                      	cpi		r17, 0x04
+000067 f171                      	breq	rcall_TIM1_mode_4
+                                 
+000068 3015                      	cpi		r17, 0x05
+000069 f199                      	breq	rcall_TIM1_mode_5
+                                 
+                                 	;-------------------------- MODE 0
+                                 
+                                 	rcall_TIM1_mode_0:
+00006a 9110 006b                 		lds		r17, timer1_counter
+00006c 9513                      		inc		r17
+                                 
+00006d 331c                      		cpi		r17, 0x3c
+00006e f408                      		brsh	_TIM1_mode_0_reset_counter
+00006f c00d                      		rjmp	_TIM1_mode_0_end
+                                 
+                                 		_TIM1_mode_0_reset_counter:
+                                 
+                                 			;-------------------------- Считать данные с ds1302 пакетом
+                                 
+000070 d0b1                      			rcall	DS1302_read_package_data
+                                 
+000071 9110 0063                 			lds		r17, clock_mode
+                                 
+000073 3011                      			cpi		r17, 0x01
+000074 f021                      			breq	_TIM1_date_mode
+                                 
+000075 3012                      			cpi		r17, 0x02
+000076 f021                      			breq	_TIM1_year_mode
+                                 
+                                 			_TIM1_time_mode:
+000077 d164                      				rcall	TM1637_display_time
+000078 c003                      				rjmp	_TIM1_mode_0_reset_counter_end
+                                 
+                                 			_TIM1_date_mode:
+000079 d16c                      				rcall	TM1637_display_date
+00007a c001                      				rjmp	_TIM1_mode_0_reset_counter_end
+                                 
+                                 			_TIM1_year_mode:
+00007b d175                      				rcall	TM1637_display_year
+                                 
+                                 			_TIM1_mode_0_reset_counter_end:
+00007c e010                      				ldi		r17, 0x00
+                                 
+                                 			_TIM1_mode_0_end:
+00007d 9310 006b                 				sts		timer1_counter, r17
+00007f d0f6                      				rcall	TM1637_display
+                                 
+000080 c022                      		rjmp	_TIM1_end
+                                 
+                                 	;-------------------------- MODE 1
+                                 
+                                 	rcall_TIM1_mode_1:
+000081 9120 006c                 		lds		r18, tm_h1
+000083 9130 006d                 		lds		r19, tm_h2
+000085 e011                      		ldi		r17, 0x01
+000086 d174                      		rcall	TM1637_blink_pair
+                                 
+000087 c01b                      		rjmp	_TIM1_end
+                                 
+                                 	;-------------------------- MODE 2
+                                 
+                                 	rcall_TIM1_mode_2:
+000088 9120 006e                 		lds		r18, tm_m1
+00008a 9130 006f                 		lds		r19, tm_m2
+00008c e012                      		ldi		r17, 0x02
+00008d d16d                      		rcall	TM1637_blink_pair
+                                 
+00008e c014                      		rjmp	_TIM1_end
+                                 
+                                 	;-------------------------- MODE 3
+                                 
+                                 	rcall_TIM1_mode_3:
+00008f 9120 0070                 		lds		r18, tm_d1
+000091 9130 0071                 		lds		r19, tm_d2
+000093 e011                      		ldi		r17, 0x01
+000094 d166                      		rcall	TM1637_blink_pair
+                                 
+000095 c00d                      		rjmp	_TIM1_end
+                                 
+                                 	;-------------------------- MODE 4
+                                 
+                                 	rcall_TIM1_mode_4:
+000096 9120 0072                 		lds		r18, tm_mt1
+000098 9130 0073                 		lds		r19, tm_mt2
+00009a e012                      		ldi		r17, 0x02
+00009b d15f                      		rcall	TM1637_blink_pair
+                                 
+00009c c006                      		rjmp	_TIM1_end
+                                 
+                                 	;-------------------------- MODE 5
+                                 
+                                 	rcall_TIM1_mode_5:
+00009d 9120 0076                 		lds		r18, tm_y3
+00009f 9130 0077                 		lds		r19, tm_y4
+0000a1 e013                      		ldi		r17, 0x03
+0000a2 d158                      		rcall	TM1637_blink_pair
+                                 
+                                 
+                                 	_TIM1_end:
+0000a3 913f                      		pop		r19
+0000a4 912f                      		pop		r18
+0000a5 911f                      		pop		r17
+                                 		
+0000a6 9518                      	reti
+                                 	
+                                 ;-------------------------- Прерывание таймера T1	
+                                 
+                                 _TIM0:
+0000a7 931f                      	push	r17
+0000a8 930f                      	push	r16
+                                 
+                                 	;-------------------------- Отработать прерывание, если clock_mode == 0
+                                 
+0000a9 9110 0063                 	lds		r17, clock_mode
+0000ab 9100 0064                 	lds		r16, mode
+0000ad 2b01                      	or		r16, r17
+0000ae f471                      	brne	_TIM0_end
+                                 
+0000af 9110 006a                 	lds		r17, timer0_counter
+0000b1 9513                      	inc		r17
+                                 
+                                 	;-------------------------- Моргать двоеточием раз
+                                 
+0000b2 301f                      	cpi		r17, 0x0f
+0000b3 f408                      	brsh	_TIM0_reset_counter
+0000b4 c008                      	rjmp	_TIM0_end
+                                 
+                                 	_TIM0_reset_counter:
+0000b5 9110 0062                 		lds		r17, double_point
+                                 
+0000b7 3010                      		cpi		r17, 0x00
+0000b8 f011                      		breq	_TIM0_set_double_point
+                                 
+0000b9 d114                      		rcall	TM1637_unset_double_point
+0000ba c001                      		rjmp	_TIM0_reset_counter_end
+                                 
+                                 		_TIM0_set_double_point:
+0000bb d10a                      			rcall	TM1637_set_double_point
+                                 
+                                 	_TIM0_reset_counter_end:
+0000bc e010                      		ldi		r17, 0x00
+                                 
+                                 	_TIM0_end:
+0000bd 9310 006a                 		sts		timer0_counter, r17
+0000bf 910f                      		pop		r16
+0000c0 911f                      		pop		r17
+                                 
+0000c1 9518                      	reti
+                                 
+                                 .include "initialization.asm"
+                                 
+                                 ;				 Модуль инициализации
+                                 ;========================================================
+                                 
+                                 init:
+                                 
+                                 	;-------------------------- Инициализация стека
+                                 	
+0000c2 ed1f                      	ldi		r17, RAMEND			; Выбор адреса вершины стека 
+0000c3 bf1d                      	out		SPL, r17			; Запись его в регистр стека
+                                 
+                                 	;-------------------------- Инициализация Главного предделителя
+                                 
+0000c4 e810                      	ldi		r17, 0x80		    ; Записываем число $80 в регистр temp
+0000c5 bd16                      	out		CLKPR, r17			; Записываем в регистр CLKPR
+0000c6 e010                      	ldi		r17, 0x0			; Записываем 0 в регистр temp
+0000c7 bd16                      	out		CLKPR, r17			; Записываем этот ноль в CLKPR
+                                 
+                                 	;--------------------------- Инициализация компаратора
+                                 
+0000c8 e810                      	ldi 	r17, 0x80			; Выключение компаратора
+0000c9 b918                      	out		ACSR, r17
+                                 
+                                 	;-------------------------- Инициализация портов ВВ для чипа TM1367
+                                 
+0000ca 9ab8                      	sbi		DDRB, TM1637_CLK
+0000cb 9abb                      	sbi		DDRB, TM1637_DATA
+                                 
+                                 	;-------------------------- Инициализация портов ВВ для чипа DS1302
+                                 
+0000cc 9ab8                      	sbi		DDR_DS1302, DS1302_RST
+0000cd 9ab9                      	sbi		DDR_DS1302, DS1302_SCLK
+                                 
+                                 	;-------------------------- Инициализация портов ВВ для кнопок
+                                 
+0000ce 988a                      	cbi		DDR_BUTTON_MODE, BUTTON_MODE
+0000cf 9a92                      	sbi		PORT_BUTTON_MODE, BUTTON_MODE
+                                 
+0000d0 988b                      	cbi		DDR_BUTTON_SET, BUTTON_SET
+0000d1 9a93                      	sbi		PORT_BUTTON_SET, BUTTON_SET
+                                 
+                                 	;-------------------------- Инициализация таймеров
+                                 
+0000d2 e01d                      	ldi		r17, (1 << WGM12) | (1 << CS12) | (0 << CS11) | (1 << CS10) ; Выбор режима таймера (СТС, предделитель = 1024) 
+0000d3 bd1e                      	out		TCCR1B, r17
+0000d4 e01f                      	ldi		r17, high(kdel2)	; Старший полубайт кода совпадения
+0000d5 bd1b                      	out		OCR1AH, r17			; Запись в регистр совпадения старш.
+0000d6 e412                      	ldi		r17, low(kdel2)		; Младший полубайт кода совпадения
+0000d7 bd1a                      	out		OCR1AL, r17			; Запись в регистр совпадения младш.
+                                 
+0000d8 e012                      	ldi		r17, (1 << WGM01)							 ; Выбор режима таймера СТС 
+0000d9 bf10                      	out		TCCR0A, r17
+0000da e015                      	ldi		r17, (1 << CS02) | (0 << CS01) | (1 << CS00) ; Выбор предделителя = 1024 
+0000db bf13                      	out		TCCR0B, r17
+0000dc ef1a                      	ldi		r17, kdel3
+0000dd bf16                      	out		OCR0A, r17
+                                 
+                                 	;--------------------------- Разрешаем прерывание от таймеров
+                                 		
+0000de e411                      	ldi 	r17, (1 << OCIE1A) | (1 << OCIE0A)
+0000df bf19                      	out		TIMSK, r17
+                                 
+                                 	;--------------------------- Разрешаем прерывание INT0 и INT1 по заднему фронту
+                                 
+0000e0 e01a                      	ldi		r17, (0 << ISC00) | (1 << ISC01) | (0 << ISC10) | (1 << ISC11)
+0000e1 bf15                      	out		MCUCR, r17
+                                 
+0000e2 ec10                      	ldi		r17, (1 << INT0) | (1 << INT1)
+0000e3 bf1b                      
+                                 	;-------------------------- Начало основной программы
+                                 
+0000e4 9478                      	sei						; Разрешение прерываний
+0000e5 d0f0                      	rcall	TM1637_display_dash
+                                 
+                                 	;-------------------------- Чтобы данные сразу отобразились
+                                 
+0000e6 e31c                      	ldi		r17, 0x3c
+0000e7 9310 006b                 	sts		timer1_counter, r17
+                                 
+                                 	;-------------------------- Первые две цифры отображения года 
+                                 
+0000e9 e51b                      	ldi		r17, 0b01011011	; 2
+0000ea 9310 0074                 	sts		tm_y1, r17
+0000ec e31f                      	ldi		r17, 0b00111111	; 0
+0000ed 9310 0075                 	sts		tm_y2, r17
+                                 
+                                 main:		
+0000ef cfff                      	rjmp	main			; Пустой бесконечный цикл
+                                 
+                                 .include "ds1302.asm"
+                                 
+                                 ;       Подпрограммы начала и конца передачи данных
+                                 ;========================================================
+                                 
+                                 DS1302_send_start:
+0000f0 9ac0                      	sbi		PORT_DS1302, DS1302_RST
+0000f1 0000                      	nop
+0000f2 9508                      	ret
+                                 DS1302_send_stop:
+0000f3 98c1                      	cbi		PORT_DS1302, DS1302_SCLK
+0000f4 98c2                      	cbi		PORT_DS1302, DS1302_IO
+0000f5 0000                      	nop
+0000f6 98c0                      	cbi		PORT_DS1302, DS1302_RST
+0000f7 0000                      	nop
+0000f8 9508                      	ret
+                                 
+                                 ;========================================================
+                                 ;       Отправка байта из регистра BYTE
+                                 ;========================================================
+                                 
+                                 DS1302_send_byte:
+0000f9 931f                      	push	r17
+0000fa 938f                      	push	BYTE
+                                 
+                                 	;------------------------- Вывод DAT на выход
+                                 
+0000fb 9aba                      	sbi		DDR_DS1302, DS1302_IO
+0000fc 98c2                      	cbi		PORT_DS1302, DS1302_IO
+                                 
+                                 	;------------------------- Счётчик цикла
+                                 
+0000fd e010                      	ldi		r17, 0x00		
+                                 
+                                 	;------------------------- Начало цикла
+                                 
+                                 	DS1302_while_send:
+0000fe 3018                      		cpi		r17, 0x08
+0000ff f458                      		brsh	DS1302_while_send_end
+                                 
+000100 98c1                      		cbi		PORT_DS1302, DS1302_SCLK
+                                 
+000101 9586                      		lsr		BYTE			
+000102 f410                      		brcc	DS1302_cbi_send_bit
+                                 			
+                                 		DS1302_sbi_send_bit:
+000103 9ac2                      			sbi		PORT_DS1302, DS1302_IO
+000104 c001                      			rjmp	DS1302_while_send_bit
+                                 
+                                 		DS1302_cbi_send_bit:
+000105 98c2                      			cbi		PORT_DS1302, DS1302_IO
+                                 
+                                 		DS1302_while_send_bit:
+                                 
+                                 			;------------------------- Отправка бита
+                                 
+000106 0000                      			nop
+000107 9ac1                      			sbi		PORT_DS1302, DS1302_SCLK
+000108 0000                      			nop
+000109 9513                      			inc		r17
+                                 
+00010a cff3                      		rjmp	DS1302_while_send
+                                 
+                                 	;------------------------- Выход из цикла
+                                 
+                                 	DS1302_while_send_end:
+00010b 918f                      		pop		BYTE
+00010c 911f                      		pop		r17
+                                 
+00010d 9508                      	ret
+                                 
+                                 ;========================================================
+                                 ;       Получение байта, результат в регистр BYTE
+                                 ;========================================================
+                                 
+                                 DS1302_transmit_byte:
+00010e 931f                      	push	r17
+                                 
+                                 	;------------------------- Вывод DAT на вход
+                                 
+00010f 98c2                      	cbi		PORT_DS1302, DS1302_IO
+000110 98ba                      	cbi		DDR_DS1302, DS1302_IO
+                                 
+                                 	;------------------------- Счётчик цикла
+                                 
+000111 e010                      	ldi		r17, 0x00
+000112 e080                      	ldi		BYTE, 0x00
+                                 
+                                 	;------------------------- Начало цикла
+                                 
+                                 	DS1302_while_transmit:
+000113 3017                      		cpi		r17, 0x07
+000114 f458                      		brsh	DS1302_while_transmit_end
+                                 
+000115 98c1                      		cbi		PORT_DS1302, DS1302_SCLK
+                                 
+000116 99b2                      		sbic	PIN_DS1302, DS1302_IO
+000117 6880                      		ori		BYTE, 0x80
+000118 9bb2                      		sbis	PIN_DS1302, DS1302_IO
+000119 778f                      		andi	BYTE, 0x7f
+                                 
+00011a 9586                      		lsr		BYTE
+00011b 0000                      		nop
+00011c 9ac1                      		sbi		PORT_DS1302, DS1302_SCLK
+00011d 0000                      		nop
+                                 
+00011e 9513                      		inc		r17
+00011f cff3                      		rjmp	DS1302_while_transmit
+                                 
+                                 	;------------------------- Выход из цикла
+                                 
+                                 	DS1302_while_transmit_end:
+000120 911f                      		pop		r17
+                                 
+000121 9508                      	ret
+                                 
+                                 ;========================================================
+                                 ;			Считать данные с ds1302 пакетом
+                                 ;========================================================
+                                 
+                                 DS1302_read_package_data:
+000122 931f                      	push	r17
+000123 93ff                      	push	ZH
+000124 93ef                      	push	ZL
+000125 93df                      	push	YH
+000126 93cf                      	push	YL
+000127 93bf                      	push	XH
+000128 93af                      	push	XL
+                                 
+                                 	;------------------------- Минтуы
+                                 
+000129 e883                      	ldi		BYTE, 0x83
+00012a e0b0                      	ldi		XH, high(var_minutes)		
+00012b e6a5                      	ldi		XL, low(var_minutes)
+00012c e0d0                      	ldi		YH, high(tm_m1)		
+00012d e6ce                      	ldi		YL, low(tm_m1)
+00012e e0f0                      	ldi		ZH, high(tm_m2)		
+00012f e6ef                      	ldi		ZL, low(tm_m2)
+                                 
+000130 d02d                      	rcall	DS1302_read_package_data_ext
+                                 
+                                 
+                                 	;------------------------- Часы
+                                 
+000131 e885                      	ldi		BYTE, 0x85
+000132 e0b0                      	ldi		XH, high(var_hours)		
+000133 e6a6                      	ldi		XL, low(var_hours)
+000134 e0d0                      	ldi		YH, high(tm_h1)		
+000135 e6cc                      	ldi		YL, low(tm_h1)
+000136 e0f0                      	ldi		ZH, high(tm_h2)		
+000137 e6ed                      	ldi		ZL, low(tm_h2)
+                                 
+000138 d025                      	rcall	DS1302_read_package_data_ext
+                                 
+                                 	;------------------------- Число
+                                 
+000139 e887                      	ldi		BYTE, 0x87
+00013a e0b0                      	ldi		XH, high(var_day)		
+00013b e6a7                      	ldi		XL, low(var_day)
+00013c e0d0                      	ldi		YH, high(tm_d1)		
+00013d e7c0                      	ldi		YL, low(tm_d1)
+00013e e0f0                      	ldi		ZH, high(tm_d2)		
+00013f e7e1                      	ldi		ZL, low(tm_d2)
+                                 
+000140 d01d                      	rcall	DS1302_read_package_data_ext
+                                 
+                                 	;------------------------- Месяц
+                                 
+000141 e889                      	ldi		BYTE, 0x89
+000142 e0b0                      	ldi		XH, high(var_month)		
+000143 e6a8                      	ldi		XL, low(var_month)
+000144 e0d0                      	ldi		YH, high(tm_mt1)		
+000145 e7c2                      	ldi		YL, low(tm_mt1)
+000146 e0f0                      	ldi		ZH, high(tm_mt2)		
+000147 e7e3                      	ldi		ZL, low(tm_mt2)
+                                 
+000148 d015                      	rcall	DS1302_read_package_data_ext
+                                 
+                                 	;------------------------- Год
+                                 
+000149 e88d                      	ldi		BYTE, 0x8D
+00014a e0b0                      	ldi		XH, high(var_year)		
+00014b e6a9                      	ldi		XL, low(var_year)
+00014c e0d0                      	ldi		YH, high(tm_y3)		
+00014d e7c6                      	ldi		YL, low(tm_y3)
+00014e e0f0                      	ldi		ZH, high(tm_y4)		
+00014f e7e7                      	ldi		ZL, low(tm_y4)
+                                 
+000150 d00d                      	rcall	DS1302_read_package_data_ext
+                                 
+000151 91af                      	pop		XL
+000152 91bf                      	pop		XH
+000153 91cf                      	pop		YL
+000154 91df                      	pop		YH
+000155 91ef                      	pop		ZL
+000156 91ff                      	pop		ZH
+000157 911f                      	pop		r17
+                                 
+000158 9508                      	ret
+                                 
+                                 DS1302_read_package_data_f1:
+000159 df96                      	rcall	DS1302_send_start
+00015a df9e                      	rcall	DS1302_send_byte
+00015b dfb2                      	rcall	DS1302_transmit_byte
+00015c df96                      	rcall	DS1302_send_stop
+                                 
+00015d 9508                      	ret
+                                 
+                                 ;========================================================
+                                 ;			Считать данные с ds1302.
+                                 ;	Адрес регистра чтения ds1302 в регистре BYTE.
+                                 ;	Запись ответа от ds1302 в переменную по адресу X.
+                                 ;	Запись преобразованных ответов для TM1367 в 
+                                 ;	переменные по адресу Y (старший разряд) 
+                                 ;	и Z (младший разряд).
+                                 ;========================================================
+                                 
+                                 DS1302_read_package_data_ext:
+00015e dffa                      	rcall	DS1302_read_package_data_f1
+00015f 938c                      	st		X, BYTE
+                                 
+000160 d0b7                      	rcall	conv_ds1302_to_tm1637
+000161 9110 0060                 	lds		r17, d1
+000163 8318                      	st		Y, r17
+                                 
+000164 9110 0061                 	lds		r17, d2
+000166 8310                      	st		Z, r17
+                                 
+000167 9508                      	ret
+                                 
+                                 ;========================================================
+                                 ;       Подпрограммы включения\отключения часов
+                                 ;========================================================
+                                 
+                                 DS1302_clock_on:
+000168 df87                      	rcall	DS1302_send_start
+000169 e880                      	ldi		BYTE, 0x80
+00016a df8e                      	rcall	DS1302_send_byte
+00016b e080                      	ldi		BYTE, 0x00
+00016c df8c                      	rcall	DS1302_send_byte
+00016d df85                      	rcall	DS1302_send_stop
+                                 
+00016e 9508                      	ret
+                                 
+                                 DS1302_clock_off:
+00016f df80                      	rcall	DS1302_send_start
+000170 e880                      	ldi		BYTE, 0x80
+000171 df87                      	rcall	DS1302_send_byte
+000172 e880                      	ldi		BYTE, 0x80
+000173 df85                      	rcall	DS1302_send_byte
+000174 df7e                      	rcall	DS1302_send_stop
+                                 
+000175 9508                      	ret
+                                 .include "tm1637.asm"
+                                 
+                                 ; managed by TM1637 microchip, available at Aliexpress a lot.
+                                 ;
+                                 ; How to code displaying information
+                                 ;
+                                 ; In order to display some information call TM1637_display and fill registers
+                                 ; TM1637_d1 .. TM1637_d4 with letters, that are coded next way:
+                                 ;         0
+                                 ;       +---+
+                                 ;     5 | 6 | 1
+                                 ;       +---+
+                                 ;     4 |   | 2
+                                 ;       +---+
+                                 ;         3
+                                 ; 
+                                 ; Here the ordering numers is the bits layout in letters that to be passed to the called function.
+                                 ; Number one coded as 0b00000110
+                                 ; Number two coded as 0b01011011
+                                 ; So this way, use bit=1 for diods to be burnt and bit=0 for bits that to be off.
+                                 ;
+                                 
+                                 ;========================================================
+                                 ;				 Отображение данных
+                                 ;========================================================	
+                                 
+                                 TM1637_display:
+000176 930f                      	push	reg_1
+000177 931f                      	push	reg_2
+000178 932f                      	push	reg_3
+                                 
+                                 	;------------------------- Команда записи в регистр дисплея
+                                 
+000179 d043                      	rcall	TM1637_start
+00017a e400                      	ldi		reg_1, 0x40			; Data command setting: Automatic address adding, Normal mode, Write data to display
+00017b d016                      	rcall	TM1637_writeByte
+00017c d044                      	rcall	TM1637_stop
+                                 
+                                 	;------------------------- Начальный адрес 
+                                 
+00017d d03f                      	rcall	TM1637_start
+00017e ec00                      	ldi		reg_1, 0xC0
+00017f d012                      	rcall	TM1637_writeByte
+                                 
+                                 	;------------------------- Запись данных для каждого регистра дисплея
+                                 
+000180 2f04                      	mov		reg_1, TM1637_d1
+000181 d010                      	rcall	TM1637_writeByte
+                                 
+000182 2f05                      	mov		reg_1, TM1637_d2
+000183 d00e                      	rcall	TM1637_writeByte
+                                 
+000184 2f06                      	mov		reg_1, TM1637_d3
+000185 d00c                      	rcall	TM1637_writeByte
+                                 
+000186 2f07                      	mov		reg_1, TM1637_d4
+000187 d00a                      	rcall	TM1637_writeByte
+                                 
+000188 d038                      	rcall	TM1637_stop
+                                 
+                                 	;------------------------- Команда управления дисплея
+                                 
+000189 d033                      	rcall	TM1637_start
+00018a e80f                      	ldi		reg_1, 0x8f
+00018b d006                      	rcall	TM1637_writeByte
+00018c d034                      	rcall	TM1637_stop
+00018d 0000                      	nop
+                                 
+00018e 912f                      	pop		reg_3
+00018f 911f                      	pop		reg_2
+000190 910f                      	pop		reg_1
+                                 
+000191 9508                      	ret
+                                 
+                                 ; Expected byte in reg_1
+                                 ; reg_1 contains a char to be written is to be passed as an argument of the call
+                                 ; used temp registers: reg_1, reg_2, reg_3
+                                 ; params: reg_1 - incoming char (8-bit) that to be sent out
+                                 
+                                 ;========================================================
+                                 ;					Отправка байта
+                                 ;========================================================
+                                 
+                                 TM1637_writeByte:
+000192 e018                      	ldi		reg_2, 8
+                                 
+                                 	TM1637_writeByte_1:
+000193 98c0                      		cbi		PORT_TM1367, TM1637_CLK
+                                 
+                                 	; starting if condition
+000194 2f20                      		mov		reg_3, reg_1
+000195 7021                      		cbr		reg_3, 0xfe
+000196 3021                      		cpi		reg_3, 0x01
+000197 f411                      		brne	TM1637_writeByte_send_low
+                                 
+                                 	TM1637_writeByte_send_high:
+000198 9ac3                      		sbi		PORT_TM1367, TM1637_DATA
+000199 c002                      		rjmp	TM1637_writeByte_sync
+                                 
+                                 	TM1637_writeByte_send_low:
+00019a 98c3                      		cbi		PORT_TM1367, TM1637_DATA 
+00019b c000                      		rjmp	TM1637_writeByte_sync
+                                 
+                                 	TM1637_writeByte_sync:
+00019c 0000                      		nop
+00019d 0000                      		nop
+00019e 0000                      		nop
+00019f 0000                      		nop
+0001a0 0000                      		nop
+0001a1 9506                      		lsr		reg_1 
+0001a2 9ac0                      		sbi		PORT_TM1367, TM1637_CLK                    
+0001a3 0000                      		nop
+0001a4 0000                      		nop
+0001a5 0000                      		nop
+0001a6 0000                      		nop
+0001a7 0000                      		nop
+                                 
+0001a8 951a                      		dec		reg_2
+0001a9 3010                      		cpi		reg_2, 0                            ; end of 8-bit loop
+0001aa f741                      		brne	TM1637_writeByte_1
+                                 
+0001ab 98c0                      		cbi		PORT_TM1367, TM1637_CLK
+0001ac 0000                      		nop
+0001ad 0000                      		nop
+0001ae 0000                      		nop
+0001af 0000                      		nop
+0001b0 0000                      		nop
+0001b1 98bb                      		cbi		DDR_TM1367, TM1637_DATA
+                                 
+                                 	TM1637_writeByte_wait_ACK:
+0001b2 99b3                      		sbic	PIN_TM1367, TM1637_DATA
+0001b3 cffe                      		rjmp	TM1637_writeByte_wait_ACK          ; wait for acknowledgment
+                                     
+0001b4 9abb                      		sbi		DDR_TM1367, TM1637_DATA
+0001b5 9ac0                      		sbi		PORT_TM1367, TM1637_CLK
+0001b6 0000                      		nop
+0001b7 0000                      		nop
+0001b8 0000                      		nop
+0001b9 0000                      		nop
+0001ba 0000                      		nop
+0001bb 98c0                      		cbi		PORT_TM1367, TM1637_CLK
+                                 
+0001bc 9508                      	ret
+                                 
+                                 ;========================================================
+                                 ;       Подпрограммы начала и конца передачи данных
+                                 ;========================================================
+                                 
+                                 TM1637_start:
+0001bd 9ac0                      	sbi		PORT_TM1367, TM1637_CLK
+0001be 9ac3                      	sbi		PORT_TM1367, TM1637_DATA
+0001bf 98c3                      	cbi		PORT_TM1367, TM1637_DATA
+                                 
+0001c0 9508                      	ret
+                                 
+                                 TM1637_stop:
+0001c1 98c0                      	cbi		PORT_TM1367, TM1637_CLK
+0001c2 98c3                      	cbi		PORT_TM1367, TM1637_DATA
+0001c3 9ac0                      	sbi		PORT_TM1367, TM1637_CLK
+0001c4 9ac3                      	sbi		PORT_TM1367, TM1637_DATA
+                                 
+0001c5 9508                      	ret
+                                 
+                                 ;========================================================
+                                 ;       Включение и выключение двоеточия
+                                 ;========================================================
+                                 
+                                 TM1637_set_double_point:
+0001c6 931f                      	push	r17
+0001c7 e011                      	ldi		r17, 0x01
+0001c8 9310 0062                 	sts		double_point, r17
+0001ca 6870                      	ori		TM1637_d4, 0x80
+0001cb dfaa                      	rcall	TM1637_display
+0001cc 911f                      	pop		r17
+                                 
+0001cd 9508                      	ret
+                                 
+                                 TM1637_unset_double_point:
+0001ce 931f                      	push	r17
+0001cf e010                      	ldi		r17, 0x00
+0001d0 9310 0062                 	sts		double_point, r17
+0001d2 777f                      	andi	TM1637_d4, 0x7f
+0001d3 dfa2                      	rcall	TM1637_display
+0001d4 911f                      	pop		r17
+                                 
+0001d5 9508                      	ret
+                                 
+                                 ;========================================================
+                                 ;       Отображение прочерков на всех элементах
+                                 ;========================================================
+                                 
+                                 TM1637_display_dash:
+0001d6 e440                      	ldi		TM1637_d1, 0b01000000
+0001d7 e450                      	ldi		TM1637_d2, 0b01000000
+0001d8 e460                      	ldi		TM1637_d3, 0b01000000
+0001d9 e470                      	ldi		TM1637_d4, 0b01000000
+0001da df9b                      	rcall	TM1637_display
+                                 
+0001db 9508                      	ret
+                                 
+                                 ;========================================================
+                                 ;				Отображение времени
+                                 ;========================================================
+                                 
+                                 TM1637_display_time:
+0001dc 9140 006c                 	lds		TM1637_d1, tm_h1
+0001de 9150 006d                 	lds		TM1637_d2, tm_h2
+0001e0 9160 006e                 	lds		TM1637_d3, tm_m1
+0001e2 9170 006f                 	lds		TM1637_d4, tm_m2
+                                 
+0001e4 df91                      	rcall	TM1637_display
+                                 
+0001e5 9508                      	ret
+                                 
+                                 ;========================================================
+                                 ;				Отображение даты
+                                 ;========================================================
+                                 
+                                 TM1637_display_date:
+0001e6 9140 0070                 	lds		TM1637_d1, tm_d1
+0001e8 9150 0071                 	lds		TM1637_d2, tm_d2
+0001ea 6850                      	ori		TM1637_d2, 0x80
+0001eb 9160 0072                 	lds		TM1637_d3, tm_mt1
+0001ed 9170 0073                 	lds		TM1637_d4, tm_mt2
+0001ef df86                      	rcall	TM1637_display
+                                 
+0001f0 9508                      	ret
+                                 
+                                 ;========================================================
+                                 ;				Отображение года
+                                 ;========================================================
+                                 
+                                 TM1637_display_year:
+0001f1 9140 0074                 	lds		TM1637_d1, tm_y1
+0001f3 9150 0075                 	lds		TM1637_d2, tm_y2
+0001f5 9160 0076                 	lds		TM1637_d3, tm_y3
+0001f7 9170 0077                 	lds		TM1637_d4, tm_y4
+0001f9 df7c                      	rcall	TM1637_display
+                                 
+0001fa 9508                      	ret
+                                 
+                                 ;========================================================
+                                 ;				Моргание
+                                 ;	Режимы: 
+                                 ;		1-й и 2-й элементы r17==1
+                                 ;		3-й и 4-й элементы r17==2
+                                 ;		Все элементы r17==3
+                                 ;
+                                 ;	значение 1-го элемента == r18
+                                 ;	значение 2-го элемента == r19
+                                 ;========================================================
+                                 
+                                 TM1637_blink_pair:
+0001fb 931f                      	push	r17
+0001fc 932f                      	push	r18
+0001fd 933f                      	push	r19
+                                 
+0001fe 3011                      	cpi		r17, 0x01
+0001ff f029                      	breq	TM1637_blink_pair_first
+                                 
+000200 3012                      	cpi		r17, 0x02
+000201 f031                      	breq	TM1637_blink_pair_second
+                                 
+000202 3013                      	cpi		r17, 0x03
+000203 f039                      	breq	TM1637_blink_pair_third
+                                 
+000204 c00e                      	rjmp	TM1637_blink_pair_end
+                                 
+                                 	TM1637_blink_pair_first:
+000205 2742                      		eor		TM1637_d1, r18
+000206 2753                      		eor		TM1637_d2, r19
+                                 
+000207 c00b                      		rjmp	TM1637_blink_pair_end
+                                 
+                                 	TM1637_blink_pair_second:
+000208 2762                      		eor		TM1637_d3, r18
+000209 2773                      		eor		TM1637_d4, r19
+                                 
+00020a c008                      		rjmp	TM1637_blink_pair_end
+                                 
+                                 	TM1637_blink_pair_third:
+00020b 9110 0074                 		lds		r17, tm_y1
+00020d 2741                      		eor		TM1637_d1, r17
+                                 
+00020e 9110 0075                 		lds		r17, tm_y2
+000210 2751                      		eor		TM1637_d2, r17
+                                 
+000211 2762                      		eor		TM1637_d3, r18
+000212 2773                      		eor		TM1637_d4, r19
+                                 
+                                 
+                                 	TM1637_blink_pair_end:
+000213 df62                      		rcall	TM1637_display
+                                 
+000214 913f                      		pop		r19
+000215 912f                      		pop		r18
+000216 911f                      		pop		r17
+                                 
+000217 9508                      	ret
+                                 .include "data_convertor.asm"
+                                 
+                                 ;		Преобразование данных с ds1302 в 
+                                 ;		числа для 4-х сегментного дисплея tm1637
+                                 ;		запись результата в переменные d1 и d2
+                                 ;		вход - регистр BYTE
+                                 ;========================================================
+                                 
+                                 conv_ds1302_to_tm1637:
+000218 931f                      	push	r17
+                                 
+                                 	;------------------------- преобразуем младший разряд в переменную d2
+                                 
+000219 2f18                      	mov		r17, BYTE
+00021a 701f                      	andi	r17, 0x0f
+00021b d00a                      	rcall	bin_to_tm1637_digit
+00021c 9310 0061                 	sts		d2, r17
+                                 
+                                 	;------------------------- преобразуем старший разряд в переменную d1
+                                 
+00021e 2f18                      	mov		r17, BYTE
+00021f 7710                      	andi	r17, 0x70
+000220 9512                      	swap	r17
+000221 d004                      	rcall	bin_to_tm1637_digit
+000222 9310 0060                 	sts		d1, r17
+000224 911f                      	pop		r17
+                                 
+000225 9508                      	ret
+                                 
+                                 ;------------------------- Подфункция преобразования.
+                                 ;------------------------- Данные из регистра r17 преобразуются в числовое 
+                                 ;------------------------- значение для 7-сегментного индикатора, результат в 
+                                 ;------------------------- регистр r17
+                                 
+                                 bin_to_tm1637_digit:
+000226 3010                      	cpi		r17, 0x00
+000227 f099                      	breq	_d0
+000228 3011                      	cpi		r17, 0x01
+000229 f099                      	breq	_d1
+00022a 3012                      	cpi		r17, 0x02
+00022b f099                      	breq	_d2
+00022c 3013                      	cpi		r17, 0x03
+00022d f099                      	breq	_d3
+00022e 3014                      	cpi		r17, 0x04
+00022f f099                      	breq	_d4
+000230 3015                      	cpi		r17, 0x05
+000231 f099                      	breq	_d5
+000232 3016                      	cpi		r17, 0x06
+000233 f099                      	breq	_d6
+000234 3017                      	cpi		r17, 0x07
+000235 f099                      	breq	_d7
+000236 3018                      	cpi		r17, 0x08
+000237 f099                      	breq	_d8
+000238 3019                      	cpi		r17, 0x09
+000239 f099                      	breq	_d9
+                                 
+00023a c014                      	rjmp	_dx
+                                 
+                                 	;------------------------- Подпрограммы для чисел 0..9
+                                 
+                                 	_d0:
+00023b e31f                      		ldi		r17, 0b00111111
+00023c c013                      		rjmp	bin_to_tm1637_digit_end
+                                 	_d1:
+00023d e016                      		ldi		r17, 0b00000110
+00023e c011                      		rjmp	bin_to_tm1637_digit_end
+                                 	_d2:
+00023f e51b                      		ldi		r17, 0b01011011
+000240 c00f                      		rjmp	bin_to_tm1637_digit_end
+                                 	_d3:
+000241 e41f                      		ldi		r17, 0b01001111
+000242 c00d                      		rjmp	bin_to_tm1637_digit_end
+                                 	_d4:
+000243 e616                      		ldi		r17, 0b01100110
+000244 c00b                      		rjmp	bin_to_tm1637_digit_end
+                                 	_d5:
+000245 e61d                      		ldi		r17, 0b01101101
+000246 c009                      		rjmp	bin_to_tm1637_digit_end
+                                 	_d6:
+000247 e71d                      		ldi		r17, 0b01111101
+000248 c007                      		rjmp	bin_to_tm1637_digit_end
+                                 	_d7:
+000249 e017                      		ldi		r17, 0b00000111
+00024a c005                      		rjmp	bin_to_tm1637_digit_end
+                                 	_d8:
+00024b e71f                      		ldi		r17, 0b01111111
+00024c c003                      		rjmp	bin_to_tm1637_digit_end
+                                 	_d9:
+00024d e61f                      		ldi		r17, 0b01101111
+00024e c001                      		rjmp	bin_to_tm1637_digit_end
+                                 	_dx:
+00024f e419                      		ldi		r17, 0b01001001
+                                 	
+                                 	bin_to_tm1637_digit_end:
+                                 
+000250 9508                      	ret
+                                 
+                                 ;========================================================
+                                 ;	Подпрограммы инкремента до определённого порога
+                                 ;========================================================
+                                 
+                                 inc_circle:
+000251 931f                      	push	r17
+000252 932f                      	push	r18
+000253 933f                      	push	r19
+                                 
+000254 9110 0064                 	lds		r17, mode
+                                 
+                                 	;-------------------------- Выбор режима mode
+                                 
+000256 3011                      	cpi		r17, 0x01
+000257 f049                      	breq	inc_circle_hour
+                                 
+000258 3012                      	cpi		r17, 0x02
+000259 f089                      	breq	inc_circle_minutes
+                                 
+00025a 3013                      	cpi		r17, 0x03
+00025b f0c9                      	breq	inc_circle_day
+                                 
+00025c 3014                      	cpi		r17, 0x04
+00025d f101                      	breq	inc_circle_month
+                                 
+00025e 3015                      	cpi		r17, 0x05
+00025f f139                      	breq	inc_circle_year
+                                 
+000260 c02d                      	rjmp	inc_circle_end
+                                 
+                                 	;-------------------------- Часы
+                                 
+                                 	inc_circle_hour:
+000261 e0b0                      		ldi		XH, high(var_hours)		
+000262 e6a6                      		ldi		XL, low(var_hours)
+000263 e030                      		ldi		r19, 0
+000264 e128                      		ldi		r18, 24
+000265 e884                      		ldi		BYTE, 0x84
+000266 e0f1                      		ldi		ZH, high(TM1637_display_time)
+000267 edec                      		ldi		ZL, low(TM1637_display_time)
+                                 
+000268 d044                      		rcall	inc_circle_ext
+000269 df5c                      		rcall	TM1637_set_double_point
+                                 
+00026a c023                      		rjmp	inc_circle_end
+                                 
+                                 	;-------------------------- Минуты
+                                 
+                                 	inc_circle_minutes:
+00026b e0b0                      		ldi		XH, high(var_minutes)		
+00026c e6a5                      		ldi		XL, low(var_minutes)
+00026d e030                      		ldi		r19, 0
+00026e e32c                      		ldi		r18, 60
+00026f e882                      		ldi		BYTE, 0x82
+000270 e0f1                      		ldi		ZH, high(TM1637_display_time)
+000271 edec                      		ldi		ZL, low(TM1637_display_time)
+                                 
+000272 d03a                      		rcall	inc_circle_ext
+000273 df52                      		rcall	TM1637_set_double_point
+                                 
+000274 c019                      		rjmp	inc_circle_end
+                                 
+                                 	;-------------------------- День месяца
+                                 
+                                 	inc_circle_day:
+000275 e0b0                      		ldi		XH, high(var_day)		
+000276 e6a7                      		ldi		XL, low(var_day)
+000277 e031                      		ldi		r19, 1
+000278 e220                      		ldi		r18, 32
+000279 e886                      		ldi		BYTE, 0x86
+00027a e0f1                      		ldi		ZH, high(TM1637_display_date)
+00027b eee6                      		ldi		ZL, low(TM1637_display_date)
+                                 
+00027c d030                      		rcall	inc_circle_ext
+                                 
+00027d c010                      		rjmp	inc_circle_end
+                                 
+                                 	;-------------------------- Месяц
+                                 
+                                 	inc_circle_month:
+00027e e0b0                      		ldi		XH, high(var_month)		
+00027f e6a8                      		ldi		XL, low(var_month)
+000280 e031                      		ldi		r19, 1
+000281 e02d                      		ldi		r18, 13
+000282 e888                      		ldi		BYTE, 0x88
+000283 e0f1                      		ldi		ZH, high(TM1637_display_date)
+000284 eee6                      		ldi		ZL, low(TM1637_display_date)
+                                 
+000285 d027                      		rcall	inc_circle_ext
+                                 
+000286 c007                      		rjmp	inc_circle_end
+                                 
+                                 	;-------------------------- Год
+                                 
+                                 	inc_circle_year:
+000287 e0b0                      		ldi		XH, high(var_year)		
+000288 e6a9                      		ldi		XL, low(var_year)
+000289 e426                      		ldi		r18, 70
+00028a e88c                      		ldi		BYTE, 0x8C
+00028b e0f1                      		ldi		ZH, high(TM1637_display_year)
+00028c efe1                      		ldi		ZL, low(TM1637_display_year)
+                                 
+00028d d01f                      		rcall	inc_circle_ext
+                                 
+                                 	;-------------------------- Конец инкрементации
+                                 			
+                                 	inc_circle_end:
+00028e 913f                      		pop		r19
+00028f 912f                      		pop		r18
+000290 911f                      		pop		r17
+                                 
+000291 9508                      	ret
+                                 
+                                 ;========================================================
+                                 ;		Преобразование 8-битного двоичного
+                                 ;		значения в упакованный BCD формат
+                                 ;		Входящее\исходящее значение == BYTE
+                                 ;========================================================
+                                 
+                                 bin8bcd:
+000292 932f                      	push	r18
+000293 933f                      	push	r19
+                                 
+                                 	.def	digitL	=	r18
+                                 	.def	digitH	=	r19
+                                 
+000294 2f28                      	mov		digitL, BYTE
+000295 e030                      	ldi		digitH, 0x00
+                                 
+                                 	bin8bcd_loop:
+000296 502a                      		subi	digitL, 0x0a
+000297 f012                      		brmi	bin8bcd_end
+                                 
+000298 9533                      		inc		digitH
+000299 cffc                      		rjmp	bin8bcd_loop
+                                 
+                                 	bin8bcd_end:
+00029a 5f26                      		subi	digitL, -0x0a
+                                 
+00029b 9532                      		swap	digitH
+00029c 2f83                      		mov		BYTE, digitH
+                                 
+00029d 702f                      		andi	digitL, 0x0f
+00029e 2b82                      		or		BYTE, digitL
+                                 
+                                 		.undef	digitL
+                                 		.undef	digitH
+                                 
+00029f 913f                      		pop		r19
+0002a0 912f                      		pop		r18
+                                 
+0002a1 9508                      	ret
+                                 
+                                 ;========================================================
+                                 ;		Преобразование 8-битного упаковонного
+                                 ;		значения в двоичный формат
+                                 ;		Входящее\исходящее значение == r17
+                                 ;========================================================
+                                 
+                                 bcd8bin:
+0002a2 932f                      	push	r18
+                                 
+                                 	.def	result	=	r17
+                                 	.def	tens	=	r18
+                                 
+0002a3 2f21                      	mov		tens, r17
+0002a4 7f20                      	andi	tens, 0xf0
+0002a5 9522                      	swap	tens
+                                 
+0002a6 701f                      	andi	result, 0x0f
+                                 	
+                                 	bcd8bind_loop:
+0002a7 952a                      		dec		tens
+0002a8 f012                      		brmi	bcd8bin_end
+                                 
+0002a9 5f16                      		subi	result, -0x0a
+0002aa cffc                      		rjmp	bcd8bind_loop
+                                 
+                                 	bcd8bin_end:
+                                 		.undef	result
+                                 		.undef	tens
+                                 
+0002ab 912f                      		pop		r18
+                                 
+0002ac 9508                      	ret
+                                 
+                                 ;========================================================
+                                 ;	Инкремент переменной по адресу X.
+                                 ;	Верхняя граница - max_digit (r18).
+                                 ;	Нижняя граница - min_digit (r19).
+                                 ;	Адрес регистра для DS1302 в регистре BYTE.
+                                 ;	Непрямой вызов подпрограммы по адресу Z
+                                 ;========================================================
+                                 
+                                 inc_circle_ext:
+0002ad 931f                      	push	r17
+                                 
+                                 	.def	max_digit = r18
+                                 	.def	min_digit = r19
+                                 
+0002ae 911c                      	ld		r17, X
+0002af dff2                      	rcall	bcd8bin
+0002b0 9513                      	inc		r17
+                                 
+0002b1 1712                      	cp		r17,  max_digit
+0002b2 f408                      	brsh	inc_circle_ext_reset
+                                 
+0002b3 c001                      	rjmp	inc_circle_ext_end
+                                 
+                                 	inc_circle_ext_reset:
+0002b4 2f13                      		mov		r17, min_digit
+                                 
+                                 	inc_circle_ext_end:
+0002b5 de3a                      		rcall	DS1302_send_start
+                                 
+0002b6 de42                      		rcall	DS1302_send_byte
+                                 
+0002b7 2f81                      		mov		BYTE, r17
+0002b8 dfd9                      		rcall	bin8bcd
+                                 
+0002b9 de3f                      		rcall	DS1302_send_byte
+                                 
+0002ba de38                      		rcall	DS1302_send_stop	
+                                 
+0002bb de66                      		rcall	DS1302_read_package_data
+0002bc 9509                      		icall
+                                 
+                                 		.undef	max_digit
+                                 		.undef	min_digit
+                                 
+0002bd 911f                      		pop		r17
+                                 
+0002be 9508                      	ret
+
+
+RESOURCE USE INFORMATION
+------------------------
+
+Notice:
+The register and instruction counts are symbol table hit counts,
+and hence implicitly used resources are not counted, eg, the
+'lpm' instruction without operands implicitly uses r0 and z,
+none of which are counted.
+
+x,y,z are separate entities in the symbol table and are
+counted separately from r26..r31 here.
+
+.dseg memory usage only counts static data declared with .byte
+
+"ATtiny2313A" register use summary:
+x  :   2 y  :   1 z  :   1 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
+r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
+r13:   0 r14:   0 r15:   0 r16:  15 r17: 184 r18:  38 r19:  25 r20:   7 
+r21:   8 r22:   7 r23:   9 r24:  28 r25:   0 r26:  12 r27:  12 r28:   7 
+r29:   7 r30:  12 r31:  12 
+Registers used: 18 out of 35 (51.4%)
+
+"ATtiny2313A" instruction use summary:
+.lds  :   0 .sts  :   0 adc   :   0 add   :   0 adiw  :   0 and   :   0 
+andi  :   7 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
+brcc  :   1 brcs  :   0 break :   0 breq  :  33 brge  :   0 brhc  :   0 
+brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   2 
+brne  :   3 brpl  :   0 brsh  :   7 brtc  :   0 brts  :   0 brvc  :   0 
+brvs  :   0 bset  :   0 bst   :   0 cbi   :  19 cbr   :   1 clc   :   0 
+clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 clt   :   0 
+clv   :   0 clz   :   0 com   :   0 cp    :   1 cpc   :   0 cpi   :  41 
+cpse  :   0 dec   :   2 eor   :   8 icall :   1 ijmp  :   0 in    :   0 
+inc   :   8 ld    :   1 ldd   :   0 ldi   : 129 lds   :  37 lpm   :   0 
+lsl   :   0 lsr   :   3 mov   :  12 movw  :   0 neg   :   0 nop   :  28 
+or    :   2 ori   :   3 out   :  17 pop   :  33 push  :  33 rcall :  80 
+ret   :  26 reti  :  18 rjmp  :  52 rol   :   0 ror   :   0 sbc   :   0 
+sbci  :   0 sbi   :  19 sbic  :   2 sbis  :   1 sbiw  :   0 sbr   :   0 
+sbrc  :   0 sbrs  :   0 sec   :   0 seh   :   0 sei   :   1 sen   :   0 
+ser   :   0 ses   :   0 set   :   0 sev   :   0 sez   :   0 sleep :   0 
+spm   :   0 st    :   3 std   :   0 sts   :  13 sub   :   0 subi  :   3 
+swap  :   3 tst   :   0 wdr   :   0 
+Instructions used: 37 out of 105 (35.2%)
+
+"ATtiny2313A" memory use summary [bytes]:
+Segment   Begin    End      Code   Data   Used    Size   Use%
+---------------------------------------------------------------
+[.cseg] 0x000000 0x00057e   1406      0   1406    2048  68.7%
+[.dseg] 0x000060 0x000078      0     24     24     128  18.8%
+[.eseg] 0x000000 0x000000      0      0      0     128   0.0%
+
+Assembly complete, 0 errors, 4 warnings
