@@ -1,27 +1,27 @@
 ;========================================================
 ;		Преобразование данных с ds1302 в 
 ;		числа для 4-х сегментного дисплея tm1637
-;		запись результата в переменные d1 и d2
+;		запись результата в регистры r16:r15 
 ;		вход - регистр BYTE
 ;========================================================
 
 conv_ds1302_to_tm1637:
 	push	r17
 
-	;------------------------- преобразуем младший разряд в переменную d2
+	;------------------------- преобразуем младший разряд в регистр r15
 
 	mov		r17, BYTE
 	andi	r17, 0x0f
 	rcall	bin_to_tm1637_digit
-	sts		d2, r17
+	mov		r15, r17
 
-	;------------------------- преобразуем старший разряд в переменную d1
+	;------------------------- преобразуем старший разряд в регистр r16
 
 	mov		r17, BYTE
-	andi	r17, 0x70
+	andi	r17, 0xf0
 	swap	r17
 	rcall	bin_to_tm1637_digit
-	sts		d1, r17
+	mov		r16, r17
 	pop		r17
 
 	ret
@@ -95,7 +95,7 @@ bin_to_tm1637_digit:
 	ret
 
 ;========================================================
-;	Подпрограммы инкремента до определённого порога
+;	Подпрограммы инкремента с установленными границами
 ;========================================================
 
 inc_circle:
@@ -127,8 +127,8 @@ inc_circle:
 	;-------------------------- Часы
 
 	inc_circle_hour:
-		ldi		XH, high(var_hours)		
-		ldi		XL, low(var_hours)
+		ldi		XH, high(bcd_hours)		
+		ldi		XL, low(bcd_hours)
 		ldi		r19, 0
 		ldi		r18, 24
 		ldi		BYTE, 0x84
@@ -143,8 +143,8 @@ inc_circle:
 	;-------------------------- Минуты
 
 	inc_circle_minutes:
-		ldi		XH, high(var_minutes)		
-		ldi		XL, low(var_minutes)
+		ldi		XH, high(bcd_minutes)		
+		ldi		XL, low(bcd_minutes)
 		ldi		r19, 0
 		ldi		r18, 60
 		ldi		BYTE, 0x82
@@ -159,10 +159,12 @@ inc_circle:
 	;-------------------------- День месяца
 
 	inc_circle_day:
-		ldi		XH, high(var_day)		
-		ldi		XL, low(var_day)
+		ldi		XH, high(bcd_day)		
+		ldi		XL, low(bcd_day)
 		ldi		r19, 1
-		ldi		r18, 32
+		rcall	get_max_day
+		inc		r17
+		mov		r18, r17
 		ldi		BYTE, 0x86
 		ldi		ZH, high(TM1637_display_date)
 		ldi		ZL, low(TM1637_display_date)
@@ -174,8 +176,8 @@ inc_circle:
 	;-------------------------- Месяц
 
 	inc_circle_month:
-		ldi		XH, high(var_month)		
-		ldi		XL, low(var_month)
+		ldi		XH, high(bcd_month)		
+		ldi		XL, low(bcd_month)
 		ldi		r19, 1
 		ldi		r18, 13
 		ldi		BYTE, 0x88
@@ -189,9 +191,9 @@ inc_circle:
 	;-------------------------- Год
 
 	inc_circle_year:
-		ldi		XH, high(var_year)		
-		ldi		XL, low(var_year)
-		ldi		r18, 70
+		ldi		XH, high(bcd_year)		
+		ldi		XL, low(bcd_year)
+		ldi		r18, 100
 		ldi		BYTE, 0x8C
 		ldi		ZH, high(TM1637_display_year)
 		ldi		ZL, low(TM1637_display_year)
@@ -308,14 +310,12 @@ inc_circle_ext:
 
 	inc_circle_ext_end:
 		rcall	DS1302_send_start
-
 		rcall	DS1302_send_byte
 
 		mov		BYTE, r17
 		rcall	bin8bcd
 
 		rcall	DS1302_send_byte
-
 		rcall	DS1302_send_stop	
 
 		rcall	DS1302_read_package_data
@@ -325,5 +325,75 @@ inc_circle_ext:
 		.undef	min_digit
 
 		pop		r17
+
+	ret
+
+;========================================================
+;	Нахождение максимального дня текущего месяца
+;	с учётом високосных лет
+;	Исходящее значение == r17
+;========================================================
+
+get_max_day:
+	ldi		ZH, high(max_day_in_month*2)
+	ldi		ZL, low(max_day_in_month*2)
+
+	lds		r17, bcd_month
+	rcall	bcd8bin
+	dec		r17
+
+	ldi		YH, 0
+	mov		YL, r17
+
+	add		ZL, YL
+	adc		ZH, YH
+	lpm		r17, Z
+
+	rcall	leap_year
+
+	ret
+
+;========================================================
+;	Определение високосного года и перезапись 
+;	Если год високосный и сейчас 2-й месяц
+;	меняеться значение r17 = 29
+;========================================================
+
+leap_year:
+	push	r16
+
+	;------------------------- Сохраняем значение r17 в r16, чтобы его не изменить в случае, 
+	;------------------------- если сейчас не февраль високосного года
+
+	mov		r16, r17
+
+	;------------------------- Если установлен не февраль, проверка на високосный год не нужна
+
+	lds		r17, bcd_month
+	cpi		r17, 0x02
+	brne	leap_year_end
+
+	;------------------------- Каждый сотый год не високосный
+
+	lds		r17, bcd_year
+	cpi		r17, 0x00
+	breq	leap_year_end
+
+	;------------------------- Если один из двух младших битов или оба установлены
+	;------------------------- число не кратно 4-м. Год високосный
+
+	rcall	bcd8bin
+	sbrc	r17, 1
+	rjmp	leap_year_end
+	sbrc	r17, 0
+	rjmp	leap_year_end
+
+	;------------------------- Максимальное значение числа месяца = 29
+
+	ldi		r16, 29
+		
+	leap_year_end:
+		mov		r17, r16
+		pop		r16
 
 	ret

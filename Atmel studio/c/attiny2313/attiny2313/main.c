@@ -6,13 +6,17 @@
  */ 
 
 #include <avr/io.h>
+//#include <avr/delay.h>
 
 inline void MCU_init(void);
 void read_package_data_from_ds1302(void);
 void display_clock_mode(void);
 void display_mode(uint8_t _1, uint8_t _2, uint8_t _3, uint8_t _4, uint8_t pair_number);
+uint8_t max_day_month(void);
 
 #include <avr/interrupt.h>
+#include <avr/delay.h>
+
 
 #include "def.h"
 #include "data_convertor.h"
@@ -62,7 +66,7 @@ inline void MCU_init(void)
 	
 	// Инициализация таймеров
 	TCCR1B |= (1 << WGM12) | (1 << CS12) | (0 << CS11) | (1 << CS10); // Выбор режима таймера (СТС, предделитель = 1024)
-	OCR1A = kdel2;
+	OCR1A = kdel0;
 		
 	// Разрешаем прерывание от таймеров
 	TIMSK |= (1 << OCIE1A);
@@ -123,4 +127,16 @@ void display_mode(uint8_t _1, uint8_t _2, uint8_t _3, uint8_t _4, uint8_t pair_n
 		
 		blink = 1;
 	}
+}
+
+uint8_t max_day_month(void)
+{
+	uint8_t month = DS1302_get_month();
+	uint8_t year = DS1302_get_year();
+	uint8_t max_day = max_day_in_month[bcd8bin(month)-1];
+	
+	if( (month == 0x02) && (year % 4 == 0) )
+		max_day = 29;
+		
+	return max_day;
 }

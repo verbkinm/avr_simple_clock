@@ -10,6 +10,8 @@ ISR(INT0_vect)
 		mode = 0;
 		clock_mode = 0;
 		DS1302_clock_on();
+		if(bcd8bin(DS1302_get_day()) > max_day_month())
+			DS1302_set_day(bin8bcd(max_day_month()));
 	}
 }
 
@@ -35,7 +37,7 @@ ISR(INT1_vect)
 	if(mode == 3)
 	{
 		uint8_t buf = bcd8bin(DS1302_get_day());
-		buf = inc_circle(buf, 1, 31);
+		buf = inc_circle(buf, 1, max_day_month());
 		DS1302_set_day(bin8bcd(buf));
 	}
 	if(mode == 4)
@@ -47,7 +49,7 @@ ISR(INT1_vect)
 	if(mode == 5)
 	{
 		uint8_t buf = bcd8bin(DS1302_get_year());
-		buf = inc_circle(buf, 0, 79);
+		buf = inc_circle(buf, 0, 99);
 		DS1302_set_year(bin8bcd(buf));
 		
 	}

@@ -40,17 +40,17 @@ void DS1302_send_start(void)
 {
 	PORT_DS1302 |= (1 << DS1302_RST);
 	__asm__("nop");
-	//_delay_ms(3);
+	_delay_ms(3);
 }
 
 void DS1302_send_stop(void)
 {
 	PORT_DS1302 &= ~( (1 << DS1302_SCLK) | (1 << DS1302_IO) );
 	__asm__("nop");
-	//_delay_ms(3);
+	_delay_ms(3);
 	PORT_DS1302 &= ~(1 << DS1302_RST);
 	__asm__("nop");
-	//_delay_ms(3);
+	_delay_ms(3);
 }
 
 void DS1302_send_byte(uint8_t byte)
@@ -72,11 +72,11 @@ void DS1302_send_byte(uint8_t byte)
 			PORT_DS1302 &= ~(1 << DS1302_IO);
 
 		__asm__("nop");
-		//_delay_ms(3);
+		_delay_ms(3);
 		
 		PORT_DS1302 |= 1 << DS1302_SCLK;
 		__asm__("nop");
-		//_delay_ms(3);
+		_delay_ms(3);
 
 		byte >>= 1;
 	}
@@ -103,10 +103,10 @@ void DS1302_send_byte(uint8_t byte)
 			byte &= 0x7f;
 		
 		__asm__("nop");
-		//_delay_ms(3);
+		_delay_ms(3);
 		PORT_DS1302 |= 1 << DS1302_SCLK;
 		__asm__("nop");
-		//_delay_ms(3);
+		_delay_ms(3);
 		
 		byte >>= 1;
 	}

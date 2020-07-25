@@ -3,15 +3,20 @@
 ;========================================================
 
 DS1302_send_start:
-	sbi		PORT_DS1302, DS1302_RST
+	sbi		PORT_DS1302, DS1302_CE
 	nop
 	ret
+
 DS1302_send_stop:
 	cbi		PORT_DS1302, DS1302_SCLK
 	cbi		PORT_DS1302, DS1302_IO
-	nop
-	cbi		PORT_DS1302, DS1302_RST
-	nop
+	cbi		PORT_DS1302, DS1302_CE
+
+	;------------------------- Вывод DAT на выход
+	
+	sbi		DDR_DS1302, DS1302_IO
+	cbi		PORT_DS1302, DS1302_IO
+
 	ret
 
 ;========================================================
@@ -23,6 +28,8 @@ DS1302_send_byte:
 	push	BYTE
 
 	;------------------------- Вывод DAT на выход
+	;------------------------- Он уже установлен на выход в функции DS1302_send_stop,
+	;------------------------- но для уверенности будующего кода устанавливаем
 
 	sbi		DDR_DS1302, DS1302_IO
 	cbi		PORT_DS1302, DS1302_IO
@@ -53,9 +60,9 @@ DS1302_send_byte:
 
 			;------------------------- Отправка бита
 
-			nop
 			sbi		PORT_DS1302, DS1302_SCLK
 			nop
+
 			inc		r17
 
 		rjmp	DS1302_while_send
@@ -91,17 +98,10 @@ DS1302_transmit_byte:
 		cpi		r17, 0x07
 		brsh	DS1302_while_transmit_end
 
-		cbi		PORT_DS1302, DS1302_SCLK
-
-		sbic	PIN_DS1302, DS1302_IO
-		ori		BYTE, 0x80
-		sbis	PIN_DS1302, DS1302_IO
-		andi	BYTE, 0x7f
+		rcall	DS1302_transmit_byte_write_bit
 
 		lsr		BYTE
-		nop
 		sbi		PORT_DS1302, DS1302_SCLK
-		nop
 
 		inc		r17
 		rjmp	DS1302_while_transmit
@@ -109,10 +109,19 @@ DS1302_transmit_byte:
 	;------------------------- Выход из цикла
 
 	DS1302_while_transmit_end:
+		rcall	DS1302_transmit_byte_write_bit
 		pop		r17
 
 	ret
 
+DS1302_transmit_byte_write_bit:
+	cbi		PORT_DS1302, DS1302_SCLK
+	sbic	PIN_DS1302, DS1302_IO
+	ori		BYTE, 0x80
+	sbis	PIN_DS1302, DS1302_IO
+	andi	BYTE, 0x7f
+
+	ret
 ;========================================================
 ;			Считать данные с ds1302 пакетом
 ;========================================================
@@ -129,8 +138,8 @@ DS1302_read_package_data:
 	;------------------------- Минтуы
 
 	ldi		BYTE, 0x83
-	ldi		XH, high(var_minutes)		
-	ldi		XL, low(var_minutes)
+	ldi		XH, high(bcd_minutes)		
+	ldi		XL, low(bcd_minutes)
 	ldi		YH, high(tm_m1)		
 	ldi		YL, low(tm_m1)
 	ldi		ZH, high(tm_m2)		
@@ -142,8 +151,8 @@ DS1302_read_package_data:
 	;------------------------- Часы
 
 	ldi		BYTE, 0x85
-	ldi		XH, high(var_hours)		
-	ldi		XL, low(var_hours)
+	ldi		XH, high(bcd_hours)		
+	ldi		XL, low(bcd_hours)
 	ldi		YH, high(tm_h1)		
 	ldi		YL, low(tm_h1)
 	ldi		ZH, high(tm_h2)		
@@ -154,8 +163,8 @@ DS1302_read_package_data:
 	;------------------------- Число
 
 	ldi		BYTE, 0x87
-	ldi		XH, high(var_day)		
-	ldi		XL, low(var_day)
+	ldi		XH, high(bcd_day)		
+	ldi		XL, low(bcd_day)
 	ldi		YH, high(tm_d1)		
 	ldi		YL, low(tm_d1)
 	ldi		ZH, high(tm_d2)		
@@ -166,8 +175,8 @@ DS1302_read_package_data:
 	;------------------------- Месяц
 
 	ldi		BYTE, 0x89
-	ldi		XH, high(var_month)		
-	ldi		XL, low(var_month)
+	ldi		XH, high(bcd_month)		
+	ldi		XL, low(bcd_month)
 	ldi		YH, high(tm_mt1)		
 	ldi		YL, low(tm_mt1)
 	ldi		ZH, high(tm_mt2)		
@@ -178,8 +187,8 @@ DS1302_read_package_data:
 	;------------------------- Год
 
 	ldi		BYTE, 0x8D
-	ldi		XH, high(var_year)		
-	ldi		XL, low(var_year)
+	ldi		XH, high(bcd_year)		
+	ldi		XL, low(bcd_year)
 	ldi		YH, high(tm_y3)		
 	ldi		YL, low(tm_y3)
 	ldi		ZH, high(tm_y4)		
@@ -219,11 +228,9 @@ DS1302_read_package_data_ext:
 	st		X, BYTE
 
 	rcall	conv_ds1302_to_tm1637
-	lds		r17, d1
-	st		Y, r17
+	st		Y, r16
 
-	lds		r17, d2
-	st		Z, r17
+	st		Z, r15
 
 	ret
 

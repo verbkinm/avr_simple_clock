@@ -5,52 +5,93 @@
 ;-------------------------- Прерывание при нажатии кнопки Mode
 
 _INT0:
-		push	r17
+	push	r17
+	push	r16
+
+	rcall	DS1302_read_package_data
+
+
+	ldi		r17, 0x00
+	sts		clock_mode, r17
 
 	;-------------------------- Инкремент переменной mode
 
-		ldi		r17, 0x00
-		sts		clock_mode, r17
-		lds		r17, mode
-		inc		r17
+	lds		r17, mode
+	inc		r17
 
 	;-------------------------- Выбор режима mode
 
-		cpi		r17, 0x01
-		breq	_INT0_mode_1
+	cpi		r17, 0x01
+	breq	_INT0_mode_1
 
-		cpi		r17, 0x02
-		breq	_INT0_mode_2
+	cpi		r17, 0x02
+	breq	_INT0_mode_2
 
-		cpi		r17, 0x03
-		breq	_INT0_mode_3
+	cpi		r17, 0x03
+	breq	_INT0_mode_3
 
-		cpi		r17, 0x04
-		breq	_INT0_mode_4
+	cpi		r17, 0x04
+	breq	_INT0_mode_4
 
-		cpi		r17, 0x05
-		breq	_INT0_mode_5
+	cpi		r17, 0x05
+	breq	_INT0_mode_5
 
-		cpi		r17, 0x06
-		brsh	_INT0_mode_0
+	cpi		r17, 0x06
+	brsh	_INT0_mode_0
 
-		rjmp	_INT0_end
+	rjmp	_INT0_end
 
 	;------------------------- MODE 0
 
 	_INT0_mode_0:
 		rcall	DS1302_clock_on
+		rcall	tim0_on
 		rcall	TM1637_display_time
-		ldi		r17, 0x00
+
+		;------------------------- Если день был установлен больше, чем максимальный в этом месяце, то данный код это исправляет.
+		;------------------------- Пример: выставили 31 число, потом 9 месяц (а в сентябре 30 дней). При переходе в режим
+		;------------------------- mode == 0 устанавливается 30 число!
+
+		lds		r17, bcd_day
+		rcall	bcd8bin
+		mov		r16, r17
+		rcall	get_max_day
+		cp		r16, r17
+		brlo	_INT0_mode_0_end
+		ldi		BYTE, 0x86
+		rcall	DS1302_send_start
+		rcall	DS1302_send_byte
+		mov		BYTE, r17
+		rcall	bin8bcd
+		rcall	DS1302_send_byte
+		rcall	DS1302_send_stop
+
+		_INT0_mode_0_end:
+			ldi		r17, high(kdel2)	; меняем предделитель на 60 сек.
+			out		OCR1AH, r17			 
+			ldi		r17, low(kdel2)		 
+			out		OCR1AL, r17	
+
+			ldi		r17, 0x00
 
 		rjmp	_INT0_end
 
 	;------------------------- MODE 1
 
 	_INT0_mode_1:
+		rcall	tim0_off
 		rcall	DS1302_clock_off
 		rcall	TM1637_display_time
 		rcall	TM1637_set_double_point
+
+		ldi		r16, high(kdel3)	; меняем предделитель на 0,5 сек., чтобы моргало то, что мы меняем в режимах mode 1 - mode 5
+		out		OCR1AH, r16 
+		ldi		r16, low(kdel3)		 
+		out		OCR1AL, r16
+		ldi		r16, high(kdel3)
+		out		TCNT1H, r16
+		ldi		r16, low(kdel3-10)
+		out		TCNT1L, r16
 
 		rjmp	_INT0_end
 
@@ -83,6 +124,7 @@ _INT0:
 
 	_INT0_end:
 		sts		mode, r17
+		pop		r16
 		pop		r17
 
 	reti
@@ -91,6 +133,8 @@ _INT0:
 
 _INT1:
 		push	r17
+
+		rcall	tim0_off
 
 		lds		r17, mode
 		cpi		r17, 0x00
@@ -106,11 +150,6 @@ _INT1:
 	;-------------------------- Режим Clock mode
 
 	_INT1_clock_mode_pressed:
-		ldi		r17, 0x00
-		out		TCCR1B, r17 ; выключить таймер
-
-		rcall	TM1637_display_dash
-
 		lds		r17, clock_mode
 		inc		r17
 
@@ -119,22 +158,19 @@ _INT1:
 		rjmp	_INT1_1
 
 		_INT1_reset_clock_mode:
+			rcall	tim0_on
 			ldi		r17, 0x00
 
 		_INT1_1:
 			sts		clock_mode, r17
 
-			ldi		r17, (1 << WGM12) | (1 << CS12) | (0 << CS11) | (1 << CS10) ; Выбор режима таймера (СТС, предделитель = 1024) 
-			out		TCCR1B, r17
+			;-------------------------- Чтобы данные сразу отобразились
+			
 			ldi		r17, high(kdel2)
 			out		TCNT1H, r17
-			ldi		r17, low(kdel2)
+			ldi		r17, low(kdel2-10)
 			out		TCNT1L, r17
 
-			;-------------------------- Чтобы данные сразу отобразились
-
-			ldi		r17, 0x3c
-			sts		timer1_counter, r17
 
 	_INT1_end:
 		pop		r17
@@ -171,44 +207,35 @@ _TIM1:
 	;-------------------------- MODE 0
 
 	rcall_TIM1_mode_0:
-		lds		r17, timer1_counter
-		inc		r17
 
-		cpi		r17, 0x3c
-		brsh	_TIM1_mode_0_reset_counter
-		rjmp	_TIM1_mode_0_end
+		;-------------------------- Считать данные с ds1302 пакетом
 
-		_TIM1_mode_0_reset_counter:
+		rcall	DS1302_read_package_data
 
-			;-------------------------- Считать данные с ds1302 пакетом
+		lds		r17, clock_mode
 
-			rcall	DS1302_read_package_data
+		cpi		r17, 0x01
+		breq	_TIM1_date_mode
 
-			lds		r17, clock_mode
+		cpi		r17, 0x02
+		breq	_TIM1_year_mode
 
-			cpi		r17, 0x01
-			breq	_TIM1_date_mode
+		_TIM1_time_mode:
+			rcall	TM1637_display_time
+			rjmp	_TIM1_mode_0_reset_counter_end
 
-			cpi		r17, 0x02
-			breq	_TIM1_year_mode
+		_TIM1_date_mode:
+			rcall	TM1637_display_date
+			rjmp	_TIM1_mode_0_reset_counter_end
 
-			_TIM1_time_mode:
-				rcall	TM1637_display_time
-				rjmp	_TIM1_mode_0_reset_counter_end
+		_TIM1_year_mode:
+			rcall	TM1637_display_year
 
-			_TIM1_date_mode:
-				rcall	TM1637_display_date
-				rjmp	_TIM1_mode_0_reset_counter_end
+		_TIM1_mode_0_reset_counter_end:
+			ldi		r17, 0x00
 
-			_TIM1_year_mode:
-				rcall	TM1637_display_year
-
-			_TIM1_mode_0_reset_counter_end:
-				ldi		r17, 0x00
-
-			_TIM1_mode_0_end:
-				sts		timer1_counter, r17
-				rcall	TM1637_display
+		_TIM1_mode_0_end:
+			rcall	TM1637_display
 
 		rjmp	_TIM1_end
 
@@ -268,47 +295,51 @@ _TIM1:
 		
 	reti
 	
-;-------------------------- Прерывание таймера T1	
+;-------------------------- Прерывание таймера T0
 
 _TIM0:
 	push	r17
-	push	r16
+	push	BYTE
 
-	;-------------------------- Отработать прерывание, если clock_mode == 0
+	;-------------------------- Для экономии работы микроконтроллеров. Изменяется только значение 4-го элемента на дисплее, а не всех!!!
 
-	lds		r17, clock_mode
-	lds		r16, mode
-	or		r16, r17
-	brne	_TIM0_end
+	rcall	TM1637_start
+	ldi		BYTE, 0x44
+	rcall	TM1637_send_byte
+	rcall	TM1637_stop
 
-	lds		r17, timer0_counter
-	inc		r17
+	rcall	TM1637_start
+	ldi		BYTE, 0xC3
+	rcall	TM1637_send_byte
+	lds		BYTE, tm_m2
+	ldi		r17, 0x80
+	eor		BYTE, r17
+	sts		tm_m2, BYTE
+	rcall	TM1637_send_byte
+	rcall	TM1637_stop
 
-	;-------------------------- Моргать двоеточием раз
-
-	cpi		r17, 0x0f
-	brsh	_TIM0_reset_counter
-	rjmp	_TIM0_end
-
-	_TIM0_reset_counter:
-		lds		r17, double_point
-
-		cpi		r17, 0x00
-		breq	_TIM0_set_double_point
-
-		rcall	TM1637_unset_double_point
-		rjmp	_TIM0_reset_counter_end
-
-		_TIM0_set_double_point:
-			rcall	TM1637_set_double_point
-
-	_TIM0_reset_counter_end:
-		ldi		r17, 0x00
-
-	_TIM0_end:
-		sts		timer0_counter, r17
-		pop		r16
-		pop		r17
+	pop		BYTE
+	pop		r17
 
 	reti
 
+
+tim0_on:
+	push	r17
+	ldi		r17, (1 << WGM01)							 ; Выбор режима таймера СТС 
+	out		TCCR0A, r17
+	ldi		r17, (1 << CS02) | (0 << CS01) | (1 << CS00) ; Выбор предделителя = 1024 
+	out		TCCR0B, r17
+	pop		r17
+
+	ret
+
+tim0_off:
+	push	r17
+	ldi		r17, (0 << WGM01)							 ; Выбор режима таймера СТС 
+	out		TCCR0A, r17
+	ldi		r17, (0 << CS02) | (0 << CS01) | (0 << CS00) ; Выбор предделителя = 1024 
+	out		TCCR0B, r17
+	pop		r17
+
+	ret

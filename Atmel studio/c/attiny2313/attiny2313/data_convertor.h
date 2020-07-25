@@ -11,7 +11,6 @@ uint8_t bin_to_tm1637_digit(uint8_t digit);
 uint8_t half_byteH(uint8_t digit);
 uint8_t half_byteL(uint8_t digit);
 
-
 //========================================================
 //		Преобразование 8-битного двоичного
 //		значения в упакованный BCD формат
@@ -27,7 +26,7 @@ uint8_t bin8bcd(uint8_t byte)
     {
 	    _byte -= 10;
 	    if(_byte >= 0)
-	    digitH++;
+			digitH++;
     }
 
     if(_byte < 0)
