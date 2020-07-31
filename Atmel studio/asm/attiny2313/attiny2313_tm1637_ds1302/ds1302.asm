@@ -4,7 +4,8 @@
 
 DS1302_send_start:
 	sbi		PORT_DS1302, DS1302_CE
-	nop
+	rcall	MCU_wait_10mks
+
 	ret
 
 DS1302_send_stop:
@@ -12,10 +13,7 @@ DS1302_send_stop:
 	cbi		PORT_DS1302, DS1302_IO
 	cbi		PORT_DS1302, DS1302_CE
 
-	;------------------------- Вывод DAT на выход
-	
-	sbi		DDR_DS1302, DS1302_IO
-	cbi		PORT_DS1302, DS1302_IO
+	rcall	MCU_wait_10mks
 
 	ret
 
@@ -28,8 +26,6 @@ DS1302_send_byte:
 	push	BYTE
 
 	;------------------------- Вывод DAT на выход
-	;------------------------- Он уже установлен на выход в функции DS1302_send_stop,
-	;------------------------- но для уверенности будующего кода устанавливаем
 
 	sbi		DDR_DS1302, DS1302_IO
 	cbi		PORT_DS1302, DS1302_IO
@@ -45,6 +41,7 @@ DS1302_send_byte:
 		brsh	DS1302_while_send_end
 
 		cbi		PORT_DS1302, DS1302_SCLK
+		rcall	MCU_wait_10mks
 
 		lsr		BYTE			
 		brcc	DS1302_cbi_send_bit
@@ -61,7 +58,7 @@ DS1302_send_byte:
 			;------------------------- Отправка бита
 
 			sbi		PORT_DS1302, DS1302_SCLK
-			nop
+			rcall	MCU_wait_10mks
 
 			inc		r17
 
@@ -102,6 +99,7 @@ DS1302_transmit_byte:
 
 		lsr		BYTE
 		sbi		PORT_DS1302, DS1302_SCLK
+		rcall	MCU_wait_10mks
 
 		inc		r17
 		rjmp	DS1302_while_transmit
@@ -116,6 +114,7 @@ DS1302_transmit_byte:
 
 DS1302_transmit_byte_write_bit:
 	cbi		PORT_DS1302, DS1302_SCLK
+	rcall	MCU_wait_10mks
 	sbic	PIN_DS1302, DS1302_IO
 	ori		BYTE, 0x80
 	sbis	PIN_DS1302, DS1302_IO
@@ -146,7 +145,6 @@ DS1302_read_package_data:
 	ldi		ZL, low(tm_m2)
 
 	rcall	DS1302_read_package_data_ext
-
 
 	;------------------------- Часы
 

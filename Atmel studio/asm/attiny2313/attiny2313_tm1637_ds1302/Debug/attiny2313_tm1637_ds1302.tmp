@@ -52,80 +52,85 @@
   <start><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm</FILE><LINE>63</LINE></start>
   <init><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\initialization.asm</FILE><LINE>5</LINE></init>
   <_INT0><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>7</LINE></_INT0>
-  <_INT1><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>134</LINE></_INT1>
-  <_TIM1><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>183</LINE></_TIM1>
-  <_TIM0><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>300</LINE></_TIM0>
-  <DS1302_read_package_data><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>129</LINE></DS1302_read_package_data>
-  <_INT0_mode_1><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>81</LINE></_INT0_mode_1>
-  <_INT0_mode_2><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>100</LINE></_INT0_mode_2>
-  <_INT0_mode_3><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>108</LINE></_INT0_mode_3>
-  <_INT0_mode_4><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>115</LINE></_INT0_mode_4>
-  <_INT0_mode_5><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>122</LINE></_INT0_mode_5>
-  <_INT0_mode_0><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>46</LINE></_INT0_mode_0>
-  <_INT0_end><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>125</LINE></_INT0_end>
-  <DS1302_clock_on><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>241</LINE></DS1302_clock_on>
-  <tim0_on><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>327</LINE></tim0_on>
-  <TM1637_display_time><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>169</LINE></TM1637_display_time>
+  <_INT1><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>139</LINE></_INT1>
+  <_TIM1><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>194</LINE></_TIM1>
+  <_TIM0><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>311</LINE></_TIM0>
+  <_INT0_wait_release><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>11</LINE></_INT0_wait_release>
+  <MCU_wait_50ms><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm</FILE><LINE>418</LINE></MCU_wait_50ms>
+  <DS1302_read_package_data><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>128</LINE></DS1302_read_package_data>
+  <_INT0_mode_1><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>86</LINE></_INT0_mode_1>
+  <_INT0_mode_2><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>105</LINE></_INT0_mode_2>
+  <_INT0_mode_3><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>113</LINE></_INT0_mode_3>
+  <_INT0_mode_4><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>120</LINE></_INT0_mode_4>
+  <_INT0_mode_5><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>127</LINE></_INT0_mode_5>
+  <_INT0_mode_0><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>51</LINE></_INT0_mode_0>
+  <_INT0_end><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>130</LINE></_INT0_end>
+  <DS1302_clock_on><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>239</LINE></DS1302_clock_on>
+  <tim0_on><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>345</LINE></tim0_on>
+  <TM1637_display_time><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>171</LINE></TM1637_display_time>
   <bcd8bin><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm</FILE><LINE>258</LINE></bcd8bin>
   <get_max_day><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm</FILE><LINE>337</LINE></get_max_day>
-  <_INT0_mode_0_end><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>69</LINE></_INT0_mode_0_end>
+  <_INT0_mode_0_end><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>74</LINE></_INT0_mode_0_end>
   <DS1302_send_start><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>5</LINE></DS1302_send_start>
-  <DS1302_send_byte><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>26</LINE></DS1302_send_byte>
+  <DS1302_send_byte><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>24</LINE></DS1302_send_byte>
   <bin8bcd><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm</FILE><LINE>218</LINE></bin8bcd>
-  <DS1302_send_stop><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>10</LINE></DS1302_send_stop>
-  <tim0_off><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>337</LINE></tim0_off>
-  <DS1302_clock_off><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>251</LINE></DS1302_clock_off>
-  <TM1637_set_double_point><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>132</LINE></TM1637_set_double_point>
-  <TM1637_display_date><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>183</LINE></TM1637_display_date>
-  <TM1637_display_year><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>197</LINE></TM1637_display_year>
-  <_INT1_clock_mode_pressed><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>152</LINE></_INT1_clock_mode_pressed>
-  <_INT1_set_pressed><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>145</LINE></_INT1_set_pressed>
+  <DS1302_send_stop><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>11</LINE></DS1302_send_stop>
+  <tim0_off><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>355</LINE></tim0_off>
+  <DS1302_clock_off><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>249</LINE></DS1302_clock_off>
+  <TM1637_set_double_point><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>134</LINE></TM1637_set_double_point>
+  <TM1637_display_date><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>185</LINE></TM1637_display_date>
+  <TM1637_display_year><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>199</LINE></TM1637_display_year>
+  <_INT1_wait_release><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>142</LINE></_INT1_wait_release>
+  <_INT1_clock_mode_pressed><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>163</LINE></_INT1_clock_mode_pressed>
+  <_INT1_set_pressed><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>156</LINE></_INT1_set_pressed>
   <inc_circle><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm</FILE><LINE>101</LINE></inc_circle>
-  <_INT1_end><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>175</LINE></_INT1_end>
-  <_INT1_reset_clock_mode><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>160</LINE></_INT1_reset_clock_mode>
-  <_INT1_1><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>164</LINE></_INT1_1>
-  <rcall_TIM1_mode_0><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>209</LINE></rcall_TIM1_mode_0>
-  <rcall_TIM1_mode_1><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>244</LINE></rcall_TIM1_mode_1>
-  <rcall_TIM1_mode_2><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>254</LINE></rcall_TIM1_mode_2>
-  <rcall_TIM1_mode_3><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>264</LINE></rcall_TIM1_mode_3>
-  <rcall_TIM1_mode_4><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>274</LINE></rcall_TIM1_mode_4>
-  <rcall_TIM1_mode_5><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>284</LINE></rcall_TIM1_mode_5>
-  <_TIM1_date_mode><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>227</LINE></_TIM1_date_mode>
-  <_TIM1_year_mode><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>231</LINE></_TIM1_year_mode>
-  <_TIM1_time_mode><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>223</LINE></_TIM1_time_mode>
-  <_TIM1_mode_0_reset_counter_end><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>234</LINE></_TIM1_mode_0_reset_counter_end>
-  <_TIM1_mode_0_end><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>237</LINE></_TIM1_mode_0_end>
+  <_INT1_end><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>186</LINE></_INT1_end>
+  <_INT1_reset_clock_mode><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>171</LINE></_INT1_reset_clock_mode>
+  <_INT1_1><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>175</LINE></_INT1_1>
+  <rcall_TIM1_mode_0><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>220</LINE></rcall_TIM1_mode_0>
+  <rcall_TIM1_mode_1><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>255</LINE></rcall_TIM1_mode_1>
+  <rcall_TIM1_mode_2><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>265</LINE></rcall_TIM1_mode_2>
+  <rcall_TIM1_mode_3><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>275</LINE></rcall_TIM1_mode_3>
+  <rcall_TIM1_mode_4><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>285</LINE></rcall_TIM1_mode_4>
+  <rcall_TIM1_mode_5><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>295</LINE></rcall_TIM1_mode_5>
+  <_TIM1_date_mode><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>238</LINE></_TIM1_date_mode>
+  <_TIM1_year_mode><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>242</LINE></_TIM1_year_mode>
+  <_TIM1_time_mode><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>234</LINE></_TIM1_time_mode>
+  <_TIM1_mode_0_reset_counter_end><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>245</LINE></_TIM1_mode_0_reset_counter_end>
+  <_TIM1_mode_0_end><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>248</LINE></_TIM1_mode_0_end>
   <TM1637_display><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>5</LINE></TM1637_display>
-  <_TIM1_end><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>291</LINE></_TIM1_end>
-  <TM1637_blink_pair><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>217</LINE></TM1637_blink_pair>
+  <_TIM1_end><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>302</LINE></_TIM1_end>
+  <TM1637_blink_pair><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>219</LINE></TM1637_blink_pair>
+  <_TIM0_end><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm</FILE><LINE>338</LINE></_TIM0_end>
   <TM1637_start><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>113</LINE></TM1637_start>
   <TM1637_send_byte><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>52</LINE></TM1637_send_byte>
-  <TM1637_stop><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>120</LINE></TM1637_stop>
-  <main><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm</FILE><LINE>84</LINE></main>
-  <max_day_in_month><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm</FILE><LINE>89</LINE></max_day_in_month>
-  <DS1302_while_send><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>43</LINE></DS1302_while_send>
-  <DS1302_while_send_end><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>72</LINE></DS1302_while_send_end>
-  <DS1302_cbi_send_bit><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>56</LINE></DS1302_cbi_send_bit>
-  <DS1302_sbi_send_bit><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>52</LINE></DS1302_sbi_send_bit>
-  <DS1302_while_send_bit><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>59</LINE></DS1302_while_send_bit>
-  <DS1302_transmit_byte><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>82</LINE></DS1302_transmit_byte>
-  <DS1302_while_transmit><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>97</LINE></DS1302_while_transmit>
-  <DS1302_while_transmit_end><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>111</LINE></DS1302_while_transmit_end>
-  <DS1302_transmit_byte_write_bit><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>117</LINE></DS1302_transmit_byte_write_bit>
-  <DS1302_read_package_data_ext><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>226</LINE></DS1302_read_package_data_ext>
-  <DS1302_read_package_data_f1><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>209</LINE></DS1302_read_package_data_f1>
+  <TM1637_stop><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>121</LINE></TM1637_stop>
+  <main><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm</FILE><LINE>90</LINE></main>
+  <max_day_in_month><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm</FILE><LINE>95</LINE></max_day_in_month>
+  <MCU_wait_10mks><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm</FILE><LINE>405</LINE></MCU_wait_10mks>
+  <DS1302_while_send><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>39</LINE></DS1302_while_send>
+  <DS1302_while_send_end><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>69</LINE></DS1302_while_send_end>
+  <DS1302_cbi_send_bit><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>53</LINE></DS1302_cbi_send_bit>
+  <DS1302_sbi_send_bit><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>49</LINE></DS1302_sbi_send_bit>
+  <DS1302_while_send_bit><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>56</LINE></DS1302_while_send_bit>
+  <DS1302_transmit_byte><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>79</LINE></DS1302_transmit_byte>
+  <DS1302_while_transmit><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>94</LINE></DS1302_while_transmit>
+  <DS1302_while_transmit_end><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>109</LINE></DS1302_while_transmit_end>
+  <DS1302_transmit_byte_write_bit><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>115</LINE></DS1302_transmit_byte_write_bit>
+  <DS1302_read_package_data_ext><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>224</LINE></DS1302_read_package_data_ext>
+  <DS1302_read_package_data_f1><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm</FILE><LINE>207</LINE></DS1302_read_package_data_f1>
   <conv_ds1302_to_tm1637><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm</FILE><LINE>8</LINE></conv_ds1302_to_tm1637>
   <TM1637_while_send><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>62</LINE></TM1637_while_send>
   <TM1637_wait_ACK><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>95</LINE></TM1637_wait_ACK>
   <TM1637_cbi_send_bit><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>75</LINE></TM1637_cbi_send_bit>
   <TM1637_sbi_send_bit><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>71</LINE></TM1637_sbi_send_bit>
   <TM1637_while_send_bit><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>78</LINE></TM1637_while_send_bit>
-  <TM1637_unset_double_point><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>142</LINE></TM1637_unset_double_point>
-  <TM1637_display_dash><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>156</LINE></TM1637_display_dash>
-  <TM1637_blink_pair_first><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>233</LINE></TM1637_blink_pair_first>
-  <TM1637_blink_pair_second><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>239</LINE></TM1637_blink_pair_second>
-  <TM1637_blink_pair_third><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>245</LINE></TM1637_blink_pair_third>
-  <TM1637_blink_pair_end><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>256</LINE></TM1637_blink_pair_end>
+  <TM1637_unset_double_point><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>144</LINE></TM1637_unset_double_point>
+  <TM1637_display_dash><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>158</LINE></TM1637_display_dash>
+  <TM1637_blink_pair_first><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>235</LINE></TM1637_blink_pair_first>
+  <TM1637_blink_pair_second><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>241</LINE></TM1637_blink_pair_second>
+  <TM1637_blink_pair_third><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>247</LINE></TM1637_blink_pair_third>
+  <TM1637_blink_pair_end><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm</FILE><LINE>258</LINE></TM1637_blink_pair_end>
   <bin_to_tm1637_digit><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm</FILE><LINE>34</LINE></bin_to_tm1637_digit>
   <_d0><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm</FILE><LINE>60</LINE></_d0>
   <_d1><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm</FILE><LINE>63</LINE></_d1>
@@ -154,5 +159,8 @@
   <inc_circle_ext_end><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm</FILE><LINE>311</LINE></inc_circle_ext_end>
   <leap_year><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm</FILE><LINE>362</LINE></leap_year>
   <leap_year_end><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm</FILE><LINE>395</LINE></leap_year_end>
+  <MCU_wait_loop><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm</FILE><LINE>410</LINE></MCU_wait_loop>
+  <MCU_wait_loop_L><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm</FILE><LINE>425</LINE></MCU_wait_loop_L>
+  <MCU_wait_loop_H><FILE>C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm</FILE><LINE>429</LINE></MCU_wait_loop_H>
  </LABELS>
 </ASSEMBLER_INFO>

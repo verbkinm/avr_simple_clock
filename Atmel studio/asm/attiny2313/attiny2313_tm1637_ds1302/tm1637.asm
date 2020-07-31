@@ -113,6 +113,7 @@ TM1637_send_byte:
 TM1637_start:
 	sbi		PORT_TM1367, TM1637_CLK
 	sbi		PORT_TM1367, TM1637_DATA
+	nop
 	cbi		PORT_TM1367, TM1637_DATA
 
 	ret
@@ -120,6 +121,7 @@ TM1637_start:
 TM1637_stop:
 	cbi		PORT_TM1367, TM1637_CLK
 	cbi		PORT_TM1367, TM1637_DATA
+	nop
 	sbi		PORT_TM1367, TM1637_CLK
 	sbi		PORT_TM1367, TM1637_DATA
 
@@ -133,7 +135,7 @@ TM1637_set_double_point:
 	push	r17
 	ldi		r17, 0x01
 	sts		double_point, r17
-	ori		TM1637_char4, 0x80
+	ori		TM1637_char2, 0x80
 	rcall	TM1637_display
 	pop		r17
 
@@ -143,7 +145,7 @@ TM1637_unset_double_point:
 	push	r17
 	ldi		r17, 0x00
 	sts		double_point, r17
-	andi	TM1637_char4, 0x7f
+	andi	TM1637_char2, 0x7f
 	rcall	TM1637_display
 	pop		r17
 
@@ -183,7 +185,7 @@ TM1637_display_time:
 TM1637_display_date:
 	lds		TM1637_char1, tm_d1
 	lds		TM1637_char2, tm_d2
-	ori		TM1637_char2, 0x80
+	;ori		TM1637_char2, 0x80
 	lds		TM1637_char3, tm_mt1
 	lds		TM1637_char4, tm_mt2
 	rcall	TM1637_display

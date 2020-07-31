@@ -397,3 +397,41 @@ leap_year:
 		pop		r16
 
 	ret
+
+;========================================================
+;			Подпрограммы формирования задержки
+;========================================================
+
+MCU_wait_10mks:						; 10 мкс + время на команды 
+	push	r17
+
+	ldi		r17, 10
+
+	MCU_wait_loop:
+		dec		r17
+		brne	MCU_wait_loop
+
+	pop		r17
+
+	ret
+
+MCU_wait_50ms:						; приблизительно 51 мс + время команд
+	push	r17
+	push	r16
+
+	ldi		r17, 200
+	ser		r16
+
+	MCU_wait_loop_L:
+		dec		r16
+		brne	MCU_wait_loop_L
+
+	MCU_wait_loop_H:
+		ser		r16
+		dec		r17
+		brne	MCU_wait_loop_L
+
+	pop		r16
+	pop		r17
+
+	ret

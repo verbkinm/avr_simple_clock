@@ -8,6 +8,11 @@ _INT0:
 	push	r17
 	push	r16
 
+	_INT0_wait_release:
+		rcall	MCU_wait_50ms
+		sbis	PIND, PD2
+		rjmp	_INT0_wait_release
+
 	rcall	DS1302_read_package_data
 
 
@@ -84,13 +89,13 @@ _INT0:
 		rcall	TM1637_display_time
 		rcall	TM1637_set_double_point
 
-		ldi		r16, high(kdel3)	; меняем предделитель на 0,5 сек., чтобы моргало то, что мы меняем в режимах mode 1 - mode 5
+		ldi		r16, high(kdel1)	; меняем предделитель на 0,5 сек., чтобы моргало то, что мы меняем в режимах mode 1 - mode 5
 		out		OCR1AH, r16 
-		ldi		r16, low(kdel3)		 
+		ldi		r16, low(kdel1)		 
 		out		OCR1AL, r16
-		ldi		r16, high(kdel3)
+		ldi		r16, high(kdel1)	; чтобы сразу отобразилось
 		out		TCNT1H, r16
-		ldi		r16, low(kdel3-10)
+		ldi		r16, low(kdel1-10)
 		out		TCNT1L, r16
 
 		rjmp	_INT0_end
@@ -132,13 +137,19 @@ _INT0:
 ;-------------------------- Прерывание при нажатии кнопки Clock mode \ Set
 
 _INT1:
-		push	r17
+	push	r17
 
-		rcall	tim0_off
+	_INT1_wait_release:
+		rcall	MCU_wait_50ms
+		sbis	PIND, PD3
+		rjmp	_INT1_wait_release
 
-		lds		r17, mode
-		cpi		r17, 0x00
-		breq	_INT1_clock_mode_pressed
+
+	rcall	tim0_off
+
+	lds		r17, mode
+	cpi		r17, 0x00
+	breq	_INT1_clock_mode_pressed
 
 	;-------------------------- Режим Set
 
@@ -301,7 +312,13 @@ _TIM0:
 	push	r17
 	push	BYTE
 
-	;-------------------------- Для экономии работы микроконтроллеров. Изменяется только значение 4-го элемента на дисплее, а не всех!!!
+	inc		timer0_counter
+	cpi		timer0_counter, 0x03
+	brne	_TIM0_end
+
+	clr		timer0_counter
+
+	;-------------------------- Для экономии работы микроконтроллеров. Изменяется только значение 2-го элемента на дисплее, а не всех!!!
 
 	rcall	TM1637_start
 	ldi		BYTE, 0x44
@@ -309,17 +326,18 @@ _TIM0:
 	rcall	TM1637_stop
 
 	rcall	TM1637_start
-	ldi		BYTE, 0xC3
+	ldi		BYTE, 0xC1
 	rcall	TM1637_send_byte
-	lds		BYTE, tm_m2
+	lds		BYTE, tm_h2
 	ldi		r17, 0x80
 	eor		BYTE, r17
-	sts		tm_m2, BYTE
+	sts		tm_h2, BYTE
 	rcall	TM1637_send_byte
 	rcall	TM1637_stop
 
-	pop		BYTE
-	pop		r17
+	_TIM0_end:
+		pop		BYTE
+		pop		r17
 
 	reti
 
@@ -336,8 +354,6 @@ tim0_on:
 
 tim0_off:
 	push	r17
-	ldi		r17, (0 << WGM01)							 ; Выбор режима таймера СТС 
-	out		TCCR0A, r17
 	ldi		r17, (0 << CS02) | (0 << CS01) | (0 << CS00) ; Выбор предделителя = 1024 
 	out		TCCR0B, r17
 	pop		r17

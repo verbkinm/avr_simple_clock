@@ -16,17 +16,22 @@ init:
 
 	;-------------------------- Инициализация Главного предделителя
 
-	;ldi		r17, 0x80		    ; Записываем число $80 в регистр temp
+	ldi		r17, 0x80		    ; Записываем число $80 в регистр temp
 	out		CLKPR, r17			; Записываем в регистр CLKPR
-	ldi		r17, 0x00			; Записываем 0 в регистр temp
+	ldi		r17, 0x03			; Записываем 0 в регистр temp
 	out		CLKPR, r17			; Записываем этот ноль в CLKPR
 
 	;-------------------------- Инициализация портов ВВ по умолчанию
 
-	ldi		r17, 0xff
+	ser		r17
 	out		PORTA, r17
 	out		PORTB, r17
 	out		PORTD, r17
+
+	clr		r17
+	out		DDRA, r17
+	out		DDRB, r17
+	out		DDRD, r17
 
 	;-------------------------- Инициализация портов ВВ для чипа TM1367
 
@@ -46,7 +51,7 @@ init:
 	;sbi		PORT_BUTTON_MODE, BUTTON_MODE
 
 	cbi		DDR_BUTTON_SET, BUTTON_SET
-	;sbi		PORT_BUTTON_SET, BUTTON_SET
+	sbi		PORT_BUTTON_SET, BUTTON_SET
 
 	;-------------------------- Инициализация таймеров
 
@@ -68,7 +73,7 @@ init:
 
 	;--------------------------- Разрешаем прерывание INT0 и INT1 по заднему фронту
 
-	ldi		r17, (0 << ISC00) | (1 << ISC01) | (0 << ISC10) | (1 << ISC11)
+	ldi		r17, (0 << ISC00) | (0 << ISC01) | (0 << ISC10) | (0 << ISC11)
 	out		MCUCR, r17
 
 	ldi		r17, (1 << INT0) | (1 << INT1)
