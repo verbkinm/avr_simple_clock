@@ -54,6 +54,8 @@ tm_y2:			.byte	1		;
 tm_y3:			.byte	1		;
 tm_y4:			.byte	1		;
 
+tm_bright_level: .byte	1		; уровень яркости дисплея
+
 
 ;------------------------- Начало программного кода
 
@@ -68,10 +70,10 @@ start:
 
 	;-------------------------- Начало основной программы
 
-	clr		r17
-	mov		timer0_counter, r17
-	sts		mode, r17
-	sts		clock_mode, r17
+	clr		timer0_counter
+	sts		mode, timer0_counter
+	sts		clock_mode, timer0_counter
+	sts		tm_bright_level, timer0_counter
 
 	sei							; Разрешение прерываний
 
@@ -88,6 +90,7 @@ start:
 	rcall	_TIM1
 
 	main:		
+		sleep
 		rjmp	main			; Пустой бесконечный цикл
 
 ;-------------------------- Массив максимального числа в месяцах

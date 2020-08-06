@@ -1,24 +1,24 @@
 
-AVRASM ver. 2.2.7  C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm Fri Jul 31 16:23:05 2020
+AVRASM ver. 2.2.7  C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm Thu Aug 06 15:30:09 2020
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.3.229\avrasm\inc\tn2313adef.inc'
-C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(15): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.3.229\avrasm\inc\tn2313adef.inc'
-C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(16): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\def_equ.inc'
-C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(65): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts_vector.asm'
-C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(66): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm'
-C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(67): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\initialization.asm'
-C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(97): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm'
-C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(98): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm'
-C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(99): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm'
+C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(15): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.3.229\avrasm\inc\tn2313adef.inc'
+C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(16): Including file 'C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\def_equ.inc'
+C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(67): Including file 'C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts_vector.asm'
+C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(68): Including file 'C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm'
+C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(69): Including file 'C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\initialization.asm'
+C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(100): Including file 'C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm'
+C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(101): Including file 'C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm'
+C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(102): Including file 'C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm'
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.3.229\avrasm\inc\tn2313adef.inc'
-C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(15): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.3.229\avrasm\inc\tn2313adef.inc'
-C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(16): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\def_equ.inc'
-C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(65): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts_vector.asm'
-C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(66): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm'
-C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(67): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\initialization.asm'
-C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(97): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm'
-C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(98): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm'
-C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(99): Including file 'C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm'
+C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(15): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.3.229\avrasm\inc\tn2313adef.inc'
+C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(16): Including file 'C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\def_equ.inc'
+C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(67): Including file 'C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts_vector.asm'
+C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(68): Including file 'C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\interrupts.asm'
+C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(69): Including file 'C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\initialization.asm'
+C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(100): Including file 'C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\ds1302.asm'
+C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(101): Including file 'C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\tm1637.asm'
+C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm(102): Including file 'C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\data_convertor.asm'
                                  
                                  ;
                                  
@@ -863,6 +863,8 @@ C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\a
 000072                           tm_y3:			.byte	1		;
 000073                           tm_y4:			.byte	1		;
                                  
+000074                           tm_bright_level: .byte	1		; уровень яркости дисплея
+                                 
                                  
                                  ;------------------------- Начало программного кода
                                  
@@ -876,11 +878,11 @@ C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\a
                                  ;				 Вектор прерываний
                                  ;========================================================		
                                  
-000000 c0e1                      	rjmp	init	; Переход на начало программы
-000001 c011                      	rjmp	_INT0	; Внешнее прерывание 0
-000002 c05a                      	rjmp	_INT1	; Внешнее прерывание 1
+000000 c0fd                      	rjmp	init	; Переход на начало программы
+000001 c011                      	rjmp	_INT0_or_1	; Внешнее прерывание 0
+000002 c010                      	rjmp	_INT0_or_1	; Внешнее прерывание 1
 000003 9518                      	reti			; Прерывание по захвату таймера T1
-000004 c073                      	rjmp 	_TIM1	; Прерывание по совпадению T1
+000004 c08f                      	rjmp 	_TIM1	; Прерывание по совпадению T1
 000005 9518                      	reti			; Прерывание по переполнению T1
 000006 9518                      	reti			; Прерывание по переполнению T0
 000007 9518                      	reti			; Прерывание UART прием завершен
@@ -889,7 +891,7 @@ C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\a
 00000a 9518                      	reti			; Прерывание по компаратору
 00000b 9518                      	reti			; Прерывание по изменению на любом контакте
 00000c 9518                      	reti			; Таймер/счетчик 1. Совпадение B 
-00000d c0b0                      	rjmp 	_TIM0	; Таймер/счетчик 0. Совпадение A
+00000d c0cc                      	rjmp 	_TIM0	; Таймер/счетчик 0. Совпадение A
 00000e 9518                      	reti			; Таймер/счетчик 0. Совпадение B 
 00000f 9518                      	reti			; USI Стартовая готовность
 000010 9518                      	reti			; USI Переполнение
@@ -899,218 +901,275 @@ C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\a
                                  ;       Подпрограммы обработки прерываний
                                  ;========================================================
                                  
-                                 ;-------------------------- Прерывание при нажатии кнопки Mode
+                                 ;-------------------------- Прерывание при нажатии любой кнопки
+                                 
+                                 _INT0_or_1:
+000013 931f                      	push	r17
+                                 
+000014 d30e                      	rcall	MCU_wait_20ms
+                                 
+000015 b310                      	in		r17, PIND
+000016 701c                      	andi	r17, 0x0C
+                                 
+000017 3018                      	cpi		r17, 0x08		; pd2 - int0
+000018 f029                      	breq	_INT01_MODE_press
+                                 
+000019 3014                      	cpi		r17, 0x04		; pd3 - int1
+00001a f029                      	breq	_INT01_SET_press
+                                 
+00001b 3010                      	cpi		r17, 0x00		
+00001c f029                      	breq	_INT01_double_press
+                                 
+00001d c011                      	rjmp	_INT0_or_1_end
+                                 
+                                 	;-------------------------- Нажатие кнопки Mode
+                                 
+                                 	_INT01_MODE_press:
+00001e d012                      		rcall	_INT0
+00001f c00f                      		rjmp	_INT0_or_1_end
+                                 
+                                 	;-------------------------- Нажатие кнопки Set
+                                 
+                                 	_INT01_SET_press:
+000020 d059                      		rcall	_INT1
+000021 c00d                      		rjmp	_INT0_or_1_end
+                                 
+                                 	;-------------------------- Нажатие двух кнопок
+                                 
+                                 	_INT01_double_press:
+000022 b310                      		in		r17, PIND
+000023 701c                      		andi	r17, 0x0C
+000024 301c                      		cpi		r17, 0x0C
+000025 f7e1                      		brne	_INT01_double_press
+                                 
+                                 
+000026 9110 0074                 		lds		r17, tm_bright_level
+000028 9513                      		inc		r17
+000029 3018                      		cpi		r17, 0x08
+00002a f008                      		brlo	_INT01_double_press_set_bright
+                                 	
+00002b 2711                      		clr		r17			
+                                 
+                                 		_INT01_double_press_set_bright:
+00002c 9310 0074                 			sts		tm_bright_level, r17
+00002e d21e                      			rcall	TM1637_set_bright
+                                 
+                                 	_INT0_or_1_end:
+00002f 911f                      		pop		r17
+                                 
+000030 9518                      	reti
+                                 
+                                 
+                                 ;-------------------------- Подпрограмма при нажатии кнопки Mode
                                  
                                  _INT0:
-000013 931f                      	push	r17
-000014 930f                      	push	r16
+000031 931f                      	push	r17
+000032 930f                      	push	r16
                                  
                                  	_INT0_wait_release:
-000015 d2e8                      		rcall	MCU_wait_50ms
-000016 9b82                      		sbis	PIND, PD2
-000017 cffd                      		rjmp	_INT0_wait_release
+000033 9b82                      		sbis	PIN_BUTTON_MODE, BUTTON_MODE
+000034 cffe                      		rjmp	_INT0_wait_release
                                  
-000018 d139                      	rcall	DS1302_read_package_data
+000035 d13b                      	rcall	DS1302_read_package_data
                                  
                                  
-000019 e010                      	ldi		r17, 0x00
-00001a 9310 0061                 	sts		clock_mode, r17
+000036 e010                      	ldi		r17, 0x00
+000037 9310 0061                 	sts		clock_mode, r17
                                  
                                  	;-------------------------- Инкремент переменной mode
                                  
-00001c 9110 0062                 	lds		r17, mode
-00001e 9513                      	inc		r17
+000039 9110 0062                 	lds		r17, mode
+00003b 9513                      	inc		r17
                                  
                                  	;-------------------------- Выбор режима mode
                                  
-00001f 3011                      	cpi		r17, 0x01
-000020 f111                      	breq	_INT0_mode_1
+00003c 3011                      	cpi		r17, 0x01
+00003d f111                      	breq	_INT0_mode_1
                                  
-000021 3012                      	cpi		r17, 0x02
-000022 f169                      	breq	_INT0_mode_2
+00003e 3012                      	cpi		r17, 0x02
+00003f f169                      	breq	_INT0_mode_2
                                  
-000023 3013                      	cpi		r17, 0x03
-000024 f171                      	breq	_INT0_mode_3
+000040 3013                      	cpi		r17, 0x03
+000041 f171                      	breq	_INT0_mode_3
                                  
-000025 3014                      	cpi		r17, 0x04
-000026 f171                      	breq	_INT0_mode_4
+000042 3014                      	cpi		r17, 0x04
+000043 f171                      	breq	_INT0_mode_4
                                  
-000027 3015                      	cpi		r17, 0x05
-000028 f171                      	breq	_INT0_mode_5
+000044 3015                      	cpi		r17, 0x05
+000045 f171                      	breq	_INT0_mode_5
                                  
-000029 3016                      	cpi		r17, 0x06
-00002a f408                      	brsh	_INT0_mode_0
+000046 3016                      	cpi		r17, 0x06
+000047 f408                      	brsh	_INT0_mode_0
                                  
-00002b c02c                      	rjmp	_INT0_end
+000048 c02c                      	rjmp	_INT0_end
                                  
                                  	;------------------------- MODE 0
                                  
                                  	_INT0_mode_0:
-00002c d167                      		rcall	DS1302_clock_on
-00002d d0a8                      		rcall	tim0_on
-00002e d1c7                      		rcall	TM1637_display_time
+000049 d169                      		rcall	DS1302_clock_on
+00004a d0a7                      		rcall	tim0_on
+00004b d1c6                      		rcall	TM1637_display_time
                                  
                                  		;------------------------- Если день был установлен больше, чем максимальный в этом месяце, то данный код это исправляет.
                                  		;------------------------- Пример: выставили 31 число, потом 9 месяц (а в сентябре 30 дней). При переходе в режим
                                  		;------------------------- mode == 0 устанавливается 30 число!
                                  
-00002f 9110 0065                 		lds		r17, bcd_day
-000031 d289                      		rcall	bcd8bin
-000032 2f01                      		mov		r16, r17
-000033 d2a4                      		rcall	get_max_day
-000034 1701                      		cp		r16, r17
-000035 f038                      		brlo	_INT0_mode_0_end
-000036 e886                      		ldi		BYTE, 0x86
-000037 d0e6                      		rcall	DS1302_send_start
-000038 d0ed                      		rcall	DS1302_send_byte
-000039 2f81                      		mov		BYTE, r17
-00003a d270                      		rcall	bin8bcd
-00003b d0ea                      		rcall	DS1302_send_byte
-00003c d0e4                      		rcall	DS1302_send_stop
+00004c 9110 0065                 		lds		r17, bcd_day
+00004e d291                      		rcall	bcd8bin
+00004f 2f01                      		mov		r16, r17
+000050 d2ac                      		rcall	get_max_day
+000051 1701                      		cp		r16, r17
+000052 f038                      		brlo	_INT0_mode_0_end
+000053 e886                      		ldi		BYTE, 0x86
+000054 d0e8                      		rcall	DS1302_send_start
+000055 d0ef                      		rcall	DS1302_send_byte
+000056 2f81                      		mov		BYTE, r17
+000057 d278                      		rcall	bin8bcd
+000058 d0ec                      		rcall	DS1302_send_byte
+000059 d0e6                      		rcall	DS1302_send_stop
                                  
                                  		_INT0_mode_0_end:
-00003d ee14                      			ldi		r17, high(kdel2)	; меняем предделитель на 60 сек.
-00003e bd1b                      			out		OCR1AH, r17			 
-00003f ee11                      			ldi		r17, low(kdel2)		 
-000040 bd1a                      			out		OCR1AL, r17	
+00005a ee14                      			ldi		r17, high(kdel2)	; меняем предделитель на 60 сек.
+00005b bd1b                      			out		OCR1AH, r17			 
+00005c ee11                      			ldi		r17, low(kdel2)		 
+00005d bd1a                      			out		OCR1AL, r17	
                                  
-000041 e010                      			ldi		r17, 0x00
+00005e e010                      			ldi		r17, 0x00
                                  
-000042 c015                      		rjmp	_INT0_end
+00005f c015                      		rjmp	_INT0_end
                                  
                                  	;------------------------- MODE 1
                                  
                                  	_INT0_mode_1:
-000043 d099                      		rcall	tim0_off
-000044 d156                      		rcall	DS1302_clock_off
-000045 d1b0                      		rcall	TM1637_display_time
-000046 d199                      		rcall	TM1637_set_double_point
+000060 d098                      		rcall	tim0_off
+000061 d158                      		rcall	DS1302_clock_off
+000062 d1af                      		rcall	TM1637_display_time
+000063 d198                      		rcall	TM1637_set_double_point
                                  
-000047 e001                      		ldi		r16, high(kdel1)	; меняем предделитель на 0,5 сек., чтобы моргало то, что мы меняем в режимах mode 1 - mode 5
-000048 bd0b                      		out		OCR1AH, r16 
-000049 ee07                      		ldi		r16, low(kdel1)		 
-00004a bd0a                      		out		OCR1AL, r16
-00004b e001                      		ldi		r16, high(kdel1)	; чтобы сразу отобразилось
-00004c bd0d                      		out		TCNT1H, r16
-00004d ed0d                      		ldi		r16, low(kdel1-10)
-00004e bd0c                      		out		TCNT1L, r16
+000064 e001                      		ldi		r16, high(kdel1)	; меняем предделитель на 0,5 сек., чтобы моргало то, что мы меняем в режимах mode 1 - mode 5
+000065 bd0b                      		out		OCR1AH, r16 
+000066 ee07                      		ldi		r16, low(kdel1)		 
+000067 bd0a                      		out		OCR1AL, r16
+000068 e001                      		ldi		r16, high(kdel1)	; чтобы сразу отобразилось
+000069 bd0d                      		out		TCNT1H, r16
+00006a ed0d                      		ldi		r16, low(kdel1-10)
+00006b bd0c                      		out		TCNT1L, r16
                                  
-00004f c008                      		rjmp	_INT0_end
+00006c c008                      		rjmp	_INT0_end
                                  
                                  	;------------------------- MODE 2
                                  
                                  	_INT0_mode_2:
-000050 d1a5                      		rcall	TM1637_display_time
-000051 d18e                      		rcall	TM1637_set_double_point
+00006d d1a4                      		rcall	TM1637_display_time
+00006e d18d                      		rcall	TM1637_set_double_point
                                  
-000052 c005                      		rjmp	_INT0_end
+00006f c005                      		rjmp	_INT0_end
                                  
                                  	;------------------------- MODE 3
                                  
                                  	_INT0_mode_3:
-000053 d1ac                      		rcall	TM1637_display_date
+000070 d1ab                      		rcall	TM1637_display_date
                                  
-000054 c003                      		rjmp	_INT0_end
+000071 c003                      		rjmp	_INT0_end
                                  
                                  	;------------------------- MODE 4
                                  
                                  	_INT0_mode_4:
-000055 d1aa                      		rcall	TM1637_display_date
+000072 d1a9                      		rcall	TM1637_display_date
                                  
-000056 c001                      		rjmp	_INT0_end
+000073 c001                      		rjmp	_INT0_end
                                  
                                  	;------------------------- MODE 5
                                  
                                  	_INT0_mode_5:
-000057 d1b2                      		rcall	TM1637_display_year
+000074 d1b1                      		rcall	TM1637_display_year
                                  
                                  	_INT0_end:
-000058 9310 0062                 		sts		mode, r17
-00005a 910f                      		pop		r16
-00005b 911f                      		pop		r17
+000075 9310 0062                 		sts		mode, r17
+000077 910f                      		pop		r16
+000078 911f                      		pop		r17
                                  
-00005c 9518                      	reti
+000079 9518                      	reti
                                  
-                                 ;-------------------------- Прерывание при нажатии кнопки Clock mode \ Set
+                                 ;-------------------------- Подпрограмма при нажатии кнопки Clock mode \ Set
                                  
                                  _INT1:
-00005d 931f                      	push	r17
+00007a 931f                      	push	r17
                                  
                                  	_INT1_wait_release:
-00005e d29f                      		rcall	MCU_wait_50ms
-00005f 9b83                      		sbis	PIND, PD3
-000060 cffd                      		rjmp	_INT1_wait_release
+00007b 9b83                      		sbis	PIN_BUTTON_SET, BUTTON_SET
+00007c cffe                      		rjmp	_INT1_wait_release
                                  
                                  
-000061 d07b                      	rcall	tim0_off
+00007d d07b                      	rcall	tim0_off
                                  
-000062 9110 0062                 	lds		r17, mode
-000064 3010                      	cpi		r17, 0x00
-000065 f011                      	breq	_INT1_clock_mode_pressed
+00007e 9110 0062                 	lds		r17, mode
+000080 3010                      	cpi		r17, 0x00
+000081 f011                      	breq	_INT1_clock_mode_pressed
                                  
                                  	;-------------------------- Режим Set
                                  
                                  	_INT1_set_pressed:
-000066 d201                      		rcall	inc_circle
+000082 d20a                      		rcall	inc_circle
                                  
-000067 c00e                      		rjmp	_INT1_end
+000083 c00e                      		rjmp	_INT1_end
                                  
                                  	;-------------------------- Режим Clock mode
                                  
                                  	_INT1_clock_mode_pressed:
-000068 9110 0061                 		lds		r17, clock_mode
-00006a 9513                      		inc		r17
+000084 9110 0061                 		lds		r17, clock_mode
+000086 9513                      		inc		r17
                                  
-00006b 3013                      		cpi		r17, 0x03
-00006c f408                      		brsh	_INT1_reset_clock_mode
-00006d c002                      		rjmp	_INT1_1
+000087 3013                      		cpi		r17, 0x03
+000088 f408                      		brsh	_INT1_reset_clock_mode
+000089 c002                      		rjmp	_INT1_1
                                  
                                  		_INT1_reset_clock_mode:
-00006e d067                      			rcall	tim0_on
-00006f e010                      			ldi		r17, 0x00
+00008a d067                      			rcall	tim0_on
+00008b e010                      			ldi		r17, 0x00
                                  
                                  		_INT1_1:
-000070 9310 0061                 			sts		clock_mode, r17
+00008c 9310 0061                 			sts		clock_mode, r17
                                  
                                  			;-------------------------- Чтобы данные сразу отобразились
                                  			
-000072 ee14                      			ldi		r17, high(kdel2)
-000073 bd1d                      			out		TCNT1H, r17
-000074 ed17                      			ldi		r17, low(kdel2-10)
-000075 bd1c                      			out		TCNT1L, r17
+00008e ee14                      			ldi		r17, high(kdel2)
+00008f bd1d                      			out		TCNT1H, r17
+000090 ed17                      			ldi		r17, low(kdel2-10)
+000091 bd1c                      			out		TCNT1L, r17
                                  
                                  
                                  	_INT1_end:
-000076 911f                      		pop		r17
+000092 911f                      		pop		r17
                                  
-000077 9518                      	reti
+000093 9518                      	reti
                                  	
                                  ;-------------------------- Прерывание таймера T1	
                                  
                                  
                                  _TIM1:		
-000078 931f                      	push	r17
-000079 932f                      	push	r18
-00007a 933f                      	push	r19
+000094 931f                      	push	r17
+000095 932f                      	push	r18
+000096 933f                      	push	r19
                                  	
-00007b 9110 0062                 	lds		r17, mode
-00007d 3010                      	cpi		r17, 0x00
-00007e f051                      	breq	rcall_TIM1_mode_0
+000097 9110 0062                 	lds		r17, mode
+000099 3010                      	cpi		r17, 0x00
+00009a f051                      	breq	rcall_TIM1_mode_0
                                  
-00007f 3011                      	cpi		r17, 0x01
-000080 f0b9                      	breq	rcall_TIM1_mode_1
+00009b 3011                      	cpi		r17, 0x01
+00009c f0b9                      	breq	rcall_TIM1_mode_1
                                  
-000081 3012                      	cpi		r17, 0x02
-000082 f0e1                      	breq	rcall_TIM1_mode_2
+00009d 3012                      	cpi		r17, 0x02
+00009e f0e1                      	breq	rcall_TIM1_mode_2
                                  
-000083 3013                      	cpi		r17, 0x03
-000084 f109                      	breq	rcall_TIM1_mode_3
+00009f 3013                      	cpi		r17, 0x03
+0000a0 f109                      	breq	rcall_TIM1_mode_3
                                  
-000085 3014                      	cpi		r17, 0x04
-000086 f131                      	breq	rcall_TIM1_mode_4
+0000a1 3014                      	cpi		r17, 0x04
+0000a2 f131                      	breq	rcall_TIM1_mode_4
                                  
-000087 3015                      	cpi		r17, 0x05
-000088 f159                      	breq	rcall_TIM1_mode_5
+0000a3 3015                      	cpi		r17, 0x05
+0000a4 f159                      	breq	rcall_TIM1_mode_5
                                  
                                  	;-------------------------- MODE 0
                                  
@@ -1118,145 +1177,145 @@ C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\a
                                  
                                  		;-------------------------- Считать данные с ds1302 пакетом
                                  
-000089 d0c8                      		rcall	DS1302_read_package_data
+0000a5 d0cb                      		rcall	DS1302_read_package_data
                                  
-00008a 9110 0061                 		lds		r17, clock_mode
+0000a6 9110 0061                 		lds		r17, clock_mode
                                  
-00008c 3011                      		cpi		r17, 0x01
-00008d f021                      		breq	_TIM1_date_mode
+0000a8 3011                      		cpi		r17, 0x01
+0000a9 f021                      		breq	_TIM1_date_mode
                                  
-00008e 3012                      		cpi		r17, 0x02
-00008f f021                      		breq	_TIM1_year_mode
+0000aa 3012                      		cpi		r17, 0x02
+0000ab f021                      		breq	_TIM1_year_mode
                                  
                                  		_TIM1_time_mode:
-000090 d165                      			rcall	TM1637_display_time
-000091 c003                      			rjmp	_TIM1_mode_0_reset_counter_end
+0000ac d165                      			rcall	TM1637_display_time
+0000ad c003                      			rjmp	_TIM1_mode_0_reset_counter_end
                                  
                                  		_TIM1_date_mode:
-000092 d16d                      			rcall	TM1637_display_date
-000093 c001                      			rjmp	_TIM1_mode_0_reset_counter_end
+0000ae d16d                      			rcall	TM1637_display_date
+0000af c001                      			rjmp	_TIM1_mode_0_reset_counter_end
                                  
                                  		_TIM1_year_mode:
-000094 d175                      			rcall	TM1637_display_year
+0000b0 d175                      			rcall	TM1637_display_year
                                  
                                  		_TIM1_mode_0_reset_counter_end:
-000095 e010                      			ldi		r17, 0x00
+0000b1 e010                      			ldi		r17, 0x00
                                  
                                  		_TIM1_mode_0_end:
-000096 d10b                      			rcall	TM1637_display
+0000b2 d10e                      			rcall	TM1637_display
                                  
-000097 c022                      		rjmp	_TIM1_end
+0000b3 c022                      		rjmp	_TIM1_end
                                  
                                  	;-------------------------- MODE 1
                                  
                                  	rcall_TIM1_mode_1:
-000098 9120 0068                 		lds		r18, tm_h1
-00009a 9130 0069                 		lds		r19, tm_h2
-00009c e011                      		ldi		r17, 0x01
-00009d d176                      		rcall	TM1637_blink_pair
+0000b4 9120 0068                 		lds		r18, tm_h1
+0000b6 9130 0069                 		lds		r19, tm_h2
+0000b8 e011                      		ldi		r17, 0x01
+0000b9 d176                      		rcall	TM1637_blink_pair
                                  
-00009e c01b                      		rjmp	_TIM1_end
+0000ba c01b                      		rjmp	_TIM1_end
                                  
                                  	;-------------------------- MODE 2
                                  
                                  	rcall_TIM1_mode_2:
-00009f 9120 006a                 		lds		r18, tm_m1
-0000a1 9130 006b                 		lds		r19, tm_m2
-0000a3 e012                      		ldi		r17, 0x02
-0000a4 d16f                      		rcall	TM1637_blink_pair
+0000bb 9120 006a                 		lds		r18, tm_m1
+0000bd 9130 006b                 		lds		r19, tm_m2
+0000bf e012                      		ldi		r17, 0x02
+0000c0 d16f                      		rcall	TM1637_blink_pair
                                  
-0000a5 c014                      		rjmp	_TIM1_end
+0000c1 c014                      		rjmp	_TIM1_end
                                  
                                  	;-------------------------- MODE 3
                                  
                                  	rcall_TIM1_mode_3:
-0000a6 9120 006c                 		lds		r18, tm_d1
-0000a8 9130 006d                 		lds		r19, tm_d2
-0000aa e011                      		ldi		r17, 0x01
-0000ab d168                      		rcall	TM1637_blink_pair
+0000c2 9120 006c                 		lds		r18, tm_d1
+0000c4 9130 006d                 		lds		r19, tm_d2
+0000c6 e011                      		ldi		r17, 0x01
+0000c7 d168                      		rcall	TM1637_blink_pair
                                  
-0000ac c00d                      		rjmp	_TIM1_end
+0000c8 c00d                      		rjmp	_TIM1_end
                                  
                                  	;-------------------------- MODE 4
                                  
                                  	rcall_TIM1_mode_4:
-0000ad 9120 006e                 		lds		r18, tm_mt1
-0000af 9130 006f                 		lds		r19, tm_mt2
-0000b1 e012                      		ldi		r17, 0x02
-0000b2 d161                      		rcall	TM1637_blink_pair
+0000c9 9120 006e                 		lds		r18, tm_mt1
+0000cb 9130 006f                 		lds		r19, tm_mt2
+0000cd e012                      		ldi		r17, 0x02
+0000ce d161                      		rcall	TM1637_blink_pair
                                  
-0000b3 c006                      		rjmp	_TIM1_end
+0000cf c006                      		rjmp	_TIM1_end
                                  
                                  	;-------------------------- MODE 5
                                  
                                  	rcall_TIM1_mode_5:
-0000b4 9120 0072                 		lds		r18, tm_y3
-0000b6 9130 0073                 		lds		r19, tm_y4
-0000b8 e013                      		ldi		r17, 0x03
-0000b9 d15a                      		rcall	TM1637_blink_pair
+0000d0 9120 0072                 		lds		r18, tm_y3
+0000d2 9130 0073                 		lds		r19, tm_y4
+0000d4 e013                      		ldi		r17, 0x03
+0000d5 d15a                      		rcall	TM1637_blink_pair
                                  
                                  
                                  	_TIM1_end:
-0000ba 913f                      		pop		r19
-0000bb 912f                      		pop		r18
-0000bc 911f                      		pop		r17
+0000d6 913f                      		pop		r19
+0000d7 912f                      		pop		r18
+0000d8 911f                      		pop		r17
                                  		
-0000bd 9518                      	reti
+0000d9 9518                      	reti
                                  	
                                  ;-------------------------- Прерывание таймера T0
                                  
                                  _TIM0:
-0000be 931f                      	push	r17
-0000bf 938f                      	push	BYTE
+0000da 931f                      	push	r17
+0000db 938f                      	push	BYTE
                                  
-0000c0 9593                      	inc		timer0_counter
-0000c1 3093                      	cpi		timer0_counter, 0x03
-0000c2 f481                      	brne	_TIM0_end
+0000dc 9593                      	inc		timer0_counter
+0000dd 3093                      	cpi		timer0_counter, 0x03
+0000de f481                      	brne	_TIM0_end
                                  
-0000c3 2799                      	clr		timer0_counter
+0000df 2799                      	clr		timer0_counter
                                  
                                  	;-------------------------- Для экономии работы микроконтроллеров. Изменяется только значение 2-го элемента на дисплее, а не всех!!!
                                  
-0000c4 d110                      	rcall	TM1637_start
-0000c5 e484                      	ldi		BYTE, 0x44
-0000c6 d0f2                      	rcall	TM1637_send_byte
-0000c7 d112                      	rcall	TM1637_stop
+0000e0 d110                      	rcall	TM1637_start
+0000e1 e484                      	ldi		BYTE, 0x44
+0000e2 d0f2                      	rcall	TM1637_send_byte
+0000e3 d112                      	rcall	TM1637_stop
                                  
-0000c8 d10c                      	rcall	TM1637_start
-0000c9 ec81                      	ldi		BYTE, 0xC1
-0000ca d0ee                      	rcall	TM1637_send_byte
-0000cb 9180 0069                 	lds		BYTE, tm_h2
-0000cd e810                      	ldi		r17, 0x80
-0000ce 2781                      	eor		BYTE, r17
-0000cf 9380 0069                 	sts		tm_h2, BYTE
-0000d1 d0e7                      	rcall	TM1637_send_byte
-0000d2 d107                      	rcall	TM1637_stop
+0000e4 d10c                      	rcall	TM1637_start
+0000e5 ec81                      	ldi		BYTE, 0xC1
+0000e6 d0ee                      	rcall	TM1637_send_byte
+0000e7 9180 0069                 	lds		BYTE, tm_h2
+0000e9 e810                      	ldi		r17, 0x80
+0000ea 2781                      	eor		BYTE, r17
+0000eb 9380 0069                 	sts		tm_h2, BYTE
+0000ed d0e7                      	rcall	TM1637_send_byte
+0000ee d107                      	rcall	TM1637_stop
                                  
                                  	_TIM0_end:
-0000d3 918f                      		pop		BYTE
-0000d4 911f                      		pop		r17
+0000ef 918f                      		pop		BYTE
+0000f0 911f                      		pop		r17
                                  
-0000d5 9518                      	reti
+0000f1 9518                      	reti
                                  
                                  
                                  tim0_on:
-0000d6 931f                      	push	r17
-0000d7 e012                      	ldi		r17, (1 << WGM01)							 ; Выбор режима таймера СТС 
-0000d8 bf10                      	out		TCCR0A, r17
-0000d9 e015                      	ldi		r17, (1 << CS02) | (0 << CS01) | (1 << CS00) ; Выбор предделителя = 1024 
-0000da bf13                      	out		TCCR0B, r17
-0000db 911f                      	pop		r17
+0000f2 931f                      	push	r17
+0000f3 e012                      	ldi		r17, (1 << WGM01)							 ; Выбор режима таймера СТС 
+0000f4 bf10                      	out		TCCR0A, r17
+0000f5 e015                      	ldi		r17, (1 << CS02) | (0 << CS01) | (1 << CS00) ; Выбор предделителя = 1024 
+0000f6 bf13                      	out		TCCR0B, r17
+0000f7 911f                      	pop		r17
                                  
-0000dc 9508                      	ret
+0000f8 9508                      	ret
                                  
                                  tim0_off:
-0000dd 931f                      	push	r17
-0000de e010                      	ldi		r17, (0 << CS02) | (0 << CS01) | (0 << CS00) ; Выбор предделителя = 1024 
-0000df bf13                      	out		TCCR0B, r17
-0000e0 911f                      	pop		r17
+0000f9 931f                      	push	r17
+0000fa e010                      	ldi		r17, (0 << CS02) | (0 << CS01) | (0 << CS00) ; Выбор предделителя = 1024 
+0000fb bf13                      	out		TCCR0B, r17
+0000fc 911f                      	pop		r17
                                  
                                  .include "initialization.asm"
-0000e1 9508                      
+0000fd 9508                      
                                  ;				 Модуль инициализации
                                  ;========================================================
                                  
@@ -1264,111 +1323,111 @@ C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\a
                                  
                                  	;-------------------------- Инициализация стека
                                  	
-0000e2 ed1f                      	ldi		r17, RAMEND			; Выбор адреса вершины стека 
-0000e3 bf1d                      	out		SPL, r17			; Запись его в регистр стека
+0000fe ed1f                      	ldi		r17, RAMEND			; Выбор адреса вершины стека 
+0000ff bf1d                      	out		SPL, r17			; Запись его в регистр стека
                                  
                                  	;--------------------------- Инициализация компаратора
                                  
-0000e4 e810                      	ldi 	r17, 0x80			; Выключение компаратора
-0000e5 b918                      	out		ACSR, r17
+000100 e810                      	ldi 	r17, 0x80			; Выключение компаратора
+000101 b918                      	out		ACSR, r17
                                  
                                  	;-------------------------- Инициализация Главного предделителя
                                  
-0000e6 e810                      	ldi		r17, 0x80		    ; Записываем число $80 в регистр temp
-0000e7 bd16                      	out		CLKPR, r17			; Записываем в регистр CLKPR
-0000e8 e013                      	ldi		r17, 0x03			; Записываем 0 в регистр temp
-0000e9 bd16                      	out		CLKPR, r17			; Записываем этот ноль в CLKPR
+000102 e810                      	ldi		r17, 0x80		    ; Записываем число $80 в регистр temp
+000103 bd16                      	out		CLKPR, r17			; Записываем в регистр CLKPR
+000104 e013                      	ldi		r17, 0x03			; Записываем 0 в регистр temp
+000105 bd16                      	out		CLKPR, r17			; Записываем этот ноль в CLKPR
                                  
                                  	;-------------------------- Инициализация портов ВВ по умолчанию
                                  
-0000ea ef1f                      	ser		r17
-0000eb bb1b                      	out		PORTA, r17
-0000ec bb18                      	out		PORTB, r17
-0000ed bb12                      	out		PORTD, r17
+000106 ef1f                      	ser		r17
+000107 bb1b                      	out		PORTA, r17
+000108 bb18                      	out		PORTB, r17
+000109 bb12                      	out		PORTD, r17
                                  
-0000ee 2711                      	clr		r17
-0000ef bb1a                      	out		DDRA, r17
-0000f0 bb17                      	out		DDRB, r17
-0000f1 bb11                      	out		DDRD, r17
+00010a 2711                      	clr		r17
+00010b bb1a                      	out		DDRA, r17
+00010c bb17                      	out		DDRB, r17
+00010d bb11                      	out		DDRD, r17
                                  
                                  	;-------------------------- Инициализация портов ВВ для чипа TM1367
                                  
-0000f2 9ab8                      	sbi		DDRB, TM1637_CLK
-0000f3 9abb                      	sbi		DDRB, TM1637_DATA
+00010e 9ab8                      	sbi		DDRB, TM1637_CLK
+00010f 9abb                      	sbi		DDRB, TM1637_DATA
                                  
                                  	;-------------------------- Инициализация портов ВВ для чипа DS1302
                                  
-0000f4 9abc                      	sbi		DDR_DS1302, DS1302_CE
-0000f5 9ab9                      	sbi		DDR_DS1302, DS1302_SCLK
+000110 9abc                      	sbi		DDR_DS1302, DS1302_CE
+000111 9ab9                      	sbi		DDR_DS1302, DS1302_SCLK
                                  
                                  	;------------------------- Вывод DS1302_DAT устанавливается при первой отправке или чтении ds1302
                                  
                                  	;-------------------------- Инициализация портов ВВ для кнопок
                                  
-0000f6 988a                      	cbi		DDR_BUTTON_MODE, BUTTON_MODE
-                                 	;sbi		PORT_BUTTON_MODE, BUTTON_MODE
+000112 988a                      	cbi		DDR_BUTTON_MODE, BUTTON_MODE
+000113 9a92                      	sbi		PORT_BUTTON_MODE, BUTTON_MODE
                                  
-0000f7 988b                      	cbi		DDR_BUTTON_SET, BUTTON_SET
-0000f8 9a93                      	sbi		PORT_BUTTON_SET, BUTTON_SET
+000114 988b                      	cbi		DDR_BUTTON_SET, BUTTON_SET
+000115 9a93                      	sbi		PORT_BUTTON_SET, BUTTON_SET
                                  
                                  	;-------------------------- Инициализация таймеров
                                  
-0000f9 e01d                      	ldi		r17, (1 << WGM12) | (1 << CS12) | (0 << CS11) | (1 << CS10) ; Выбор режима таймера (СТС, предделитель = 1024) 
-0000fa bd1e                      	out		TCCR1B, r17
-0000fb ee14                      	ldi		r17, high(kdel2)	; Старший полубайт кода совпадения
-0000fc bd1b                      	out		OCR1AH, r17			; Запись в регистр совпадения старш.
-0000fd ee11                      	ldi		r17, low(kdel2)		; Младший полубайт кода совпадения
-0000fe bd1a                      	out		OCR1AL, r17			; Запись в регистр совпадения младш.
+000116 e01d                      	ldi		r17, (1 << WGM12) | (1 << CS12) | (0 << CS11) | (1 << CS10) ; Выбор режима таймера (СТС, предделитель = 1024) 
+000117 bd1e                      	out		TCCR1B, r17
+000118 ee14                      	ldi		r17, high(kdel2)	; Старший полубайт кода совпадения
+000119 bd1b                      	out		OCR1AH, r17			; Запись в регистр совпадения старш.
+00011a ee11                      	ldi		r17, low(kdel2)		; Младший полубайт кода совпадения
+00011b bd1a                      	out		OCR1AL, r17			; Запись в регистр совпадения младш.
                                  
-0000ff dfd6                      	rcall	tim0_on
-000100 ee19                      	ldi		r17, kdel3
-000101 bf16                      	out		OCR0A, r17
+00011c dfd5                      	rcall	tim0_on
+00011d ee19                      	ldi		r17, kdel3
+00011e bf16                      	out		OCR0A, r17
                                  
                                  	;--------------------------- Разрешаем прерывание от таймеров
                                  		
-000102 e411                      	ldi 	r17, (1 << OCIE1A) | (1 << OCIE0A)
-000103 bf19                      	out		TIMSK, r17
+00011f e411                      	ldi 	r17, (1 << OCIE1A) | (1 << OCIE0A)
+000120 bf19                      	out		TIMSK, r17
                                  
                                  	;--------------------------- Разрешаем прерывание INT0 и INT1 по заднему фронту
                                  
-000104 e010                      	ldi		r17, (0 << ISC00) | (0 << ISC01) | (0 << ISC10) | (0 << ISC11)
-000105 bf15                      	out		MCUCR, r17
+000121 e210                      	ldi		r17, (0 << ISC00) | (0 << ISC01) | (0 << ISC10) | (0 << ISC11) | (1 << SE) ;| (1 << SM0)
+000122 bf15                      	out		MCUCR, r17
                                  
-000106 ec10                      	ldi		r17, (1 << INT0) | (1 << INT1)
-000107 bf1b                      	out		GIMSK, r17
-                                 
+000123 ec10                      	ldi		r17, (1 << INT0) | (1 << INT1)
+000124 bf1b                      
                                  	;-------------------------- Начало основной программы
                                  
-000108 2711                      	clr		r17
-000109 2f91                      	mov		timer0_counter, r17
-00010a 9310 0062                 	sts		mode, r17
-00010c 9310 0061                 	sts		clock_mode, r17
+000125 2799                      	clr		timer0_counter
+000126 9390 0062                 	sts		mode, timer0_counter
+000128 9390 0061                 	sts		clock_mode, timer0_counter
+00012a 9390 0074                 	sts		tm_bright_level, timer0_counter
                                  
-00010e 9478                      	sei							; Разрешение прерываний
+00012c 9478                      	sei							; Разрешение прерываний
                                  
                                  	;-------------------------- Первые две цифры отображения года 
                                  
-00010f e51b                      	ldi		r17, 0b01011011	; 2
-000110 9310 0070                 	sts		tm_y1, r17
-000112 e31f                      	ldi		r17, 0b00111111	; 0
-000113 9310 0071                 	sts		tm_y2, r17
+00012d e51b                      	ldi		r17, 0b01011011	; 2
+00012e 9310 0070                 	sts		tm_y1, r17
+000130 e31f                      	ldi		r17, 0b00111111	; 0
+000131 9310 0071                 	sts		tm_y2, r17
                                  
                                  	;-------------------------- Чтобы данные сразу отобразились
                                  
-000115 df62                      	rcall	_TIM1
-000116 df61                      	rcall	_TIM1
+000133 df60                      	rcall	_TIM1
+000134 df5f                      	rcall	_TIM1
                                  
                                  	main:		
-000117 cfff                      		rjmp	main			; Пустой бесконечный цикл
+000135 9588                      		sleep
+000136 cffe                      		rjmp	main			; Пустой бесконечный цикл
                                  
                                  ;-------------------------- Массив максимального числа в месяцах
                                  
-000118 1c1f
-000119 1e1f
-00011a 1e1f
-00011b 1f1f
-00011c 1f1e
-00011d 1f1e                      max_day_in_month:	.db		31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+000137 1c1f
+000138 1e1f
+000139 1e1f
+00013a 1f1f
+00013b 1f1e
+00013c 1f1e                      max_day_in_month:	.db		31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
                                  
                                  .include "ds1302.asm"
                                  
@@ -1376,214 +1435,214 @@ C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\a
                                  ;========================================================
                                  
                                  DS1302_send_start:
-00011e 9ac4                      	sbi		PORT_DS1302, DS1302_CE
-00011f d1d8                      	rcall	MCU_wait_10mks
+00013d 9ac4                      	sbi		PORT_DS1302, DS1302_CE
+00013e d1de                      	rcall	MCU_wait_10mks
                                  
-000120 9508                      	ret
+00013f 9508                      	ret
                                  
                                  DS1302_send_stop:
-000121 98c1                      	cbi		PORT_DS1302, DS1302_SCLK
-000122 98c2                      	cbi		PORT_DS1302, DS1302_IO
-000123 98c4                      	cbi		PORT_DS1302, DS1302_CE
+000140 98c1                      	cbi		PORT_DS1302, DS1302_SCLK
+000141 98c2                      	cbi		PORT_DS1302, DS1302_IO
+000142 98c4                      	cbi		PORT_DS1302, DS1302_CE
                                  
-000124 d1d3                      	rcall	MCU_wait_10mks
+000143 d1d9                      	rcall	MCU_wait_10mks
                                  
-000125 9508                      	ret
+000144 9508                      	ret
                                  
                                  ;========================================================
                                  ;       Отправка байта из регистра BYTE
                                  ;========================================================
                                  
                                  DS1302_send_byte:
-000126 931f                      	push	r17
-000127 938f                      	push	BYTE
+000145 931f                      	push	r17
+000146 938f                      	push	BYTE
                                  
                                  	;------------------------- Вывод DAT на выход
                                  
-000128 9aba                      	sbi		DDR_DS1302, DS1302_IO
-000129 98c2                      	cbi		PORT_DS1302, DS1302_IO
+000147 9aba                      	sbi		DDR_DS1302, DS1302_IO
+000148 98c2                      	cbi		PORT_DS1302, DS1302_IO
                                  
                                  	;------------------------- Счётчик цикла
                                  
-00012a e010                      	ldi		r17, 0x00		
+000149 e010                      	ldi		r17, 0x00		
                                  
                                  	;------------------------- Начало цикла
                                  
                                  	DS1302_while_send:
-00012b 3018                      		cpi		r17, 0x08
-00012c f458                      		brsh	DS1302_while_send_end
+00014a 3018                      		cpi		r17, 0x08
+00014b f458                      		brsh	DS1302_while_send_end
                                  
-00012d 98c1                      		cbi		PORT_DS1302, DS1302_SCLK
-00012e d1c9                      		rcall	MCU_wait_10mks
+00014c 98c1                      		cbi		PORT_DS1302, DS1302_SCLK
+00014d d1cf                      		rcall	MCU_wait_10mks
                                  
-00012f 9586                      		lsr		BYTE			
-000130 f410                      		brcc	DS1302_cbi_send_bit
+00014e 9586                      		lsr		BYTE			
+00014f f410                      		brcc	DS1302_cbi_send_bit
                                  			
                                  		DS1302_sbi_send_bit:
-000131 9ac2                      			sbi		PORT_DS1302, DS1302_IO
-000132 c001                      			rjmp	DS1302_while_send_bit
+000150 9ac2                      			sbi		PORT_DS1302, DS1302_IO
+000151 c001                      			rjmp	DS1302_while_send_bit
                                  
                                  		DS1302_cbi_send_bit:
-000133 98c2                      			cbi		PORT_DS1302, DS1302_IO
+000152 98c2                      			cbi		PORT_DS1302, DS1302_IO
                                  
                                  		DS1302_while_send_bit:
                                  
                                  			;------------------------- Отправка бита
                                  
-000134 9ac1                      			sbi		PORT_DS1302, DS1302_SCLK
-000135 d1c2                      			rcall	MCU_wait_10mks
+000153 9ac1                      			sbi		PORT_DS1302, DS1302_SCLK
+000154 d1c8                      			rcall	MCU_wait_10mks
                                  
-000136 9513                      			inc		r17
+000155 9513                      			inc		r17
                                  
-000137 cff3                      		rjmp	DS1302_while_send
+000156 cff3                      		rjmp	DS1302_while_send
                                  
                                  	;------------------------- Выход из цикла
                                  
                                  	DS1302_while_send_end:
-000138 918f                      		pop		BYTE
-000139 911f                      		pop		r17
+000157 918f                      		pop		BYTE
+000158 911f                      		pop		r17
                                  
-00013a 9508                      	ret
+000159 9508                      	ret
                                  
                                  ;========================================================
                                  ;       Получение байта, результат в регистр BYTE
                                  ;========================================================
                                  
                                  DS1302_transmit_byte:
-00013b 931f                      	push	r17
+00015a 931f                      	push	r17
                                  
                                  	;------------------------- Вывод DAT на вход
                                  
-00013c 98c2                      	cbi		PORT_DS1302, DS1302_IO
-00013d 98ba                      	cbi		DDR_DS1302, DS1302_IO
+00015b 98c2                      	cbi		PORT_DS1302, DS1302_IO
+00015c 98ba                      	cbi		DDR_DS1302, DS1302_IO
                                  
                                  	;------------------------- Счётчик цикла
                                  
-00013e e010                      	ldi		r17, 0x00
-00013f e080                      	ldi		BYTE, 0x00
+00015d e010                      	ldi		r17, 0x00
+00015e e080                      	ldi		BYTE, 0x00
                                  
                                  	;------------------------- Начало цикла
                                  
                                  	DS1302_while_transmit:
-000140 3017                      		cpi		r17, 0x07
-000141 f430                      		brsh	DS1302_while_transmit_end
+00015f 3017                      		cpi		r17, 0x07
+000160 f430                      		brsh	DS1302_while_transmit_end
                                  
-000142 d008                      		rcall	DS1302_transmit_byte_write_bit
+000161 d008                      		rcall	DS1302_transmit_byte_write_bit
                                  
-000143 9586                      		lsr		BYTE
-000144 9ac1                      		sbi		PORT_DS1302, DS1302_SCLK
-000145 d1b2                      		rcall	MCU_wait_10mks
+000162 9586                      		lsr		BYTE
+000163 9ac1                      		sbi		PORT_DS1302, DS1302_SCLK
+000164 d1b8                      		rcall	MCU_wait_10mks
                                  
-000146 9513                      		inc		r17
-000147 cff8                      		rjmp	DS1302_while_transmit
+000165 9513                      		inc		r17
+000166 cff8                      		rjmp	DS1302_while_transmit
                                  
                                  	;------------------------- Выход из цикла
                                  
                                  	DS1302_while_transmit_end:
-000148 d002                      		rcall	DS1302_transmit_byte_write_bit
-000149 911f                      		pop		r17
+000167 d002                      		rcall	DS1302_transmit_byte_write_bit
+000168 911f                      		pop		r17
                                  
-00014a 9508                      	ret
+000169 9508                      	ret
                                  
                                  DS1302_transmit_byte_write_bit:
-00014b 98c1                      	cbi		PORT_DS1302, DS1302_SCLK
-00014c d1ab                      	rcall	MCU_wait_10mks
-00014d 99b2                      	sbic	PIN_DS1302, DS1302_IO
-00014e 6880                      	ori		BYTE, 0x80
-00014f 9bb2                      	sbis	PIN_DS1302, DS1302_IO
-000150 778f                      	andi	BYTE, 0x7f
+00016a 98c1                      	cbi		PORT_DS1302, DS1302_SCLK
+00016b d1b1                      	rcall	MCU_wait_10mks
+00016c 99b2                      	sbic	PIN_DS1302, DS1302_IO
+00016d 6880                      	ori		BYTE, 0x80
+00016e 9bb2                      	sbis	PIN_DS1302, DS1302_IO
+00016f 778f                      	andi	BYTE, 0x7f
                                  
-000151 9508                      	ret
+000170 9508                      	ret
                                  ;========================================================
                                  ;			Считать данные с ds1302 пакетом
                                  ;========================================================
                                  
                                  DS1302_read_package_data:
-000152 931f                      	push	r17
-000153 93ff                      	push	ZH
-000154 93ef                      	push	ZL
-000155 93df                      	push	YH
-000156 93cf                      	push	YL
-000157 93bf                      	push	XH
-000158 93af                      	push	XL
+000171 931f                      	push	r17
+000172 93ff                      	push	ZH
+000173 93ef                      	push	ZL
+000174 93df                      	push	YH
+000175 93cf                      	push	YL
+000176 93bf                      	push	XH
+000177 93af                      	push	XL
                                  
                                  	;------------------------- Минтуы
                                  
-000159 e883                      	ldi		BYTE, 0x83
-00015a e0b0                      	ldi		XH, high(bcd_minutes)		
-00015b e6a3                      	ldi		XL, low(bcd_minutes)
-00015c e0d0                      	ldi		YH, high(tm_m1)		
-00015d e6ca                      	ldi		YL, low(tm_m1)
-00015e e0f0                      	ldi		ZH, high(tm_m2)		
-00015f e6eb                      	ldi		ZL, low(tm_m2)
+000178 e883                      	ldi		BYTE, 0x83
+000179 e0b0                      	ldi		XH, high(bcd_minutes)		
+00017a e6a3                      	ldi		XL, low(bcd_minutes)
+00017b e0d0                      	ldi		YH, high(tm_m1)		
+00017c e6ca                      	ldi		YL, low(tm_m1)
+00017d e0f0                      	ldi		ZH, high(tm_m2)		
+00017e e6eb                      	ldi		ZL, low(tm_m2)
                                  
-000160 d02d                      	rcall	DS1302_read_package_data_ext
+00017f d02d                      	rcall	DS1302_read_package_data_ext
                                  
                                  	;------------------------- Часы
                                  
-000161 e885                      	ldi		BYTE, 0x85
-000162 e0b0                      	ldi		XH, high(bcd_hours)		
-000163 e6a4                      	ldi		XL, low(bcd_hours)
-000164 e0d0                      	ldi		YH, high(tm_h1)		
-000165 e6c8                      	ldi		YL, low(tm_h1)
-000166 e0f0                      	ldi		ZH, high(tm_h2)		
-000167 e6e9                      	ldi		ZL, low(tm_h2)
+000180 e885                      	ldi		BYTE, 0x85
+000181 e0b0                      	ldi		XH, high(bcd_hours)		
+000182 e6a4                      	ldi		XL, low(bcd_hours)
+000183 e0d0                      	ldi		YH, high(tm_h1)		
+000184 e6c8                      	ldi		YL, low(tm_h1)
+000185 e0f0                      	ldi		ZH, high(tm_h2)		
+000186 e6e9                      	ldi		ZL, low(tm_h2)
                                  
-000168 d025                      	rcall	DS1302_read_package_data_ext
+000187 d025                      	rcall	DS1302_read_package_data_ext
                                  
                                  	;------------------------- Число
                                  
-000169 e887                      	ldi		BYTE, 0x87
-00016a e0b0                      	ldi		XH, high(bcd_day)		
-00016b e6a5                      	ldi		XL, low(bcd_day)
-00016c e0d0                      	ldi		YH, high(tm_d1)		
-00016d e6cc                      	ldi		YL, low(tm_d1)
-00016e e0f0                      	ldi		ZH, high(tm_d2)		
-00016f e6ed                      	ldi		ZL, low(tm_d2)
+000188 e887                      	ldi		BYTE, 0x87
+000189 e0b0                      	ldi		XH, high(bcd_day)		
+00018a e6a5                      	ldi		XL, low(bcd_day)
+00018b e0d0                      	ldi		YH, high(tm_d1)		
+00018c e6cc                      	ldi		YL, low(tm_d1)
+00018d e0f0                      	ldi		ZH, high(tm_d2)		
+00018e e6ed                      	ldi		ZL, low(tm_d2)
                                  
-000170 d01d                      	rcall	DS1302_read_package_data_ext
+00018f d01d                      	rcall	DS1302_read_package_data_ext
                                  
                                  	;------------------------- Месяц
                                  
-000171 e889                      	ldi		BYTE, 0x89
-000172 e0b0                      	ldi		XH, high(bcd_month)		
-000173 e6a6                      	ldi		XL, low(bcd_month)
-000174 e0d0                      	ldi		YH, high(tm_mt1)		
-000175 e6ce                      	ldi		YL, low(tm_mt1)
-000176 e0f0                      	ldi		ZH, high(tm_mt2)		
-000177 e6ef                      	ldi		ZL, low(tm_mt2)
+000190 e889                      	ldi		BYTE, 0x89
+000191 e0b0                      	ldi		XH, high(bcd_month)		
+000192 e6a6                      	ldi		XL, low(bcd_month)
+000193 e0d0                      	ldi		YH, high(tm_mt1)		
+000194 e6ce                      	ldi		YL, low(tm_mt1)
+000195 e0f0                      	ldi		ZH, high(tm_mt2)		
+000196 e6ef                      	ldi		ZL, low(tm_mt2)
                                  
-000178 d015                      	rcall	DS1302_read_package_data_ext
+000197 d015                      	rcall	DS1302_read_package_data_ext
                                  
                                  	;------------------------- Год
                                  
-000179 e88d                      	ldi		BYTE, 0x8D
-00017a e0b0                      	ldi		XH, high(bcd_year)		
-00017b e6a7                      	ldi		XL, low(bcd_year)
-00017c e0d0                      	ldi		YH, high(tm_y3)		
-00017d e7c2                      	ldi		YL, low(tm_y3)
-00017e e0f0                      	ldi		ZH, high(tm_y4)		
-00017f e7e3                      	ldi		ZL, low(tm_y4)
+000198 e88d                      	ldi		BYTE, 0x8D
+000199 e0b0                      	ldi		XH, high(bcd_year)		
+00019a e6a7                      	ldi		XL, low(bcd_year)
+00019b e0d0                      	ldi		YH, high(tm_y3)		
+00019c e7c2                      	ldi		YL, low(tm_y3)
+00019d e0f0                      	ldi		ZH, high(tm_y4)		
+00019e e7e3                      	ldi		ZL, low(tm_y4)
                                  
-000180 d00d                      	rcall	DS1302_read_package_data_ext
+00019f d00d                      	rcall	DS1302_read_package_data_ext
                                  
-000181 91af                      	pop		XL
-000182 91bf                      	pop		XH
-000183 91cf                      	pop		YL
-000184 91df                      	pop		YH
-000185 91ef                      	pop		ZL
-000186 91ff                      	pop		ZH
-000187 911f                      	pop		r17
+0001a0 91af                      	pop		XL
+0001a1 91bf                      	pop		XH
+0001a2 91cf                      	pop		YL
+0001a3 91df                      	pop		YH
+0001a4 91ef                      	pop		ZL
+0001a5 91ff                      	pop		ZH
+0001a6 911f                      	pop		r17
                                  
-000188 9508                      	ret
+0001a7 9508                      	ret
                                  
                                  DS1302_read_package_data_f1:
-000189 df94                      	rcall	DS1302_send_start
-00018a df9b                      	rcall	DS1302_send_byte
-00018b dfaf                      	rcall	DS1302_transmit_byte
-00018c df94                      	rcall	DS1302_send_stop
+0001a8 df94                      	rcall	DS1302_send_start
+0001a9 df9b                      	rcall	DS1302_send_byte
+0001aa dfaf                      	rcall	DS1302_transmit_byte
+0001ab df94                      	rcall	DS1302_send_stop
                                  
-00018d 9508                      	ret
+0001ac 9508                      	ret
                                  
                                  ;========================================================
                                  ;			Считать данные с ds1302.
@@ -1595,246 +1654,238 @@ C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\a
                                  ;========================================================
                                  
                                  DS1302_read_package_data_ext:
-00018e dffa                      	rcall	DS1302_read_package_data_f1
-00018f 938c                      	st		X, BYTE
+0001ad dffa                      	rcall	DS1302_read_package_data_f1
+0001ae 938c                      	st		X, BYTE
                                  
-000190 d0a0                      	rcall	conv_ds1302_to_tm1637
-000191 8308                      	st		Y, r16
+0001af d0a6                      	rcall	conv_ds1302_to_tm1637
+0001b0 8308                      	st		Y, r16
                                  
-000192 82f0                      	st		Z, r15
+0001b1 82f0                      	st		Z, r15
                                  
-000193 9508                      	ret
+0001b2 9508                      	ret
                                  
                                  ;========================================================
                                  ;       Подпрограммы включения\отключения часов
                                  ;========================================================
                                  
                                  DS1302_clock_on:
-000194 df89                      	rcall	DS1302_send_start
-000195 e880                      	ldi		BYTE, 0x80
-000196 df8f                      	rcall	DS1302_send_byte
-000197 e080                      	ldi		BYTE, 0x00
-000198 df8d                      	rcall	DS1302_send_byte
-000199 df87                      	rcall	DS1302_send_stop
+0001b3 df89                      	rcall	DS1302_send_start
+0001b4 e880                      	ldi		BYTE, 0x80
+0001b5 df8f                      	rcall	DS1302_send_byte
+0001b6 e080                      	ldi		BYTE, 0x00
+0001b7 df8d                      	rcall	DS1302_send_byte
+0001b8 df87                      	rcall	DS1302_send_stop
                                  
-00019a 9508                      	ret
+0001b9 9508                      	ret
                                  
                                  DS1302_clock_off:
-00019b df82                      	rcall	DS1302_send_start
-00019c e880                      	ldi		BYTE, 0x80
-00019d df88                      	rcall	DS1302_send_byte
-00019e e880                      	ldi		BYTE, 0x80
-00019f df86                      	rcall	DS1302_send_byte
-0001a0 df80                      	rcall	DS1302_send_stop
+0001ba df82                      	rcall	DS1302_send_start
+0001bb e880                      	ldi		BYTE, 0x80
+0001bc df88                      	rcall	DS1302_send_byte
+0001bd e880                      	ldi		BYTE, 0x80
+0001be df86                      	rcall	DS1302_send_byte
+0001bf df80                      	rcall	DS1302_send_stop
                                  
-0001a1 9508                      	ret
+0001c0 9508                      	ret
                                  .include "tm1637.asm"
                                  
                                  ;				 Отображение данных
                                  ;========================================================	
                                  
                                  TM1637_display:
-0001a2 938f                      	push	BYTE
+0001c1 938f                      	push	BYTE
                                  
                                  	;------------------------- Команда записи в регистр дисплея
                                  
-0001a3 d031                      	rcall	TM1637_start
-0001a4 e480                      	ldi		BYTE, 0x40					
-0001a5 d013                      	rcall	TM1637_send_byte
-0001a6 d033                      	rcall	TM1637_stop
+0001c2 d02e                      	rcall	TM1637_start
+0001c3 e480                      	ldi		BYTE, 0x40					
+0001c4 d010                      	rcall	TM1637_send_byte
+0001c5 d030                      	rcall	TM1637_stop
                                  
                                  	;------------------------- Начальный адрес 
                                  
-0001a7 d02d                      	rcall	TM1637_start
-0001a8 ec80                      	ldi		BYTE, 0xC0
-0001a9 d00f                      	rcall	TM1637_send_byte
+0001c6 d02a                      	rcall	TM1637_start
+0001c7 ec80                      	ldi		BYTE, 0xC0
+0001c8 d00c                      	rcall	TM1637_send_byte
                                  
                                  	;------------------------- Запись данных для каждого регистра дисплея
                                  
-0001aa 2f84                      	mov		BYTE, TM1637_char1
-0001ab d00d                      	rcall	TM1637_send_byte
+0001c9 2f84                      	mov		BYTE, TM1637_char1
+0001ca d00a                      	rcall	TM1637_send_byte
+0001cb 2f85                      	mov		BYTE, TM1637_char2
+0001cc d008                      	rcall	TM1637_send_byte
+0001cd 2f86                      	mov		BYTE, TM1637_char3
+0001ce d006                      	rcall	TM1637_send_byte
+0001cf 2f87                      	mov		BYTE, TM1637_char4
+0001d0 d004                      	rcall	TM1637_send_byte
                                  
-0001ac 2f85                      	mov		BYTE, TM1637_char2
-0001ad d00b                      	rcall	TM1637_send_byte
+0001d1 d024                      	rcall	TM1637_stop
                                  
-0001ae 2f86                      	mov		BYTE, TM1637_char3
-0001af d009                      	rcall	TM1637_send_byte
+0001d2 d07a                      	rcall	TM1637_set_bright
                                  
-0001b0 2f87                      	mov		BYTE, TM1637_char4
-0001b1 d007                      	rcall	TM1637_send_byte
+0001d3 918f                      	pop		BYTE
                                  
-0001b2 d027                      	rcall	TM1637_stop
-                                 
-                                 	;------------------------- Команда управления дисплея
-                                 
-0001b3 d021                      	rcall	TM1637_start
-0001b4 e88f                      	ldi		BYTE, 0x8f
-0001b5 d003                      	rcall	TM1637_send_byte
-0001b6 d023                      	rcall	TM1637_stop
-                                 
-0001b7 918f                      	pop		BYTE
-                                 
-0001b8 9508                      	ret
+0001d4 9508                      	ret
                                  
                                  ;========================================================
                                  ;			Отправка байта из регистра BYTE
                                  ;========================================================
                                  
                                  TM1637_send_byte:
-0001b9 931f                      	push	r17
-0001ba 938f                      	push	BYTE
+0001d5 931f                      	push	r17
+0001d6 938f                      	push	BYTE
                                  
                                  	;------------------------- Счётчик цикла
                                  
-0001bb e010                      	ldi		r17, 0x00	
+0001d7 e010                      	ldi		r17, 0x00	
                                  
                                  	;------------------------- Начало цикла
                                  
                                  	TM1637_while_send:
-0001bc 3018                      		cpi		r17, 0x08
-0001bd f470                      		brsh	TM1637_wait_ACK
+0001d8 3018                      		cpi		r17, 0x08
+0001d9 f470                      		brsh	TM1637_wait_ACK
                                  
-0001be 98c0                      		cbi		PORT_TM1367, TM1637_CLK
+0001da 98c0                      		cbi		PORT_TM1367, TM1637_CLK
                                  
-0001bf 9586                      		lsr		BYTE
-0001c0 f410                      		brcc	TM1637_cbi_send_bit
+0001db 9586                      		lsr		BYTE
+0001dc f410                      		brcc	TM1637_cbi_send_bit
                                  
                                  		TM1637_sbi_send_bit:
-0001c1 9ac3                      			sbi		PORT_TM1367, TM1637_DATA
-0001c2 c001                      			rjmp	TM1637_while_send_bit
+0001dd 9ac3                      			sbi		PORT_TM1367, TM1637_DATA
+0001de c001                      			rjmp	TM1637_while_send_bit
                                  
                                  		TM1637_cbi_send_bit:
-0001c3 98c3                      			cbi		PORT_TM1367, TM1637_DATA 
+0001df 98c3                      			cbi		PORT_TM1367, TM1637_DATA 
                                  
                                  		TM1637_while_send_bit:
                                  
                                  			;------------------------- Отправка бита
                                  
-0001c4 0000                      			nop
-0001c5 9ac0                      			sbi		PORT_TM1367, TM1637_CLK                    
-0001c6 0000                      			nop
+0001e0 0000                      			nop
+0001e1 9ac0                      			sbi		PORT_TM1367, TM1637_CLK                    
+0001e2 0000                      			nop
                                  
-0001c7 9513                      			inc		r17
+0001e3 9513                      			inc		r17
                                  
-0001c8 98c0                      			cbi		PORT_TM1367, TM1637_CLK
-0001c9 0000                      			nop
-0001ca 98c3                      			cbi		PORT_TM1367, TM1637_DATA
-0001cb cff0                      			rjmp	TM1637_while_send
+0001e4 98c0                      			cbi		PORT_TM1367, TM1637_CLK
+0001e5 0000                      			nop
+0001e6 98c3                      			cbi		PORT_TM1367, TM1637_DATA
+0001e7 cff0                      			rjmp	TM1637_while_send
                                  
                                  	;------------------------- Ожидания бита ответа
                                  
                                  	TM1637_wait_ACK:
-0001cc 99b3                      		sbic	PIN_TM1367, TM1637_DATA
-0001cd cffe                      		rjmp	TM1637_wait_ACK          
+0001e8 99b3                      		sbic	PIN_TM1367, TM1637_DATA
+0001e9 cffe                      		rjmp	TM1637_wait_ACK          
                                      
-0001ce 9abb                      		sbi		DDR_TM1367, TM1637_DATA
-0001cf 9ac0                      		sbi		PORT_TM1367, TM1637_CLK
-0001d0 0000                      		nop
-0001d1 98c0                      		cbi		PORT_TM1367, TM1637_CLK
+0001ea 9abb                      		sbi		DDR_TM1367, TM1637_DATA
+0001eb 9ac0                      		sbi		PORT_TM1367, TM1637_CLK
+0001ec 0000                      		nop
+0001ed 98c0                      		cbi		PORT_TM1367, TM1637_CLK
                                  
-0001d2 918f                      		pop		BYTE
-0001d3 911f                      		pop		r17
+0001ee 918f                      		pop		BYTE
+0001ef 911f                      		pop		r17
                                  
-0001d4 9508                      	ret
+0001f0 9508                      	ret
                                  
                                  ;========================================================
                                  ;       Подпрограммы начала и конца передачи данных
                                  ;========================================================
                                  
                                  TM1637_start:
-0001d5 9ac0                      	sbi		PORT_TM1367, TM1637_CLK
-0001d6 9ac3                      	sbi		PORT_TM1367, TM1637_DATA
-0001d7 0000                      	nop
-0001d8 98c3                      	cbi		PORT_TM1367, TM1637_DATA
+0001f1 9ac0                      	sbi		PORT_TM1367, TM1637_CLK
+0001f2 9ac3                      	sbi		PORT_TM1367, TM1637_DATA
+0001f3 0000                      	nop
+0001f4 98c3                      	cbi		PORT_TM1367, TM1637_DATA
                                  
-0001d9 9508                      	ret
+0001f5 9508                      	ret
                                  
                                  TM1637_stop:
-0001da 98c0                      	cbi		PORT_TM1367, TM1637_CLK
-0001db 98c3                      	cbi		PORT_TM1367, TM1637_DATA
-0001dc 0000                      	nop
-0001dd 9ac0                      	sbi		PORT_TM1367, TM1637_CLK
-0001de 9ac3                      	sbi		PORT_TM1367, TM1637_DATA
+0001f6 98c0                      	cbi		PORT_TM1367, TM1637_CLK
+0001f7 98c3                      	cbi		PORT_TM1367, TM1637_DATA
+0001f8 0000                      	nop
+0001f9 9ac0                      	sbi		PORT_TM1367, TM1637_CLK
+0001fa 9ac3                      	sbi		PORT_TM1367, TM1637_DATA
                                  
-0001df 9508                      	ret
+0001fb 9508                      	ret
                                  
                                  ;========================================================
                                  ;       Включение и выключение двоеточия
                                  ;========================================================
                                  
                                  TM1637_set_double_point:
-0001e0 931f                      	push	r17
-0001e1 e011                      	ldi		r17, 0x01
-0001e2 9310 0060                 	sts		double_point, r17
-0001e4 6850                      	ori		TM1637_char2, 0x80
-0001e5 dfbc                      	rcall	TM1637_display
-0001e6 911f                      	pop		r17
+0001fc 931f                      	push	r17
+0001fd e011                      	ldi		r17, 0x01
+0001fe 9310 0060                 	sts		double_point, r17
+000200 6850                      	ori		TM1637_char2, 0x80
+000201 dfbf                      	rcall	TM1637_display
+000202 911f                      	pop		r17
                                  
-0001e7 9508                      	ret
+000203 9508                      	ret
                                  
                                  TM1637_unset_double_point:
-0001e8 931f                      	push	r17
-0001e9 e010                      	ldi		r17, 0x00
-0001ea 9310 0060                 	sts		double_point, r17
-0001ec 775f                      	andi	TM1637_char2, 0x7f
-0001ed dfb4                      	rcall	TM1637_display
-0001ee 911f                      	pop		r17
+000204 931f                      	push	r17
+000205 e010                      	ldi		r17, 0x00
+000206 9310 0060                 	sts		double_point, r17
+000208 775f                      	andi	TM1637_char2, 0x7f
+000209 dfb7                      	rcall	TM1637_display
+00020a 911f                      	pop		r17
                                  
-0001ef 9508                      	ret
+00020b 9508                      	ret
                                  
                                  ;========================================================
                                  ;       Отображение прочерков на всех элементах
                                  ;========================================================
                                  
                                  TM1637_display_dash:
-0001f0 e440                      	ldi		TM1637_char1, 0b01000000
-0001f1 e450                      	ldi		TM1637_char2, 0b01000000
-0001f2 e460                      	ldi		TM1637_char3, 0b01000000
-0001f3 e470                      	ldi		TM1637_char4, 0b01000000
-0001f4 dfad                      	rcall	TM1637_display
+00020c e440                      	ldi		TM1637_char1, 0b01000000
+00020d e450                      	ldi		TM1637_char2, 0b01000000
+00020e e460                      	ldi		TM1637_char3, 0b01000000
+00020f e470                      	ldi		TM1637_char4, 0b01000000
+000210 dfb0                      	rcall	TM1637_display
                                  
-0001f5 9508                      	ret
+000211 9508                      	ret
                                  
                                  ;========================================================
                                  ;				Отображение времени
                                  ;========================================================
                                  
                                  TM1637_display_time:
-0001f6 9140 0068                 	lds		TM1637_char1, tm_h1
-0001f8 9150 0069                 	lds		TM1637_char2, tm_h2
-0001fa 9160 006a                 	lds		TM1637_char3, tm_m1
-0001fc 9170 006b                 	lds		TM1637_char4, tm_m2
+000212 9140 0068                 	lds		TM1637_char1, tm_h1
+000214 9150 0069                 	lds		TM1637_char2, tm_h2
+000216 9160 006a                 	lds		TM1637_char3, tm_m1
+000218 9170 006b                 	lds		TM1637_char4, tm_m2
                                  
-0001fe dfa3                      	rcall	TM1637_display
+00021a dfa6                      	rcall	TM1637_display
                                  
-0001ff 9508                      	ret
+00021b 9508                      	ret
                                  
                                  ;========================================================
                                  ;				Отображение даты
                                  ;========================================================
                                  
                                  TM1637_display_date:
-000200 9140 006c                 	lds		TM1637_char1, tm_d1
-000202 9150 006d                 	lds		TM1637_char2, tm_d2
+00021c 9140 006c                 	lds		TM1637_char1, tm_d1
+00021e 9150 006d                 	lds		TM1637_char2, tm_d2
                                  	;ori		TM1637_char2, 0x80
-000204 9160 006e                 	lds		TM1637_char3, tm_mt1
-000206 9170 006f                 	lds		TM1637_char4, tm_mt2
-000208 df99                      	rcall	TM1637_display
+000220 9160 006e                 	lds		TM1637_char3, tm_mt1
+000222 9170 006f                 	lds		TM1637_char4, tm_mt2
+000224 df9c                      	rcall	TM1637_display
                                  
-000209 9508                      	ret
+000225 9508                      	ret
                                  
                                  ;========================================================
                                  ;				Отображение года
                                  ;========================================================
                                  
                                  TM1637_display_year:
-00020a 9140 0070                 	lds		TM1637_char1, tm_y1
-00020c 9150 0071                 	lds		TM1637_char2, tm_y2
-00020e 9160 0072                 	lds		TM1637_char3, tm_y3
-000210 9170 0073                 	lds		TM1637_char4, tm_y4
-000212 df8f                      	rcall	TM1637_display
+000226 9140 0070                 	lds		TM1637_char1, tm_y1
+000228 9150 0071                 	lds		TM1637_char2, tm_y2
+00022a 9160 0072                 	lds		TM1637_char3, tm_y3
+00022c 9170 0073                 	lds		TM1637_char4, tm_y4
+00022e df92                      	rcall	TM1637_display
                                  
-000213 9508                      	ret
+00022f 9508                      	ret
                                  
                                  ;========================================================
                                  ;				Моргание
@@ -1848,54 +1899,73 @@ C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\a
                                  ;========================================================
                                  
                                  TM1637_blink_pair:
-000214 931f                      	push	r17
-000215 932f                      	push	r18
-000216 933f                      	push	r19
+000230 931f                      	push	r17
+000231 932f                      	push	r18
+000232 933f                      	push	r19
                                  
-000217 3011                      	cpi		r17, 0x01
-000218 f029                      	breq	TM1637_blink_pair_first
+000233 3011                      	cpi		r17, 0x01
+000234 f029                      	breq	TM1637_blink_pair_first
                                  
-000219 3012                      	cpi		r17, 0x02
-00021a f031                      	breq	TM1637_blink_pair_second
+000235 3012                      	cpi		r17, 0x02
+000236 f031                      	breq	TM1637_blink_pair_second
                                  
-00021b 3013                      	cpi		r17, 0x03
-00021c f039                      	breq	TM1637_blink_pair_third
+000237 3013                      	cpi		r17, 0x03
+000238 f039                      	breq	TM1637_blink_pair_third
                                  
-00021d c00e                      	rjmp	TM1637_blink_pair_end
+000239 c00e                      	rjmp	TM1637_blink_pair_end
                                  
                                  	TM1637_blink_pair_first:
-00021e 2742                      		eor		TM1637_char1, r18
-00021f 2753                      		eor		TM1637_char2, r19
+00023a 2742                      		eor		TM1637_char1, r18
+00023b 2753                      		eor		TM1637_char2, r19
                                  
-000220 c00b                      		rjmp	TM1637_blink_pair_end
+00023c c00b                      		rjmp	TM1637_blink_pair_end
                                  
                                  	TM1637_blink_pair_second:
-000221 2762                      		eor		TM1637_char3, r18
-000222 2773                      		eor		TM1637_char4, r19
+00023d 2762                      		eor		TM1637_char3, r18
+00023e 2773                      		eor		TM1637_char4, r19
                                  
-000223 c008                      		rjmp	TM1637_blink_pair_end
+00023f c008                      		rjmp	TM1637_blink_pair_end
                                  
                                  	TM1637_blink_pair_third:
-000224 9110 0070                 		lds		r17, tm_y1
-000226 2741                      		eor		TM1637_char1, r17
+000240 9110 0070                 		lds		r17, tm_y1
+000242 2741                      		eor		TM1637_char1, r17
                                  
-000227 9110 0071                 		lds		r17, tm_y2
-000229 2751                      		eor		TM1637_char2, r17
+000243 9110 0071                 		lds		r17, tm_y2
+000245 2751                      		eor		TM1637_char2, r17
                                  
-00022a 2762                      		eor		TM1637_char3, r18
-00022b 2773                      		eor		TM1637_char4, r19
+000246 2762                      		eor		TM1637_char3, r18
+000247 2773                      		eor		TM1637_char4, r19
                                  
                                  
                                  	TM1637_blink_pair_end:
-00022c df75                      		rcall	TM1637_display
+000248 df78                      		rcall	TM1637_display
                                  
-00022d 913f                      		pop		r19
-00022e 912f                      		pop		r18
-00022f 911f                      		pop		r17
+000249 913f                      		pop		r19
+00024a 912f                      		pop		r18
+00024b 911f                      		pop		r17
                                  
-000230 9508                      	ret
+00024c 9508                      	ret
+                                 
+                                 ;========================================================
+                                 ; Установка яркости дисплея. Входящее значение (0 - 7)
+                                 ; в переменной tm_bright_level без проверки входящего 
+                                 ; значения
+                                 ;========================================================
+                                 
+                                 TM1637_set_bright:
+00024d 938f                      	push	BYTE
+                                 
+00024e 9180 0074                 	lds		BYTE, tm_bright_level
+000250 6888                      	sbr		BYTE, 0x88
+                                 
+000251 df9f                      	rcall	TM1637_start
+000252 df82                      	rcall	TM1637_send_byte
+000253 dfa2                      	rcall	TM1637_stop
+                                 
+000254 918f                      	pop		BYTE
+                                 
                                  .include "data_convertor.asm"
-                                 
+000255 9508                      
                                  ;		Преобразование данных с ds1302 в 
                                  ;		числа для 4-х сегментного дисплея tm1637
                                  ;		запись результата в регистры r16:r15 
@@ -1903,25 +1973,25 @@ C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\a
                                  ;========================================================
                                  
                                  conv_ds1302_to_tm1637:
-000231 931f                      	push	r17
+000256 931f                      	push	r17
                                  
                                  	;------------------------- преобразуем младший разряд в регистр r15
                                  
-000232 2f18                      	mov		r17, BYTE
-000233 701f                      	andi	r17, 0x0f
-000234 d008                      	rcall	bin_to_tm1637_digit
-000235 2ef1                      	mov		r15, r17
+000257 2f18                      	mov		r17, BYTE
+000258 701f                      	andi	r17, 0x0f
+000259 d008                      	rcall	bin_to_tm1637_digit
+00025a 2ef1                      	mov		r15, r17
                                  
                                  	;------------------------- преобразуем старший разряд в регистр r16
                                  
-000236 2f18                      	mov		r17, BYTE
-000237 7f10                      	andi	r17, 0xf0
-000238 9512                      	swap	r17
-000239 d003                      	rcall	bin_to_tm1637_digit
-00023a 2f01                      	mov		r16, r17
-00023b 911f                      	pop		r17
+00025b 2f18                      	mov		r17, BYTE
+00025c 7f10                      	andi	r17, 0xf0
+00025d 9512                      	swap	r17
+00025e d003                      	rcall	bin_to_tm1637_digit
+00025f 2f01                      	mov		r16, r17
+000260 911f                      	pop		r17
                                  
-00023c 9508                      	ret
+000261 9508                      	ret
                                  
                                  ;------------------------- Подфункция преобразования.
                                  ;------------------------- Данные из регистра r17 преобразуются в числовое 
@@ -1929,182 +1999,182 @@ C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\a
                                  ;------------------------- регистр r17
                                  
                                  bin_to_tm1637_digit:
-00023d 3010                      	cpi		r17, 0x00
-00023e f099                      	breq	_d0
-00023f 3011                      	cpi		r17, 0x01
-000240 f099                      	breq	_d1
-000241 3012                      	cpi		r17, 0x02
-000242 f099                      	breq	_d2
-000243 3013                      	cpi		r17, 0x03
-000244 f099                      	breq	_d3
-000245 3014                      	cpi		r17, 0x04
-000246 f099                      	breq	_d4
-000247 3015                      	cpi		r17, 0x05
-000248 f099                      	breq	_d5
-000249 3016                      	cpi		r17, 0x06
-00024a f099                      	breq	_d6
-00024b 3017                      	cpi		r17, 0x07
-00024c f099                      	breq	_d7
-00024d 3018                      	cpi		r17, 0x08
-00024e f099                      	breq	_d8
-00024f 3019                      	cpi		r17, 0x09
-000250 f099                      	breq	_d9
+000262 3010                      	cpi		r17, 0x00
+000263 f099                      	breq	_d0
+000264 3011                      	cpi		r17, 0x01
+000265 f099                      	breq	_d1
+000266 3012                      	cpi		r17, 0x02
+000267 f099                      	breq	_d2
+000268 3013                      	cpi		r17, 0x03
+000269 f099                      	breq	_d3
+00026a 3014                      	cpi		r17, 0x04
+00026b f099                      	breq	_d4
+00026c 3015                      	cpi		r17, 0x05
+00026d f099                      	breq	_d5
+00026e 3016                      	cpi		r17, 0x06
+00026f f099                      	breq	_d6
+000270 3017                      	cpi		r17, 0x07
+000271 f099                      	breq	_d7
+000272 3018                      	cpi		r17, 0x08
+000273 f099                      	breq	_d8
+000274 3019                      	cpi		r17, 0x09
+000275 f099                      	breq	_d9
                                  
-000251 c014                      	rjmp	_dx
+000276 c014                      	rjmp	_dx
                                  
                                  	;------------------------- Подпрограммы для чисел 0..9
                                  
                                  	_d0:
-000252 e31f                      		ldi		r17, 0b00111111
-000253 c013                      		rjmp	bin_to_tm1637_digit_end
+000277 e31f                      		ldi		r17, 0b00111111
+000278 c013                      		rjmp	bin_to_tm1637_digit_end
                                  	_d1:
-000254 e016                      		ldi		r17, 0b00000110
-000255 c011                      		rjmp	bin_to_tm1637_digit_end
+000279 e016                      		ldi		r17, 0b00000110
+00027a c011                      		rjmp	bin_to_tm1637_digit_end
                                  	_d2:
-000256 e51b                      		ldi		r17, 0b01011011
-000257 c00f                      		rjmp	bin_to_tm1637_digit_end
+00027b e51b                      		ldi		r17, 0b01011011
+00027c c00f                      		rjmp	bin_to_tm1637_digit_end
                                  	_d3:
-000258 e41f                      		ldi		r17, 0b01001111
-000259 c00d                      		rjmp	bin_to_tm1637_digit_end
+00027d e41f                      		ldi		r17, 0b01001111
+00027e c00d                      		rjmp	bin_to_tm1637_digit_end
                                  	_d4:
-00025a e616                      		ldi		r17, 0b01100110
-00025b c00b                      		rjmp	bin_to_tm1637_digit_end
+00027f e616                      		ldi		r17, 0b01100110
+000280 c00b                      		rjmp	bin_to_tm1637_digit_end
                                  	_d5:
-00025c e61d                      		ldi		r17, 0b01101101
-00025d c009                      		rjmp	bin_to_tm1637_digit_end
+000281 e61d                      		ldi		r17, 0b01101101
+000282 c009                      		rjmp	bin_to_tm1637_digit_end
                                  	_d6:
-00025e e71d                      		ldi		r17, 0b01111101
-00025f c007                      		rjmp	bin_to_tm1637_digit_end
+000283 e71d                      		ldi		r17, 0b01111101
+000284 c007                      		rjmp	bin_to_tm1637_digit_end
                                  	_d7:
-000260 e017                      		ldi		r17, 0b00000111
-000261 c005                      		rjmp	bin_to_tm1637_digit_end
+000285 e017                      		ldi		r17, 0b00000111
+000286 c005                      		rjmp	bin_to_tm1637_digit_end
                                  	_d8:
-000262 e71f                      		ldi		r17, 0b01111111
-000263 c003                      		rjmp	bin_to_tm1637_digit_end
+000287 e71f                      		ldi		r17, 0b01111111
+000288 c003                      		rjmp	bin_to_tm1637_digit_end
                                  	_d9:
-000264 e61f                      		ldi		r17, 0b01101111
-000265 c001                      		rjmp	bin_to_tm1637_digit_end
+000289 e61f                      		ldi		r17, 0b01101111
+00028a c001                      		rjmp	bin_to_tm1637_digit_end
                                  	_dx:
-000266 e419                      		ldi		r17, 0b01001001
+00028b e419                      		ldi		r17, 0b01001001
                                  	
                                  	bin_to_tm1637_digit_end:
                                  
-000267 9508                      	ret
+00028c 9508                      	ret
                                  
                                  ;========================================================
                                  ;	Подпрограммы инкремента с установленными границами
                                  ;========================================================
                                  
                                  inc_circle:
-000268 931f                      	push	r17
-000269 932f                      	push	r18
-00026a 933f                      	push	r19
+00028d 931f                      	push	r17
+00028e 932f                      	push	r18
+00028f 933f                      	push	r19
                                  
-00026b 9110 0062                 	lds		r17, mode
+000290 9110 0062                 	lds		r17, mode
                                  
                                  	;-------------------------- Выбор режима mode
                                  
-00026d 3011                      	cpi		r17, 0x01
-00026e f049                      	breq	inc_circle_hour
+000292 3011                      	cpi		r17, 0x01
+000293 f049                      	breq	inc_circle_hour
                                  
-00026f 3012                      	cpi		r17, 0x02
-000270 f089                      	breq	inc_circle_minutes
+000294 3012                      	cpi		r17, 0x02
+000295 f089                      	breq	inc_circle_minutes
                                  
-000271 3013                      	cpi		r17, 0x03
-000272 f0c9                      	breq	inc_circle_day
+000296 3013                      	cpi		r17, 0x03
+000297 f0c9                      	breq	inc_circle_day
                                  
-000273 3014                      	cpi		r17, 0x04
-000274 f111                      	breq	inc_circle_month
+000298 3014                      	cpi		r17, 0x04
+000299 f111                      	breq	inc_circle_month
                                  
-000275 3015                      	cpi		r17, 0x05
-000276 f149                      	breq	inc_circle_year
+00029a 3015                      	cpi		r17, 0x05
+00029b f149                      	breq	inc_circle_year
                                  
-000277 c02f                      	rjmp	inc_circle_end
+00029c c02f                      	rjmp	inc_circle_end
                                  
                                  	;-------------------------- Часы
                                  
                                  	inc_circle_hour:
-000278 e0b0                      		ldi		XH, high(bcd_hours)		
-000279 e6a4                      		ldi		XL, low(bcd_hours)
-00027a e030                      		ldi		r19, 0
-00027b e128                      		ldi		r18, 24
-00027c e884                      		ldi		BYTE, 0x84
-00027d e0f1                      		ldi		ZH, high(TM1637_display_time)
-00027e efe6                      		ldi		ZL, low(TM1637_display_time)
+00029d e0b0                      		ldi		XH, high(bcd_hours)		
+00029e e6a4                      		ldi		XL, low(bcd_hours)
+00029f e030                      		ldi		r19, 0
+0002a0 e128                      		ldi		r18, 24
+0002a1 e884                      		ldi		BYTE, 0x84
+0002a2 e0f2                      		ldi		ZH, high(TM1637_display_time)
+0002a3 e1e2                      		ldi		ZL, low(TM1637_display_time)
                                  
-00027f d046                      		rcall	inc_circle_ext
-000280 df5f                      		rcall	TM1637_set_double_point
+0002a4 d046                      		rcall	inc_circle_ext
+0002a5 df56                      		rcall	TM1637_set_double_point
                                  
-000281 c025                      		rjmp	inc_circle_end
+0002a6 c025                      		rjmp	inc_circle_end
                                  
                                  	;-------------------------- Минуты
                                  
                                  	inc_circle_minutes:
-000282 e0b0                      		ldi		XH, high(bcd_minutes)		
-000283 e6a3                      		ldi		XL, low(bcd_minutes)
-000284 e030                      		ldi		r19, 0
-000285 e32c                      		ldi		r18, 60
-000286 e882                      		ldi		BYTE, 0x82
-000287 e0f1                      		ldi		ZH, high(TM1637_display_time)
-000288 efe6                      		ldi		ZL, low(TM1637_display_time)
+0002a7 e0b0                      		ldi		XH, high(bcd_minutes)		
+0002a8 e6a3                      		ldi		XL, low(bcd_minutes)
+0002a9 e030                      		ldi		r19, 0
+0002aa e32c                      		ldi		r18, 60
+0002ab e882                      		ldi		BYTE, 0x82
+0002ac e0f2                      		ldi		ZH, high(TM1637_display_time)
+0002ad e1e2                      		ldi		ZL, low(TM1637_display_time)
                                  
-000289 d03c                      		rcall	inc_circle_ext
-00028a df55                      		rcall	TM1637_set_double_point
+0002ae d03c                      		rcall	inc_circle_ext
+0002af df4c                      		rcall	TM1637_set_double_point
                                  
-00028b c01b                      		rjmp	inc_circle_end
+0002b0 c01b                      		rjmp	inc_circle_end
                                  
                                  	;-------------------------- День месяца
                                  
                                  	inc_circle_day:
-00028c e0b0                      		ldi		XH, high(bcd_day)		
-00028d e6a5                      		ldi		XL, low(bcd_day)
-00028e e031                      		ldi		r19, 1
-00028f d048                      		rcall	get_max_day
-000290 9513                      		inc		r17
-000291 2f21                      		mov		r18, r17
-000292 e886                      		ldi		BYTE, 0x86
-000293 e0f2                      		ldi		ZH, high(TM1637_display_date)
-000294 e0e0                      		ldi		ZL, low(TM1637_display_date)
+0002b1 e0b0                      		ldi		XH, high(bcd_day)		
+0002b2 e6a5                      		ldi		XL, low(bcd_day)
+0002b3 e031                      		ldi		r19, 1
+0002b4 d048                      		rcall	get_max_day
+0002b5 9513                      		inc		r17
+0002b6 2f21                      		mov		r18, r17
+0002b7 e886                      		ldi		BYTE, 0x86
+0002b8 e0f2                      		ldi		ZH, high(TM1637_display_date)
+0002b9 e1ec                      		ldi		ZL, low(TM1637_display_date)
                                  
-000295 d030                      		rcall	inc_circle_ext
+0002ba d030                      		rcall	inc_circle_ext
                                  
-000296 c010                      		rjmp	inc_circle_end
+0002bb c010                      		rjmp	inc_circle_end
                                  
                                  	;-------------------------- Месяц
                                  
                                  	inc_circle_month:
-000297 e0b0                      		ldi		XH, high(bcd_month)		
-000298 e6a6                      		ldi		XL, low(bcd_month)
-000299 e031                      		ldi		r19, 1
-00029a e02d                      		ldi		r18, 13
-00029b e888                      		ldi		BYTE, 0x88
-00029c e0f2                      		ldi		ZH, high(TM1637_display_date)
-00029d e0e0                      		ldi		ZL, low(TM1637_display_date)
+0002bc e0b0                      		ldi		XH, high(bcd_month)		
+0002bd e6a6                      		ldi		XL, low(bcd_month)
+0002be e031                      		ldi		r19, 1
+0002bf e02d                      		ldi		r18, 13
+0002c0 e888                      		ldi		BYTE, 0x88
+0002c1 e0f2                      		ldi		ZH, high(TM1637_display_date)
+0002c2 e1ec                      		ldi		ZL, low(TM1637_display_date)
                                  
-00029e d027                      		rcall	inc_circle_ext
+0002c3 d027                      		rcall	inc_circle_ext
                                  
-00029f c007                      		rjmp	inc_circle_end
+0002c4 c007                      		rjmp	inc_circle_end
                                  
                                  	;-------------------------- Год
                                  
                                  	inc_circle_year:
-0002a0 e0b0                      		ldi		XH, high(bcd_year)		
-0002a1 e6a7                      		ldi		XL, low(bcd_year)
-0002a2 e624                      		ldi		r18, 100
-0002a3 e88c                      		ldi		BYTE, 0x8C
-0002a4 e0f2                      		ldi		ZH, high(TM1637_display_year)
-0002a5 e0ea                      		ldi		ZL, low(TM1637_display_year)
+0002c5 e0b0                      		ldi		XH, high(bcd_year)		
+0002c6 e6a7                      		ldi		XL, low(bcd_year)
+0002c7 e624                      		ldi		r18, 100
+0002c8 e88c                      		ldi		BYTE, 0x8C
+0002c9 e0f2                      		ldi		ZH, high(TM1637_display_year)
+0002ca e2e6                      		ldi		ZL, low(TM1637_display_year)
                                  
-0002a6 d01f                      		rcall	inc_circle_ext
+0002cb d01f                      		rcall	inc_circle_ext
                                  
                                  	;-------------------------- Конец инкрементации
                                  			
                                  	inc_circle_end:
-0002a7 913f                      		pop		r19
-0002a8 912f                      		pop		r18
-0002a9 911f                      		pop		r17
+0002cc 913f                      		pop		r19
+0002cd 912f                      		pop		r18
+0002ce 911f                      		pop		r17
                                  
-0002aa 9508                      	ret
+0002cf 9508                      	ret
                                  
                                  ;========================================================
                                  ;		Преобразование 8-битного двоичного
@@ -2113,38 +2183,38 @@ C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\a
                                  ;========================================================
                                  
                                  bin8bcd:
-0002ab 932f                      	push	r18
-0002ac 933f                      	push	r19
+0002d0 932f                      	push	r18
+0002d1 933f                      	push	r19
                                  
                                  	.def	digitL	=	r18
                                  	.def	digitH	=	r19
                                  
-0002ad 2f28                      	mov		digitL, BYTE
-0002ae e030                      	ldi		digitH, 0x00
+0002d2 2f28                      	mov		digitL, BYTE
+0002d3 e030                      	ldi		digitH, 0x00
                                  
                                  	bin8bcd_loop:
-0002af 502a                      		subi	digitL, 0x0a
-0002b0 f012                      		brmi	bin8bcd_end
+0002d4 502a                      		subi	digitL, 0x0a
+0002d5 f012                      		brmi	bin8bcd_end
                                  
-0002b1 9533                      		inc		digitH
-0002b2 cffc                      		rjmp	bin8bcd_loop
+0002d6 9533                      		inc		digitH
+0002d7 cffc                      		rjmp	bin8bcd_loop
                                  
                                  	bin8bcd_end:
-0002b3 5f26                      		subi	digitL, -0x0a
+0002d8 5f26                      		subi	digitL, -0x0a
                                  
-0002b4 9532                      		swap	digitH
-0002b5 2f83                      		mov		BYTE, digitH
+0002d9 9532                      		swap	digitH
+0002da 2f83                      		mov		BYTE, digitH
                                  
-0002b6 702f                      		andi	digitL, 0x0f
-0002b7 2b82                      		or		BYTE, digitL
+0002db 702f                      		andi	digitL, 0x0f
+0002dc 2b82                      		or		BYTE, digitL
                                  
                                  		.undef	digitL
                                  		.undef	digitH
                                  
-0002b8 913f                      		pop		r19
-0002b9 912f                      		pop		r18
+0002dd 913f                      		pop		r19
+0002de 912f                      		pop		r18
                                  
-0002ba 9508                      	ret
+0002df 9508                      	ret
                                  
                                  ;========================================================
                                  ;		Преобразование 8-битного упаковонного
@@ -2153,31 +2223,31 @@ C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\a
                                  ;========================================================
                                  
                                  bcd8bin:
-0002bb 932f                      	push	r18
+0002e0 932f                      	push	r18
                                  
                                  	.def	result	=	r17
                                  	.def	tens	=	r18
                                  
-0002bc 2f21                      	mov		tens, r17
-0002bd 7f20                      	andi	tens, 0xf0
-0002be 9522                      	swap	tens
+0002e1 2f21                      	mov		tens, r17
+0002e2 7f20                      	andi	tens, 0xf0
+0002e3 9522                      	swap	tens
                                  
-0002bf 701f                      	andi	result, 0x0f
+0002e4 701f                      	andi	result, 0x0f
                                  	
                                  	bcd8bind_loop:
-0002c0 952a                      		dec		tens
-0002c1 f012                      		brmi	bcd8bin_end
+0002e5 952a                      		dec		tens
+0002e6 f012                      		brmi	bcd8bin_end
                                  
-0002c2 5f16                      		subi	result, -0x0a
-0002c3 cffc                      		rjmp	bcd8bind_loop
+0002e7 5f16                      		subi	result, -0x0a
+0002e8 cffc                      		rjmp	bcd8bind_loop
                                  
                                  	bcd8bin_end:
                                  		.undef	result
                                  		.undef	tens
                                  
-0002c4 912f                      		pop		r18
+0002e9 912f                      		pop		r18
                                  
-0002c5 9508                      	ret
+0002ea 9508                      	ret
                                  
                                  ;========================================================
                                  ;	Инкремент переменной по адресу X.
@@ -2188,42 +2258,42 @@ C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\a
                                  ;========================================================
                                  
                                  inc_circle_ext:
-0002c6 931f                      	push	r17
+0002eb 931f                      	push	r17
                                  
                                  	.def	max_digit = r18
                                  	.def	min_digit = r19
                                  
-0002c7 911c                      	ld		r17, X
-0002c8 dff2                      	rcall	bcd8bin
-0002c9 9513                      	inc		r17
+0002ec 911c                      	ld		r17, X
+0002ed dff2                      	rcall	bcd8bin
+0002ee 9513                      	inc		r17
                                  
-0002ca 1712                      	cp		r17,  max_digit
-0002cb f408                      	brsh	inc_circle_ext_reset
+0002ef 1712                      	cp		r17,  max_digit
+0002f0 f408                      	brsh	inc_circle_ext_reset
                                  
-0002cc c001                      	rjmp	inc_circle_ext_end
+0002f1 c001                      	rjmp	inc_circle_ext_end
                                  
                                  	inc_circle_ext_reset:
-0002cd 2f13                      		mov		r17, min_digit
+0002f2 2f13                      		mov		r17, min_digit
                                  
                                  	inc_circle_ext_end:
-0002ce de4f                      		rcall	DS1302_send_start
-0002cf de56                      		rcall	DS1302_send_byte
+0002f3 de49                      		rcall	DS1302_send_start
+0002f4 de50                      		rcall	DS1302_send_byte
                                  
-0002d0 2f81                      		mov		BYTE, r17
-0002d1 dfd9                      		rcall	bin8bcd
+0002f5 2f81                      		mov		BYTE, r17
+0002f6 dfd9                      		rcall	bin8bcd
                                  
-0002d2 de53                      		rcall	DS1302_send_byte
-0002d3 de4d                      		rcall	DS1302_send_stop	
+0002f7 de4d                      		rcall	DS1302_send_byte
+0002f8 de47                      		rcall	DS1302_send_stop	
                                  
-0002d4 de7d                      		rcall	DS1302_read_package_data
-0002d5 9509                      		icall
+0002f9 de77                      		rcall	DS1302_read_package_data
+0002fa 9509                      		icall
                                  
                                  		.undef	max_digit
                                  		.undef	min_digit
                                  
-0002d6 911f                      		pop		r17
+0002fb 911f                      		pop		r17
                                  
-0002d7 9508                      	ret
+0002fc 9508                      	ret
                                  
                                  ;========================================================
                                  ;	Нахождение максимального дня текущего месяца
@@ -2232,23 +2302,23 @@ C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\a
                                  ;========================================================
                                  
                                  get_max_day:
-0002d8 e0f2                      	ldi		ZH, high(max_day_in_month*2)
-0002d9 e3e0                      	ldi		ZL, low(max_day_in_month*2)
+0002fd e0f2                      	ldi		ZH, high(max_day_in_month*2)
+0002fe e6ee                      	ldi		ZL, low(max_day_in_month*2)
                                  
-0002da 9110 0066                 	lds		r17, bcd_month
-0002dc dfde                      	rcall	bcd8bin
-0002dd 951a                      	dec		r17
+0002ff 9110 0066                 	lds		r17, bcd_month
+000301 dfde                      	rcall	bcd8bin
+000302 951a                      	dec		r17
                                  
-0002de e0d0                      	ldi		YH, 0
-0002df 2fc1                      	mov		YL, r17
+000303 e0d0                      	ldi		YH, 0
+000304 2fc1                      	mov		YL, r17
                                  
-0002e0 0fec                      	add		ZL, YL
-0002e1 1ffd                      	adc		ZH, YH
-0002e2 9114                      	lpm		r17, Z
+000305 0fec                      	add		ZL, YL
+000306 1ffd                      	adc		ZH, YH
+000307 9114                      	lpm		r17, Z
                                  
-0002e3 d001                      	rcall	leap_year
+000308 d001                      	rcall	leap_year
                                  
-0002e4 9508                      	ret
+000309 9508                      	ret
                                  
                                  ;========================================================
                                  ;	Определение високосного года и перезапись 
@@ -2257,79 +2327,79 @@ C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\a
                                  ;========================================================
                                  
                                  leap_year:
-0002e5 930f                      	push	r16
+00030a 930f                      	push	r16
                                  
                                  	;------------------------- Сохраняем значение r17 в r16, чтобы его не изменить в случае, 
                                  	;------------------------- если сейчас не февраль високосного года
                                  
-0002e6 2f01                      	mov		r16, r17
+00030b 2f01                      	mov		r16, r17
                                  
                                  	;------------------------- Если установлен не февраль, проверка на високосный год не нужна
                                  
-0002e7 9110 0066                 	lds		r17, bcd_month
-0002e9 3012                      	cpi		r17, 0x02
-0002ea f451                      	brne	leap_year_end
+00030c 9110 0066                 	lds		r17, bcd_month
+00030e 3012                      	cpi		r17, 0x02
+00030f f451                      	brne	leap_year_end
                                  
                                  	;------------------------- Каждый сотый год не високосный
                                  
-0002eb 9110 0067                 	lds		r17, bcd_year
-0002ed 3010                      	cpi		r17, 0x00
-0002ee f031                      	breq	leap_year_end
+000310 9110 0067                 	lds		r17, bcd_year
+000312 3010                      	cpi		r17, 0x00
+000313 f031                      	breq	leap_year_end
                                  
                                  	;------------------------- Если один из двух младших битов или оба установлены
                                  	;------------------------- число не кратно 4-м. Год високосный
                                  
-0002ef dfcb                      	rcall	bcd8bin
-0002f0 fd11                      	sbrc	r17, 1
-0002f1 c003                      	rjmp	leap_year_end
-0002f2 fd10                      	sbrc	r17, 0
-0002f3 c001                      	rjmp	leap_year_end
+000314 dfcb                      	rcall	bcd8bin
+000315 fd11                      	sbrc	r17, 1
+000316 c003                      	rjmp	leap_year_end
+000317 fd10                      	sbrc	r17, 0
+000318 c001                      	rjmp	leap_year_end
                                  
                                  	;------------------------- Максимальное значение числа месяца = 29
                                  
-0002f4 e10d                      	ldi		r16, 29
+000319 e10d                      	ldi		r16, 29
                                  		
                                  	leap_year_end:
-0002f5 2f10                      		mov		r17, r16
-0002f6 910f                      		pop		r16
+00031a 2f10                      		mov		r17, r16
+00031b 910f                      		pop		r16
                                  
-0002f7 9508                      	ret
+00031c 9508                      	ret
                                  
                                  ;========================================================
                                  ;			Подпрограммы формирования задержки
                                  ;========================================================
                                  
                                  MCU_wait_10mks:						; 10 мкс + время на команды 
-0002f8 931f                      	push	r17
+00031d 931f                      	push	r17
                                  
-0002f9 e01a                      	ldi		r17, 10
+00031e e01a                      	ldi		r17, 10
                                  
                                  	MCU_wait_loop:
-0002fa 951a                      		dec		r17
-0002fb f7f1                      		brne	MCU_wait_loop
+00031f 951a                      		dec		r17
+000320 f7f1                      		brne	MCU_wait_loop
                                  
-0002fc 911f                      	pop		r17
+000321 911f                      	pop		r17
                                  
-0002fd 9508                      	ret
+000322 9508                      	ret
                                  
-                                 MCU_wait_50ms:						; приблизительно 10 мс
-0002fe 931f                      	push	r17
-0002ff 930f                      	push	r16
+                                 MCU_wait_20ms:						; приблизительно 20 мс + время команд
+000323 931f                      	push	r17
+000324 930f                      	push	r16
                                  
-000300 ec18                      	ldi		r17, 200
-000301 ef0f                      	ser		r16
+000325 e510                      	ldi		r17, 80
+000326 ef0f                      	ser		r16
                                  
                                  	MCU_wait_loop_L:
-000302 950a                      		dec		r16
-000303 f7f1                      		brne	MCU_wait_loop_L
+000327 950a                      		dec		r16
+000328 f7f1                      		brne	MCU_wait_loop_L
                                  
                                  	MCU_wait_loop_H:
-000304 ef0f                      		ser		r16
-000305 951a                      		dec		r17
-000306 f7d9                      		brne	MCU_wait_loop_L
+000329 ef0f                      		ser		r16
+00032a 951a                      		dec		r17
+00032b f7d9                      		brne	MCU_wait_loop_L
                                  
-000307 910f                      	pop		r16
-000308 911f                      	pop		r17
+00032c 910f                      	pop		r16
+00032d 911f                      	pop		r17
                                  
 
 
@@ -2350,37 +2420,37 @@ counted separately from r26..r31 here.
 "ATtiny2313A" register use summary:
 x  :   2 y  :   1 z  :   2 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   2 r16:  24 r17: 209 r18:  33 r19:  25 r20:   7 
-r21:   9 r22:   7 r23:   7 r24:  49 r25:   4 r26:  12 r27:  12 r28:   9 
+r13:   0 r14:   0 r15:   2 r16:  24 r17: 220 r18:  33 r19:  25 r20:   7 
+r21:   9 r22:   7 r23:   7 r24:  52 r25:   7 r26:  12 r27:  12 r28:   9 
 r29:   9 r30:  14 r31:  14 
 Registers used: 20 out of 35 (57.1%)
 
 "ATtiny2313A" instruction use summary:
 .lds  :   0 .sts  :   0 adc   :   1 add   :   1 adiw  :   0 and   :   0 
-andi  :   7 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
-brcc  :   2 brcs  :   0 break :   0 breq  :  33 brge  :   0 brhc  :   0 
-brhs  :   0 brid  :   0 brie  :   0 brlo  :   1 brlt  :   0 brmi  :   2 
-brne  :   5 brpl  :   0 brsh  :   6 brtc  :   0 brts  :   0 brvc  :   0 
+andi  :   9 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
+brcc  :   2 brcs  :   0 break :   0 breq  :  36 brge  :   0 brhc  :   0 
+brhs  :   0 brid  :   0 brie  :   0 brlo  :   2 brlt  :   0 brmi  :   2 
+brne  :   6 brpl  :   0 brsh  :   6 brtc  :   0 brts  :   0 brvc  :   0 
 brvs  :   0 bset  :   0 bst   :   0 cbi   :  19 cbr   :   0 clc   :   0 
-clh   :   0 cli   :   0 cln   :   0 clr   :   3 cls   :   0 clt   :   0 
-clv   :   0 clz   :   0 com   :   0 cp    :   2 cpc   :   0 cpi   :  40 
-cpse  :   0 dec   :   5 eor   :   9 icall :   1 ijmp  :   0 in    :   0 
-inc   :   9 ld    :   1 ldd   :   0 ldi   : 140 lds   :  35 lpm   :   2 
-lsl   :   0 lsr   :   3 mov   :  20 movw  :   0 neg   :   0 nop   :   6 
-or    :   1 ori   :   2 out   :  28 pop   :  40 push  :  40 rcall : 112 
-ret   :  33 reti  :  18 rjmp  :  53 rol   :   0 ror   :   0 sbc   :   0 
-sbci  :   0 sbi   :  18 sbic  :   2 sbis  :   3 sbiw  :   0 sbr   :   0 
+clh   :   0 cli   :   0 cln   :   0 clr   :   4 cls   :   0 clt   :   0 
+clv   :   0 clz   :   0 com   :   0 cp    :   2 cpc   :   0 cpi   :  45 
+cpse  :   0 dec   :   5 eor   :   9 icall :   1 ijmp  :   0 in    :   2 
+inc   :  10 ld    :   1 ldd   :   0 ldi   : 139 lds   :  37 lpm   :   2 
+lsl   :   0 lsr   :   3 mov   :  19 movw  :   0 neg   :   0 nop   :   6 
+or    :   1 ori   :   2 out   :  28 pop   :  42 push  :  42 rcall : 115 
+ret   :  34 reti  :  19 rjmp  :  56 rol   :   0 ror   :   0 sbc   :   0 
+sbci  :   0 sbi   :  19 sbic  :   2 sbis  :   3 sbiw  :   0 sbr   :   1 
 sbrc  :   2 sbrs  :   0 sec   :   0 seh   :   0 sei   :   1 sen   :   0 
-ser   :   3 ses   :   0 set   :   0 sev   :   0 sez   :   0 sleep :   0 
-spm   :   0 st    :   3 std   :   0 sts   :  10 sub   :   0 subi  :   3 
+ser   :   3 ses   :   0 set   :   0 sev   :   0 sez   :   0 sleep :   1 
+spm   :   0 st    :   3 std   :   0 sts   :  12 sub   :   0 subi  :   3 
 swap  :   3 tst   :   0 wdr   :   0 
-Instructions used: 43 out of 105 (41.0%)
+Instructions used: 46 out of 105 (43.8%)
 
 "ATtiny2313A" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000614   1544     12   1556    2048  76.0%
-[.dseg] 0x000060 0x000074      0     20     20     128  15.6%
+[.cseg] 0x000000 0x00065e   1618     12   1630    2048  79.6%
+[.dseg] 0x000060 0x000075      0     21     21     128  16.4%
 [.eseg] 0x000000 0x000000      0      0      0     128   0.0%
 
 Assembly complete, 0 errors, 0 warnings

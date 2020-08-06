@@ -22,24 +22,16 @@ TM1637_display:
 
 	mov		BYTE, TM1637_char1
 	rcall	TM1637_send_byte
-
 	mov		BYTE, TM1637_char2
 	rcall	TM1637_send_byte
-
 	mov		BYTE, TM1637_char3
 	rcall	TM1637_send_byte
-
 	mov		BYTE, TM1637_char4
 	rcall	TM1637_send_byte
 
 	rcall	TM1637_stop
 
-	;------------------------- Команда управления дисплея
-
-	rcall	TM1637_start
-	ldi		BYTE, 0x8f
-	rcall	TM1637_send_byte
-	rcall	TM1637_stop
+	rcall	TM1637_set_bright
 
 	pop		BYTE
 
@@ -261,5 +253,25 @@ TM1637_blink_pair:
 		pop		r19
 		pop		r18
 		pop		r17
+
+	ret
+
+;========================================================
+; Установка яркости дисплея. Входящее значение (0 - 7)
+; в переменной tm_bright_level без проверки входящего 
+; значения
+;========================================================
+
+TM1637_set_bright:
+	push	BYTE
+
+	lds		BYTE, tm_bright_level
+	sbr		BYTE, 0x88
+
+	rcall	TM1637_start
+	rcall	TM1637_send_byte
+	rcall	TM1637_stop
+
+	pop		BYTE
 
 	ret

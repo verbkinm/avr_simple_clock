@@ -48,7 +48,7 @@ init:
 	;-------------------------- Инициализация портов ВВ для кнопок
 
 	cbi		DDR_BUTTON_MODE, BUTTON_MODE
-	;sbi		PORT_BUTTON_MODE, BUTTON_MODE
+	sbi		PORT_BUTTON_MODE, BUTTON_MODE
 
 	cbi		DDR_BUTTON_SET, BUTTON_SET
 	sbi		PORT_BUTTON_SET, BUTTON_SET
@@ -73,7 +73,7 @@ init:
 
 	;--------------------------- Разрешаем прерывание INT0 и INT1 по заднему фронту
 
-	ldi		r17, (0 << ISC00) | (0 << ISC01) | (0 << ISC10) | (0 << ISC11)
+	ldi		r17, (0 << ISC00) | (0 << ISC01) | (0 << ISC10) | (0 << ISC11) | (1 << SE) ;| (1 << SM0)
 	out		MCUCR, r17
 
 	ldi		r17, (1 << INT0) | (1 << INT1)

@@ -2,15 +2,73 @@
 ;       Подпрограммы обработки прерываний
 ;========================================================
 
-;-------------------------- Прерывание при нажатии кнопки Mode
+;-------------------------- Прерывание при нажатии любой кнопки
+
+_INT0_or_1:
+	push	r17
+
+	rcall	MCU_wait_20ms
+
+	in		r17, PIND
+	andi	r17, 0x0C
+
+	cpi		r17, 0x08		; pd2 - int0
+	breq	_INT01_MODE_press
+
+	cpi		r17, 0x04		; pd3 - int1
+	breq	_INT01_SET_press
+
+	cpi		r17, 0x00		
+	breq	_INT01_double_press
+
+	rjmp	_INT0_or_1_end
+
+	;-------------------------- Нажатие кнопки Mode
+
+	_INT01_MODE_press:
+		rcall	_INT0
+		rjmp	_INT0_or_1_end
+
+	;-------------------------- Нажатие кнопки Set
+
+	_INT01_SET_press:
+		rcall	_INT1
+		rjmp	_INT0_or_1_end
+
+	;-------------------------- Нажатие двух кнопок
+
+	_INT01_double_press:
+		in		r17, PIND
+		andi	r17, 0x0C
+		cpi		r17, 0x0C
+		brne	_INT01_double_press
+
+
+		lds		r17, tm_bright_level
+		inc		r17
+		cpi		r17, 0x08
+		brlo	_INT01_double_press_set_bright
+	
+		clr		r17			
+
+		_INT01_double_press_set_bright:
+			sts		tm_bright_level, r17
+			rcall	TM1637_set_bright
+
+	_INT0_or_1_end:
+		pop		r17
+
+	reti
+
+
+;-------------------------- Подпрограмма при нажатии кнопки Mode
 
 _INT0:
 	push	r17
 	push	r16
 
 	_INT0_wait_release:
-		rcall	MCU_wait_50ms
-		sbis	PIND, PD2
+		sbis	PIN_BUTTON_MODE, BUTTON_MODE
 		rjmp	_INT0_wait_release
 
 	rcall	DS1302_read_package_data
@@ -134,14 +192,13 @@ _INT0:
 
 	reti
 
-;-------------------------- Прерывание при нажатии кнопки Clock mode \ Set
+;-------------------------- Подпрограмма при нажатии кнопки Clock mode \ Set
 
 _INT1:
 	push	r17
 
 	_INT1_wait_release:
-		rcall	MCU_wait_50ms
-		sbis	PIND, PD3
+		sbis	PIN_BUTTON_SET, BUTTON_SET
 		rjmp	_INT1_wait_release
 
 

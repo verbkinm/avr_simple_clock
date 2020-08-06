@@ -415,11 +415,11 @@ MCU_wait_10mks:						; 10 мкс + время на команды
 
 	ret
 
-MCU_wait_50ms:						; приблизительно 51 мс + время команд
+MCU_wait_20ms:						; приблизительно 20 мс + время команд
 	push	r17
 	push	r16
 
-	ldi		r17, 200
+	ldi		r17, 80
 	ser		r16
 
 	MCU_wait_loop_L:
