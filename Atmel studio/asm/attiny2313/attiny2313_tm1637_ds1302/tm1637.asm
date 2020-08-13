@@ -47,7 +47,7 @@ TM1637_send_byte:
 
 	;------------------------- Счётчик цикла
 
-	ldi		r17, 0x00	
+	clr		r17
 
 	;------------------------- Начало цикла
 
@@ -123,7 +123,7 @@ TM1637_stop:
 ;       Включение и выключение двоеточия
 ;========================================================
 
-TM1637_set_double_point:
+/*TM1637_set_double_point:
 	push	r17
 	ldi		r17, 0x01
 	sts		double_point, r17
@@ -141,7 +141,7 @@ TM1637_unset_double_point:
 	rcall	TM1637_display
 	pop		r17
 
-	ret
+	ret*/
 
 ;========================================================
 ;       Отображение прочерков на всех элементах
@@ -163,6 +163,7 @@ TM1637_display_dash:
 TM1637_display_time:
 	lds		TM1637_char1, tm_h1
 	lds		TM1637_char2, tm_h2
+	sbr		TM1637_char2, 0b10000000
 	lds		TM1637_char3, tm_m1
 	lds		TM1637_char4, tm_m2
 
@@ -177,7 +178,6 @@ TM1637_display_time:
 TM1637_display_date:
 	lds		TM1637_char1, tm_d1
 	lds		TM1637_char2, tm_d2
-	;ori		TM1637_char2, 0x80
 	lds		TM1637_char3, tm_mt1
 	lds		TM1637_char4, tm_mt2
 	rcall	TM1637_display
@@ -198,29 +198,59 @@ TM1637_display_year:
 	ret
 
 ;========================================================
+;				Отображение времени будильника
+;========================================================
+
+TM1637_display_alarm:
+	lds		TM1637_char1, tm_ah1
+	lds		TM1637_char2, tm_ah2
+	sbr		TM1637_char2, 0b10000000
+	lds		TM1637_char3, tm_am1
+	lds		TM1637_char4, tm_am2
+	rcall	TM1637_display
+
+	ret
+
+;========================================================
+;		Отображение режима будильника (вкл.\выкл)
+;========================================================
+
+TM1637_display_alarm_mode:
+	push	r17
+
+	ldi		TM1637_char1, char_A
+	ldi		TM1637_char2, char_minus
+	ldi		TM1637_char3, char_O
+		
+	lds		r17, alarm
+	sbrc	r17, 0
+	ldi		TM1637_char4, char_N
+	sbrs	r17, 0
+	ldi		TM1637_char4, char_F
+
+	rcall	TM1637_display
+
+	pop		r17
+
+	ret
+
+;========================================================
 ;				Моргание
 ;	Режимы: 
 ;		1-й и 2-й элементы r17==1
 ;		3-й и 4-й элементы r17==2
-;		Все элементы r17==3
-;
 ;	значение 1-го элемента == r18
 ;	значение 2-го элемента == r19
 ;========================================================
 
 TM1637_blink_pair:
-	push	r17
-	push	r18
-	push	r19
+	;rcall	push_17_18_19
 
 	cpi		r17, 0x01
 	breq	TM1637_blink_pair_first
 
 	cpi		r17, 0x02
 	breq	TM1637_blink_pair_second
-
-	cpi		r17, 0x03
-	breq	TM1637_blink_pair_third
 
 	rjmp	TM1637_blink_pair_end
 
@@ -236,23 +266,10 @@ TM1637_blink_pair:
 
 		rjmp	TM1637_blink_pair_end
 
-	TM1637_blink_pair_third:
-		lds		r17, tm_y1
-		eor		TM1637_char1, r17
-
-		lds		r17, tm_y2
-		eor		TM1637_char2, r17
-
-		eor		TM1637_char3, r18
-		eor		TM1637_char4, r19
-
-
 	TM1637_blink_pair_end:
 		rcall	TM1637_display
 
-		pop		r19
-		pop		r18
-		pop		r17
+		;rcall	pop_19_18_17
 
 	ret
 
@@ -265,7 +282,9 @@ TM1637_blink_pair:
 TM1637_set_bright:
 	push	BYTE
 
-	lds		BYTE, tm_bright_level
+/*	lds		BYTE, tm_bright_level
+	sbr		BYTE, 0x88*/
+	mov		BYTE, tm_bright_level
 	sbr		BYTE, 0x88
 
 	rcall	TM1637_start

@@ -96,12 +96,29 @@ bin_to_tm1637_digit:
 
 ;========================================================
 ;	Подпрограммы инкремента с установленными границами
+;	входящее\исходящее значение == r17, r19 == min, r18 == max
+;========================================================
+_inc:
+	inc		r17
+	cp		r17, r18
+	brsh	_inc_reset
+	;brcs	_inc_reset
+
+	rjmp	_inc_end
+
+	_inc_reset:
+		mov		r17, r19
+
+	_inc_end:
+	
+		ret
+;========================================================
+;	Подпрограммы инкремента с установленными границами
+;	и вызовом подпрограммы
 ;========================================================
 
 inc_circle:
-	push	r17
-	push	r18
-	push	r19
+	rcall	push_17_18_19
 
 	lds		r17, mode
 
@@ -122,6 +139,15 @@ inc_circle:
 	cpi		r17, 0x05
 	breq	inc_circle_year
 
+	cpi		r17, 0x06
+	breq	rcall_inc_cicle_alarm
+
+	cpi		r17, 0x07
+	breq	rcall_inc_cicle_alarm
+
+	cpi		r17, 0x08
+	breq	rcall_inc_cicle_alarm
+
 	rjmp	inc_circle_end
 
 	;-------------------------- Часы
@@ -136,7 +162,6 @@ inc_circle:
 		ldi		ZL, low(TM1637_display_time)
 
 		rcall	inc_circle_ext
-		rcall	TM1637_set_double_point
 
 		rjmp	inc_circle_end
 
@@ -152,7 +177,6 @@ inc_circle:
 		ldi		ZL, low(TM1637_display_time)
 
 		rcall	inc_circle_ext
-		rcall	TM1637_set_double_point
 
 		rjmp	inc_circle_end
 
@@ -193,6 +217,7 @@ inc_circle:
 	inc_circle_year:
 		ldi		XH, high(bcd_year)		
 		ldi		XL, low(bcd_year)
+		ldi		r19, 0
 		ldi		r18, 100
 		ldi		BYTE, 0x8C
 		ldi		ZH, high(TM1637_display_year)
@@ -200,12 +225,18 @@ inc_circle:
 
 		rcall	inc_circle_ext
 
+		rjmp	inc_circle_end
+
+	;-------------------------- Будильник
+
+	rcall_inc_cicle_alarm:
+		rcall	inc_cicle_alarm
+	
+
 	;-------------------------- Конец инкрементации
 			
 	inc_circle_end:
-		pop		r19
-		pop		r18
-		pop		r17
+		rcall	pop_19_18_17
 
 	ret
 
@@ -223,7 +254,7 @@ bin8bcd:
 	.def	digitH	=	r19
 
 	mov		digitL, BYTE
-	ldi		digitH, 0x00
+	clr		digitH
 
 	bin8bcd_loop:
 		subi	digitL, 0x0a
@@ -432,6 +463,84 @@ MCU_wait_20ms:						; приблизительно 20 мс + время команд
 		brne	MCU_wait_loop_L
 
 	pop		r16
+	pop		r17
+
+	ret
+
+
+push_17_18_19:
+	ldi	YL, low(ram_r17)
+
+	st	Y+, r17
+	st	Y+, r18
+	st	Y, r19
+
+	ret
+	
+pop_19_18_17:
+	ldi	YL, low(ram_r17)
+	ld	r17, Y+
+	ld	r18, Y+
+	ld	r19, Y
+
+	ret	
+
+change_tim1_to_blink_mode:
+	push	r17
+
+	ldi		r17, high(kdel1)	; меняем предделитель на 0,5 сек., чтобы моргало то, что мы меняем в режимах mode 1 - mode 5 или во время работы будильника
+	out		OCR1AH, r17
+	ldi		r17, low(kdel1)		 
+	out		OCR1AL, r17
+	ldi		r17, high(kdel1)	; чтобы сразу отобразилось
+	out		TCNT1H, r17
+	ldi		r17, low(kdel1-10)
+	out		TCNT1L, r17
+
+	pop		r17
+
+	ret
+
+change_tim1_to_normal_mode:
+	push	r17
+
+	ldi		r17, high(kdel2)	; 60 сек.
+	out		OCR1AH, r17
+	ldi		r17, low(kdel2)		 
+	out		OCR1AL, r17
+	ldi		r17, high(kdel2)	; чтобы сразу отобразилось
+	out		TCNT1H, r17
+	ldi		r17, low(kdel2-10)
+	out		TCNT1L, r17
+
+	pop		r17
+
+	ret
+
+change_tim0_to_normal_mode:
+	push	r17
+
+	ldi		r17, (1 << WGM01)							 ; Выбор режима таймера СТС 
+	out		TCCR0A, r17
+	ldi		r17, (1 << CS02) | (0 << CS01) | (1 << CS00) ; Выбор предделителя = 1024 
+	out		TCCR0B, r17
+	ldi		r17, kdel3
+	out		OCR0A, r17
+
+	pop		r17
+
+	ret
+
+change_tim0_to_buzzer_mode:
+	push	r17
+
+	ldi		r17, (1 << WGM01) | (0 << COM0A1) | (1 << COM0A0)		
+	out		TCCR0A, r17
+	ldi		r17, (0 << CS02) | (1 << CS01) | (0 << CS00) 
+	out		TCCR0B, r17
+	ldi		r17, kdel4
+	out		OCR0A, r17
+
 	pop		r17
 
 	ret

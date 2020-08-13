@@ -28,15 +28,19 @@ init:
 	out		PORTB, r17
 	out		PORTD, r17
 
-	clr		r17
-	out		DDRA, r17
-	out		DDRB, r17
-	out		DDRD, r17
+	out		DDRA, CONST_ZERO
+	out		DDRB, CONST_ZERO
+	out		DDRD, CONST_ZERO
+
+	;-------------------------- Инициализация порта зуммера
+
+	cbi		PORT_BUZZER, BUZZER
+	sbi		DDR_BUZZER, BUZZER
 
 	;-------------------------- Инициализация портов ВВ для чипа TM1367
 
-	sbi		DDRB, TM1637_CLK
-	sbi		DDRB, TM1637_DATA
+	sbi		DDR_TM1367, TM1637_CLK
+	sbi		DDR_TM1367, TM1637_DATA
 
 	;-------------------------- Инициализация портов ВВ для чипа DS1302
 
@@ -57,14 +61,20 @@ init:
 
 	ldi		r17, (1 << WGM12) | (1 << CS12) | (0 << CS11) | (1 << CS10) ; Выбор режима таймера (СТС, предделитель = 1024) 
 	out		TCCR1B, r17
-	ldi		r17, high(kdel2)	; Старший полубайт кода совпадения
+	rcall	change_tim1_to_normal_mode
+	/*	ldi		r17, high(kdel2)	; Старший полубайт кода совпадения
 	out		OCR1AH, r17			; Запись в регистр совпадения старш.
 	ldi		r17, low(kdel2)		; Младший полубайт кода совпадения
-	out		OCR1AL, r17			; Запись в регистр совпадения младш.
+	out		OCR1AL, r17			; Запись в регистр совпадения младш.*/
 
-	rcall	tim0_on
+	rcall	change_tim0_to_normal_mode
+/*	ldi		r17, (1 << WGM01)							 ; Выбор режима таймера СТС 
+	out		TCCR0A, r17
+	ldi		r17, (1 << CS02) | (0 << CS01) | (1 << CS00) ; Выбор предделителя = 1024 
+	out		TCCR0B, r17
 	ldi		r17, kdel3
-	out		OCR0A, r17
+	out		OCR0A, r17*/
+
 
 	;--------------------------- Разрешаем прерывание от таймеров
 		

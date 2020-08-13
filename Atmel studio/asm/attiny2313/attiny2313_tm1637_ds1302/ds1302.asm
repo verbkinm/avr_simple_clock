@@ -32,7 +32,7 @@ DS1302_send_byte:
 
 	;------------------------- Счётчик цикла
 
-	ldi		r17, 0x00		
+	clr		r17
 
 	;------------------------- Начало цикла
 
@@ -86,8 +86,8 @@ DS1302_transmit_byte:
 
 	;------------------------- Счётчик цикла
 
-	ldi		r17, 0x00
-	ldi		BYTE, 0x00
+	clr		r17
+	clr		BYTE
 
 	;------------------------- Начало цикла
 
@@ -232,26 +232,17 @@ DS1302_read_package_data_ext:
 
 	ret
 
-;========================================================
+/*;========================================================
 ;       Подпрограммы включения\отключения часов
+;		входящее значение - r18
 ;========================================================
 
-DS1302_clock_on:
+DS1302_clock_change_state:
 	rcall	DS1302_send_start
 	ldi		BYTE, 0x80
 	rcall	DS1302_send_byte
-	ldi		BYTE, 0x00
+	mov		BYTE, r18
 	rcall	DS1302_send_byte
 	rcall	DS1302_send_stop
 
-	ret
-
-DS1302_clock_off:
-	rcall	DS1302_send_start
-	ldi		BYTE, 0x80
-	rcall	DS1302_send_byte
-	ldi		BYTE, 0x80
-	rcall	DS1302_send_byte
-	rcall	DS1302_send_stop
-
-	ret
+	ret*/

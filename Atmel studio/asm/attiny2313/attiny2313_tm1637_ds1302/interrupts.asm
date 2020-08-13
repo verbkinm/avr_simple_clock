@@ -27,12 +27,14 @@ _INT0_or_1:
 
 	_INT01_MODE_press:
 		rcall	_INT0
+
 		rjmp	_INT0_or_1_end
 
 	;-------------------------- Нажатие кнопки Set
 
 	_INT01_SET_press:
 		rcall	_INT1
+
 		rjmp	_INT0_or_1_end
 
 	;-------------------------- Нажатие двух кнопок
@@ -43,17 +45,17 @@ _INT0_or_1:
 		cpi		r17, 0x0C
 		brne	_INT01_double_press
 
-
-		lds		r17, tm_bright_level
-		inc		r17
+		inc		tm_bright_level
+		mov		r17, tm_bright_level
 		cpi		r17, 0x08
 		brlo	_INT01_double_press_set_bright
 	
-		clr		r17			
+		clr		tm_bright_level
 
 		_INT01_double_press_set_bright:
-			sts		tm_bright_level, r17
 			rcall	TM1637_set_bright
+
+		rjmp	_INT0_or_1_end
 
 	_INT0_or_1_end:
 		pop		r17
@@ -73,12 +75,12 @@ _INT0:
 
 	rcall	DS1302_read_package_data
 
+	;-------------------------- Сброс переменной clock_mode
 
-	ldi		r17, 0x00
-	sts		clock_mode, r17
+	sts		clock_mode, CONST_ZERO
 
-	;-------------------------- Инкремент переменной mode
-
+	;-------------------------- Инкремент переменной mode 
+	; !!! Далее r17 не переписывать
 	lds		r17, mode
 	inc		r17
 
@@ -100,6 +102,15 @@ _INT0:
 	breq	_INT0_mode_5
 
 	cpi		r17, 0x06
+	breq	_INT0_mode_6
+
+	cpi		r17, 0x07
+	breq	_INT0_mode_7
+
+	cpi		r17, 0x08
+	breq	_INT0_mode_8
+
+	cpi		r17, 0x09
 	brsh	_INT0_mode_0
 
 	rjmp	_INT0_end
@@ -107,8 +118,6 @@ _INT0:
 	;------------------------- MODE 0
 
 	_INT0_mode_0:
-		rcall	DS1302_clock_on
-		rcall	tim0_on
 		rcall	TM1637_display_time
 
 		;------------------------- Если день был установлен больше, чем максимальный в этом месяце, то данный код это исправляет.
@@ -130,31 +139,16 @@ _INT0:
 		rcall	DS1302_send_stop
 
 		_INT0_mode_0_end:
-			ldi		r17, high(kdel2)	; меняем предделитель на 60 сек.
-			out		OCR1AH, r17			 
-			ldi		r17, low(kdel2)		 
-			out		OCR1AL, r17	
-
-			ldi		r17, 0x00
+			rcall	change_tim1_to_normal_mode
+			clr		r17
 
 		rjmp	_INT0_end
 
 	;------------------------- MODE 1
 
 	_INT0_mode_1:
-		rcall	tim0_off
-		rcall	DS1302_clock_off
 		rcall	TM1637_display_time
-		rcall	TM1637_set_double_point
-
-		ldi		r16, high(kdel1)	; меняем предделитель на 0,5 сек., чтобы моргало то, что мы меняем в режимах mode 1 - mode 5
-		out		OCR1AH, r16 
-		ldi		r16, low(kdel1)		 
-		out		OCR1AL, r16
-		ldi		r16, high(kdel1)	; чтобы сразу отобразилось
-		out		TCNT1H, r16
-		ldi		r16, low(kdel1-10)
-		out		TCNT1L, r16
+		rcall	change_tim1_to_blink_mode
 
 		rjmp	_INT0_end
 
@@ -162,19 +156,12 @@ _INT0:
 
 	_INT0_mode_2:
 		rcall	TM1637_display_time
-		rcall	TM1637_set_double_point
 
 		rjmp	_INT0_end
 
-	;------------------------- MODE 3
+	;------------------------- MODE 3 или 4 
 
 	_INT0_mode_3:
-		rcall	TM1637_display_date
-
-		rjmp	_INT0_end
-
-	;------------------------- MODE 4
-
 	_INT0_mode_4:
 		rcall	TM1637_display_date
 
@@ -184,6 +171,21 @@ _INT0:
 
 	_INT0_mode_5:
 		rcall	TM1637_display_year
+
+		rjmp	_INT0_end
+
+	;------------------------- MODE 6
+
+	_INT0_mode_6:
+		rcall	TM1637_display_alarm_mode
+
+		rjmp	_INT0_end
+
+	;------------------------- MODE 7 или 8
+
+	_INT0_mode_7:
+	_INT0_mode_8:
+		rcall	TM1637_display_alarm
 
 	_INT0_end:
 		sts		mode, r17
@@ -201,9 +203,6 @@ _INT1:
 		sbis	PIN_BUTTON_SET, BUTTON_SET
 		rjmp	_INT1_wait_release
 
-
-	rcall	tim0_off
-
 	lds		r17, mode
 	cpi		r17, 0x00
 	breq	_INT1_clock_mode_pressed
@@ -211,6 +210,7 @@ _INT1:
 	;-------------------------- Режим Set
 
 	_INT1_set_pressed:
+		
 		rcall	inc_circle
 
 		rjmp	_INT1_end
@@ -226,8 +226,7 @@ _INT1:
 		rjmp	_INT1_1
 
 		_INT1_reset_clock_mode:
-			rcall	tim0_on
-			ldi		r17, 0x00
+			clr		r17
 
 		_INT1_1:
 			sts		clock_mode, r17
@@ -247,13 +246,13 @@ _INT1:
 	
 ;-------------------------- Прерывание таймера T1	
 
-
-_TIM1:		
-	push	r17
-	push	r18
-	push	r19
+_TIM1_A:		
+	rcall	push_17_18_19
 	
+	;-------------------------- Проверка режимов Mode
+
 	lds		r17, mode
+
 	cpi		r17, 0x00
 	breq	rcall_TIM1_mode_0
 
@@ -272,38 +271,26 @@ _TIM1:
 	cpi		r17, 0x05
 	breq	rcall_TIM1_mode_5
 
+	cpi		r17, 0x06
+	breq	rcall_TIM1_mode_6
+
+	cpi		r17, 0x07
+	breq	rcall_TIM1_mode_7
+
+	cpi		r17, 0x08
+	breq	rcall_TIM1_mode_8
+
+	cpi		r17, 0x09
+	breq	rcall_TIM1_mode_9
+
+	rjmp	_TIM1_end
+
 	;-------------------------- MODE 0
 
 	rcall_TIM1_mode_0:
 
-		;-------------------------- Считать данные с ds1302 пакетом
-
-		rcall	DS1302_read_package_data
-
-		lds		r17, clock_mode
-
-		cpi		r17, 0x01
-		breq	_TIM1_date_mode
-
-		cpi		r17, 0x02
-		breq	_TIM1_year_mode
-
-		_TIM1_time_mode:
-			rcall	TM1637_display_time
-			rjmp	_TIM1_mode_0_reset_counter_end
-
-		_TIM1_date_mode:
-			rcall	TM1637_display_date
-			rjmp	_TIM1_mode_0_reset_counter_end
-
-		_TIM1_year_mode:
-			rcall	TM1637_display_year
-
-		_TIM1_mode_0_reset_counter_end:
-			ldi		r17, 0x00
-
-		_TIM1_mode_0_end:
-			rcall	TM1637_display
+		rcall	_TIM1_mode_0
+		rcall	alarm_check
 
 		rjmp	_TIM1_end
 
@@ -352,22 +339,87 @@ _TIM1:
 	rcall_TIM1_mode_5:
 		lds		r18, tm_y3
 		lds		r19, tm_y4
-		ldi		r17, 0x03
+		ldi		r17, 0x02
 		rcall	TM1637_blink_pair
 
+		rjmp	_TIM1_end
+
+	;-------------------------- MODE 6
+
+	rcall_TIM1_mode_6:
+		rcall	alarm_blink
+
+		rjmp	_TIM1_end
+
+	;-------------------------- MODE 7
+
+	rcall_TIM1_mode_7:
+		lds		r18, tm_ah1
+		lds		r19, tm_ah2
+		ldi		r17, 0x01
+		rcall	TM1637_blink_pair
+
+		rjmp	_TIM1_end
+
+	;-------------------------- MODE 8
+
+	rcall_TIM1_mode_8:
+		lds		r18, tm_am1
+		lds		r19, tm_am2
+		ldi		r17, 0x02
+		rcall	TM1637_blink_pair
+
+		rjmp	_TIM1_end
+
+	;-------------------------- MODE 9
+
+	rcall_TIM1_mode_9:
+		rcall	change_tim0_to_normal_mode
+		ldi		ZL, low(tm_h1)
+		ld		r18, Z+
+		ld		r19, Z+
+		ldi		r17, 0x01
+		rcall	TM1637_blink_pair
+
+		ld		r18, Z+
+		ld		r19, Z
+		ldi		r17, 0x02
+		rcall	TM1637_blink_pair
+		rcall	change_tim0_to_buzzer_mode
 
 	_TIM1_end:
-		pop		r19
-		pop		r18
-		pop		r17
-		
+
+		rcall	pop_19_18_17
+
 	reti
-	
+
 ;-------------------------- Прерывание таймера T0
 
 _TIM0:
 	push	r17
 	push	BYTE
+
+	in		r17, OCR0A
+	cpi		r17, kdel4
+	breq	_TIM0_end
+
+	inc		timer0_counter_alarm_unlock
+	sbrc	timer0_counter_alarm_unlock, 7
+	clr		alarm_lock
+
+	;-------------------------- 
+
+	lds		r17, mode
+	lds		BYTE, clock_mode
+	add		r17, BYTE
+	brne	_TIM0_end
+
+/*	lds		r17, mode
+	cpi		r17, 0x00
+	brne	_TIM0_end
+	lds		r17, clock_mode
+	cpi		r17, 0x00
+	brne	_TIM0_end*/
 
 	inc		timer0_counter
 	cpi		timer0_counter, 0x03
@@ -399,20 +451,33 @@ _TIM0:
 	reti
 
 
-tim0_on:
-	push	r17
-	ldi		r17, (1 << WGM01)							 ; Выбор режима таймера СТС 
-	out		TCCR0A, r17
-	ldi		r17, (1 << CS02) | (0 << CS01) | (1 << CS00) ; Выбор предделителя = 1024 
-	out		TCCR0B, r17
-	pop		r17
 
-	ret
+_TIM1_mode_0:
 
-tim0_off:
-	push	r17
-	ldi		r17, (0 << CS02) | (0 << CS01) | (0 << CS00) ; Выбор предделителя = 1024 
-	out		TCCR0B, r17
-	pop		r17
+	;-------------------------- Считать данные с ds1302 пакетом
+
+	rcall	DS1302_read_package_data
+
+	lds		r17, clock_mode
+
+	cpi		r17, 0x01
+	breq	_TIM1_date_mode
+
+	cpi		r17, 0x02
+	breq	_TIM1_year_mode
+
+	_TIM1_time_mode:
+		rcall	TM1637_display_time
+		rjmp	_TIM1_mode_0_end
+
+	_TIM1_date_mode:
+		rcall	TM1637_display_date
+		rjmp	_TIM1_mode_0_end
+
+	_TIM1_year_mode:
+		rcall	TM1637_display_year
+
+	_TIM1_mode_0_end:
+		rcall	TM1637_display
 
 	ret
