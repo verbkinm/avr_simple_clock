@@ -224,10 +224,9 @@ DS1302_read_package_data_f1:
 DS1302_read_package_data_ext:
 	rcall	DS1302_read_package_data_f1
 	st		X, BYTE
-
+	mov		r17, BYTE
 	rcall	conv_ds1302_to_tm1637
 	st		Y, r16
-
 	st		Z, r15
 
 	ret

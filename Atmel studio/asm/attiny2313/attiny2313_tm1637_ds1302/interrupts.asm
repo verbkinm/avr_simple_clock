@@ -77,12 +77,15 @@ _INT0:
 
 	;-------------------------- Сброс переменной clock_mode
 
-	sts		clock_mode, CONST_ZERO
+	;sts		clock_mode, CONST_ZERO
+	clr		clock_mode
 
 	;-------------------------- Инкремент переменной mode 
 	; !!! Далее r17 не переписывать
-	lds		r17, mode
-	inc		r17
+	;lds		r17, mode
+	;inc		r17
+	inc		mode
+	mov		r17, mode
 
 	;-------------------------- Выбор режима mode
 
@@ -133,8 +136,8 @@ _INT0:
 		ldi		BYTE, 0x86
 		rcall	DS1302_send_start
 		rcall	DS1302_send_byte
-		mov		BYTE, r17
 		rcall	bin8bcd
+		mov		BYTE, r17
 		rcall	DS1302_send_byte
 		rcall	DS1302_send_stop
 
@@ -188,7 +191,8 @@ _INT0:
 		rcall	TM1637_display_alarm
 
 	_INT0_end:
-		sts		mode, r17
+		;sts		mode, r17
+		mov		mode, r17
 		pop		r16
 		pop		r17
 
@@ -203,7 +207,7 @@ _INT1:
 		sbis	PIN_BUTTON_SET, BUTTON_SET
 		rjmp	_INT1_wait_release
 
-	lds		r17, mode
+	mov		r17, mode
 	cpi		r17, 0x00
 	breq	_INT1_clock_mode_pressed
 
@@ -218,18 +222,22 @@ _INT1:
 	;-------------------------- Режим Clock mode
 
 	_INT1_clock_mode_pressed:
-		lds		r17, clock_mode
-		inc		r17
+		;lds		r17, clock_mode
+		;inc		r17
+		inc		clock_mode
 
-		cpi		r17, 0x03
+		;cpi		r17, 0x03
+		ldi		r17, 0x03
+		cp		clock_mode, r17
 		brsh	_INT1_reset_clock_mode
 		rjmp	_INT1_1
 
 		_INT1_reset_clock_mode:
-			clr		r17
+			;clr		r17
+			clr		clock_mode
 
 		_INT1_1:
-			sts		clock_mode, r17
+			;sts		clock_mode, r17
 
 			;-------------------------- Чтобы данные сразу отобразились
 			
@@ -247,11 +255,15 @@ _INT1:
 ;-------------------------- Прерывание таймера T1	
 
 _TIM1_A:		
-	rcall	push_17_18_19
+	;rcall	push_17_18_19
+	push	r17
+	push	r18
+	push	r19
 	
 	;-------------------------- Проверка режимов Mode
 
-	lds		r17, mode
+	;lds		r17, mode
+	mov		r17, mode
 
 	cpi		r17, 0x00
 	breq	rcall_TIM1_mode_0
@@ -389,7 +401,10 @@ _TIM1_A:
 
 	_TIM1_end:
 
-		rcall	pop_19_18_17
+		;rcall	pop_19_18_17
+		pop		r19
+		pop		r18
+		pop		r17
 
 	reti
 
@@ -404,22 +419,15 @@ _TIM0:
 	breq	_TIM0_end
 
 	inc		timer0_counter_alarm_unlock
-	sbrc	timer0_counter_alarm_unlock, 7
+	sbrc	timer0_counter_alarm_unlock, 7		; 128 * 240 мс ~ 31 мс
 	clr		alarm_lock
 
 	;-------------------------- 
 
-	lds		r17, mode
-	lds		BYTE, clock_mode
+	mov		r17, mode
+	mov		BYTE, clock_mode
 	add		r17, BYTE
 	brne	_TIM0_end
-
-/*	lds		r17, mode
-	cpi		r17, 0x00
-	brne	_TIM0_end
-	lds		r17, clock_mode
-	cpi		r17, 0x00
-	brne	_TIM0_end*/
 
 	inc		timer0_counter
 	cpi		timer0_counter, 0x03
@@ -458,7 +466,8 @@ _TIM1_mode_0:
 
 	rcall	DS1302_read_package_data
 
-	lds		r17, clock_mode
+	;lds		r17, clock_mode
+	mov		r17, clock_mode
 
 	cpi		r17, 0x01
 	breq	_TIM1_date_mode

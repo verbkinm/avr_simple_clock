@@ -2,55 +2,55 @@
 ;		Преобразование данных с ds1302 в 
 ;		числа для 4-х сегментного дисплея tm1637
 ;		запись результата в регистры r16:r15 
-;		вход - регистр BYTE
+;		вход - регистр r17
 ;========================================================
 
 conv_ds1302_to_tm1637:
-	push	r17
+	push	r18
 
 	;------------------------- преобразуем младший разряд в регистр r15
 
-	mov		r17, BYTE
-	andi	r17, 0x0f
+	mov		r18, r17
+	andi	r18, 0x0f
 	rcall	bin_to_tm1637_digit
-	mov		r15, r17
+	mov		r15, r18
 
 	;------------------------- преобразуем старший разряд в регистр r16
 
-	mov		r17, BYTE
-	andi	r17, 0xf0
-	swap	r17
+	mov		r18, r17
+	andi	r18, 0xf0
+	swap	r18
 	rcall	bin_to_tm1637_digit
-	mov		r16, r17
-	pop		r17
+	mov		r16, r18
+	pop		r18
 
 	ret
 
 ;------------------------- Подфункция преобразования.
-;------------------------- Данные из регистра r17 преобразуются в числовое 
+;------------------------- Данные из регистра r18 преобразуются в числовое 
 ;------------------------- значение для 7-сегментного индикатора, результат в 
-;------------------------- регистр r17
+;------------------------- регистр r18
 
 bin_to_tm1637_digit:
-	cpi		r17, 0x00
+	cpi		r18, 0x00
 	breq	_d0
-	cpi		r17, 0x01
+	cpi		r18, 0x01
 	breq	_d1
-	cpi		r17, 0x02
+	cpi		r18, 0x02
 	breq	_d2
-	cpi		r17, 0x03
+	cpi		r18, 0x03
 	breq	_d3
-	cpi		r17, 0x04
+	cpi		r18, 0x04
 	breq	_d4
-	cpi		r17, 0x05
+	cpi		r18, 0x05
 	breq	_d5
-	cpi		r17, 0x06
+	cpi		r18, 0x06
 	breq	_d6
-	cpi		r17, 0x07
+	cpi		r18, 0x07
 	breq	_d7
-	cpi		r17, 0x08
+	cpi		r18, 0x08
 	breq	_d8
-	cpi		r17, 0x09
+	cpi		r18, 0x09
 	breq	_d9
 
 	rjmp	_dx
@@ -58,37 +58,37 @@ bin_to_tm1637_digit:
 	;------------------------- Подпрограммы для чисел 0..9
 
 	_d0:
-		ldi		r17, 0b00111111
+		ldi		r18, 0b00111111
 		rjmp	bin_to_tm1637_digit_end
 	_d1:
-		ldi		r17, 0b00000110
+		ldi		r18, 0b00000110
 		rjmp	bin_to_tm1637_digit_end
 	_d2:
-		ldi		r17, 0b01011011
+		ldi		r18, 0b01011011
 		rjmp	bin_to_tm1637_digit_end
 	_d3:
-		ldi		r17, 0b01001111
+		ldi		r18, 0b01001111
 		rjmp	bin_to_tm1637_digit_end
 	_d4:
-		ldi		r17, 0b01100110
+		ldi		r18, 0b01100110
 		rjmp	bin_to_tm1637_digit_end
 	_d5:
-		ldi		r17, 0b01101101
+		ldi		r18, 0b01101101
 		rjmp	bin_to_tm1637_digit_end
 	_d6:
-		ldi		r17, 0b01111101
+		ldi		r18, 0b01111101
 		rjmp	bin_to_tm1637_digit_end
 	_d7:
-		ldi		r17, 0b00000111
+		ldi		r18, 0b00000111
 		rjmp	bin_to_tm1637_digit_end
 	_d8:
-		ldi		r17, 0b01111111
+		ldi		r18, 0b01111111
 		rjmp	bin_to_tm1637_digit_end
 	_d9:
-		ldi		r17, 0b01101111
+		ldi		r18, 0b01101111
 		rjmp	bin_to_tm1637_digit_end
 	_dx:
-		ldi		r17, 0b01001001
+		ldi		r18, 0b01001001
 	
 	bin_to_tm1637_digit_end:
 
@@ -102,7 +102,6 @@ _inc:
 	inc		r17
 	cp		r17, r18
 	brsh	_inc_reset
-	;brcs	_inc_reset
 
 	rjmp	_inc_end
 
@@ -118,9 +117,13 @@ _inc:
 ;========================================================
 
 inc_circle:
-	rcall	push_17_18_19
+	;rcall	push_17_18_19
+	push	r17
+	push	r18
+	push	r19
 
-	lds		r17, mode
+	;lds		r17, mode
+	mov		r17, mode
 
 	;-------------------------- Выбор режима mode
 
@@ -236,14 +239,17 @@ inc_circle:
 	;-------------------------- Конец инкрементации
 			
 	inc_circle_end:
-		rcall	pop_19_18_17
+		;rcall	pop_19_18_17
+		pop		r19
+		pop		r18
+		pop		r17
 
 	ret
 
 ;========================================================
 ;		Преобразование 8-битного двоичного
 ;		значения в упакованный BCD формат
-;		Входящее\исходящее значение == BYTE
+;		Входящее\исходящее значение == r17
 ;========================================================
 
 bin8bcd:
@@ -253,7 +259,7 @@ bin8bcd:
 	.def	digitL	=	r18
 	.def	digitH	=	r19
 
-	mov		digitL, BYTE
+	mov		digitL, r17
 	clr		digitH
 
 	bin8bcd_loop:
@@ -267,10 +273,10 @@ bin8bcd:
 		subi	digitL, -0x0a
 
 		swap	digitH
-		mov		BYTE, digitH
+		mov		r17, digitH
 
 		andi	digitL, 0x0f
-		or		BYTE, digitL
+		or		r17, digitL
 
 		.undef	digitL
 		.undef	digitH
@@ -343,8 +349,8 @@ inc_circle_ext:
 		rcall	DS1302_send_start
 		rcall	DS1302_send_byte
 
-		mov		BYTE, r17
 		rcall	bin8bcd
+		mov		BYTE, r17
 
 		rcall	DS1302_send_byte
 		rcall	DS1302_send_stop	
@@ -468,7 +474,7 @@ MCU_wait_20ms:						; приблизительно 20 мс + время команд
 	ret
 
 
-push_17_18_19:
+/*push_17_18_19:
 	ldi	YL, low(ram_r17)
 
 	st	Y+, r17
@@ -483,7 +489,7 @@ pop_19_18_17:
 	ld	r18, Y+
 	ld	r19, Y
 
-	ret	
+	ret	*/
 
 change_tim1_to_blink_mode:
 	push	r17
@@ -542,5 +548,58 @@ change_tim0_to_buzzer_mode:
 	out		OCR0A, r17
 
 	pop		r17
+
+	ret
+
+;========================================================
+;			 Запись в EEPROM память
+;	адрес - r18
+;	данные для записи - r17
+;========================================================
+
+EEPROM_write:
+	push	r17
+	push	r18
+
+	; Wait for completion of previous write
+	sbic	EECR, EEPE
+	rjmp	EEPROM_write
+	; Set Programming mode
+	;ldi		r16, (0<<EEPM1)|(0<<EEPM0)
+	out		EECR, CONST_ZERO
+	; Set up address in address registers
+	out		EEARL, r18
+	; Write data (r18) to data register
+	out		EEDR, r17
+	; Write logical one to EEMPE
+	sbi		EECR, EEMPE
+	; Start eeprom write by setting EEPE
+	sbi		EECR, EEPE
+
+	pop		r18
+	pop		r17
+
+	ret
+
+;========================================================
+;			 Чтение из EEPROM памяти
+;	адрес - r18
+;	возвращаеммые данные - r17
+;========================================================
+
+EEPROM_read:
+	push	r18
+
+	; Wait for completion of previous write
+	sbic	EECR, EEPE
+	rjmp	EEPROM_read
+	; Set up address in address registers
+	out		EEARL, r18
+	; Start eeprom read by writing EERE
+	sbi		EECR, EERE
+	; Read data from data register
+	in		r17, EEDR
+
+	pop		r18
 
 	ret

@@ -18,6 +18,14 @@
 .equ	TM1637_CLK		= PB0
 .equ	TM1637_DATA		= PB1
 
+;------------------------- Постоянные символы для tm1637
+
+.equ	char_A			= 0b01110111
+.equ	char_minus		= 0b01000000
+.equ	char_N			= 0b00110111
+.equ	char_F			= 0b01110001
+.equ	char_O			= 0b00111111
+
 ;------------------------- Регистры/описания для работы с ds1302
 
 .equ	PORT_DS1302		= PORTB
@@ -26,7 +34,6 @@
 .equ	DS1302_CE		= PB3
 .equ	DS1302_SCLK		= PB4
 .equ	DS1302_IO		= PB5
-
 
 ;------------------------- Регистры/описания для работы с кнопками
 
@@ -40,14 +47,7 @@
 .equ	PIN_BUTTON_SET	= PIND
 .equ	BUTTON_SET		= PD3
 
-
-.equ	char_A			= 0b01110111
-.equ	char_minus		= 0b01000000
-.equ	char_N			= 0b00110111
-.equ	char_F			= 0b01110001
-.equ	char_O			= 0b00111111
-
-;------------------------- Регистры/описания для зуммер
+;------------------------- Регистры/описания для зуммера
 
 .equ	PORT_BUZZER		= PORTB
 .equ	DDR_BUZZER		= DDRB
