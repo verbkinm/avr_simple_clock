@@ -108,6 +108,8 @@ DS1302_receive_byte:
 
 	DS1302_while_receive_end:
 		rcall	DS1302_receive_byte_write_bit
+		sbi		PORT_DS1302, DS1302_SCLK
+
 		pop		r16
 
 	ret
@@ -128,102 +130,53 @@ DS1302_receive_byte_write_bit:
 
 DS1302_read_package_data:
 	push	r17
-	push	ZH
-	push	ZL
-	push	YH
-	push	YL
+	push	r16
+	push	r15
 	push	XH
 	push	XL
+	push	YH
+	push	YL
 
-	;------------------------- Минтуы
+	ldi		XH, high(bcd_seconds)
+	ldi		XL, low(bcd_seconds)
 
-	ldi		BYTE, 0x83
-	ldi		XH, high(bcd_minutes)		
-	ldi		XL, low(bcd_minutes)
-	ldi		YH, high(tm_m1)		
-	ldi		YL, low(tm_m1)
-	ldi		ZH, high(tm_m2)		
-	ldi		ZL, low(tm_m2)
+	ldi		YH, high(tm_s1)
+	ldi		YL, low(tm_s1)
 
-	rcall	DS1302_read_package_data_ext
-
-	;------------------------- Часы
-
-	ldi		BYTE, 0x85
-	ldi		XH, high(bcd_hours)		
-	ldi		XL, low(bcd_hours)
-	ldi		YH, high(tm_h1)		
-	ldi		YL, low(tm_h1)
-	ldi		ZH, high(tm_h2)		
-	ldi		ZL, low(tm_h2)
-
-	rcall	DS1302_read_package_data_ext
-
-	;------------------------- Число
-
-	ldi		BYTE, 0x87
-	ldi		XH, high(bcd_day)		
-	ldi		XL, low(bcd_day)
-	ldi		YH, high(tm_d1)		
-	ldi		YL, low(tm_d1)
-	ldi		ZH, high(tm_d2)		
-	ldi		ZL, low(tm_d2)
-
-	rcall	DS1302_read_package_data_ext
-
-	;------------------------- Месяц
-
-	ldi		BYTE, 0x89
-	ldi		XH, high(bcd_month)		
-	ldi		XL, low(bcd_month)
-	ldi		YH, high(tm_mt1)		
-	ldi		YL, low(tm_mt1)
-	ldi		ZH, high(tm_mt2)		
-	ldi		ZL, low(tm_mt2)
-
-	rcall	DS1302_read_package_data_ext
-
-	;------------------------- Год
-
-	ldi		BYTE, 0x8D
-	ldi		XH, high(bcd_year)		
-	ldi		XL, low(bcd_year)
-	ldi		YH, high(tm_y3)		
-	ldi		YL, low(tm_y3)
-	ldi		ZH, high(tm_y4)		
-	ldi		ZL, low(tm_y4)
-
-	rcall	DS1302_read_package_data_ext
-
-	pop		XL
-	pop		XH
-	pop		YL
-	pop		YH
-	pop		ZL
-	pop		ZH
-	pop		r17
-
-	ret
-
-;========================================================
-;			Считать данные с ds1302.
-;	Адрес регистра чтения ds1302 в регистре BYTE.
-;	Запись ответа от ds1302 в переменную по адресу X.
-;	Запись преобразованных ответов для TM1367 в 
-;	переменные по адресу Y (старший разряд) 
-;	и Z (младший разряд).
-;========================================================
-
-DS1302_read_package_data_ext:
 	rcall	DS1302_send_start
+	ldi		BYTE, 0xBF
 	rcall	DS1302_send_byte
-	rcall	DS1302_receive_byte
-	rcall	DS1302_send_stop
 
-	st		X, BYTE
-	mov		r17, BYTE
-	rcall	conv_ds1302_to_tm1637
-	st		Y, r16
-	st		Z, r15
+	clr		r17
+
+	DS1302_read_package_data_while_receive:
+		cpi		r17, 0x07
+		brsh	DS1302_read_package_data_while_receive_end
+
+		rcall	DS1302_receive_byte
+
+		st		X+, BYTE
+		push	r17
+		mov		r17, BYTE
+		rcall	conv_ds1302_to_tm1637
+		st		Y+, r16
+		st		Y+, r15
+		pop		r17
+
+		inc		r17
+
+		rjmp	DS1302_read_package_data_while_receive
+
+	DS1302_read_package_data_while_receive_end:
+
+		rcall	DS1302_send_stop
+
+		pop		YL
+		pop		YH
+		pop		XL
+		pop		XH
+		pop		r15
+		pop		r16
+		pop		r17
 
 	ret
