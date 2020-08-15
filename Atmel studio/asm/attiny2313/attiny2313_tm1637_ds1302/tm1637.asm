@@ -12,7 +12,7 @@ TM1637_display:
 	rcall	TM1637_send_byte
 	rcall	TM1637_stop
 
-	;------------------------- Начальный адрес 
+	;------------------------- Начальный адрес - первый символ
 
 	rcall	TM1637_start
 	ldi		BYTE, 0xC0
@@ -42,17 +42,17 @@ TM1637_display:
 ;========================================================
 
 TM1637_send_byte:
-	push	r17
+	push	r16
 	push	BYTE
 
 	;------------------------- Счётчик цикла
 
-	clr		r17
+	clr		r16
 
 	;------------------------- Начало цикла
 
 	TM1637_while_send:
-		cpi		r17, 0x08
+		cpi		r16, 0x08
 		brsh	TM1637_wait_ACK
 
 		cbi		PORT_TM1367, TM1637_CLK
@@ -69,13 +69,13 @@ TM1637_send_byte:
 
 		TM1637_while_send_bit:
 
-			;------------------------- Отправка бита
+			;------------------------- Отправка бита, задержки в один nop на 1МГ хватает
 
 			nop
 			sbi		PORT_TM1367, TM1637_CLK                    
 			nop
 
-			inc		r17
+			inc		r16
 
 			cbi		PORT_TM1367, TM1637_CLK
 			nop
@@ -94,7 +94,7 @@ TM1637_send_byte:
 		cbi		PORT_TM1367, TM1637_CLK
 
 		pop		BYTE
-		pop		r17
+		pop		r16
 
 	ret
 
@@ -120,43 +120,6 @@ TM1637_stop:
 	ret
 
 ;========================================================
-;       Включение и выключение двоеточия
-;========================================================
-
-/*TM1637_set_double_point:
-	push	r17
-	ldi		r17, 0x01
-	sts		double_point, r17
-	ori		TM1637_char2, 0x80
-	rcall	TM1637_display
-	pop		r17
-
-	ret
-
-TM1637_unset_double_point:
-	push	r17
-	ldi		r17, 0x00
-	sts		double_point, r17
-	andi	TM1637_char2, 0x7f
-	rcall	TM1637_display
-	pop		r17
-
-	ret*/
-
-/*;========================================================
-;       Отображение прочерков на всех элементах
-;========================================================
-
-TM1637_display_dash:
-	ldi		TM1637_char1, 0b01000000
-	ldi		TM1637_char2, 0b01000000
-	ldi		TM1637_char3, 0b01000000
-	ldi		TM1637_char4, 0b01000000
-	rcall	TM1637_display
-
-	ret*/
-
-;========================================================
 ;				Отображение времени
 ;========================================================
 
@@ -180,6 +143,7 @@ TM1637_display_date:
 	lds		TM1637_char2, tm_d2
 	lds		TM1637_char3, tm_mt1
 	lds		TM1637_char4, tm_mt2
+
 	rcall	TM1637_display
 
 	ret
@@ -193,6 +157,7 @@ TM1637_display_year:
 	lds		TM1637_char2, tm_y2
 	lds		TM1637_char3, tm_y3
 	lds		TM1637_char4, tm_y4
+
 	rcall	TM1637_display
 
 	ret
@@ -207,6 +172,7 @@ TM1637_display_alarm:
 	sbr		TM1637_char2, 0b10000000
 	lds		TM1637_char3, tm_am1
 	lds		TM1637_char4, tm_am2
+
 	rcall	TM1637_display
 
 	ret
@@ -217,16 +183,14 @@ TM1637_display_alarm:
 
 TM1637_display_alarm_mode:
 	push	r17
-
+	
 	ldi		TM1637_char1, char_A
 	ldi		TM1637_char2, char_minus
-	ldi		TM1637_char3, char_O
+	ldi		TM1637_char3, char_0
 		
-	;lds		r17, alarm
-	;sbrc	r17, 0
 	sbrc	alarm, 0
 	ldi		TM1637_char4, char_N
-	sbrs	r17, 0
+	sbrs	alarm, 0
 	ldi		TM1637_char4, char_F
 
 	rcall	TM1637_display
@@ -240,12 +204,14 @@ TM1637_display_alarm_mode:
 ;	Режимы: 
 ;		1-й и 2-й элементы r17==1
 ;		3-й и 4-й элементы r17==2
-;	значение 1-го элемента == r18
-;	значение 2-го элемента == r19
+;	значение 1-го моргающего элемента == r18
+;	значение 2-го моргающего элемента == r19
 ;========================================================
 
 TM1637_blink_pair:
-	;rcall	push_17_18_19
+	push	r19
+	push	r18
+	push	r17
 
 	cpi		r17, 0x01
 	breq	TM1637_blink_pair_first
@@ -270,21 +236,21 @@ TM1637_blink_pair:
 	TM1637_blink_pair_end:
 		rcall	TM1637_display
 
-		;rcall	pop_19_18_17
+		pop		r19
+		pop		r18
+		pop		r17
 
 	ret
 
 ;========================================================
-; Установка яркости дисплея. Входящее значение (0 - 7)
-; в переменной tm_bright_level без проверки входящего 
+; Установка яркости дисплея. Входящее значение (0..7)
+; в регистре tm_bright_level, без проверки входящего 
 ; значения
 ;========================================================
 
 TM1637_set_bright:
 	push	BYTE
 
-/*	lds		BYTE, tm_bright_level
-	sbr		BYTE, 0x88*/
 	mov		BYTE, tm_bright_level
 	sbr		BYTE, 0x88
 

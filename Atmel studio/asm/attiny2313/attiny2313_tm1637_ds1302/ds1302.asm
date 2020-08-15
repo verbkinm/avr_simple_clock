@@ -22,22 +22,22 @@ DS1302_send_stop:
 ;========================================================
 
 DS1302_send_byte:
-	push	r17
+	push	r16
 	push	BYTE
 
 	;------------------------- Вывод DAT на выход
 
-	sbi		DDR_DS1302, DS1302_IO
 	cbi		PORT_DS1302, DS1302_IO
+	sbi		DDR_DS1302, DS1302_IO
 
 	;------------------------- Счётчик цикла
 
-	clr		r17
+	clr		r16
 
 	;------------------------- Начало цикла
 
 	DS1302_while_send:
-		cpi		r17, 0x08
+		cpi		r16, 0x08
 		brsh	DS1302_while_send_end
 
 		cbi		PORT_DS1302, DS1302_SCLK
@@ -60,7 +60,7 @@ DS1302_send_byte:
 			sbi		PORT_DS1302, DS1302_SCLK
 			rcall	MCU_wait_10mks
 
-			inc		r17
+			inc		r16
 
 		rjmp	DS1302_while_send
 
@@ -68,7 +68,7 @@ DS1302_send_byte:
 
 	DS1302_while_send_end:
 		pop		BYTE
-		pop		r17
+		pop		r16
 
 	ret
 
@@ -76,8 +76,8 @@ DS1302_send_byte:
 ;       Получение байта, результат в регистр BYTE
 ;========================================================
 
-DS1302_transmit_byte:
-	push	r17
+DS1302_receive_byte:
+	push	r16
 
 	;------------------------- Вывод DAT на вход
 
@@ -86,33 +86,33 @@ DS1302_transmit_byte:
 
 	;------------------------- Счётчик цикла
 
-	clr		r17
+	clr		r16
 	clr		BYTE
 
 	;------------------------- Начало цикла
 
-	DS1302_while_transmit:
-		cpi		r17, 0x07
-		brsh	DS1302_while_transmit_end
+	DS1302_while_receive:
+		cpi		r16, 0x07
+		brsh	DS1302_while_receive_end
 
-		rcall	DS1302_transmit_byte_write_bit
+		rcall	DS1302_receive_byte_write_bit
 
 		lsr		BYTE
 		sbi		PORT_DS1302, DS1302_SCLK
 		rcall	MCU_wait_10mks
 
-		inc		r17
-		rjmp	DS1302_while_transmit
+		inc		r16
+		rjmp	DS1302_while_receive
 
-	;------------------------- Выход из цикла
+	;------------------------- Выход из цикла и получение последнего бита
 
-	DS1302_while_transmit_end:
-		rcall	DS1302_transmit_byte_write_bit
-		pop		r17
+	DS1302_while_receive_end:
+		rcall	DS1302_receive_byte_write_bit
+		pop		r16
 
 	ret
 
-DS1302_transmit_byte_write_bit:
+DS1302_receive_byte_write_bit:
 	cbi		PORT_DS1302, DS1302_SCLK
 	rcall	MCU_wait_10mks
 	sbic	PIN_DS1302, DS1302_IO
@@ -121,6 +121,7 @@ DS1302_transmit_byte_write_bit:
 	andi	BYTE, 0x7f
 
 	ret
+
 ;========================================================
 ;			Считать данные с ds1302 пакетом
 ;========================================================
@@ -204,14 +205,6 @@ DS1302_read_package_data:
 
 	ret
 
-DS1302_read_package_data_f1:
-	rcall	DS1302_send_start
-	rcall	DS1302_send_byte
-	rcall	DS1302_transmit_byte
-	rcall	DS1302_send_stop
-
-	ret
-
 ;========================================================
 ;			Считать данные с ds1302.
 ;	Адрес регистра чтения ds1302 в регистре BYTE.
@@ -222,7 +215,11 @@ DS1302_read_package_data_f1:
 ;========================================================
 
 DS1302_read_package_data_ext:
-	rcall	DS1302_read_package_data_f1
+	rcall	DS1302_send_start
+	rcall	DS1302_send_byte
+	rcall	DS1302_receive_byte
+	rcall	DS1302_send_stop
+
 	st		X, BYTE
 	mov		r17, BYTE
 	rcall	conv_ds1302_to_tm1637
@@ -230,18 +227,3 @@ DS1302_read_package_data_ext:
 	st		Z, r15
 
 	ret
-
-/*;========================================================
-;       Подпрограммы включения\отключения часов
-;		входящее значение - r18
-;========================================================
-
-DS1302_clock_change_state:
-	rcall	DS1302_send_start
-	ldi		BYTE, 0x80
-	rcall	DS1302_send_byte
-	mov		BYTE, r18
-	rcall	DS1302_send_byte
-	rcall	DS1302_send_stop
-
-	ret*/

@@ -3,10 +3,11 @@
 ;		числа для 4-х сегментного дисплея tm1637
 ;		запись результата в регистры r16:r15 
 ;		вход - регистр r17
+;		выход - r16:r15
 ;========================================================
 
 conv_ds1302_to_tm1637:
-	push	r18
+	push	r17
 
 	;------------------------- преобразуем младший разряд в регистр r15
 
@@ -22,7 +23,8 @@ conv_ds1302_to_tm1637:
 	swap	r18
 	rcall	bin_to_tm1637_digit
 	mov		r16, r18
-	pop		r18
+
+	pop		r17
 
 	ret
 
@@ -58,37 +60,37 @@ bin_to_tm1637_digit:
 	;------------------------- Подпрограммы для чисел 0..9
 
 	_d0:
-		ldi		r18, 0b00111111
+		ldi		r18, char_0
 		rjmp	bin_to_tm1637_digit_end
 	_d1:
-		ldi		r18, 0b00000110
+		ldi		r18, char_1
 		rjmp	bin_to_tm1637_digit_end
 	_d2:
-		ldi		r18, 0b01011011
+		ldi		r18, char_2
 		rjmp	bin_to_tm1637_digit_end
 	_d3:
-		ldi		r18, 0b01001111
+		ldi		r18, char_3
 		rjmp	bin_to_tm1637_digit_end
 	_d4:
-		ldi		r18, 0b01100110
+		ldi		r18, char_4
 		rjmp	bin_to_tm1637_digit_end
 	_d5:
-		ldi		r18, 0b01101101
+		ldi		r18, char_5
 		rjmp	bin_to_tm1637_digit_end
 	_d6:
-		ldi		r18, 0b01111101
+		ldi		r18, char_6
 		rjmp	bin_to_tm1637_digit_end
 	_d7:
-		ldi		r18, 0b00000111
+		ldi		r18, char_7
 		rjmp	bin_to_tm1637_digit_end
 	_d8:
-		ldi		r18, 0b01111111
+		ldi		r18, char_8
 		rjmp	bin_to_tm1637_digit_end
 	_d9:
-		ldi		r18, 0b01101111
+		ldi		r18, char_9
 		rjmp	bin_to_tm1637_digit_end
 	_dx:
-		ldi		r18, 0b01001001
+		ldi		r18, char_3_dash
 	
 	bin_to_tm1637_digit_end:
 
@@ -96,7 +98,7 @@ bin_to_tm1637_digit:
 
 ;========================================================
 ;	Подпрограммы инкремента с установленными границами
-;	входящее\исходящее значение == r17, r19 == min, r18 == max
+;	входящее\исходящее значение == r17, r19 == min, r18 == max + 1
 ;========================================================
 _inc:
 	inc		r17
@@ -117,38 +119,39 @@ _inc:
 ;========================================================
 
 inc_circle:
-	;rcall	push_17_18_19
-	push	r17
 	push	r18
 	push	r19
+	push	XL
+	push	XH
+	push	ZL
+	push	ZH
 
-	;lds		r17, mode
-	mov		r17, mode
+	mov		r19, CONST_ZERO
 
 	;-------------------------- Выбор режима mode
 
-	cpi		r17, 0x01
+	cpi		mode, mode_1
 	breq	inc_circle_hour
 
-	cpi		r17, 0x02
+	cpi		mode, mode_2
 	breq	inc_circle_minutes
 
-	cpi		r17, 0x03
+	cpi		mode, mode_3
 	breq	inc_circle_day
 
-	cpi		r17, 0x04
+	cpi		mode, mode_4
 	breq	inc_circle_month
 
-	cpi		r17, 0x05
+	cpi		mode, mode_5
 	breq	inc_circle_year
 
-	cpi		r17, 0x06
+	cpi		mode, mode_6
 	breq	rcall_inc_cicle_alarm
 
-	cpi		r17, 0x07
+	cpi		mode, mode_7
 	breq	rcall_inc_cicle_alarm
 
-	cpi		r17, 0x08
+	cpi		mode, mode_8
 	breq	rcall_inc_cicle_alarm
 
 	rjmp	inc_circle_end
@@ -158,7 +161,6 @@ inc_circle:
 	inc_circle_hour:
 		ldi		XH, high(bcd_hours)		
 		ldi		XL, low(bcd_hours)
-		ldi		r19, 0
 		ldi		r18, 24
 		ldi		BYTE, 0x84
 		ldi		ZH, high(TM1637_display_time)
@@ -173,7 +175,6 @@ inc_circle:
 	inc_circle_minutes:
 		ldi		XH, high(bcd_minutes)		
 		ldi		XL, low(bcd_minutes)
-		ldi		r19, 0
 		ldi		r18, 60
 		ldi		BYTE, 0x82
 		ldi		ZH, high(TM1637_display_time)
@@ -220,7 +221,6 @@ inc_circle:
 	inc_circle_year:
 		ldi		XH, high(bcd_year)		
 		ldi		XL, low(bcd_year)
-		ldi		r19, 0
 		ldi		r18, 100
 		ldi		BYTE, 0x8C
 		ldi		ZH, high(TM1637_display_year)
@@ -234,15 +234,16 @@ inc_circle:
 
 	rcall_inc_cicle_alarm:
 		rcall	inc_cicle_alarm
-	
 
 	;-------------------------- Конец инкрементации
 			
 	inc_circle_end:
-		;rcall	pop_19_18_17
+		pop		ZH
+		pop		ZL
+		pop		XH
+		pop		XL
 		pop		r19
 		pop		r18
-		pop		r17
 
 	ret
 
@@ -254,10 +255,10 @@ inc_circle:
 
 bin8bcd:
 	push	r18
-	push	r19
+	push	r16
 
 	.def	digitL	=	r18
-	.def	digitH	=	r19
+	.def	digitH	=	r16
 
 	mov		digitL, r17
 	clr		digitH
@@ -282,7 +283,7 @@ bin8bcd:
 		.undef	digitH
 
 		pop		r19
-		pop		r18
+		pop		r16
 
 	ret
 
@@ -330,20 +331,17 @@ bcd8bin:
 inc_circle_ext:
 	push	r17
 
-	.def	max_digit = r18
-	.def	min_digit = r19
-
 	ld		r17, X
 	rcall	bcd8bin
 	inc		r17
 
-	cp		r17,  max_digit
+	cp		r17,  r18
 	brsh	inc_circle_ext_reset
 
 	rjmp	inc_circle_ext_end
 
 	inc_circle_ext_reset:
-		mov		r17, min_digit
+		mov		r17, r19
 
 	inc_circle_ext_end:
 		rcall	DS1302_send_start
@@ -358,9 +356,6 @@ inc_circle_ext:
 		rcall	DS1302_read_package_data
 		icall
 
-		.undef	max_digit
-		.undef	min_digit
-
 		pop		r17
 
 	ret
@@ -372,6 +367,11 @@ inc_circle_ext:
 ;========================================================
 
 get_max_day:
+	push	ZH
+	push	ZL
+	push	YH
+	push	YL
+
 	ldi		ZH, high(max_day_in_month*2)
 	ldi		ZL, low(max_day_in_month*2)
 
@@ -387,6 +387,11 @@ get_max_day:
 	lpm		r17, Z
 
 	rcall	leap_year
+
+	pop		YL
+	pop		YH
+	pop		ZL
+	pop		ZH
 
 	ret
 
@@ -410,7 +415,7 @@ leap_year:
 	cpi		r17, 0x02
 	brne	leap_year_end
 
-	;------------------------- Каждый сотый год не високосный
+	;------------------------- Каждый сотый год не високосный. В нашем случая, только нулевой год
 
 	lds		r17, bcd_year
 	cpi		r17, 0x00
@@ -474,27 +479,14 @@ MCU_wait_20ms:						; приблизительно 20 мс + время команд
 	ret
 
 
-/*push_17_18_19:
-	ldi	YL, low(ram_r17)
-
-	st	Y+, r17
-	st	Y+, r18
-	st	Y, r19
-
-	ret
-	
-pop_19_18_17:
-	ldi	YL, low(ram_r17)
-	ld	r17, Y+
-	ld	r18, Y+
-	ld	r19, Y
-
-	ret	*/
+;========================================================
+;		Замена предделителя в TIM1
+;========================================================
 
 change_tim1_to_blink_mode:
 	push	r17
 
-	ldi		r17, high(kdel1)	; меняем предделитель на 0,5 сек., чтобы моргало то, что мы меняем в режимах mode 1 - mode 5 или во время работы будильника
+	ldi		r17, high(kdel1)	; меняем предделитель на 0,5 сек., чтобы моргало то, что мы меняем в режимах mode 1 - mode 8 или во время работы будильника
 	out		OCR1AH, r17
 	ldi		r17, low(kdel1)		 
 	out		OCR1AL, r17
@@ -506,6 +498,10 @@ change_tim1_to_blink_mode:
 	pop		r17
 
 	ret
+
+;========================================================
+;		Замена предделителя в TIM1
+;========================================================
 
 change_tim1_to_normal_mode:
 	push	r17
@@ -523,6 +519,10 @@ change_tim1_to_normal_mode:
 
 	ret
 
+;========================================================
+;		Смена режима TIM0
+;========================================================
+
 change_tim0_to_normal_mode:
 	push	r17
 
@@ -536,6 +536,10 @@ change_tim0_to_normal_mode:
 	pop		r17
 
 	ret
+
+;========================================================
+;		Смена режима TIM0
+;========================================================
 
 change_tim0_to_buzzer_mode:
 	push	r17
@@ -561,19 +565,12 @@ EEPROM_write:
 	push	r17
 	push	r18
 
-	; Wait for completion of previous write
 	sbic	EECR, EEPE
 	rjmp	EEPROM_write
-	; Set Programming mode
-	;ldi		r16, (0<<EEPM1)|(0<<EEPM0)
 	out		EECR, CONST_ZERO
-	; Set up address in address registers
 	out		EEARL, r18
-	; Write data (r18) to data register
 	out		EEDR, r17
-	; Write logical one to EEMPE
 	sbi		EECR, EEMPE
-	; Start eeprom write by setting EEPE
 	sbi		EECR, EEPE
 
 	pop		r18
@@ -583,23 +580,19 @@ EEPROM_write:
 
 ;========================================================
 ;			 Чтение из EEPROM памяти
-;	адрес - r18
+;	адрес - r17
 ;	возвращаеммые данные - r17
 ;========================================================
 
 EEPROM_read:
-	push	r18
+	;push	r18
 
-	; Wait for completion of previous write
 	sbic	EECR, EEPE
 	rjmp	EEPROM_read
-	; Set up address in address registers
-	out		EEARL, r18
-	; Start eeprom read by writing EERE
+	out		EEARL, r17
 	sbi		EECR, EERE
-	; Read data from data register
 	in		r17, EEDR
 
-	pop		r18
+	;pop		r18
 
 	ret

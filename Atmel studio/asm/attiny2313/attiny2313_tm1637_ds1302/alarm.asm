@@ -9,11 +9,11 @@ alarm_blink:
 	push	r19
 
 	sbrc	alarm, 0
-	ldi		r19, char_N	; N
+	ldi		r19, char_N	
 	sbrs	alarm, 0
-	ldi		r19, char_F	; F
+	ldi		r19, char_F	
 
-	ldi		r18, char_O	; O
+	ldi		r18, char_O	
 
 	ldi		r17, 0x02
 	rcall	TM1637_blink_pair
@@ -25,7 +25,7 @@ alarm_blink:
 	ret
 
 ;========================================================
-;		Инкремент для будильника
+;				Инкремент для будильника
 ;========================================================
 
 inc_cicle_alarm:
@@ -34,24 +34,23 @@ inc_cicle_alarm:
 	push	r19
 	push	BYTE
 
-	mov		r17, mode
+	mov		r19, CONST_ZERO			; минимальное число для инкремента во всех ниже случаях
 
-	cpi		r17, 0x06
+	cpi		mode, mode_6
 	breq	inc_circle_alarm_switch
 
-	cpi		r17, 0x07
+	cpi		mode, mode_7
 	breq	inc_circle_alarm_hour
 
-	cpi		r17, 0x08
+	cpi		mode, mode_8
 	breq	inc_circle_alarm_minutes
 
 	rjmp	inc_cicle_alarm_end
 
-	;-------------------------- вкл.\выкл. будильника 
+	;-------------------------- Вкл.\выкл. будильника 
 
 	inc_circle_alarm_switch:
 		mov		r17, alarm
-		mov		r19, CONST_ZERO
 		ldi		r18, 2
 		rcall	_inc
 		mov		alarm, r17
@@ -64,11 +63,10 @@ inc_cicle_alarm:
 	;-------------------------- Выставление часов будильника
 
 	inc_circle_alarm_hour:
-		ldi		r18, bcd_alarm_hours
+		ldi		r17, bcd_alarm_hours
 		rcall	EEPROM_read
 
 		rcall	bcd8bin
-		mov		r19, CONST_ZERO
 		ldi		r18, 24
 		rcall	_inc
 		rcall	bin8bcd
@@ -87,11 +85,10 @@ inc_cicle_alarm:
 	;-------------------------- Выставление минут будильника
 
 	inc_circle_alarm_minutes:
-		ldi		r18, bcd_alarm_minutes
+		ldi		r17, bcd_alarm_minutes
 		rcall	EEPROM_read
 
 		rcall	bcd8bin
-		ldi		r19, 0
 		ldi		r18, 60
 		rcall	_inc
 		rcall	bin8bcd
@@ -114,7 +111,7 @@ inc_cicle_alarm:
 	ret
 
 ;========================================================
-;			Включить будильник
+;				Включить будильник
 ;========================================================
 
 alarm_on:
@@ -122,18 +119,16 @@ alarm_on:
 	push	r17
 	push	r16
 
-/*	ldi		r17, (0 << INT0) | (0 << INT1)
-	out		GIMSK, r17*/
 	out		GIMSK, CONST_ZERO			; отключить прерывания от кнопок 
 
 	rcall	TM1637_display_time
 
-	ldi		r17, 0x09
-	mov		mode, r17
+	ldi		mode, mode_9				; mode_9 включается только во время срабатывания будильника
 
 	rcall	change_tim1_to_blink_mode
 	rcall	change_tim0_to_buzzer_mode
-	sei									; т.к. эта процедура вызывается из прерывания TIM1, то до этого момента прерывания отключены 
+
+	sei									; т.к. процедура "alarm_on" вызывается из прерывания TIM1, то до этого момента прерывания отключены 
 
 	;-------------------------- ~ 1 мин. 10 сек. Данный цикл + его команды + прерывание на таймер с его командами. Нужно, чтобы будильник сам выключился через время, а не звонил вечно, до самого обеда!
 
@@ -163,7 +158,7 @@ alarm_on:
 		rcall	change_tim0_to_normal_mode
 		rcall	TM1637_display_time
 		clr		mode
-		ldi		r16, 0x01
+		ldi		r16, 0x01			; Блокировка будильника
 		mov		alarm_lock, r16
 		
 		;-------------------------- Если будильник был отключён по нажатию кнопки, ждем, когда эту кнопку отпустит =))
@@ -175,7 +170,9 @@ alarm_on:
 			cpi		r17, 0x0C
 			brne	alarm_off_wait_release
 
-		ldi		r17, (1 << INT0) | (1 << INT1)
+		;-------------------------- Разрешить прерывания от кнопок 
+
+		ldi		r17, (1 << INT0) | (1 << INT1)	
 		out		GIMSK, r17
 		sei
 
@@ -193,28 +190,24 @@ alarm_check:
 	push	r18
 	push	r17
 
-	;lds		r17, alarm
-	;sbrs	r17, 0
-	sbrs	alarm, 0
-	rjmp	to_alarm_end
+	sbrs	alarm, 0					
+	rjmp	to_alarm_end				; Если будильник отключён, то выходим из процедуры
 	sbrc	alarm_lock, 0
-	rjmp	to_alarm_end
+	rjmp	to_alarm_end				; Если будильник блокирован отключён, то выходим из процедуры
 
-	lds		r18, bcd_hours
-		;lds		r18, bcd_alarm_hours
-	ldi		r18, bcd_alarm_hours
-	rcall	EEPROM_read
-	cp		r17, r18
-	brne	to_alarm_end
+	ldi		r17, bcd_alarm_hours		; Адрес переменной "bcd_alarm_hours" из EEPROM в регистр r17
+	rcall	EEPROM_read					; Результат в регистр r17
+	lds		r18, bcd_hours				; Текущие часы в регистр r18
+	cp		r17, r18					; Сравниваем текущие часы с часами будильника
+	brne	to_alarm_end				; Если текущие часы не совпадают с часами будильника - выходим из процедуры
 
-	lds		r18, bcd_minutes
-	;lds		r18, bcd_alarm_minutes
-	ldi		r18, bcd_alarm_minutes
-	rcall	EEPROM_read
-	cpse	r17, r18
-	rjmp	to_alarm_end
+	ldi		r17, bcd_alarm_minutes		; Адрес переменной "bcd_alarm_minutes" из EEPROM в регистр r17
+	rcall	EEPROM_read					; Результат в регистр r17
+	lds		r18, bcd_minutes			; Текущие минуты в регистр r18
+	cpse	r17, r18					; Сравниваем текущие минуты с минутами будильника
+	rjmp	to_alarm_end				; Если текущие минуты не совпадают с минутами будильника - выходим из процедуры
 
-	rcall	alarm_on
+	rcall	alarm_on					; Если всё совпало - включить будильник
 
 	to_alarm_end:
 		pop		r17

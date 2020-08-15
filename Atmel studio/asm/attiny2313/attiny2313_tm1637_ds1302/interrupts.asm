@@ -2,7 +2,7 @@
 ;       Подпрограммы обработки прерываний
 ;========================================================
 
-;-------------------------- Прерывание при нажатии любой кнопки
+	;-------------------------- Прерывание при нажатии любой кнопки
 
 _INT0_or_1:
 	push	r17
@@ -12,13 +12,13 @@ _INT0_or_1:
 	in		r17, PIND
 	andi	r17, 0x0C
 
-	cpi		r17, 0x08		; pd2 - int0
+	cpi		r17, 0x08						; Нажата толко кнопка "Mode" (int0)
 	breq	_INT01_MODE_press
 
-	cpi		r17, 0x04		; pd3 - int1
+	cpi		r17, 0x04						; Нажата толко кнопка "Clock mode \ Set" (int1)
 	breq	_INT01_SET_press
 
-	cpi		r17, 0x00		
+	cpi		r17, 0x00						; Нажаты обе кнопки - она же кнопка яркости
 	breq	_INT01_double_press
 
 	rjmp	_INT0_or_1_end
@@ -26,14 +26,14 @@ _INT0_or_1:
 	;-------------------------- Нажатие кнопки Mode
 
 	_INT01_MODE_press:
-		rcall	_INT0
+		rcall	Mode_pressed
 
 		rjmp	_INT0_or_1_end
 
-	;-------------------------- Нажатие кнопки Set
+	;-------------------------- Нажатие кнопки Clock mode \ Set
 
 	_INT01_SET_press:
-		rcall	_INT1
+		rcall	Clock_mode_pressed
 
 		rjmp	_INT0_or_1_end
 
@@ -43,9 +43,9 @@ _INT0_or_1:
 		in		r17, PIND
 		andi	r17, 0x0C
 		cpi		r17, 0x0C
-		brne	_INT01_double_press
+		brne	_INT01_double_press			; Ожидаем пока кнопку отпустит =))
 
-		inc		tm_bright_level
+		inc		tm_bright_level				; Яркость от 0 до 7
 		mov		r17, tm_bright_level
 		cpi		r17, 0x08
 		brlo	_INT01_double_press_set_bright
@@ -55,8 +55,6 @@ _INT0_or_1:
 		_INT01_double_press_set_bright:
 			rcall	TM1637_set_bright
 
-		rjmp	_INT0_or_1_end
-
 	_INT0_or_1_end:
 		pop		r17
 
@@ -65,7 +63,7 @@ _INT0_or_1:
 
 ;-------------------------- Подпрограмма при нажатии кнопки Mode
 
-_INT0:
+Mode_pressed:
 	push	r17
 	push	r16
 
@@ -77,50 +75,46 @@ _INT0:
 
 	;-------------------------- Сброс переменной clock_mode
 
-	;sts		clock_mode, CONST_ZERO
 	clr		clock_mode
 
 	;-------------------------- Инкремент переменной mode 
-	; !!! Далее r17 не переписывать
-	;lds		r17, mode
-	;inc		r17
+
 	inc		mode
-	mov		r17, mode
 
 	;-------------------------- Выбор режима mode
 
-	cpi		r17, 0x01
-	breq	_INT0_mode_1
+	cpi		mode, mode_1
+	breq	Mode_pressed_1
 
-	cpi		r17, 0x02
-	breq	_INT0_mode_2
+	cpi		mode, mode_2
+	breq	Mode_pressed_2
 
-	cpi		r17, 0x03
-	breq	_INT0_mode_3
+	cpi		mode, mode_3
+	breq	Mode_pressed_3
 
-	cpi		r17, 0x04
-	breq	_INT0_mode_4
+	cpi		mode, mode_4
+	breq	Mode_pressed_4
 
-	cpi		r17, 0x05
-	breq	_INT0_mode_5
+	cpi		mode, mode_5
+	breq	Mode_pressed_5
 
-	cpi		r17, 0x06
-	breq	_INT0_mode_6
+	cpi		mode, mode_6
+	breq	Mode_pressed_6
 
-	cpi		r17, 0x07
-	breq	_INT0_mode_7
+	cpi		mode, mode_7
+	breq	Mode_pressed_7
 
-	cpi		r17, 0x08
-	breq	_INT0_mode_8
+	cpi		mode, mode_8
+	breq	Mode_pressed_8
 
-	cpi		r17, 0x09
-	brsh	_INT0_mode_0
+	cpi		mode, mode_9
+	brsh	Mode_pressed_0
 
-	rjmp	_INT0_end
+	rjmp	Mode_pressed_end
 
 	;------------------------- MODE 0
 
-	_INT0_mode_0:
+	Mode_pressed_0:
 		rcall	TM1637_display_time
 
 		;------------------------- Если день был установлен больше, чем максимальный в этом месяце, то данный код это исправляет.
@@ -132,7 +126,7 @@ _INT0:
 		mov		r16, r17
 		rcall	get_max_day
 		cp		r16, r17
-		brlo	_INT0_mode_0_end
+		brlo	Mode_pressed_0_end
 		ldi		BYTE, 0x86
 		rcall	DS1302_send_start
 		rcall	DS1302_send_byte
@@ -141,58 +135,56 @@ _INT0:
 		rcall	DS1302_send_byte
 		rcall	DS1302_send_stop
 
-		_INT0_mode_0_end:
+		Mode_pressed_0_end:
 			rcall	change_tim1_to_normal_mode
-			clr		r17
+			clr		mode
 
-		rjmp	_INT0_end
+		rjmp	Mode_pressed_end
 
 	;------------------------- MODE 1
 
-	_INT0_mode_1:
+	Mode_pressed_1:
 		rcall	TM1637_display_time
 		rcall	change_tim1_to_blink_mode
 
-		rjmp	_INT0_end
+		rjmp	Mode_pressed_end
 
 	;------------------------- MODE 2
 
-	_INT0_mode_2:
+	Mode_pressed_2:
 		rcall	TM1637_display_time
 
-		rjmp	_INT0_end
+		rjmp	Mode_pressed_end
 
 	;------------------------- MODE 3 или 4 
 
-	_INT0_mode_3:
-	_INT0_mode_4:
+	Mode_pressed_3:
+	Mode_pressed_4:
 		rcall	TM1637_display_date
 
-		rjmp	_INT0_end
+		rjmp	Mode_pressed_end
 
 	;------------------------- MODE 5
 
-	_INT0_mode_5:
+	Mode_pressed_5:
 		rcall	TM1637_display_year
 
-		rjmp	_INT0_end
+		rjmp	Mode_pressed_end
 
 	;------------------------- MODE 6
 
-	_INT0_mode_6:
+	Mode_pressed_6:
 		rcall	TM1637_display_alarm_mode
 
-		rjmp	_INT0_end
+		rjmp	Mode_pressed_end
 
 	;------------------------- MODE 7 или 8
 
-	_INT0_mode_7:
-	_INT0_mode_8:
+	Mode_pressed_7:
+	Mode_pressed_8:
 		rcall	TM1637_display_alarm
 
-	_INT0_end:
-		;sts		mode, r17
-		mov		mode, r17
+	Mode_pressed_end:
 		pop		r16
 		pop		r17
 
@@ -200,44 +192,35 @@ _INT0:
 
 ;-------------------------- Подпрограмма при нажатии кнопки Clock mode \ Set
 
-_INT1:
+Clock_mode_pressed:
 	push	r17
 
 	_INT1_wait_release:
 		sbis	PIN_BUTTON_SET, BUTTON_SET
 		rjmp	_INT1_wait_release
 
-	mov		r17, mode
-	cpi		r17, 0x00
-	breq	_INT1_clock_mode_pressed
+	cpi		mode, mode_0
+	breq	Clock_mode_clock_mode_pressed
 
 	;-------------------------- Режим Set
 
-	_INT1_set_pressed:
-		
-		rcall	inc_circle
+	rcall	inc_circle
 
-		rjmp	_INT1_end
+	rjmp	Clock_mode_end
 
 	;-------------------------- Режим Clock mode
 
-	_INT1_clock_mode_pressed:
-		;lds		r17, clock_mode
-		;inc		r17
+	Clock_mode_clock_mode_pressed:
 		inc		clock_mode
 
-		;cpi		r17, 0x03
-		ldi		r17, 0x03
-		cp		clock_mode, r17
-		brsh	_INT1_reset_clock_mode
-		rjmp	_INT1_1
+		cpi		clock_mode, 0x03
+		brsh	Clock_mode_reset
+		rjmp	Clock_mode_pre_end
 
-		_INT1_reset_clock_mode:
-			;clr		r17
+		Clock_mode_reset:
 			clr		clock_mode
 
-		_INT1_1:
-			;sts		clock_mode, r17
+		Clock_mode_pre_end:
 
 			;-------------------------- Чтобы данные сразу отобразились
 			
@@ -247,52 +230,48 @@ _INT1:
 			out		TCNT1L, r17
 
 
-	_INT1_end:
+	Clock_mode_end:
 		pop		r17
 
 	reti
 	
 ;-------------------------- Прерывание таймера T1	
 
-_TIM1_A:		
-	;rcall	push_17_18_19
+_TIM1:		
 	push	r17
 	push	r18
 	push	r19
 	
 	;-------------------------- Проверка режимов Mode
 
-	;lds		r17, mode
-	mov		r17, mode
-
-	cpi		r17, 0x00
+	cpi		mode, mode_0
 	breq	rcall_TIM1_mode_0
 
-	cpi		r17, 0x01
+	cpi		mode, mode_1
 	breq	rcall_TIM1_mode_1
 
-	cpi		r17, 0x02
+	cpi		mode, mode_2
 	breq	rcall_TIM1_mode_2
 
-	cpi		r17, 0x03
+	cpi		mode, mode_3
 	breq	rcall_TIM1_mode_3
 
-	cpi		r17, 0x04
+	cpi		mode, mode_4
 	breq	rcall_TIM1_mode_4
 
-	cpi		r17, 0x05
+	cpi		mode, mode_5
 	breq	rcall_TIM1_mode_5
 
-	cpi		r17, 0x06
+	cpi		mode, mode_6
 	breq	rcall_TIM1_mode_6
 
-	cpi		r17, 0x07
+	cpi		mode, mode_7
 	breq	rcall_TIM1_mode_7
 
-	cpi		r17, 0x08
+	cpi		mode, mode_8
 	breq	rcall_TIM1_mode_8
 
-	cpi		r17, 0x09
+	cpi		mode, mode_9
 	breq	rcall_TIM1_mode_9
 
 	rjmp	_TIM1_end
@@ -387,6 +366,7 @@ _TIM1_A:
 
 	rcall_TIM1_mode_9:
 		rcall	change_tim0_to_normal_mode
+		clr		ZH
 		ldi		ZL, low(tm_h1)
 		ld		r18, Z+
 		ld		r19, Z+
@@ -401,7 +381,6 @@ _TIM1_A:
 
 	_TIM1_end:
 
-		;rcall	pop_19_18_17
 		pop		r19
 		pop		r18
 		pop		r17
@@ -422,15 +401,16 @@ _TIM0:
 	sbrc	timer0_counter_alarm_unlock, 7		; 128 * 240 мс ~ 31 мс
 	clr		alarm_lock
 
-	;-------------------------- 
+	;-------------------------- Если сейчас не Mode 0 и не Clock_mode 0 выходим из прерывания
 
-	mov		r17, mode
-	mov		BYTE, clock_mode
-	add		r17, BYTE
+	push	mode
+	add		mode, clock_mode
+	pop		mode
 	brne	_TIM0_end
 
 	inc		timer0_counter
-	cpi		timer0_counter, 0x03
+	mov		r17, timer0_counter
+	cpi		r17, 0x03
 	brne	_TIM0_end
 
 	clr		timer0_counter
@@ -466,13 +446,10 @@ _TIM1_mode_0:
 
 	rcall	DS1302_read_package_data
 
-	;lds		r17, clock_mode
-	mov		r17, clock_mode
-
-	cpi		r17, 0x01
+	cpi		clock_mode, clock_mode_1
 	breq	_TIM1_date_mode
 
-	cpi		r17, 0x02
+	cpi		clock_mode, clock_mode_2
 	breq	_TIM1_year_mode
 
 	_TIM1_time_mode:
