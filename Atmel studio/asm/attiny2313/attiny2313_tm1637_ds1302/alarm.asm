@@ -56,7 +56,7 @@ inc_cicle_alarm:
 		mov		alarm, r17
 
 		rcall	TM1637_display_alarm_mode
-		clr		alarm_lock							; снять блокировкку будильника
+		clr		alarm_lock							; снять блокировку будильника
 
 		rjmp	inc_cicle_alarm_end
 

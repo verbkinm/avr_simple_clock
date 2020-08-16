@@ -1,42 +1,24 @@
 ;========================================================
-;				 Отображение данных
-;========================================================	
+;       Подпрограммы начала и конца передачи данных
+;========================================================
 
-TM1637_display:
-	push	BYTE
-
-	;------------------------- Команда записи в регистр дисплея
-
-	rcall	TM1637_start
-	ldi		BYTE, 0x40					
-	rcall	TM1637_send_byte
-	rcall	TM1637_stop
-
-	;------------------------- Начальный адрес - первый символ
-
-	rcall	TM1637_start
-	ldi		BYTE, 0xC0
-	rcall	TM1637_send_byte
-
-	;------------------------- Запись данных для каждого регистра дисплея
-
-	mov		BYTE, TM1637_char1
-	rcall	TM1637_send_byte
-	mov		BYTE, TM1637_char2
-	rcall	TM1637_send_byte
-	mov		BYTE, TM1637_char3
-	rcall	TM1637_send_byte
-	mov		BYTE, TM1637_char4
-	rcall	TM1637_send_byte
-
-	rcall	TM1637_stop
-
-	rcall	TM1637_set_bright
-
-	pop		BYTE
+TM1637_start:
+	sbi		PORT_TM1367, TM1637_CLK
+	sbi		PORT_TM1367, TM1637_DATA
+	nop
+	cbi		PORT_TM1367, TM1637_DATA
 
 	ret
 
+TM1637_stop:
+	cbi		PORT_TM1367, TM1637_CLK
+	cbi		PORT_TM1367, TM1637_DATA
+	nop
+	sbi		PORT_TM1367, TM1637_CLK
+	sbi		PORT_TM1367, TM1637_DATA
+
+	ret
+	
 ;========================================================
 ;			Отправка байта из регистра BYTE
 ;========================================================
@@ -99,23 +81,41 @@ TM1637_send_byte:
 	ret
 
 ;========================================================
-;       Подпрограммы начала и конца передачи данных
-;========================================================
+;				 Отображение данных
+;========================================================	
 
-TM1637_start:
-	sbi		PORT_TM1367, TM1637_CLK
-	sbi		PORT_TM1367, TM1637_DATA
-	nop
-	cbi		PORT_TM1367, TM1637_DATA
+TM1637_display:
+	push	BYTE
 
-	ret
+	;------------------------- Команда записи в регистр дисплея c автоматическим инкрементом адреса
 
-TM1637_stop:
-	cbi		PORT_TM1367, TM1637_CLK
-	cbi		PORT_TM1367, TM1637_DATA
-	nop
-	sbi		PORT_TM1367, TM1637_CLK
-	sbi		PORT_TM1367, TM1637_DATA
+	rcall	TM1637_start
+	ldi		BYTE, 0x40					
+	rcall	TM1637_send_byte
+	rcall	TM1637_stop
+
+	;------------------------- Начальный адрес - первый символ дисплея
+
+	rcall	TM1637_start
+	ldi		BYTE, 0xC0
+	rcall	TM1637_send_byte
+
+	;------------------------- Запись данных для каждого регистра дисплея
+
+	mov		BYTE, TM1637_char1
+	rcall	TM1637_send_byte
+	mov		BYTE, TM1637_char2
+	rcall	TM1637_send_byte
+	mov		BYTE, TM1637_char3
+	rcall	TM1637_send_byte
+	mov		BYTE, TM1637_char4
+	rcall	TM1637_send_byte
+
+	rcall	TM1637_stop
+
+	rcall	TM1637_set_bright
+
+	pop		BYTE
 
 	ret
 
@@ -201,7 +201,7 @@ TM1637_display_alarm_mode:
 
 ;========================================================
 ;				Моргание
-;	Режимы: 
+;	Режимы моргания: 
 ;		1-й и 2-й элементы r17==1
 ;		3-й и 4-й элементы r17==2
 ;	значение 1-го моргающего элемента == r18

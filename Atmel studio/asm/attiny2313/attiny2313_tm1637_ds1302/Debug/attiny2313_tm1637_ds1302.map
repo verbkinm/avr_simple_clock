@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.7  C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm Sat Aug 15 17:53:42 2020
+AVRASM ver. 2.2.7  C:\Users\user\Documents\Atmel Studio\7.0\attiny2313_tm1637_ds1302\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm Sun Aug 16 16:37:38 2020
 
 
 EQU  SIGNATURE_000 0000001e
@@ -640,14 +640,14 @@ CSEG alarm_blink  00000150
 CSEG change_tim0_to_normal_mode 000003bb
 CSEG change_tim0_to_buzzer_mode 000003c4
 CSEG _TIM0_end    000000f9
-CSEG TM1637_start 0000025a
-CSEG TM1637_send_byte 0000023e
-CSEG TM1637_stop  0000025f
+CSEG TM1637_start 0000022a
+CSEG TM1637_send_byte 00000235
+CSEG TM1637_stop  0000022f
 CSEG _TIM1_date_mode 00000103
 CSEG _TIM1_year_mode 00000105
 CSEG _TIM1_time_mode 00000101
 CSEG _TIM1_mode_0_end 00000106
-CSEG TM1637_display 0000022a
+CSEG TM1637_display 00000251
 CSEG clear_reg    00000130
 CSEG clear_reg_end 00000134
 CSEG clear_ram    00000136
@@ -680,11 +680,11 @@ CSEG DS1302_while_receive_end 000001fb
 CSEG DS1302_receive_byte_write_bit 000001ff
 CSEG DS1302_read_package_data_while_receive 00000215
 CSEG DS1302_read_package_data_while_receive_end 00000221
-CSEG TM1637_while_send 00000241
-CSEG TM1637_wait_ACK 00000251
-CSEG TM1637_cbi_send_bit 00000248
-CSEG TM1637_sbi_send_bit 00000246
-CSEG TM1637_while_send_bit 00000249
+CSEG TM1637_while_send 00000238
+CSEG TM1637_wait_ACK 00000248
+CSEG TM1637_cbi_send_bit 0000023f
+CSEG TM1637_sbi_send_bit 0000023d
+CSEG TM1637_while_send_bit 00000240
 CSEG TM1637_blink_pair_first 000002a2
 CSEG TM1637_blink_pair_second 000002a5
 CSEG TM1637_blink_pair_end 000002a8
