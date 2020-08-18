@@ -128,7 +128,7 @@ inc_circle:
 	push	ZH
 
 	mov		r19, CONST_ZERO
-
+	
 	;-------------------------- Выбор режима mode
 
 	cpi		mode, mode_1

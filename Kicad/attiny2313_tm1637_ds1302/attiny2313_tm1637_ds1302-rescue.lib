@@ -1,0 +1,20 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# tm1637-module-Display_Graphic
+#
+DEF tm1637-module-Display_Graphic U 0 40 Y Y 1 F N
+F0 "U" 0 -300 50 H V C CNN
+F1 "tm1637-module-Display_Graphic" 50 300 50 H V C CNN
+F2 "" -150 -350 50 H I C CNN
+F3 "" -150 -350 50 H I C CNN
+DRAW
+S 200 200 -250 -200 0 1 0 f
+X GND 2 -350 -100 100 R 50 50 0 1 W
+X VCC 1 -350 100 100 R 50 50 1 1 W
+X DIO 3 300 100 100 L 50 50 1 1 B
+X CLK 4 300 -100 100 L 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+#End Library

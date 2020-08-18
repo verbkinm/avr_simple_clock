@@ -7,7 +7,7 @@
 
 ;------------------------- Регистры/описания для работы с tm1637
 
-.def	TM1637_char1	= r22
+.def	TM1637_char1	= r6
 .def	TM1637_char2	= r23
 .def	TM1637_char3	= r24
 .def	TM1637_char4	= r25

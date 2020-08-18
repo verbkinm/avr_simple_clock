@@ -184,7 +184,8 @@ TM1637_display_alarm:
 TM1637_display_alarm_mode:
 	push	r17
 	
-	ldi		TM1637_char1, char_A
+	ldi		r17, char_A
+	mov		TM1637_char1, r17
 	ldi		TM1637_char2, char_minus
 	ldi		TM1637_char3, char_0
 		

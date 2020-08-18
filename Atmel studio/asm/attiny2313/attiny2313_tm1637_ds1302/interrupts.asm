@@ -374,15 +374,15 @@ _TIM1:
 	rcall_TIM1_mode_9:
 		rcall	change_tim0_to_normal_mode
 		clr		ZH
-		ldi		ZL, low(tm_h1)
+		ldi		ZL, low(tm_m1)
 		ld		r18, Z+
 		ld		r19, Z+
-		ldi		r17, 0x01
+		ldi		r17, 0x02
 		rcall	TM1637_blink_pair
 
 		ld		r18, Z+
 		ld		r19, Z
-		ldi		r17, 0x02
+		ldi		r17, 0x01
 		rcall	TM1637_blink_pair
 		rcall	change_tim0_to_buzzer_mode
 
