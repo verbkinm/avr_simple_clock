@@ -1,11 +1,11 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# tm1637-module-Display_Graphic
+# tm1637-module-Display_Graphic-attiny2313_tm1637_ds1302-rescue
 #
-DEF tm1637-module-Display_Graphic U 0 40 Y Y 1 F N
+DEF tm1637-module-Display_Graphic-attiny2313_tm1637_ds1302-rescue U 0 40 Y Y 1 F N
 F0 "U" 0 -300 50 H V C CNN
-F1 "tm1637-module-Display_Graphic" 50 300 50 H V C CNN
+F1 "tm1637-module-Display_Graphic-attiny2313_tm1637_ds1302-rescue" 50 300 50 H V C CNN
 F2 "" -150 -350 50 H I C CNN
 F3 "" -150 -350 50 H I C CNN
 DRAW

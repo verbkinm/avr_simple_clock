@@ -1,22 +1,45 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# Device_Battery_Cell
+# Connector_Generic_Conn_01x02
 #
-DEF Device_Battery_Cell BT 0 0 N N 1 F N
-F0 "BT" 100 100 50 H V L CNN
-F1 "Device_Battery_Cell" 100 0 50 H V L CNN
-F2 "" 0 60 50 V I C CNN
-F3 "" 0 60 50 V I C CNN
+DEF Connector_Generic_Conn_01x02 J 0 40 Y N 1 F N
+F0 "J" 0 100 50 H V C CNN
+F1 "Connector_Generic_Conn_01x02" 0 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_1x??_*
+$ENDFPLIST
 DRAW
-S -90 70 90 60 0 1 0 F
-S -62 47 58 27 0 1 0 F
-P 2 0 1 0 0 30 0 0 N
-P 2 0 1 0 0 70 0 100 N
-P 2 0 1 10 20 135 60 135 N
-P 2 0 1 10 40 155 40 115 N
-X + 1 0 200 100 D 50 50 1 1 O
-X - 2 0 -100 100 U 50 50 1 1 O
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 50 50 -150 1 1 10 f
+X Pin_1 1 -200 0 150 R 50 50 1 1 P
+X Pin_2 2 -200 -100 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Connector_Generic_Conn_01x04
+#
+DEF Connector_Generic_Conn_01x04 J 0 40 Y N 1 F N
+F0 "J" 0 200 50 H V C CNN
+F1 "Connector_Generic_Conn_01x04" 0 -300 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_1x??_*
+$ENDFPLIST
+DRAW
+S -50 -195 0 -205 1 1 6 N
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 105 0 95 1 1 6 N
+S -50 150 50 -250 1 1 10 f
+X Pin_1 1 -200 100 150 R 50 50 1 1 P
+X Pin_2 2 -200 0 150 R 50 50 1 1 P
+X Pin_3 3 -200 -100 150 R 50 50 1 1 P
+X Pin_4 4 -200 -200 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
@@ -183,7 +206,7 @@ S -400 300 400 -300 1 1 10 f
 X VCC2 1 -100 400 100 D 50 50 1 1 W
 X X1 2 -500 -100 100 R 50 50 1 1 I
 X X2 3 -500 -200 100 R 50 50 1 1 I
-X GND 4 0 -400 100 U 50 50 1 1 W
+X GND 4 0 -400 100 U 50 50 1 1 w
 X CE 5 -500 100 100 R 50 50 1 1 I
 X I/O 6 500 200 100 L 50 50 1 1 B
 X SCLK 7 -500 200 100 R 50 50 1 1 I
@@ -214,11 +237,11 @@ X C 3 100 200 100 D 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# attiny2313_tm1637_ds1302-rescue_tm1637-module-Display_Graphic
+# attiny2313_tm1637_ds1302-rescue_tm1637-module-Display_Graphic-attiny2313_tm1637_ds1302-rescue
 #
-DEF attiny2313_tm1637_ds1302-rescue_tm1637-module-Display_Graphic U 0 40 Y Y 1 F N
+DEF attiny2313_tm1637_ds1302-rescue_tm1637-module-Display_Graphic-attiny2313_tm1637_ds1302-rescue U 0 40 Y Y 1 F N
 F0 "U" 0 -300 50 H V C CNN
-F1 "attiny2313_tm1637_ds1302-rescue_tm1637-module-Display_Graphic" 50 300 50 H V C CNN
+F1 "attiny2313_tm1637_ds1302-rescue_tm1637-module-Display_Graphic-attiny2313_tm1637_ds1302-rescue" 50 300 50 H V C CNN
 F2 "" -150 -350 50 H I C CNN
 F3 "" -150 -350 50 H I C CNN
 DRAW

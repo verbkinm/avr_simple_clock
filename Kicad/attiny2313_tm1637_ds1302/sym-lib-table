@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name attiny2313_tm1637_ds1302-rescue)(type Legacy)(uri ${KIPRJMOD}/attiny2313_tm1637_ds1302-rescue.lib)(options "")(descr ""))
-)
