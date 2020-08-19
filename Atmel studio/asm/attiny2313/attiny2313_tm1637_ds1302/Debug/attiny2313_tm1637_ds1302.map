@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.7  C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm Tue Aug 18 09:02:36 2020
+AVRASM ver. 2.2.7  C:\Users\verbkinm\Documents\Atmel Studio\7.0\avr_simple_clock\Atmel studio\asm\attiny2313\attiny2313_tm1637_ds1302\main.asm Wed Aug 19 09:36:22 2020
 
 
 EQU  SIGNATURE_000 0000001e
