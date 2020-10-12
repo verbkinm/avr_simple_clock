@@ -2,77 +2,18 @@
 ;       Подпрограммы обработки прерываний
 ;========================================================
 
-	;-------------------------- Прерывание при нажатии любой кнопки
-
-_INT0_or_1:
-	push	r17
-
-	rcall	MCU_wait_20ms					; Дребезг контактов
-
-	in		r17, PIND
-	andi	r17, 0x0C
-
-	cpi		r17, 0x08						; Нажата только кнопка "Mode" (int0)
-	breq	_INT01_MODE_press
-
-	cpi		r17, 0x04						; Нажата только кнопка "Clock mode \ Set" (int1)
-	breq	_INT01_SET_press
-
-	cpi		r17, 0x00						; Нажаты обе кнопки - она же кнопка яркости
-	breq	_INT01_double_press
-
-	rjmp	_INT0_or_1_end
-
-	;-------------------------- Нажатие кнопки Mode
-
-	_INT01_MODE_press:
-		rcall	Mode_pressed
-
-		rjmp	_INT0_or_1_end
-
-	;-------------------------- Нажатие кнопки Clock mode \ Set
-
-	_INT01_SET_press:
-		rcall	Clock_mode_pressed
-
-		rjmp	_INT0_or_1_end
-
-	;-------------------------- Нажатие двух кнопок
-
-	_INT01_double_press:
-		in		r17, PIND
-		andi	r17, 0x0C
-		cpi		r17, 0x0C
-		brne	_INT01_double_press			; Ожидаем пока кнопку отпустит =))
-
-		inc		tm_bright_level				; Яркость от 0 до 7
-		mov		r17, tm_bright_level
-		cpi		r17, 0x08
-		brlo	_INT01_double_press_set_bright
-	
-		clr		tm_bright_level
-
-		_INT01_double_press_set_bright:
-			rcall	TM1637_set_bright
-
-	_INT0_or_1_end:
-		pop		r17
-
-	reti
-
-
-
 ;========================================================
 ;		 Подпрограмма при нажатии кнопки Mode
 ;========================================================
 
-Mode_pressed:
+_INT0:
 	push	r17
 	push	r16
 
 	_INT0_wait_release:
-		sbis	PIN_BUTTON_MODE, BUTTON_MODE
-		rjmp	_INT0_wait_release
+		rcall	MCU_wait_20ms
+		sbic	PIN_BUTTON_MODE, BUTTON_MODE
+		rjmp	Mode_pressed_end
 
 	rcall	DS1302_read_package_data
 
@@ -188,6 +129,7 @@ Mode_pressed:
 		rcall	TM1637_display_alarm
 
 	Mode_pressed_end:
+
 		pop		r16
 		pop		r17
 
@@ -197,12 +139,13 @@ Mode_pressed:
 ;	 Подпрограмма при нажатии кнопки Clock mode \ Set
 ;========================================================
 
-Clock_mode_pressed:
+_INT1:
 	push	r17
 
 	_INT1_wait_release:
-		sbis	PIN_BUTTON_SET, BUTTON_SET
-		rjmp	_INT1_wait_release
+		rcall	MCU_wait_20ms
+		sbic	PIN_BUTTON_SET, BUTTON_SET
+		rjmp	Clock_mode_end
 
 	cpi		mode, mode_0
 	breq	Clock_mode_clock_mode_pressed
@@ -218,7 +161,7 @@ Clock_mode_pressed:
 	Clock_mode_clock_mode_pressed:
 		inc		clock_mode
 
-		cpi		clock_mode, 0x03
+		cpi		clock_mode, 0x04
 		brsh	Clock_mode_reset
 		rjmp	Clock_mode_pre_end
 
@@ -236,6 +179,7 @@ Clock_mode_pressed:
 
 
 	Clock_mode_end:
+
 		pop		r17
 
 	reti
@@ -288,7 +232,7 @@ _TIM1:
 	rcall_TIM1_mode_0:
 
 		rcall	_TIM1_mode_0
-		rcall	alarm_check
+		;rcall	alarm_check
 
 		rjmp	_TIM1_end
 
@@ -372,7 +316,6 @@ _TIM1:
 	;-------------------------- MODE 9
 
 	rcall_TIM1_mode_9:
-		rcall	change_tim0_to_normal_mode
 		clr		ZH
 		ldi		ZL, low(tm_m1)
 		ld		r18, Z+
@@ -387,7 +330,11 @@ _TIM1:
 		rcall	change_tim0_to_buzzer_mode
 
 	_TIM1_end:
+		cpi		mode, mode_9
+		breq	_TIM1_end_end
+		rcall	alarm_check
 
+	_TIM1_end_end:
 		pop		r19
 		pop		r18
 		pop		r17
@@ -411,6 +358,9 @@ _TIM0:
 	clr		alarm_lock
 
 	;-------------------------- Если сейчас не Mode 0 и не Clock_mode 0 выходим из прерывания
+
+	cpi		clock_mode, clock_mode_1
+	breq	_TIM0_display_seconds
 
 	push	mode
 	add		mode, clock_mode
@@ -447,6 +397,12 @@ _TIM0:
 
 	reti
 
+	_TIM0_display_seconds:
+		rcall	DS1302_read_package_data
+		rcall	TM1637_display_seconds
+
+		rjmp	_TIM0_end
+
 ;========================================================
 ;		Подпрограмма выбора режима mode_0
 ;========================================================
@@ -458,23 +414,25 @@ _TIM1_mode_0:
 	rcall	DS1302_read_package_data
 
 	cpi		clock_mode, clock_mode_1
-	breq	_TIM1_date_mode
+	breq	_TIM1_mode_0_end
 
 	cpi		clock_mode, clock_mode_2
+	breq	_TIM1_date_mode
+
+	cpi		clock_mode, clock_mode_3
 	breq	_TIM1_year_mode
 
 	_TIM1_time_mode:
 		rcall	TM1637_display_time
-		rjmp	_TIM1_mode_0_end
+		ret
 
 	_TIM1_date_mode:
 		rcall	TM1637_display_date
-		rjmp	_TIM1_mode_0_end
+		ret
 
 	_TIM1_year_mode:
 		rcall	TM1637_display_year
 
 	_TIM1_mode_0_end:
-		rcall	TM1637_display
 
 	ret

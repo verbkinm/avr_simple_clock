@@ -113,8 +113,6 @@ TM1637_display:
 
 	rcall	TM1637_stop
 
-	rcall	TM1637_set_bright
-
 	pop		BYTE
 
 	ret
@@ -129,6 +127,21 @@ TM1637_display_time:
 	sbr		TM1637_char2, 0b10000000
 	lds		TM1637_char3, tm_m1
 	lds		TM1637_char4, tm_m2
+
+	rcall	TM1637_display
+
+	ret
+
+;========================================================
+;				ќтображение времени
+;========================================================
+
+TM1637_display_seconds:
+	lds		TM1637_char1, tm_m1
+	lds		TM1637_char2, tm_m2
+	sbr		TM1637_char2, 0b10000000
+	lds		TM1637_char3, tm_s1
+	lds		TM1637_char4, tm_s2
 
 	rcall	TM1637_display
 
@@ -240,25 +253,5 @@ TM1637_blink_pair:
 		pop		r19
 		pop		r18
 		pop		r17
-
-	ret
-
-;========================================================
-; ”становка €ркости диспле€. ¬ход€щее значение (0..7)
-; в регистре tm_bright_level, без проверки вход€щего 
-; значени€
-;========================================================
-
-TM1637_set_bright:
-	push	BYTE
-
-	mov		BYTE, tm_bright_level
-	sbr		BYTE, 0x88
-
-	rcall	TM1637_start
-	rcall	TM1637_send_byte
-	rcall	TM1637_stop
-
-	pop		BYTE
 
 	ret

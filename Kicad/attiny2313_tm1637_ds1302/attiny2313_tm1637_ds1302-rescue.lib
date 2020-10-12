@@ -1,11 +1,49 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# tm1637-module-Display_Graphic-attiny2313_tm1637_ds1302-rescue
+# DS1302+-Timer_RTC
 #
-DEF tm1637-module-Display_Graphic-attiny2313_tm1637_ds1302-rescue U 0 40 Y Y 1 F N
+DEF DS1302+-Timer_RTC U 0 20 Y Y 1 F N
+F0 "U" -350 350 50 H V C CNN
+F1 "DS1302+-Timer_RTC" 250 350 50 H V C CNN
+F2 "Package_DIP:DIP-8_W7.62mm" 0 -500 50 H I C CNN
+F3 "" 0 -200 50 H I C CNN
+$FPLIST
+ DIP*W7.62mm*
+$ENDFPLIST
+DRAW
+S -400 300 400 -300 1 1 10 f
+X VCC2 1 -100 400 100 D 50 50 1 1 W
+X X1 2 -500 -100 100 R 50 50 1 1 I
+X X2 3 -500 -200 100 R 50 50 1 1 I
+X GND 4 0 -400 100 U 50 50 1 1 w
+X CE 5 -500 100 100 R 50 50 1 1 I
+X I/O 6 500 200 100 L 50 50 1 1 B
+X SCLK 7 -500 200 100 R 50 50 1 1 I
+X VCC1 8 0 400 100 D 50 50 1 1 W
+ENDDRAW
+ENDDEF
+#
+# VCC-power
+#
+DEF VCC-power #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -150 50 H I C CNN
+F1 "VCC-power" 0 150 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+P 2 0 1 0 -30 50 0 100 N
+P 2 0 1 0 0 0 0 100 N
+P 2 0 1 0 0 100 30 50 N
+X VCC 1 0 0 0 U 50 50 1 1 w N
+ENDDRAW
+ENDDEF
+#
+# tm1637-module-Display_Graphic-attiny2313_tm1637_ds1302-rescue-attiny2313_tm1637_ds1302-rescue
+#
+DEF tm1637-module-Display_Graphic-attiny2313_tm1637_ds1302-rescue-attiny2313_tm1637_ds1302-rescue U 0 40 Y Y 1 F N
 F0 "U" 0 -300 50 H V C CNN
-F1 "tm1637-module-Display_Graphic-attiny2313_tm1637_ds1302-rescue" 50 300 50 H V C CNN
+F1 "tm1637-module-Display_Graphic-attiny2313_tm1637_ds1302-rescue-attiny2313_tm1637_ds1302-rescue" 50 300 50 H V C CNN
 F2 "" -150 -350 50 H I C CNN
 F3 "" -150 -350 50 H I C CNN
 DRAW

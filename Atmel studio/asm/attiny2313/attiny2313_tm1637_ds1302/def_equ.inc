@@ -56,15 +56,16 @@
 .equ	PORT_DS1302		= PORTB
 .equ	DDR_DS1302		= DDRB
 .equ	PIN_DS1302		= PINB
-.equ	DS1302_CE		= PB3
-.equ	DS1302_SCLK		= PB4
-.equ	DS1302_IO		= PB5
+.equ	DS1302_SCLK		= PB3
+.equ	DS1302_IO		= PB4
+.equ	DS1302_CE		= PB5		; RST
 
 ;------------------------- Режимы Clock_mode для ds1302
 
 .equ	clock_mode_0	= 0x00
 .equ	clock_mode_1	= 0x01
 .equ	clock_mode_2	= 0x02
+.equ	clock_mode_3	= 0x03
 
 ;------------------------- Регистры/описания для работы с кнопками
 

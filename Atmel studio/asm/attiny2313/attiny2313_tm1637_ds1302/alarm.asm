@@ -154,21 +154,17 @@ alarm_on:
 
 	alarm_off:
 		cli
+		clr		mode
+		clr		clock_mode
+
 		rcall	change_tim1_to_normal_mode
 		rcall	change_tim0_to_normal_mode
+
 		rcall	TM1637_display_time
-		clr		mode
+
+		clr		timer0_counter_alarm_unlock
 		ldi		r16, 0x01			; Блокировка будильника
 		mov		alarm_lock, r16
-		
-		;-------------------------- Если будильник был отключён по нажатию кнопки, ждем, когда эту кнопку отпустит =))
-
-		alarm_off_wait_release:
-			rcall	MCU_wait_20ms
-			in		r17, PIND
-			andi	r17, 0x0C
-			cpi		r17, 0x0C
-			brne	alarm_off_wait_release
 
 		;-------------------------- Разрешить прерывания от кнопок 
 
@@ -193,7 +189,7 @@ alarm_check:
 	sbrs	alarm, 0					
 	rjmp	to_alarm_end				; Если будильник отключён, то выходим из процедуры
 	sbrc	alarm_lock, 0
-	rjmp	to_alarm_end				; Если будильник блокирован отключён, то выходим из процедуры
+	rjmp	to_alarm_end				; Если будильник блокирован, то выходим из процедуры
 
 	ldi		r17, bcd_alarm_hours		; Адрес переменной "bcd_alarm_hours" из EEPROM в регистр r17
 	rcall	EEPROM_read					; Результат в регистр r17

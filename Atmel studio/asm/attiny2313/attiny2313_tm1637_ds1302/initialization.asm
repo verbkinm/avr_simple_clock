@@ -46,22 +46,20 @@ init:
 
 	sbi		DDR_DS1302, DS1302_CE
 	sbi		DDR_DS1302, DS1302_SCLK
+
 	;------------------------- Вывод DS1302_DAT устанавливается при отправке или чтении ds1302
 
 	;-------------------------- Инициализация портов ВВ для кнопок
 
 	cbi		DDR_BUTTON_MODE, BUTTON_MODE
-	sbi		PORT_BUTTON_MODE, BUTTON_MODE
-
 	cbi		DDR_BUTTON_SET, BUTTON_SET
-	sbi		PORT_BUTTON_SET, BUTTON_SET
 
 	;-------------------------- Инициализация таймеров
 
 	ldi		r17, (1 << WGM12) | (1 << CS12) | (0 << CS11) | (1 << CS10) ; Выбор режима таймера (СТС, предделитель = 1024) 
 	out		TCCR1B, r17
-	rcall	change_tim1_to_normal_mode
 
+	rcall	change_tim1_to_normal_mode
 	rcall	change_tim0_to_normal_mode
 
 	;--------------------------- Разрешаем прерывание от таймеров
@@ -71,7 +69,7 @@ init:
 
 	;--------------------------- Разрешаем прерывание INT0 и INT1 по заднему фронту и режим сна (idle)
 
-	ldi		r17, (0 << ISC00) | (0 << ISC01) | (0 << ISC10) | (0 << ISC11) | (1 << SE)
+	ldi		r17, (1 << ISC01) | (0 << ISC00) | (1 << ISC11) | (0 << ISC10) | (1 << SE)
 	out		MCUCR, r17
 
 	ldi		r17, (1 << INT0) | (1 << INT1)
