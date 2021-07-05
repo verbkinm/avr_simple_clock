@@ -59,7 +59,19 @@ init:
 	ldi		r17, (1 << WGM12) | (1 << CS12) | (0 << CS11) | (1 << CS10) ; Выбор режима таймера (СТС, предделитель = 1024) 
 	out		TCCR1B, r17
 
-	rcall	change_tim1_to_normal_mode
+	;-------------------------- Таймер 1 
+
+	ldi		r17, high(kdel1)	; 0.5 сек.
+	out		OCR1AH, r17
+	ldi		r17, low(kdel1)		 
+	out		OCR1AL, r17
+	ldi		r17, high(kdel1)	; чтобы сразу отобразилось
+	out		TCNT1H, r17
+	ldi		r17, low(kdel1-10)
+	out		TCNT1L, r17
+
+	;-------------------------- Таймер 1 
+
 	rcall	change_tim0_to_normal_mode
 
 	;--------------------------- Разрешаем прерывание от таймеров
