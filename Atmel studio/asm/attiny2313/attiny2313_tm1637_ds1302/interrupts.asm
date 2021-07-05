@@ -1,8 +1,4 @@
 ;========================================================
-;       Подпрограммы обработки прерываний
-;========================================================
-
-;========================================================
 ;		 Подпрограмма при нажатии кнопки Mode
 ;========================================================
 
@@ -11,7 +7,7 @@ _INT0:
 	push	r16
 
 	_INT0_wait_release:
-		rcall	MCU_wait_20ms
+		rcall	MCU_wait_300ms
 		sbic	PIN_BUTTON_MODE, BUTTON_MODE
 		rjmp	Mode_pressed_end
 
@@ -52,9 +48,7 @@ _INT0:
 	breq	Mode_pressed_8
 
 	cpi		mode, mode_9
-	brsh	Mode_pressed_0
-
-	rjmp	Mode_pressed_end
+	breq	Mode_pressed_9
 
 	;------------------------- MODE 0
 
@@ -80,21 +74,14 @@ _INT0:
 		rcall	DS1302_send_stop
 
 		Mode_pressed_0_end:
-			rcall	change_tim1_to_normal_mode
+			rcall	change_tim0_to_normal_mode
 			clr		mode
 
 		rjmp	Mode_pressed_end
 
-	;------------------------- MODE 1
+	;------------------------- MODE 1 или 2
 
 	Mode_pressed_1:
-		rcall	TM1637_display_time
-		rcall	change_tim1_to_blink_mode
-
-		rjmp	Mode_pressed_end
-
-	;------------------------- MODE 2
-
 	Mode_pressed_2:
 		rcall	TM1637_display_time
 
@@ -128,6 +115,11 @@ _INT0:
 	Mode_pressed_8:
 		rcall	TM1637_display_alarm
 
+		rjmp	Mode_pressed_end
+
+	Mode_pressed_9:
+		rcall	TM1637_display_light
+
 	Mode_pressed_end:
 
 		pop		r16
@@ -143,7 +135,7 @@ _INT1:
 	push	r17
 
 	_INT1_wait_release:
-		rcall	MCU_wait_20ms
+		rcall	MCU_wait_300ms
 		sbic	PIN_BUTTON_SET, BUTTON_SET
 		rjmp	Clock_mode_end
 
@@ -161,7 +153,7 @@ _INT1:
 	Clock_mode_clock_mode_pressed:
 		inc		clock_mode
 
-		cpi		clock_mode, 0x04
+		cpi		clock_mode, clock_mode_2+1
 		brsh	Clock_mode_reset
 		rjmp	Clock_mode_pre_end
 
@@ -172,11 +164,10 @@ _INT1:
 
 			;-------------------------- Чтобы данные сразу отобразились
 			
-			ldi		r17, high(kdel2)
+			ldi		r17, high(kdel1)
 			out		TCNT1H, r17
-			ldi		r17, low(kdel2-10)
+			ldi		r17, low(kdel1-10)
 			out		TCNT1L, r17
-
 
 	Clock_mode_end:
 
@@ -225,14 +216,15 @@ _TIM1:
 	cpi		mode, mode_9
 	breq	rcall_TIM1_mode_9
 
+	cpi		mode, mode_10
+	breq	rcall_TIM1_mode_10
+
 	rjmp	_TIM1_end
 
 	;-------------------------- MODE 0
 
 	rcall_TIM1_mode_0:
-
 		rcall	_TIM1_mode_0
-		;rcall	alarm_check
 
 		rjmp	_TIM1_end
 
@@ -316,6 +308,16 @@ _TIM1:
 	;-------------------------- MODE 9
 
 	rcall_TIM1_mode_9:
+		lds		r18, 0x00
+		lds		r19, tm_light
+		ldi		r17, 0x02
+		rcall	TM1637_blink_pair
+
+	rjmp	_TIM1_end
+
+	;-------------------------- MODE 10
+
+	rcall_TIM1_mode_10:
 		clr		ZH
 		ldi		ZL, low(tm_m1)
 		ld		r18, Z+
@@ -330,7 +332,7 @@ _TIM1:
 		rcall	change_tim0_to_buzzer_mode
 
 	_TIM1_end:
-		cpi		mode, mode_9
+		cpi		mode, mode_10
 		breq	_TIM1_end_end
 		rcall	alarm_check
 
@@ -351,30 +353,30 @@ _TIM0:
 
 	in		r17, OCR0A
 	cpi		r17, kdel4
-	breq	_TIM0_end
+	breq	_TIM0_end					; Если сейчас работает будильник, выходим из прерывания
 
-	inc		timer0_counter_alarm_unlock
-	sbrc	timer0_counter_alarm_unlock, 7		; 128 * 240 мс ~ 31 с
-	clr		alarm_lock
-
-	;-------------------------- Если сейчас не Mode 0 и не Clock_mode 0 выходим из прерывания
-
-	cpi		clock_mode, clock_mode_1
-	breq	_TIM0_display_seconds
+	;-------------------------- Если сейчас не Mode 0 и не Clock_mode 0, выходим из прерывания
 
 	push	mode
 	add		mode, clock_mode
 	pop		mode
 	brne	_TIM0_end
 
+	;-------------------------- Если сейчас Clock_mode 1, то отобразить секунды
+
+	cpi		clock_mode, clock_mode_1	
+	breq	_TIM0_display_seconds
+
+	;-------------------------- Счетчик для двоеточия
+
 	inc		timer0_counter
 	mov		r17, timer0_counter
-	cpi		r17, 0x03
-	brne	_TIM0_end
+	cpi		r17, 0x05
+	brlo	_TIM0_end
 
 	clr		timer0_counter
 
-	;-------------------------- Для экономии работы микроконтроллеров. Изменяется только значение 2-го элемента на дисплее, а не всех!!!
+	;-------------------------- Отображение двоеточия. Изменяется только значение 2-го элемента на дисплее, а не всех.
 
 	rcall	TM1637_start
 	ldi		BYTE, 0x44
@@ -414,25 +416,22 @@ _TIM1_mode_0:
 	rcall	DS1302_read_package_data
 
 	cpi		clock_mode, clock_mode_1
-	breq	_TIM1_mode_0_end
+	breq	_TIM1_second_mode
 
 	cpi		clock_mode, clock_mode_2
 	breq	_TIM1_date_mode
 
-	cpi		clock_mode, clock_mode_3
-	breq	_TIM1_year_mode
-
 	_TIM1_time_mode:
 		rcall	TM1637_display_time
-		ret
+		rjmp	_TIM1_mode_0_end
 
 	_TIM1_date_mode:
 		rcall	TM1637_display_date
-		ret
+		rjmp	_TIM1_mode_0_end
 
-	_TIM1_year_mode:
-		rcall	TM1637_display_year
+	_TIM1_second_mode:
+		rcall	TM1637_display_seconds
 
 	_TIM1_mode_0_end:
 
-	ret
+		ret

@@ -1,4 +1,4 @@
-18633309059647932
+18630042840088241
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -297,13 +297,6 @@ Battery
 Battery_Panasonic_CR3032-VCN_Vertical_CircularHoles
 Panasonic CR-3032/VCN battery, https://industrial.panasonic.com/cdbs/www-data/pdf2/AAA4000/AAA4000D140.pdf
 battery CR-3032 coin cell vertical
-0
-2
-2
-Battery
-power_pins_smd
-
-
 0
 2
 2
@@ -6271,20 +6264,6 @@ tag connect programming header pogo pins
 0
 14
 14
-Connector
-bus_4_poins_smd
-
-
-0
-4
-4
-Connector
-conn_01x04
-
-
-0
-4
-4
 Connector_AMASS
 AMASS_MR30PW-FB_1x03_P3.50mm_Horizontal
 Connector XT30 Horizontal PCB Female, https://www.tme.eu/en/Document/5e47640ba39fa492dbd4c0f4c8ae7b93/MR30PW%20SPEC.pdf
@@ -56244,13 +56223,6 @@ ESP8266 WiFi microcontroller
 0
 16
 16
-Module
-tm1637-module
-
-
-0
-8
-4
 MountingEquipment
 DINRailAdapter_3xM3_PhoenixContact_1201578
 https://www.phoenixcontact.com/online/portal/us?uri=pxc-oc-itemdetail:pid=1201578&library=usen&tab=1
@@ -65582,6 +65554,13 @@ THT DIP DIL PDIP 2.54mm 7.62mm 300mil Vishay HVMDIP HEXDIP
 0
 4
 3
+Package_DIP
+tm1637-module
+
+
+0
+4
+4
 Package_DirectFET
 DirectFET_L4
 DirectFET L4 https://www.infineon.com/dgdl/Infineon-AN-1035-ApplicationNotes-v29_01-EN.pdf?fileId=5546d462533600a40153559159020f76#page=41
@@ -72652,6 +72631,13 @@ Potentiometer vertical Vishay T73YP
 0
 3
 3
+Potentiometer_THT
+Potentiometr_3362_Vertical
+
+
+0
+3
+2
 RF
 Skyworks_SKY13575_639LF
 http://www.skyworksinc.com/uploads/documents/SKY13575_639LF_203270D.pdf

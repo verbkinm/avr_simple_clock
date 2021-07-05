@@ -28,10 +28,12 @@ conv_ds1302_to_tm1637:
 
 	ret
 
-;------------------------- Подфункция преобразования.
-;------------------------- Данные из регистра r18 преобразуются в числовое 
-;------------------------- значение для 7-сегментного индикатора, результат в 
-;------------------------- регистр r18
+;========================================================
+;	Подфункция преобразования.
+;   Данные из регистра r18 преобразуются в числовое 
+;	значение для 7-сегментного индикатора, результат в 
+;	регистр r18
+;========================================================
 
 bin_to_tm1637_digit:
 	cpi		r18, 0x00
@@ -155,6 +157,9 @@ inc_circle:
 	cpi		mode, mode_8
 	breq	rcall_inc_cicle_alarm
 
+	cpi		mode, mode_9
+	breq	rcall_inc_cicle_light
+
 	rjmp	inc_circle_end
 
 	;-------------------------- Часы
@@ -235,6 +240,28 @@ inc_circle:
 
 	rcall_inc_cicle_alarm:
 		rcall	inc_cicle_alarm
+
+		rjmp	inc_circle_end
+
+	;-------------------------- Яркость дисплея
+
+	rcall_inc_cicle_light:
+		ldi		r17, light
+		rcall	EEPROM_read
+		ldi		r19, 0x00
+		ldi		r18, 0x08
+		rcall	_inc
+		
+		ldi		r18, light
+		rcall	EEPROM_write
+
+		mov		r18, r17
+		rcall	bin_to_tm1637_digit
+		sts		tm_light, r18
+
+		mov		BYTE, r17
+		rcall	TM1637_set_ligth
+		rcall	TM1637_display_light
 
 	;-------------------------- Конец инкрементации
 			
@@ -438,84 +465,6 @@ leap_year:
 	leap_year_end:
 		mov		r17, r16
 		pop		r16
-
-	ret
-
-;========================================================
-;			Подпрограммы формирования задержки
-;========================================================
-
-MCU_wait_10mks:						; 10 мкс + время на команды 
-	push	r17
-
-	ldi		r17, 10
-
-	MCU_wait_loop:
-		dec		r17
-		brne	MCU_wait_loop
-
-	pop		r17
-
-	ret
-
-MCU_wait_20ms:						; приблизительно 20 мс + время команд
-	push	r17
-	push	r16
-
-	ldi		r17, 80
-	ser		r16
-
-	MCU_wait_loop_L:
-		dec		r16
-		brne	MCU_wait_loop_L
-
-	MCU_wait_loop_H:
-		ser		r16
-		dec		r17
-		brne	MCU_wait_loop_L
-
-	pop		r16
-	pop		r17
-
-	ret
-
-;========================================================
-;		Замена предделителя в TIM1
-;========================================================
-
-change_tim1_to_blink_mode:
-	push	r17
-
-	ldi		r17, high(kdel1)	; меняем предделитель на 0,5 сек., чтобы моргало то, что мы меняем в режимах mode 1 - mode 8 или во время работы будильника
-	out		OCR1AH, r17
-	ldi		r17, low(kdel1)		 
-	out		OCR1AL, r17
-	ldi		r17, high(kdel1)	; чтобы сразу отобразилось
-	out		TCNT1H, r17
-	ldi		r17, low(kdel1-10)
-	out		TCNT1L, r17
-
-	pop		r17
-
-	ret
-
-;========================================================
-;		Замена предделителя в TIM1
-;========================================================
-
-change_tim1_to_normal_mode:
-	push	r17
-
-	ldi		r17, high(kdel2)	; 60 сек.
-	out		OCR1AH, r17
-	ldi		r17, low(kdel2)		 
-	out		OCR1AL, r17
-	ldi		r17, high(kdel2)	; чтобы сразу отобразилось
-	out		TCNT1H, r17
-	ldi		r17, low(kdel2-10)
-	out		TCNT1L, r17
-
-	pop		r17
 
 	ret
 
