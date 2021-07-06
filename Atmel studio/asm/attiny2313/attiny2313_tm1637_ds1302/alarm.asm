@@ -150,6 +150,7 @@ alarm_check:
 	rcall	TM1637_display_time
 	ldi		mode, mode_10				; mode_10 включается только во время срабатывания будильника
 	rcall	change_tim0_to_buzzer_mode
+	clr		blink_counter
 
 
 	to_alarm_end:
