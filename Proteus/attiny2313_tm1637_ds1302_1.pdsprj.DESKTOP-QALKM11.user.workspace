@@ -3,10 +3,11 @@
  <FRAME activewindow="0">
   <PLACEMENT>2c00000002000000030000000083ffff0083ffffffffffffffffffff8300000009000000d4040000d0020000</PLACEMENT>
   <WINDOW type="default" module="ISIS"/>
+  <WINDOW type="default" module="DXP"/>
  </FRAME>
  <MODULE name="VSMDEBUG">
   <PWI>
-   <POPUP w="610" x="5" flags="00000002" y="106" h="355" pid="0" iid="-1">
+   <POPUP w="610" x="756" flags="00000002" y="334" h="355" pid="0" iid="-1">
     <PROPERTIES>
      <ITEM name="Message Column Width">352</ITEM>
      <ITEM name="ShowGrid">No</ITEM>
@@ -48,7 +49,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="1" x="5" flags="0000000a" y="106" h="1" pid="6" iid="2">
+   <POPUP w="12" x="19" flags="0000800b" y="337" h="21" pid="6" iid="2">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -78,7 +79,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="8" x="256" flags="0000000b" y="84" h="20" pid="4" iid="2">
+   <POPUP w="8" x="460" flags="0000000b" y="99" h="20" pid="4" iid="2">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -88,7 +89,7 @@
      <ITEM name="TopLineAddress">00000060</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="12" x="42" flags="0000000b" y="395" h="21" pid="13" iid="2">
+   <POPUP w="12" x="42" flags="0000000a" y="395" h="21" pid="13" iid="2">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -98,7 +99,7 @@
      <ITEM name="TopLineAddress">00000020</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="156" x="5" flags="00000000" y="610" h="72" pid="1" iid="4">
+   <POPUP w="156" x="184" flags="00000001" y="105" h="72" pid="1" iid="4">
     <PROPERTIES/>
    </POPUP>
    <POPUP w="8" x="5" flags="00000008" y="106" h="4" pid="2" iid="4">

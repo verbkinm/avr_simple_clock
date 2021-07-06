@@ -160,19 +160,10 @@ _INT1:
 
 		cpi		clock_mode, clock_mode_2+1
 		brsh	Clock_mode_reset
-		rjmp	Clock_mode_pre_end
+		rjmp	Clock_mode_end
 
 		Clock_mode_reset:
 			clr		clock_mode
-
-		Clock_mode_pre_end:
-
-			;-------------------------- Чтобы данные сразу отобразились
-			
-			ldi		r17, high(kdel1)
-			out		TCNT1H, r17
-			ldi		r17, low(kdel1-10)
-			out		TCNT1L, r17
 
 	Clock_mode_end:
 
@@ -379,14 +370,22 @@ _TIM1_mode_0:
 	_TIM1_time_mode:
 
 		;-------------------------- Отображение двоеточия.
+		inc		dot_counter
+		mov		r17, dot_counter
+		cpi		r17, 0x02
+		brne	_TIM1_mode_0_display_time
+
+		clr		dot_counter
 
 		mov		r17, tm1637_dot
 		ldi		BYTE, 0x80
 		eor		r17, BYTE	
 		mov		tm1637_dot, r17
 
-		rcall	TM1637_display_time
-		rjmp	_TIM1_mode_0_end
+		_TIM1_mode_0_display_time:
+
+			rcall	TM1637_display_time
+			rjmp	_TIM1_mode_0_end
 
 	_TIM1_date_mode:
 		rcall	TM1637_display_date
