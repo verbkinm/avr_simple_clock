@@ -142,7 +142,9 @@ TM1637_set_ligth:
 TM1637_display_time:
 	lds		TM1637_char1, tm_h1
 	lds		TM1637_char2, tm_h2
-	sbr		TM1637_char2, 0b10000000
+
+	or		TM1637_char2, tm1637_dot
+
 	lds		TM1637_char3, tm_m1
 	lds		TM1637_char4, tm_m2
 
@@ -287,5 +289,66 @@ TM1637_blink_pair:
 		pop		r19
 		pop		r18
 		pop		r17
+
+	ret
+
+;========================================================
+;					Анимация №1
+;========================================================
+
+TM1637_animation_1:
+	ldi		r17, 0x01
+	mov		TM1637_char1, r17
+	mov		TM1637_char2, CONST_ZERO
+	mov		TM1637_char3, CONST_ZERO
+	mov		TM1637_char4, CONST_ZERO
+	rcall	TM1637_animation_1_ext
+
+	mov		TM1637_char2, r17
+	rcall	TM1637_animation_1_ext
+	
+	mov		TM1637_char3, r17
+	rcall	TM1637_animation_1_ext
+
+	rcall	TM1637_animation_1_ext_1
+
+	ldi		r17, 0x03
+	rcall	TM1637_animation_1_ext_1
+
+	ldi		r17, 0x07
+	rcall	TM1637_animation_1_ext_1
+
+	ldi		r17, 0x0F
+	rcall	TM1637_animation_1_ext_1
+
+	ldi		r17, 0x09
+	mov		TM1637_char3, r17
+	rcall	TM1637_animation_1_ext
+
+	mov		TM1637_char2, r17
+	rcall	TM1637_animation_1_ext
+
+	mov		TM1637_char1, r17
+	rcall	TM1637_animation_1_ext
+
+	ldi		r17, 0x19
+	mov		TM1637_char1, r17
+	rcall	TM1637_animation_1_ext
+
+	ldi		r17, 0x39
+	mov		TM1637_char1, r17
+	rcall	TM1637_animation_1_ext
+
+	ret
+
+TM1637_animation_1_ext:
+	rcall	TM1637_display
+	rcall	MCU_wait_300ms
+
+	ret
+
+TM1637_animation_1_ext_1:
+	mov		TM1637_char4, r17
+	rcall	TM1637_animation_1_ext
 
 	ret

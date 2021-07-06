@@ -472,15 +472,12 @@ leap_year:
 ;		Смена режима TIM0
 ;========================================================
 
-change_tim0_to_normal_mode:
+change_tim0_off:
 	push	r17
 
-	ldi		r17, (1 << WGM01)							 ; Выбор режима таймера СТС 
-	out		TCCR0A, r17
-	ldi		r17, (1 << CS02) | (0 << CS01) | (1 << CS00) ; Выбор предделителя = 1024 
-	out		TCCR0B, r17
-	ldi		r17, kdel3
-	out		OCR0A, r17
+	out		TCCR0A, CONST_ZERO
+	out		TCCR0B, CONST_ZERO
+	out		OCR0A, CONST_ZERO
 
 	pop		r17
 

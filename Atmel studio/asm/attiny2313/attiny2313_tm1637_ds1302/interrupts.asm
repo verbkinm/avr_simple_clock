@@ -74,7 +74,7 @@ _INT0:
 		rcall	DS1302_send_stop
 
 		Mode_pressed_0_end:
-			rcall	change_tim0_to_normal_mode
+			rcall	change_tim0_off
 			clr		mode
 
 		rjmp	Mode_pressed_end
@@ -121,6 +121,10 @@ _INT0:
 		rcall	TM1637_display_light
 
 	Mode_pressed_end:
+		ldi		r17, high(kdel1)	; чтобы сразу отобразилось
+		out		TCNT1H, r17
+		ldi		r17, low(kdel1-10)
+		out		TCNT1L, r17
 
 		pop		r16
 		pop		r17
@@ -184,6 +188,10 @@ _TIM1:
 	push	r18
 	push	r19
 	
+	;-------------------------- Считать данные с ds1302 пакетом
+
+	rcall	DS1302_read_package_data
+
 	;-------------------------- Проверка режимов Mode
 
 	cpi		mode, mode_0
@@ -344,76 +352,10 @@ _TIM1:
 	reti
 
 ;========================================================
-;				Прерывание таймера T0	
-;========================================================
-
-_TIM0:
-	push	r17
-	push	BYTE
-
-	in		r17, OCR0A
-	cpi		r17, kdel4
-	breq	_TIM0_end					; Если сейчас работает будильник, выходим из прерывания
-
-	;-------------------------- Если сейчас не Mode 0 и не Clock_mode 0, выходим из прерывания
-
-	push	mode
-	add		mode, clock_mode
-	pop		mode
-	brne	_TIM0_end
-
-	;-------------------------- Если сейчас Clock_mode 1, то отобразить секунды
-
-	cpi		clock_mode, clock_mode_1	
-	breq	_TIM0_display_seconds
-
-	;-------------------------- Счетчик для двоеточия
-
-	inc		timer0_counter
-	mov		r17, timer0_counter
-	cpi		r17, 0x05
-	brlo	_TIM0_end
-
-	clr		timer0_counter
-
-	;-------------------------- Отображение двоеточия. Изменяется только значение 2-го элемента на дисплее, а не всех.
-
-	rcall	TM1637_start
-	ldi		BYTE, 0x44
-	rcall	TM1637_send_byte
-	rcall	TM1637_stop
-
-	rcall	TM1637_start
-	ldi		BYTE, 0xC1
-	rcall	TM1637_send_byte
-	lds		BYTE, tm_h2
-	ldi		r17, 0x80
-	eor		BYTE, r17
-	sts		tm_h2, BYTE
-	rcall	TM1637_send_byte
-	rcall	TM1637_stop
-
-	_TIM0_end:
-		pop		BYTE
-		pop		r17
-
-	reti
-
-	_TIM0_display_seconds:
-		rcall	DS1302_read_package_data
-		rcall	TM1637_display_seconds
-
-		rjmp	_TIM0_end
-
-;========================================================
 ;		Подпрограмма выбора режима mode_0
 ;========================================================
 
 _TIM1_mode_0:
-
-	;-------------------------- Считать данные с ds1302 пакетом
-
-	rcall	DS1302_read_package_data
 
 	cpi		clock_mode, clock_mode_1
 	breq	_TIM1_second_mode
@@ -422,6 +364,14 @@ _TIM1_mode_0:
 	breq	_TIM1_date_mode
 
 	_TIM1_time_mode:
+
+		;-------------------------- Отображение двоеточия.
+
+		mov		r17, tm1637_dot
+		ldi		BYTE, 0x80
+		eor		r17, BYTE	
+		mov		tm1637_dot, r17
+
 		rcall	TM1637_display_time
 		rjmp	_TIM1_mode_0_end
 

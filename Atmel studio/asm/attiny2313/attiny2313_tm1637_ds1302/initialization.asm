@@ -65,23 +65,19 @@ init:
 	out		OCR1AH, r17
 	ldi		r17, low(kdel1)		 
 	out		OCR1AL, r17
-	ldi		r17, high(kdel1)	; чтобы сразу отобразилось
-	out		TCNT1H, r17
-	ldi		r17, low(kdel1-10)
-	out		TCNT1L, r17
 
 	;-------------------------- Таймер 1 
 
-	rcall	change_tim0_to_normal_mode
+	rcall	change_tim0_off
 
 	;--------------------------- Разрешаем прерывание от таймеров
 		
 	ldi 	r17, (1 << OCIE1A) | (1 << OCIE0A)
 	out		TIMSK, r17
 
-	;--------------------------- Разрешаем прерывание INT0 и INT1 по заднему фронту и режим сна (idle)
+	;--------------------------- Разрешаем прерывание INT0 и INT1 по заднему фронту ;и режим сна (idle)
 
-	ldi		r17, (1 << ISC01) | (0 << ISC00) | (1 << ISC11) | (0 << ISC10) | (1 << SE)
+	ldi		r17, (1 << ISC01) | (0 << ISC00) | (1 << ISC11) | (0 << ISC10); | (1 << SE)
 	out		MCUCR, r17
 
 	ldi		r17, (1 << INT0) | (1 << INT1)
