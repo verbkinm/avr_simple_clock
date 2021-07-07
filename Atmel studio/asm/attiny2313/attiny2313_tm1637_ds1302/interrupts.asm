@@ -122,10 +122,7 @@ _INT0:
 		rcall	TM1637_display_light
 
 	Mode_pressed_end:
-		ldi		r17, high(kdel1)	; чтобы сразу отобразилось
-		out		TCNT1H, r17
-		ldi		r17, low(kdel1-10)
-		out		TCNT1L, r17
+
 
 		pop		r16
 		pop		r17
